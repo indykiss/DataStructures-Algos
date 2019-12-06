@@ -11,3 +11,6 @@ https://github.com/lolapriego/coursework
 
 https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/
 
+Interview Cake
+
+Talk about code out loud to people.
