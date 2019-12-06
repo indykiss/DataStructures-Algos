@@ -1,5 +1,8 @@
 // Concepts to remember
 
+// Read me! As much as possible: https://www.geeksforgeeks.org/data-structures/
+
+
 // Sets! A set is a collection of any type of element where none of the elements are duplicated and the order isn't important. 
 
 // Let's say we want to remove the duplicates in an array. 
