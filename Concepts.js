@@ -10,5 +10,3 @@
 var array = ["Mike","Matt","Nancy","Adam","Nancy"];
 let newArr = [...new Set(array)]
 console.log(uniq)
-
-
