@@ -32,6 +32,9 @@ var isAlienSorted = function(words, order) {
 };
 
 
+
+
+
 // Add Binary 
 
 // Given two binary strings, return their sum (also a binary string). The input strings are both non-empty and contains only characters 1 or 0.
@@ -39,8 +42,6 @@ var isAlienSorted = function(words, order) {
 // Example 1:
 // Input: a = "11", b = "1"
 // Output: "100"
-
-
 
 
 
@@ -70,4 +71,48 @@ var isAlienSorted = function(words, order) {
 
 
 
+
+
+// First Bad Version
+
+// You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
+
+// Suppose you have n versions [1, 2, ..., n] and you want to find out the first bad one, which causes all the following ones to be bad.
+// You are given an API bool isBadVersion(version) which will return whether version is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.
+
+// Example:
+// Given n = 5, and version = 4 is the first bad version.
+
+// call isBadVersion(3) -> false
+// call isBadVersion(5) -> true
+// call isBadVersion(4) -> true
+
+// Then 4 is the first bad version. 
+
+
+
+
+
+// Merge Sorted Array
+
+// Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
+
+// Note:
+// The number of elements initialized in nums1 and nums2 are m and n respectively.
+// You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2.
+
+// Example:
+// Input:
+// nums1 = [1,2,3,0,0,0], m = 3
+// nums2 = [2,5,6],       n = 3
+
+// Output: [1,2,2,3,5,6]
+
+
+
+
+
+// Add Strings 
+
+// Given two non-negative integers num1 and num2 represented as string, return the sum of num1 and num2.
 
