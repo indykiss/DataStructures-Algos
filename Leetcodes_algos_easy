@@ -30,3 +30,44 @@ var isAlienSorted = function(words, order) {
     // Returns boolean
     return newArr;
 };
+
+
+// Add Binary 
+
+// Given two binary strings, return their sum (also a binary string). The input strings are both non-empty and contains only characters 1 or 0.
+
+// Example 1:
+// Input: a = "11", b = "1"
+// Output: "100"
+
+
+
+
+
+
+
+// Valid Palindrome
+
+// Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+
+// Note: For the purpose of this problem, we define empty string as valid palindrome.
+
+// Example 1:
+// Input: "A man, a plan, a canal: Panama"
+// Output: true
+
+
+
+
+
+
+// Valid Palindrome II
+// Given a non-empty string s, you may delete at most one character. Judge whether you can make it a palindrome.
+
+// Example 1:
+// Input: "aba"
+// Output: True
+
+
+
+
