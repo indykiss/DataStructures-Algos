@@ -4,8 +4,18 @@
 // int[][] spiral(int n);
 // where n is the size of the 2D array.
 
+var spiralizer = function(n) {
 
-// I am a solution:
+}
+
+// I am an unspiralizer solution
+// Input:
+// [
+//     [1, 2, 3, 4],
+//     [5, 6, 7, 8],
+//     [9,10,11,12]
+//   ]
+//   Output: [1,2,3,4,8,12,11,10,9,5,6,7]
 var spiralOrder = function(matrix) {
     if (matrix.length == 0 || matrix[0].length == 0)
         return []
@@ -32,7 +42,6 @@ var spiralOrder = function(matrix) {
     return res;
 };
 
-
 // Question 2: Look and Say
 // Implement a function that outputs the Look and Say sequence:
 // 1
@@ -57,3 +66,4 @@ var spiralOrder = function(matrix) {
 // OneEditApart("cat", "cut") = true
 // OneEditApart("cat", "cast") = true
 // OneEditApart("cat", "at") = true
+
