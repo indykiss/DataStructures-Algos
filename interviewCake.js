@@ -51,8 +51,8 @@ function getMaxProfit(stockPrices) {
     return maxProfit; 
     
     // Edge case of no profit all day and input errors (no price)?
-  
   }
   
   
   getMaxProfit([10, 7, 5, 8, 11, 9]);
+  
