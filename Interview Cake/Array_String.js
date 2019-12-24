@@ -158,3 +158,44 @@ mergeRanges([{ startTime: 1, endTime: 3 }, { startTime: 2, endTime: 4 }])
 
 // Input: [{ startTime: 1, endTime: 3 }, { startTime: 2, endTime: 4 }
 // Expected output: [{ startTime: 1, endTime: 4 }]
+
+
+
+
+// Write a function that takes an array of characters 
+// and reverses the letters in place.
+
+function reverse(arrayOfChars) {
+
+  // Reverse the input array of characters in place
+    // in place meaning without making a copy,
+    // thus saving time & space, but alters original arr
+    // which can be bad bc of side effects
+  
+  // One way to do this, IF it wasn't in place
+      // const newArr = []
+      // for(let i = arrayOfChars.length -1 ; i >= 0; i--) {
+      //   newArr.push(arrayOfChars[i]);
+      // }
+      // return newArr;
+
+  // BUT to do this IN PLACE, we need to swap elements
+  
+  // Step 1: Establish the 2 eles to swap
+  let leftIndex = 0;
+  let rightIndex = arrayOfChars.length - 1;
+  
+  // Step 2: Swap until we hit the middle index
+  while (leftIndex < rightIndex) {
+    const temp = arrayOfChars[leftIndex];
+    arrayOfChars[leftIndex] = arrayOfChars[rightIndex];
+    arrayOfChars[rightIndex] = temp;
+
+
+  // Step 3: Move towards the middle
+    leftIndex++; 
+    rightIndex--; 
+  }
+  
+}
+
