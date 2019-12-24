@@ -156,7 +156,5 @@ function mergeRanges(meetings) {
 
 mergeRanges([{ startTime: 1, endTime: 3 }, { startTime: 2, endTime: 4 }])
 
-// Input: 
-// [{ startTime: 1, endTime: 3 }, { startTime: 2, endTime: 4 }
-
+// Input: [{ startTime: 1, endTime: 3 }, { startTime: 2, endTime: 4 }
 // Expected output: [{ startTime: 1, endTime: 4 }]
