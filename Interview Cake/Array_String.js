@@ -37,8 +37,8 @@ function mergeArraysTooSimple(myArray, alicesArray) {
     // so we can compare which is smallest then push into newArr
   }
   
-  
-  function mergeArrays(myArray, alicesArray) {
+
+function mergeArrays(myArray, alicesArray) {
     
     const newArr = [];
     
@@ -74,12 +74,12 @@ function mergeArraysTooSimple(myArray, alicesArray) {
       
       // Either way, we increment the newArr's index so we continue adding
       currentIndexMerged++
-      
+
     }
-    
     return newArr;
-    
-  }
+}
+
+
 
 // Your company built an in-house calendar tool called HiCal. 
 // You want to add a feature to see the times in a day when everyone is available.
@@ -97,7 +97,6 @@ function mergeArraysTooSimple(myArray, alicesArray) {
 // meeting time ranges and returns an array of condensed ranges.
 
 // For example, given:
-
 //   [
 //   { startTime: 0,  endTime: 1 },
 //   { startTime: 3,  endTime: 5 },
@@ -107,7 +106,6 @@ function mergeArraysTooSimple(myArray, alicesArray) {
 // ]
 
 // your function would return:
-
 //   [
 //   { startTime: 0, endTime: 1 },
 //   { startTime: 3, endTime: 8 },
@@ -151,14 +149,12 @@ function mergeRanges(meetings) {
     }
   
  return mergedMeetings;
-
 }
 
 mergeRanges([{ startTime: 1, endTime: 3 }, { startTime: 2, endTime: 4 }])
 
 // Input: [{ startTime: 1, endTime: 3 }, { startTime: 2, endTime: 4 }
 // Expected output: [{ startTime: 1, endTime: 4 }]
-
 
 
 
@@ -191,11 +187,22 @@ function reverse(arrayOfChars) {
     arrayOfChars[leftIndex] = arrayOfChars[rightIndex];
     arrayOfChars[rightIndex] = temp;
 
-
   // Step 3: Move towards the middle
     leftIndex++; 
     rightIndex--; 
   }
   
 }
+
+
+// Take an array of chars and reverses the order of the words in place
+
+// Input: const message = [ 'c', 'a', 'k', 'e', ' ',
+// 'p', 'o', 'u', 'n', 'd', ' ',
+// 's', 't', 'e', 'a', 'l' ];
+
+// reverseWords(message)
+// console.log(message.join(''));
+
+// Expected output: 'steal pound cake'
 
