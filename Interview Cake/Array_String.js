@@ -195,7 +195,62 @@ function reverse(arrayOfChars) {
 }
 
 
+
+
 // Take an array of chars and reverses the order of the words in place
+
+// Input: const message = [ 'c', 'a', 'k', 'e', ' ',
+// 'p', 'o', 'u', 'n', 'd', ' ',
+// 's', 't', 'e', 'a', 'l' ];
+
+// reverseWords(message)
+// console.log(message.join(''));
+
+// Expected output: 'steal pound cake'
+
+// Assumptions: Only letters, no punctuation or numbers, and 
+// every word is separated by a space 
+
+
+function reverseWords(message) {
+
+  // Decode the message by reversing the words
+
+  // Step 1: Reverse all the characters in the entire message 
+    // This gives us the correct word order but with each 
+    // word backwards. Helper fixes the word backwards issue
+  reverseChars(message, 0, message.length - 1)
+  
+  // Step 1b: We keep track of beginning of the word 
+    // as we look for end of the word 
+  let currentWordStartIndex = 0; 
+    for(let i = 0; i <= message.length; i++) {
+      // If it's the end of the message or we hit a space
+      if(i === message.length || message[i] === " ") {
+        // We go to the next word to reverse that one
+      reverseChars(message, currentWordStartIndex, i - 1);
+      currentWordStartIndex = i + 1;
+      }
+  }
+}
+
+// Step 2: Write a helper method that reverses the 
+  // chars in each word to be correct
+
+function reverseChars(message, firstIndex, lastIndex) {
+  // Swap the first and the last until we get to middle
+
+  // Go towards the middle
+  while(firstIndex <  lastIndex) {
+    
+    // Swap 1st and last 
+    const temp = message[firstIndex]; 
+    message[firstIndex] = message[lastIndex]; 
+    message[lastIndex] = temp; 
+    firstIndex++; 
+    lastIndex--; 
+  }
+}
 
 // Input: const message = [ 'c', 'a', 'k', 'e', ' ',
 // 'p', 'o', 'u', 'n', 'd', ' ',
