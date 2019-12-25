@@ -232,6 +232,7 @@ function reverseWords(message) {
       currentWordStartIndex = i + 1;
       }
   }
+  return message;
 }
 
 // Step 2: Write a helper method that reverses the 
