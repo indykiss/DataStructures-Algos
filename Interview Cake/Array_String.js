@@ -262,3 +262,29 @@ function reverseChars(message, firstIndex, lastIndex) {
 
 // Expected output: 'steal pound cake'
 
+
+
+
+// Is this cafe serving food in the same order people are ordering them? 
+
+// There's a cafe where some customers are saying that people who order 
+// after them are getting served first! Big problem. 
+
+// The owner made 3 arrays keeping track of takeOutOrders, dineInOrders, and 
+// servedOrders.
+
+// Given all three, write a function to check that service 
+// is first-come, first-served. 
+
+// Example input:
+// Take Out Orders: [1, 3, 5]
+// Dine In Orders: [2, 4, 6]
+// Served Orders: [1, 2, 4, 6, 5, 3]
+// Output: False 
+
+// Example input: 
+// Take Out Orders: [1, 3, 5]
+// Dine In Orders: [2, 4, 6]
+// Served Orders: [1, 2, 3, 5, 4, 6]
+// Output: True
+
