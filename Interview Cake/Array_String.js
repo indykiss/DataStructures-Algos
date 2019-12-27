@@ -288,3 +288,22 @@ function reverseChars(message, firstIndex, lastIndex) {
 // Served Orders: [1, 2, 3, 5, 4, 6]
 // Output: True
 
+function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
+
+  // Check if we're serving orders first-come, first-served
+  
+  // Assumptions: Input is always a whole num, no blanks, 
+    // all take out and dine in customers are served 
+    // so takeOut.length + dineIn.length = served.length 
+
+  // 1st in served must be 1st in dineIn or takeOut 
+    // So we're gonna check the 1st order, throw it away as its
+    // been accounted for then continue to 2nd served order 
+    
+  // Then we do this again. So use recursion to meet
+    // the base case of everything being checked 
+  
+  
+  return false;
+}
+
