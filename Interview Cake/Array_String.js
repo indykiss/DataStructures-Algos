@@ -338,3 +338,18 @@ function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
     
 }
 
+// The time and spece costs for this are O(n2) BECAUSE  
+// while most of the equation is constant, we use .slice which 
+// costs O(m) where m is the resulting array's size. 
+// Since we use .slice twice, essentially we are doing this math: 
+  // (n-1) + (n-2) + ... 2 + 1 
+    // Where n-1 is the 1st slice and n-2 is the second, giving us 
+// O(n2)
+
+// If we want to optimize (ask the interviewer)
+// we can replace .slice() with keeping track of indices: 
+
+function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
+
+}
+
