@@ -292,18 +292,49 @@ function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
 
   // Check if we're serving orders first-come, first-served
   
-  // Assumptions: Input is always a whole num, no blanks, 
-    // all take out and dine in customers are served 
-    // so takeOut.length + dineIn.length = served.length 
-
   // 1st in served must be 1st in dineIn or takeOut 
     // So we're gonna check the 1st order, throw it away as its
     // been accounted for then continue to 2nd served order 
     
   // Then we do this again. So use recursion to meet
     // the base case of everything being checked 
+    // Eventually, we will throw out all the eles in servedOrders
+    // if the order is first come, first serve
+  
+  // Edge cases: Empty values in takeOut or dineIn. takeOut or 
+    // dineIn are not equal
   
   
-  return false;
+  // Recursive base case: We've popped off everything
+  if(servedOrders.length === 0) {
+    return true; 
+  }
+    
+  // Step 1: Are there orders in takeOut? Check if the 
+  // servedOrder[0] == takeOut[0]
+    
+  if(takeOutOrders.length > 0 && servedOrders[0] === takeOutOrders[0]) {
+    
+      // Remove 1st order for both and recurse! 
+      return isFirstComeFirstServed(takeOutOrders.slice(1), 
+      dineInOrders, 
+      servedOrders.slice(1));
+      
+  } 
+    
+  // Step 2: Are there orders in dineIn? Check if 
+  // the servedOrder[0] == dineIn[0]
+    
+  if (dineInOrders.length > 0 && servedOrders[0] === dineInOrders[0]) {
+      
+      // Remove 1st order for both and recurse! 
+      return isFirstComeFirstServed(takeOutOrders, 
+      dineInOrders.slice(1), 
+      servedOrders.slice(1));
+      
+  } 
+    
+    return false;
+    
 }
 
