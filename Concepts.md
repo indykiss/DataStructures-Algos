@@ -3,7 +3,6 @@
 Read me! As much as possible: https://www.geeksforgeeks.org/data-structures/
 
 
-
 ## RAM
 
 Ram is basically like a super tall bookshelf. RAM is memory. Random access memory. 
@@ -108,7 +107,29 @@ P: 01010000     h: 01101000      z: 01111010
 
 ## Pointers
 
+Not a thing in JS. But basically they are variables that let you read or modify another variable. This fixes the issue of needing eles in an arrs to be the same size,but makes the arr not cache-friendly. 
 
+## Dynamic arrays 
+
+All arrs in JS are by default dynamic. In other languages, the number of indices in an arr has to be declared. Dynamic arrs' size increases as necessary. 
+
+## Linked lists 
+
+A linked list is a collection of data broken down by nodes, in which each node contains two main things- data and a reference to the next node; reference is called  a pointer. A linked list will always (unless number of nodes is less than 2), have a head and a tail node.
+
+Linked lists allow run-time efficient data manipulation. Often constant time. If the data set in the structure is quite large, when we insert or remove a new node, there’s no need to reorganize the entire structure like what happens when you add/remove an element to an array.
+
+Very fast prepend and append, but very slow lookups, compared to arrays.
+
+
+## Hash tables 
+
+A hash table is a dictionary like data structure that maps keys to values. It allows people to look up a value based off its key. 
+    In order to find keys based off values, we need to loop through all values & keys. Same w/ arrs.
+
+Really useful for when we want to keep track of counts per char in a string. 
+
+Sometimes when there's duplicates within the keys, there can be a hash collision. Which is bad. But rare enough that it's ok to ignore.
 
 
 ## Sets 
@@ -123,6 +144,42 @@ OR, and this is much better, we use a set and spread operator to make a new arr:
     var array = ["Mike","Matt","Nancy","Adam","Nancy"];
     let newArr = [...new Set(array)]
     console.log(uniq)
+
+
+## Log maths
+
+Log is the inverse of exponentiating. 
+
+Basically, we're trying to figure out what power do we need to raise the base to in order to get the answer.  
+
+What power do we need to raise the base (10) to get the answer (100)?
+    10^x = 100 
+    x = 2 
+    Aka: Log base 10 of 100 = 2
+
+We use log to figure out what X is. Steps so we can do this for harder ones:
+    10^x  = 100 
+    log(10) * 10^x = log(10) * 100 
+        log(10) cancels out 10^ 
+    x = log(10) * 100 
+        What power do we have to raise 10 to in order to get 100? 
+    x = 2
+
+Log rules
+Simplification: log(b) * b^x = X 
+    Brings down exponents
+
+Multiplication: log(b) * (x * y) = log(b)(x) + log(b)(y)
+
+Division: log(b) (x/y) = log(b)(x) - log(b)(y)
+
+Powers: log(b) (x^y) = y * log(b)(x)
+
+Change of base: log(b)(x) = log(c)(x) / log(c)(b) 
+    Changes base from b to c 
+    Useful for when we want to change the base of 10 (default) to something else
+
+Useful for these types of questions: 
 
 
 ## Call Stack
