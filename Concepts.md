@@ -180,6 +180,7 @@ Change of base: log(b)(x) = log(c)(x) / log(c)(b)
     Useful for when we want to change the base of 10 (default) to something else
 
 Useful for these types of questions: 
+    How many times do we need to double 1 before we get to n?: log(2)n
 
 
 ## Call Stack
