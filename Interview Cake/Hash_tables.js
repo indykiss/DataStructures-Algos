@@ -35,9 +35,105 @@ function canTwoMoviesFillFlight(movieLengths, flightLength) {
       // Step 4: Add the new movie length into the set for future checking
       moviesLengthSeen.add(firstMovieLength)
     }
-    
+
     // We never found a match, so return false
     return false;
   }
   
   // Input: ([2, 2.5, 1.5], 4.5) => True 
+
+
+
+// Write an efficient function that checks whether any permutation 
+// of an input string is a palindrome.
+
+// Ex:
+// "civic" should return true
+// "ivicc" should return true
+// "civil" should return false
+// "livci" should return false
+
+  function hasPalindromePermutation(theString) {
+
+    // Check if any permutation of the input is a palindrome
+      // Treat this like the unpaired parenthesis thing from Dave
+        // Keep track of the pairs. Remove as paired up
+    
+    // Step 1: Track chars we've seen an odd # of times
+      // Use a Set not a hash b/c .has/.add/.delete work
+    const unpairedChars = new Set();
+    
+    // Step 2: Loop through theString
+    for(let char of theString) {
+      // If char has a pair in set, delete it now. Else add it
+      if (unpairedChars.has(char)) {
+        unpairedChars.delete(char);
+      } else {
+        unpairedChars.add(char); 
+      }
+    }
+    
+    // Step 3: If there's more than 1 unpaired char, 
+    // then not a palindrome
+    if(unpairedChars.length > 1) {
+        return false;
+      } else {
+        return true;
+    }
+    
+  }
+  
+  
+    // Note to self: 
+      // I got this one right without seeing the solution!! 
+      // Code was messy but approach was mostly correct and code was ok. 
+        // Need to do better with correctly accessing values 
+          // w/o looking at solution. Many foundational mistakes there
+      // This was my approach: 
+        
+        function hasPalindromePermutationMe(theString) {
+          // Check if any permutation of the input is a palindrome
+          // Basic structure:
+            // We need to check if a permutation of the input is a palindrome
+              // Maybe define a palindrome in a way that's mathmatical
+              // Ex: A palindrome will have even number of every character
+                // except the middle char
+                // OR even number of every char
+            // Make a hash to keep track of chars: # of times the char appears
+            // If conditions are met, then return true 
+            
+          // Step 1: Make the hash 
+          const charMap = new Set();
+          
+          // Step 2: Loop through string
+          for(let i = 0; i <= theString.length; i++) {
+            let theChar = theString[i]
+            // Is the char already in the set? If yes, we increment value
+            if(charMap.has(theChar)) {
+              charMap[theChar]++;
+              // If not, we add the value in
+            } else {
+              charMap << charMap[theChar]
+            }
+          }
+          
+          // Step 3: We have hash with chars and # of times they appear
+          // Evaluate if all the chars are even or if all but 1
+          let theOnlyOneOdd = 0; 
+          // We loop through charMap and count the odds
+          for(let j = 0; j < charMap.length; j++) {
+            if(charMap[j][1] % 2 != 0) {
+              theOnlyOneOdd++;
+            }
+          }
+          // If there's 1 odd or 0 odd, we have a palindrome
+          // More than 1 odd means no palindrome
+          if(theOnlyOneOdd > 1) {
+            return false;
+          }
+          return true;
+        }
+        
+  
+  
+
