@@ -34,7 +34,6 @@ function canTwoMoviesFillFlight(movieLengths, flightLength) {
       
       // Step 4: Add the new movie length into the set for future checking
       moviesLengthSeen.add(firstMovieLength)
-      
     }
     
     // We never found a match, so return false
