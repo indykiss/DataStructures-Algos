@@ -314,24 +314,20 @@ function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
   // servedOrder[0] == takeOut[0]
     
   if(takeOutOrders.length > 0 && servedOrders[0] === takeOutOrders[0]) {
-    
       // Remove 1st order for both and recurse! 
       return isFirstComeFirstServed(takeOutOrders.slice(1), 
       dineInOrders, 
       servedOrders.slice(1));
-      
   } 
     
   // Step 2: Are there orders in dineIn? Check if 
   // the servedOrder[0] == dineIn[0]
     
   if (dineInOrders.length > 0 && servedOrders[0] === dineInOrders[0]) {
-      
       // Remove 1st order for both and recurse! 
       return isFirstComeFirstServed(takeOutOrders, 
       dineInOrders.slice(1), 
       servedOrders.slice(1));
-      
   } 
     
     return false;
@@ -339,17 +335,60 @@ function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
 }
 
 // The time and spece costs for this are O(n2) BECAUSE  
-// while most of the equation is constant, we use .slice which 
-// costs O(m) where m is the resulting array's size. 
+// while most of the equation is constant, we use recursion and .slice.  
+// Slice costs O(m) where m is the resulting array's size. 
 // Since we use .slice twice, essentially we are doing this math: 
   // (n-1) + (n-2) + ... 2 + 1 
     // Where n-1 is the 1st slice and n-2 is the second, giving us 
 // O(n2)
 
-// If we want to optimize (ask the interviewer)
-// we can replace .slice() with keeping track of indices: 
+// If we want to optimize (ask the interviewer), we can iterate instead! 
+
+// Also lets complicate a little more and make sure that every order 
+  // has been served (not assuming we did)
 
 function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
 
+  // Step 1: Keep track of the indices
+  var takeOutIndex = 0; 
+  var dineInIndex = 0;
+  var takeOutMaxIndex = takeOutOrders.length - 1; 
+  var dineInMaxIndex = dineInOrders.length - 1; 
+
+  // Step 2: Loop through servedOrders
+    for(let i = 0; i < servedOrders.length; i++) {
+      var order = servedOrders[i]
+    
+    // Check if there's still orders in takeOut 
+      // and if current served order is in takeOut
+    if(takeOutIndex <= takeOutMaxIndex && 
+      order === takeOutOrders[takeOutIndex]) {
+      takeOutIndex++;
+    }
+
+    // Check if there's still orders in dineIn 
+      // and if current served order is in dineIn
+    else if(dineInIndex <= dineInMaxIndex && 
+      order === dineInOrders[dineInIndex]) {
+        dineInIndex++;
+    } 
+    
+    // If none of the above, we are not first come, first serve
+    else {
+      return false;
+    }
+  }
+
+  // After looping to the end of servedOrders, check if there's any extra orders
+    // Fixes assumption that every takeIn/ dineIn order is served 
+  if(dineInIndex != dineInOrders.length ||
+    takeOutIndex != takeOutOrders.length) {
+      return false;
+  }
+
+  return true;
+
 }
+
+// This final solution gives us O(n)/ linear time and O(1)/ constant space 
 
