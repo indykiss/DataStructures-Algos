@@ -32,6 +32,7 @@ When a processor gets content from a particular memory address, the controller a
 
 Think of RAM like an array; each address is numbered and contains data. 
 
+
 ## Binary numbers
 
 K, let's store some stuff into those bits we've looked at. 
@@ -60,6 +61,7 @@ How to read binary?
                 Yes to 1, no to 2, yes to 4, no to 8, no to 16, yes to 32. 
                 Adds to 37! 
 
+
 ## Fixed width integers
 
 How many different numbers can we express with 8 bits? 
@@ -71,6 +73,43 @@ We usually use 4 or 8 bytes for storing info, bc that'll give us 4 billion or 10
 Fixed-width integers take up constant space. Doing maths with fixed-width integers always yielf constant space, bc we drop constants when calculating efficiency. Tradeoff being limited to the 2^n number of values.
 
 There's always trade offs. Increase time, decrease space, vice versa. Other tradeoffs exist as well. 
+
+
+## Arrays 
+
+A data structure used to store a list of similar data type elements, all accesible by their indices. (Arrs can only have 1 )
+
+Looking up an element in an arr takes up constant time. 
+
+
+## Strings 
+
+Sets of chars. 
+
+We can express strings as arrays of 8-bit chars, in ASCII:
+
+A: 01000001     S: 01010011      k: 01101011
+B: 01000010     T: 01010100      l: 01101100
+C: 01000011     U: 01010101      m: 01101101
+D: 01000100     V: 01010110      n: 01111110
+E: 01000101     W: 01010111      o: 01101111
+F: 01000110     X: 01011000      p: 01110000
+G: 01000111     Y: 01011001      q: 01110001
+H: 01001000     Z: 01011010      r: 01110010
+I: 01001001     a: 01100001      s: 01110011
+J: 01001010     b: 01100010      t: 01110100
+K: 01001011     c: 01100011      u: 01110101
+L: 01001100     d: 01100100      v: 01110110
+M: 01001101     e: 01100101      w: 01110111
+N: 01001110     f: 01100110      x: 01111000
+O: 01001111     g: 01100111      y: 01111001
+P: 01010000     h: 01101000      z: 01111010
+
+
+## Pointers
+
+
+
 
 ## Sets 
 
