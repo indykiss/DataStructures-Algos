@@ -15,6 +15,7 @@ var addBinary = function(a, b) {
 
 // or 
 
+
 var addBinary = function(a, b) {
     a = a.split("").reverse().join("");
     b = b.split("").reverse().join("");

@@ -139,3 +139,29 @@ var addBinary = function(a, b) {
 // Given two non-negative integers num1 and num2 represented as string, 
 // return the sum of num1 and num2.
 
+
+
+
+// Given two non-negative integers num1 and num2 
+// represented as strings, return the product of num1 and num2, 
+// also represented as a string.
+
+// NOTE: THIS USES BUILT IN METHODS
+    // NOT USING BUILT IN METHODS MAKES THIS A MEDIUM QUESTION
+
+var multiply = function(num1, num2) {
+    
+    let result = 0; 
+    
+    // Step 1: Make string inputs into numbers
+        let actualNum1 = Number(num1);
+        let actualNum2 = Number(num2);
+    
+    // Step 2: Multiply them 
+    
+    result = actualNum1 * actualNum2
+    
+    // Step 3: Make the result into a string 
+    return result.toString();
+    
+};
