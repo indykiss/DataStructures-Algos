@@ -13,9 +13,10 @@ var isAlienSorted = function(words, order) {
     // Order is the alien alphabet
     
     let newArr = [...words]
-    // Let's sort this replicated arr; best practice is to not alter original arr
+    // Let's sort this replicated arr; 
+        // best practice is to not alter original arr
         .sort((a, b) => {
-    // We compare each first letter of the words in arr to see if they are      alphabetical
+    // We compare each 1st letter of words in arr to see if they are alphabetical
             for (let i = 0; i < a.length; i++) {
         // If there's a tie, we continue
                 if (a[i] === b[i]) continue;
@@ -37,12 +38,28 @@ var isAlienSorted = function(words, order) {
 
 // Add Binary 
 
-// Given two binary strings, return their sum (also a binary string). The input strings are both non-empty and contains only characters 1 or 0.
+// Given two binary strings, return their sum (also a binary string). 
+// The input strings are both non-empty and contains only characters 1 or 0.
 
 // Example 1:
 // Input: a = "11", b = "1"
 // Output: "100"
 
+var addBinary = function(a, b) {
+
+    let totalBinary = 0;
+    
+    // Step 1: Translate inputs into real nums
+    let num1 = parseInt(a, 2);
+    let num2 = parseInt(b, 2);
+        
+    // Step 2: Sum them 
+    totalBinary = num1 + num2;
+    
+    // Step 3: Translate sum back into binary then string 
+    return totalBinary.toString(2);
+    
+};
 
 
 
