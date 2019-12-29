@@ -34,8 +34,6 @@ var isAlienSorted = function(words, order) {
 
 
 
-
-
 // Add Binary 
 
 // Given two binary strings, return their sum (also a binary string). 
@@ -62,9 +60,11 @@ var addBinary = function(a, b) {
 
 // Valid Palindrome
 
-// Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+// Given a string, determine if it is a palindrome, 
+// considering only alphanumeric characters and ignoring cases.
 
-// Note: For the purpose of this problem, we define empty string as valid palindrome.
+// Note: For the purpose of this problem, we define empty string 
+// as valid palindrome.
 
 // Example 1:
 // Input: "A man, a plan, a canal: Panama"
@@ -76,7 +76,8 @@ var addBinary = function(a, b) {
 
 
 // Valid Palindrome II
-// Given a non-empty string s, you may delete at most one character. Judge whether you can make it a palindrome.
+// Given a non-empty string s, you may delete at most one character. 
+// Judge whether you can make it a palindrome.
 
 // Example 1:
 // Input: "aba"
@@ -88,10 +89,16 @@ var addBinary = function(a, b) {
 
 // First Bad Version
 
-// You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
+// You are a product manager and currently leading a team to develop 
+// a new product. Unfortunately, the latest version of your product fails 
+// the quality check. Since each version is developed based on the previous 
+// version, all the versions after a bad version are also bad.
 
-// Suppose you have n versions [1, 2, ..., n] and you want to find out the first bad one, which causes all the following ones to be bad.
-// You are given an API bool isBadVersion(version) which will return whether version is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.
+// Suppose you have n versions [1, 2, ..., n] and you want to find out the 
+// first bad one, which causes all the following ones to be bad.
+// You are given an API bool isBadVersion(version) which will return whether 
+// version is bad. Implement a function to find the first bad version. You 
+// should minimize the number of calls to the API.
 
 // Example:
 // Given n = 5, and version = 4 is the first bad version.
@@ -108,11 +115,13 @@ var addBinary = function(a, b) {
 
 // Merge Sorted Array
 
-// Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
+// Given two sorted integer arrays nums1 and nums2, merge nums2 
+// into nums1 as one sorted array.
 
 // Note:
-// The number of elements initialized in nums1 and nums2 are m and n respectively.
-// You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2.
+// The number of eles initialized in nums1 and nums2 are m and n respectively.
+// You may assume that nums1 has enough space (size that is greater or 
+// equal to m + n) to hold additional elements from nums2.
 
 // Example:
 // Input:
@@ -127,5 +136,6 @@ var addBinary = function(a, b) {
 
 // Add Strings 
 
-// Given two non-negative integers num1 and num2 represented as string, return the sum of num1 and num2.
+// Given two non-negative integers num1 and num2 represented as string, 
+// return the sum of num1 and num2.
 
