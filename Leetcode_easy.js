@@ -33,7 +33,6 @@ var isAlienSorted = function(words, order) {
 };
 
 
-
 // Add Binary 
 
 // Given two binary strings, return their sum (also a binary string). 
@@ -56,8 +55,6 @@ var addBinary = function(a, b) {
 };
 
 
-
-
 // Valid Palindrome
 
 // Given a string, determine if it is a palindrome, 
@@ -71,7 +68,17 @@ var addBinary = function(a, b) {
 // Output: true
 
 
+function palindrome(str) {
+    const reversedStr = str.split('').reverse().join('');
 
+    if (reversedStr === str) {
+        return true 
+    }
+    else {
+        return false
+    }
+
+}
 
 
 
