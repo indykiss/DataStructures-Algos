@@ -46,18 +46,14 @@ var isAlienSorted = function(words, order) {
 // Output: "100"
 
 var addBinary = function(a, b) {
-
-    let totalBinary = 0;
     
     // Step 1: Translate inputs into real nums
-    let num1 = parseInt(a, 2);
-    let num2 = parseInt(b, 2);
+    const num1 = BigInt('0b' + a);
+    const num2 = BigInt('0b' + b);
         
-    // Step 2: Sum them 
-    totalBinary = num1 + num2;
-    
-    // Step 3: Translate sum back into binary then string 
-    return totalBinary.toString(2);
+    // Step 2: Sum them and 
+        // translate sum back into binary then string 
+    return (num1 + num2).toString(2);
     
 };
 
