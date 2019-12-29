@@ -67,6 +67,7 @@ var addBinary = function(a, b) {
 // Input: "A man, a plan, a canal: Panama"
 // Output: true
 
+// Actually need to add in punctuation?
 
 function palindrome(str) {
     const reversedStr = str.split('').reverse().join('');
