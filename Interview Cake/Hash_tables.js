@@ -148,6 +148,8 @@ function canTwoMoviesFillFlight(movieLengths, flightLength) {
 
 // Remember to deal with capital words (lower case everything)
 
+// Go over me again. I'm very confused
+// I gave up. This one needs to be very specific about upper/lower case
 class WordCloudData {
     constructor(inputString) {
       this.wordsToCounts = new Map();
@@ -155,36 +157,14 @@ class WordCloudData {
     }
   
     populateWordsToCounts(inputString) {
-
-        // Count the frequency of each word
-        
-        // Step 1: Make the input all lower case
-          // and in an arr to easily loop through
-        let betterInput = 
-        inputString.toLowerCase().split(" ");
-        
-        // Step 2: Make a map
-        let hashMap = {}
-        
-        // Step 3: Loop through new input to get a count
-        for(let ele in betterInput) {
-          // If the word exists in the map, increment count++
-            // else, just add it in
-          if(hashMap[ele]) {
-              // THIS IS WRONG SYNTAX :[ ]
-            hashMap[ele]++)
-          } else {
-            hashMap.add(hashMap[ele])
-          }
-        }
-    
-      return hashMap;
-      }
-    
-    // Because there is punctuation, we want to make our own 
-      // function to make input str into array 
+  
+      // Count the frequency of each word
       
-      splitWords() {
-        
-      }
+      // Step 1: Iterate over every char and splitting
+        // words, then adding them to the wordsToCounts map
+    }
+
 }
+  
+  
+  
