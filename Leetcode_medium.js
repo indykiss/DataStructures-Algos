@@ -1,3 +1,14 @@
+// Multiply Strings
+
+// Given two non-negative integers num1 and num2 represented as strings, 
+// return the product of num1 and num2, also represented as a string.
+
+// Input: num1 = "2", num2 = "3"
+// Output: "6"
+
+
+
+
 
 // NOTE: THIS USES BUILT IN METHODS
 var multiply = function(num1, num2) {
@@ -16,6 +27,7 @@ var multiply = function(num1, num2) {
     return result.toString();
 }
 
+// Uses built in methods
 // var addStrings2 = function(num1, num2) {
 //     // Step 1: Convert nums to string 
 //         let num1Actual = parseFloat(num1)
