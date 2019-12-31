@@ -67,18 +67,41 @@ var addBinary = function(a, b) {
 // Input: "A man, a plan, a canal: Panama"
 // Output: true
 
-// Actually need to add in punctuation?
+// Actually need to add in punctuation
 
+
+var isPalindrome = function(s) {
+    
+    // Assumptions: Empty input is a palindrome. 
+    
+    // Edge cases: There are spaces and punctuations
+    
+    // Reading a str forward and backward is the same
+    
+    // Step 1: Clean up the arr to remove spaces & punctuation
+         //  Convert str to arr, reverse it, join to get a string
+    const reversedS = s
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "")
+        .split("")
+        .reverse()
+        .join("");    
+    
+    const cleanS = s
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "");
+    
+    // Step 3: Compare original str with reversed to see if palindrome
+    return reversedS === cleanS
+}
+
+
+
+// Really just for very simple palindromes, no spaces or punctuation
 function palindrome(str) {
     const reversedStr = str.split('').reverse().join('');
 
-    if (reversedStr === str) {
-        return true 
-    }
-    else {
-        return false
-    }
-
+    return reversedStr === str
 }
 
 
@@ -91,7 +114,28 @@ function palindrome(str) {
 // Input: "aba"
 // Output: True
 
-
+var validPalindrome = function(s) {
+    
+        // We are going to loop through the 1st half of s
+        for(let i = 0; i < s.length / 2; i++) {
+            // Make a variable that checks the 
+            let j = s.length - i - 1;
+            if(s[i] != s[j]) {
+                return isPalindrome(cut(s, i)) || isPalindrome(cut(s, j))
+            }
+        }
+        return true;
+    };
+    
+    // Step: Make a helper function that let's us cut a character
+const cut = (s, i) => {
+    s.slice(0,i) + s.slice(i + 1);
+}
+    
+    // Step: Checks for palindrome 
+const isPalindrome = (s) => 
+    s === s.split("").reverse.join("");
+        
 
 
 
@@ -146,9 +190,6 @@ function palindrome(str) {
 
 // Given two non-negative integers num1 and num2 represented as string, 
 // return the sum of num1 and num2.
-
-
-
 
 // Given two non-negative integers num1 and num2 
 // represented as strings, return the product of num1 and num2, 
