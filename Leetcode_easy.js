@@ -189,28 +189,36 @@ const isPalindrome = (s) =>
 // Add Strings 
 
 // Given two non-negative integers num1 and num2 represented as string, 
-// return the sum of num1 and num2.
+// return the sum of num1 and num2, also represented as a string.
 
-// Given two non-negative integers num1 and num2 
-// represented as strings, return the product of num1 and num2, 
-// also represented as a string.
-
-// NOTE: THIS USES BUILT IN METHODS
-    // NOT USING BUILT IN METHODS MAKES THIS A MEDIUM QUESTION
-
-var multiply = function(num1, num2) {
-    
-    let result = 0; 
-    
-    // Step 1: Make string inputs into numbers
-        let actualNum1 = Number(num1);
-        let actualNum2 = Number(num2);
-    
-    // Step 2: Multiply them 
-    
-    result = actualNum1 * actualNum2
-    
-    // Step 3: Make the result into a string 
-    return result.toString();
-    
+var addStrings = function(num1, num2) {
+    
+    // Step 1: Make some variables
+    let carry = 0,
+        result = "",
+        num1Index = num1.length - 1, 
+        num2Index = num2.length - 1; 
+        
+    // Step 2: Access the values in the string
+            // Do maths??
+    while(num1Index >= 0 || num2Index >= 0) {
+        const val1 = num1[num1Index--] || 0;
+        const val2 = num2[num2Index--] || 0;
+        // The +variable gives us its numeric representation
+        const sum = +val1 + +val2 + carry;
+            
+        result = sum % 10 + result; 
+            
+        carry = Math.trunc(sum/ 10);
+    }
+        
+    // Step 3: When there's leftover numbers, we add them to the result & return
+    if (carry) {
+       result = carry + result;
+    }
+        
+    return result;
 };
+
+
+
