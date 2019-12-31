@@ -6,7 +6,33 @@
 // Input: num1 = "2", num2 = "3"
 // Output: "6"
 
+// Need to memorize this I think 
 
+var multiply = function(num1, num2) {
+
+    let sum = [];
+    let hold = 0;
+    let totalLength = num1.length + num2.length; 
+
+    // If a num is 0, then it will return 0 
+    if(num1 === "0" || num2 === "0") {
+        return "0"
+    }
+
+    // If a num 1 is, then the answer is the other number
+        // Note: all if-else statements are O(1), so nest all I want
+    if(num1 === "1" || num2 === "1") {
+        if(num1 === "1") {
+            return num2
+        } else {
+            return num1
+        }
+    }
+
+    let num1Arr = num1.split('').reverse();
+    let num2Arr = num2.split('').reverse();
+
+}
 
 
 
