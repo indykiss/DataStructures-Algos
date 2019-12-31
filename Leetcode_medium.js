@@ -32,6 +32,26 @@ var multiply = function(num1, num2) {
     let num1Arr = num1.split('').reverse();
     let num2Arr = num2.split('').reverse();
 
+    // Usually nested for loops are O(n^2)
+    for(let i = 0; i < totalLength; i++) {
+        for(let j = 0; j < num2.length; j++) {
+            let k = i - j;
+
+            if(num2[j]) {
+                hold = hold + (num1[j] * num2[k])
+            }
+        }
+
+        if(i === totalLength - 1 && hold === 0) {
+            continue;
+        }
+
+        sum[i] = hold % 10; 
+        hold = Math.trunc(hold/10);
+    }
+
+    return sum.reverse().join('');
+
 }
 
 
