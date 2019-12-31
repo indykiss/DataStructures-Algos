@@ -146,6 +146,15 @@ OR, and this is much better, we use a set and spread operator to make a new arr:
     console.log(uniq)
 
 
+## Binary search 
+
+Used to find a target number in a sorted array
+    1. Find a middle number. Is it bigger or smaller than target?
+        Tells us if target is in the left or right half, which... 
+    2. Divides the problem in half. Rule out the other half. 
+    3. Do steps #1-2 with the new half, until we find the target. 
+
+
 ## Log maths
 
 Log is the inverse of exponentiating. 
