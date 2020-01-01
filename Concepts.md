@@ -146,15 +146,6 @@ OR, and this is much better, we use a set and spread operator to make a new arr:
     console.log(uniq)
 
 
-## Binary search 
-
-Used to find a target number in a sorted array
-    1. Find a middle number. Is it bigger or smaller than target?
-        Tells us if target is in the left or right half, which... 
-    2. Divides the problem in half. Rule out the other half. 
-    3. Do steps #1-2 with the new half, until we find the target. 
-
-
 ## Log maths
 
 Log is the inverse of exponentiating. 
@@ -190,6 +181,92 @@ Change of base: log(b)(x) = log(c)(x) / log(c)(b)
 
 Useful for these types of questions: 
     How many times do we need to double 1 before we get to n?: log(2)n
+    Which is what we do in binary search!! 
+
+
+## Binary search 
+
+Used to find a target number in a sorted array
+    1. Find a middle number. Is it bigger or smaller than target?
+        Tells us if target is in the left or right half, which... 
+    2. Divides the problem in half. Rule out the other half. 
+    3. Do steps #1-2 with the new half, until we find the target. 
+
+Binary search in code. Basically memorize! :) 
+    function binarySearch(target, nums) {
+        // We make a floor and a ceiling indices to keep track 
+        let floorIndex = -1;
+        let ceilingIndex = nums.length; 
+
+        // If there isn't at least 1 index between floor & ceiling 
+            // then nums does not contain target 
+        while(floorIndex + 1 < ceilingIndex) {
+            // Find the halfway point, round down to avoid half index
+                // Then make a guess index/value to compare to target
+            const distance = ceilingLength - floorIndex; 
+            const halfDistance = Math.floor(distance/2);
+            const guessIndex = floorIndex + halfDistance;
+            const guessValue = nums[guessIndex]
+
+            // If we guessed right, boom, done! 
+            if(guessValue === target) {
+                return true;
+            }
+
+            // If target is to the left of our guessed value, lets
+                // move the ceiling to the left
+            if(guessValue > target) {
+                ceilingIndex = guessIndex;
+                // OR target is right, so move floor to the right
+            } else {
+                floorIndex = guessIndex;
+            }
+        }
+        return false;
+    }
+
+We will use log maths to figure out the time cost for binary search. Since we are cutting nums in half x number of times until we get the target, we can solve for X using this formula: 
+    n * (1/2)^x = 1
+    n * (1^x)/(2^x) = 1 
+    n /(2^x) = 1
+    n = 2^x 
+        // Now we use log to pull that exponent down 
+    log(2)(n) = log(2)(2^x)
+    log(2)(n) = x
+        // That's our answer!! The time complexity of our problem is: 
+    O(log(2)(n))
+
+So our time complexity of binary search is O(log n)
+
+## Merge Sorts
+
+Log maths is also super useful for finding time complexity for mergeSort. 
+
+Mergesort is an algo where we divide the array, sort the two halves, then merge the two sorted halves into one solved whole. 
+
+Mergesort is one of the most popular sorting algos. It's good because it's a divide and conquer approach. 
+
+Two ways to mergeSort: Recursively and non-recursively 
+
+// In code, recursively: 
+    function mergeSort(unsortedArr) {
+        // If it's an arr of 1, we don't need to sort 
+        if(unsortedArr.length <= 1) {
+            return unsortedArr; 
+        }
+
+        // Find the middle of the array, round down
+        const middle = Math.floor(unsortedArr.length/2); 
+
+        // Now we divide the arr into halves; 
+        const left = unsortedArray.slice(0,middle);
+        const right = unsortedArray.slice(middle); 
+
+        // Use recursion to combine left & right 
+        return merge(;
+            mergeSort(left), mergeSort(right)
+        )
+    }
 
 
 ## Call Stack
