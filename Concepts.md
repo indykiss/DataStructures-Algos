@@ -196,6 +196,8 @@ Used to find a target number in a sorted array
     3. Do steps #1-2 with the new half, until we find the target. 
 
 Binary search in code. Basically memorize! :) 
+
+
     function binarySearch(target, nums) {
         // We make a floor and a ceiling indices to keep track 
         let floorIndex = -1;
@@ -251,7 +253,9 @@ Mergesort is one of the most popular sorting algos. It's good because it's a div
 
 Two ways to mergeSort: Recursively and non-recursively 
 
-// In code, recursively: 
+In code, recursively: 
+
+
     function mergeSort(unsortedArr) {
         // If it's an arr of 1, we don't need to sort
         if(unsortedArr.length <= 1) {
@@ -296,12 +300,22 @@ BUT terrible inserts, deletes, and space. O(n) time and space.
 
 Arr.slice(startIndex, endIndex) takes up O(n) time and space, which is a lot, because it is making a new arr and copying over elements into that new arr. Just be careful with this! 
 
+
 ## In place algos 
 
-Occasionally I'll be asked to complete an algo, in-place. Something I've already seen. 
+Occasionally I'll be asked to complete an algo, in-place. Something I've already seen. In-place, destructivly altering input, algos are really good for saving time and space BUT since we're destroying the input, it's not very good for code outside of the function. Ex: 
+
+    const originalArray = [2, 3, 4, 5];
+    squareArrayInPlace(originalArray);
+
+    console.log('original array: ' + originalArray);
+    // Logs: original array: 4,9,16,25 - confusingly!
 
 In-place algos modify data structures/ objects outside of the stack frame, without copying a new input. (See below). But, note, that I can still make additional variables (usually constant time there). I just can't copy the input. Bc that's O(n) time/space. 
 
+Primitive value inputs (integers, characters) are copied in while more complex data structures (arrs, heaps, hashs) are passed by reference. 
+
+Out of place algos are safer, but if we need to save time/space and won't use the original input again, in-place algos are ok. 
 
 
 ## Call Stack
