@@ -179,10 +179,13 @@ Change of base: log(b)(x) = log(c)(x) / log(c)(b)
     Changes base from b to c 
     Useful for when we want to change the base of 10 (default) to something else
 
+Important to note: In CS, it's almost always assumed that the base of a log is 2. SO log(n) === log(2)(n). 
+    In usual maths, the usual base is 10. BUT computers use binary, so log base 2. 
+    Also note, log base 2 is also represented as lg. 
+
 Useful for these types of questions: 
     How many times do we need to double 1 before we get to n?: log(2)n
     Which is what we do in binary search!! 
-
 
 ## Binary search 
 
@@ -250,7 +253,7 @@ Two ways to mergeSort: Recursively and non-recursively
 
 // In code, recursively: 
     function mergeSort(unsortedArr) {
-        // If it's an arr of 1, we don't need to sort 
+        // If it's an arr of 1, we don't need to sort
         if(unsortedArr.length <= 1) {
             return unsortedArr; 
         }
@@ -268,10 +271,50 @@ Two ways to mergeSort: Recursively and non-recursively
         )
     }
 
+So what's our total time cost? O (n * log(2)(n))
+Because the log(2)(n) comes from the number of times we have to cut n in half to get down to subarrays of just 1 element (our base case). The additional n comes from the time cost of merging all nn items together each time we merge two sorted subarrays.
+
+## Binary tree 
+
+A binary tree is a tree where each node has 2 or fewer children nodes. A perfect tree is when every node has 2 children nodes. 
+
+One algo that's asked often is, "given a number of nodes, what's the tree's height, as in how many levels of nodes there are?"
+
+Basically as we go down each level, the number of nodes progressively doubles. So the Q is basically, how many times do we need to double 1 in order to get to N. 
+
+For all perfect trees, the number of nodes in the last level of the tree will be (n + 1)/2 -- +1 because the first level of tree is one, so the number of nodes will always be odd in a perfect tree. Half.ish of the nodes will be in the last level, because of the whole doubling at every level thing.
+
+SO to find the height of a perfect tree, that breaks down mathmatically to be this: 
+    h = log(2)(n+1)
+    
+    
+## Arrays 
+
+Really awesome at fast lookups and fast appends, adding stuff at the end of an array. O(1) time. 
+
+BUT terrible inserts, deletes, and space. O(n) time and space. 
+
+Arr.slice(startIndex, endIndex) takes up O(n) time and space, which is a lot, because it is making a new arr and copying over elements into that new arr. Just be careful with this! 
+
+## In place algos 
+
+Occasionally I'll be asked to complete an algo, in-place. Something I've already seen. 
+
+In-place algos modify data structures/ objects outside of the stack frame, without copying a new input. (See below). But, note, that I can still make additional variables (usually constant time there). I just can't copy the input. Bc that's O(n) time/space. 
+
+
 
 ## Call Stack
 A call stack is what a program uses to keep track of function calls.
     Call stacks are made up of stack frames-- one frame for each function call. 
- Recursion uses a LOT of call stacks. 
+Recursion uses a LOT of call stacks. Which impacts the space complexity significantly. Usually O(n) space even if no data structures are created. 
+    - Iterative functions uses constant space, much better. 
         RN: When we run out of space, it's called a stack overflow.
+ 
+ A stack frame stores: 
+    - Variables
+    - Arguments passed into functions
+    - Info about the caller's stack frame 
+    - Return address; what the program should do after the function returns 
+ 
 
