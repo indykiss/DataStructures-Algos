@@ -273,22 +273,26 @@ var diameterOfBinaryTree = function(root) {
 // You may assume that each input would have exactly one solution, 
 // and you may not use the same element twice.
 
+// O(n) solution as we loop once
+
 var twoSum = function(nums, target) {
-    // Make a map 
-    let map = new Map; 
+    // Make a hash 
+    let hash = {}
     
-    // Loop through nums and add to map until we find what we need
+    // Loop through nums
     for(let i = 0; i < nums.length; i++) {
-        // Use target - nums[i] to find the missing piece
-        let numToCompare = target - nums[i];
-        // As we loop, if map has the above, then great! 
-        if (map.has(numToCompare)) {
-            return map.get(numToCompare), i
+        // We are looking for the number that completes the below
+        let partner = target - nums[i];
+        
+        // Return if we've found it
+        if (hash[partner] !== undefined) {
+            return [hash[partner], i];
         } else {
-            map.set(nums[i]), i
+            // If it doesn't, we save it 
+            hash[nums[i]] = i
         }
-           
     }    
 }
+
 
 
