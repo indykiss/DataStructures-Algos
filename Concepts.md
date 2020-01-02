@@ -80,6 +80,15 @@ A data structure used to store a list of similar data type elements, all accesib
 
 Looking up an element in an arr takes up constant time. 
 
+    
+## Arrays time & space
+
+Really awesome at fast lookups and fast appends, adding stuff at the end of an array. O(1) time. 
+
+BUT terrible inserts, deletes, and space. O(n) time and space. 
+
+Arr.slice(startIndex, endIndex) takes up O(n) time and space, which is a lot, because it is making a new arr and copying over elements into that new arr. Just be careful with this!
+
 
 ## Strings 
 
@@ -87,22 +96,22 @@ Sets of chars.
 
 We can express strings as arrays of 8-bit chars, in ASCII:
 
-A: 01000001     S: 01010011      k: 01101011
-B: 01000010     T: 01010100      l: 01101100
-C: 01000011     U: 01010101      m: 01101101
-D: 01000100     V: 01010110      n: 01111110
-E: 01000101     W: 01010111      o: 01101111
-F: 01000110     X: 01011000      p: 01110000
-G: 01000111     Y: 01011001      q: 01110001
-H: 01001000     Z: 01011010      r: 01110010
-I: 01001001     a: 01100001      s: 01110011
-J: 01001010     b: 01100010      t: 01110100
-K: 01001011     c: 01100011      u: 01110101
-L: 01001100     d: 01100100      v: 01110110
-M: 01001101     e: 01100101      w: 01110111
-N: 01001110     f: 01100110      x: 01111000
-O: 01001111     g: 01100111      y: 01111001
-P: 01010000     h: 01101000      z: 01111010
+    A: 01000001     S: 01010011      k: 01101011
+    B: 01000010     T: 01010100      l: 01101100
+    C: 01000011     U: 01010101      m: 01101101
+    D: 01000100     V: 01010110      n: 01111110
+    E: 01000101     W: 01010111      o: 01101111
+    F: 01000110     X: 01011000      p: 01110000
+    G: 01000111     Y: 01011001      q: 01110001
+    H: 01001000     Z: 01011010      r: 01110010
+    I: 01001001     a: 01100001      s: 01110011
+    J: 01001010     b: 01100010      t: 01110100
+    K: 01001011     c: 01100011      u: 01110101
+    L: 01001100     d: 01100100      v: 01110110
+    M: 01001101     e: 01100101      w: 01110111
+    N: 01001110     f: 01100110      x: 01111000
+    O: 01001111     g: 01100111      y: 01111001
+    P: 01010000     h: 01101000      z: 01111010
 
 
 ## Pointers
@@ -125,14 +134,51 @@ Very fast prepend and append, but very slow lookups, compared to arrays.
 ## Hash tables 
 
 A hash table is a dictionary like data structure that maps keys to values. It allows people to look up a value based off its key. 
-    In order to find keys based off values, we need to loop through all values & keys. Same w/ arrs.
+    In order to find keys based off values, we need to loop through all values & keys. Same w/ arrs. Ex:
+
+      const lightBulbToHoursOfLight = {
+      'incandescent': 1200,
+      'compact fluorescent': 10000,
+      'LED': 50000,
+      };
+    
 
 Really useful for when we want to keep track of counts per char in a string. 
 
-Sometimes when there's duplicates within the keys, there can be a hash collision. Which is bad. But rare enough that it's ok to ignore.
+Sometimes when there's duplicates within the keys, there can be a hash collision. Which is bad. It's rare, but if we are dealing with a hash collision, we can have each array slot hold a pointer to a linked list with the key/value pair, instead of the usual having the value itself in that slot. 
 
+Hash tables are also known as objects. 
+
+Hash tables are basically built-on arrays, where instead of indices, we use keys. 
+
+Pros: Quick lookups and flexible keys (most data types can be hashable). O(1) time. 
+
+Cons: 
+Worst case lookup is O(n), so not great. This happens when there's hash collisions. 
+Not ordered. So can't easily find lowest/highest value. 
+Single directional lookups, as in can find a value using a key in O(1) BUT if I'm trying to find the key, using a value, it's O(n) b/c need to loop through the whole structure. 
+Not cache friendly. 
+
+## Hashing and Hash functions 
+
+A hash function takes data, like a string or a file, and converts it into a hash-- a fixed-size string or number. 
+
+For example, here’s the MD5 hash (MD5 is a common hash function) for a file simply containing “cake”:
+  DF7CE038E2FA96EDF39206F898DF134D
+  
 
 ## Sets 
+
+A set is like a hash map except it only stores keys, without values.
+
+Sets often come up when we're tracking groups of items—nodes we've visited in a graph, characters we've seen in a string, or colors used by neighboring nodes. Usually, we're interested in whether something is in a set or not.
+
+Sets are usually implemented very similarly to hash maps—using hashing to index into an array—but they don't have to worry about storing values alongside keys.
+
+    lightBulbs = new Set(["incandescent", "compact fluorescent", "LED"]);
+
+    lightBulbs.has("LED");  // true
+    lightBulbs.has("halogen");  // false
 
 A set is a collection of any type of element where none of the elements are duplicated and the order isn't important. 
 
@@ -243,6 +289,7 @@ We will use log maths to figure out the time cost for binary search. Since we ar
 
 So our time complexity of binary search is O(log n)
 
+
 ## Merge Sorts
 
 Log maths is also super useful for finding time complexity for mergeSort. 
@@ -278,6 +325,7 @@ In code, recursively:
 So what's our total time cost? O (n * log(2)(n))
 Because the log(2)(n) comes from the number of times we have to cut n in half to get down to subarrays of just 1 element (our base case). The additional n comes from the time cost of merging all nn items together each time we merge two sorted subarrays.
 
+
 ## Binary tree 
 
 A binary tree is a tree where each node has 2 or fewer children nodes. A perfect tree is when every node has 2 children nodes. 
@@ -289,16 +337,7 @@ Basically as we go down each level, the number of nodes progressively doubles. S
 For all perfect trees, the number of nodes in the last level of the tree will be (n + 1)/2 -- +1 because the first level of tree is one, so the number of nodes will always be odd in a perfect tree. Half.ish of the nodes will be in the last level, because of the whole doubling at every level thing.
 
 SO to find the height of a perfect tree, that breaks down mathmatically to be this: 
-    h = log(2)(n+1)
-    
-    
-## Arrays 
-
-Really awesome at fast lookups and fast appends, adding stuff at the end of an array. O(1) time. 
-
-BUT terrible inserts, deletes, and space. O(n) time and space. 
-
-Arr.slice(startIndex, endIndex) takes up O(n) time and space, which is a lot, because it is making a new arr and copying over elements into that new arr. Just be careful with this! 
+    h = log(2)(n+1) 
 
 
 ## In place algos 
@@ -317,37 +356,6 @@ Primitive value inputs (integers, characters) are copied in while more complex d
 
 Out of place algos are safer, but if we need to save time/space and won't use the original input again, in-place algos are ok. 
 
-
-## Hash tables
-
-Key-value pair dictionary type data structure: 
-
-      const lightBulbToHoursOfLight = {
-      'incandescent': 1200,
-      'compact fluorescent': 10000,
-      'LED': 50000,
-      };
-
-Hash tables are also known as objects. 
-
-Hash tables are basically built-on arrays, where instead of indices, we use keys. 
-
-Pros: Quick lookups and flexible keys (most data types can be hashable). O(1) time. 
-
-Cons: 
-Worst case lookup is O(n), so not great. 
-Not ordered. So can't easily find lowest/highest value. 
-Single directional lookups, as in can find a value using a key in O(1) BUT if I'm trying to find the key, using a value, it's O(n) b/c need to loop through the whole structure. 
-Not cache friendly. 
-
-
-## Hashing and Hash functions 
-
-A hash function takes data, like a string or a file, and converts it into a hash-- a fixed-size string or number. 
-
-For example, here’s the MD5 hash (MD5 is a common hash function) for a file simply containing “cake”:
-  DF7CE038E2FA96EDF39206F898DF134D
-  
 
 ## Call Stack
 A call stack is what a program uses to keep track of function calls.
