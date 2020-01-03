@@ -372,3 +372,10 @@ Recursion uses a LOT of call stacks. Which impacts the space complexity signific
     - Return address; what the program should do after the function returns 
  
 
+## Greedy Algo 
+
+A greedy algorithm builds up a solution by choosing the option that looks the best at every step. The cashier making change example; she tries to get the largest option for every bill taken out of the cash register as possible until goal is met. 
+
+
+
+
