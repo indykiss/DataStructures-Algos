@@ -1,3 +1,8 @@
+// Need to do the Word Cloud one. This "define what a word is with random rules"
+// type of question gets asked often. Dave - bridgewater. 
+
+
+
 // You've built an inflight entertainment system with on-demand movie streaming.
 
 // Users on longer flights like to start a second movie right when their 
