@@ -135,7 +135,6 @@ function canTwoMoviesFillFlight(movieLengths, flightLength) {
         }
         
   
-  
 
 // Word cloud
 
@@ -167,4 +166,55 @@ class WordCloudData {
 }
   
   
+
+// You created a game.
+
+// Each round, players receive a score between 0 and 100, which you 
+// use to rank them from highest to lowest.
+
+// Each player gets a score between 0-100 and gets ranked. 
+// I need to make a quicker sorting algo for player rankings. 
+// At the moment, the time efficiency is O(n * ln (n)) which is too slow. 
+
+// Write a function that takes:
+// an array of unsortedScores and the highestPossibleScore in the game
+// and returns a sorted array of scores in less than O(n * ln (n)) time.
+
+// const unsortedScores = [37, 89, 41, 65, 91, 53];
+// const HIGHEST_POSSIBLE_SCORE = 100;
+// sortScores(unsortedScores, HIGHEST_POSSIBLE_SCORE);
+// returns [91, 89, 65, 53, 41, 37]
+
+// So now we want to get an O(n) solution instead. 
+
+function sortScores(unorderedScores, highestPossibleScore) {
+
+  // Sort the scores in O(n) time
+
+  // Make an arr
+  const scoreCounts = [];
+  const sortedScores = [];
+  
+  // Add scores into new arr
+  unorderedScores.forEach(score => {
+    scoreCounts[score]++;
+  });
+  
+  // Every time there's a num 
+  for(let score = highestPossibleScore; score >= 0; i--) {
+    const count = scoreCounts[score];
+    
+    // We push into sortedScores the number of times that num appears
+    for(let time = 0; time < count; time++) {
+      sortedScores.push(score);
+    }
+  }
+  return sortedScores;
+}
+
+// This is a nested loop. BUT this is O(n) because the second loop
+// is iterating over a smaller subset of data than that first outer
+// loop
+
+
   
