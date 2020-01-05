@@ -376,6 +376,19 @@ Recursion uses a LOT of call stacks. Which impacts the space complexity signific
 
 A greedy algorithm builds up a solution by choosing the option that looks the best at every step. The cashier making change example; she tries to get the largest option for every bill taken out of the cash register as possible until goal is met. 
 
+## Counting 
+A time-saving algo pattern that reduces time but increases space.
 
+Create an arr/hash where each index/key represents the inputs while the values represent the number of times each input appeared. 
 
+        const counts = {};
+        
+        array.forEach(item => {
+          if(counts.hasOwnProperty(item)) {
+            counts[item]+= 1 
+            } else {
+              counts[item] = 1
+            }
+          });
+        
 
