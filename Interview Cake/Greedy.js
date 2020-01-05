@@ -67,6 +67,35 @@ function getMaxProfit(stockPrices) {
 
 // So now we want to get an O(n) solution instead. 
 
+function sortScores(unorderedScores, highestPossibleScore) {
+
+  // Sort the scores in O(n) time
+
+  // Make an arr
+  const scoreCounts = [];
+  const sortedScores = [];
+  
+  // Add scores into new arr
+  unorderedScores.forEach(score => {
+    scoreCounts[score]++;
+  });
+  
+  // Every time there's a num 
+  for(let score = highestPossibleScore; score >= 0; i--) {
+    const count = scoreCounts[score];
+    
+    // We push into sortedScores the number of times that num appears
+    for(let time = 0; time < count; time++) {
+      sortedScores.push(score);
+    }
+  }
+  return sortedScores;
+}
+
+// This is a nested loop. BUT this is O(n) because the second loop
+// is iterating over a smaller subset of data than that first outer
+// loop
+
 
 
 
