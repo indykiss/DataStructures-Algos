@@ -47,5 +47,10 @@ function getMaxProfit(stockPrices) {
 
 
 
+// Given an array of integers, find the highest product you can get from three of the integers.
+// Remember that numbers can be negative so [3,2,1,-100,-100] - the highest product uses 2 negatives
+// and the highest positive. So can't sort or just find the biggest 3 numbers. 
+
+
 
 
