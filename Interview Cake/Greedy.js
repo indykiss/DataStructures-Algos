@@ -52,5 +52,64 @@ function getMaxProfit(stockPrices) {
 // and the highest positive. So can't sort or just find the biggest 3 numbers. 
 
 
-
+  // Calculate the highest product of three numbers
+    // ideally in O(n) time worst case bc have to look at
+    // all the nums at least 1
+  
+  // Edge cases: negative numbers. (-100)(-100)(2) = highest product
+    // given [2,1,1,-100,-100]. Less than 3 numbers given 
+    
+function highestProductOf3(arrayOfInts) {
+    
+ // Strategy: Loop and see if current number times
+  // lowestProdOf2 or highestProdOf2 yields a new highestProdOf3
+  // and current x highest/ lowest yields new highestProdOf2 / lowestProdOf2
+  // and if there's a new highest / lowest value 
+    
+  // Step 1: Populate the variables to give some value to compare to within 
+    // our loop
+  let highestProductOf3 = arrayOfInts[0] * arrayOfInts[1] * arrayOfInts[2];
+  let highestProductOf2 = arrayOfInts[0] * arrayOfInts[1];
+  let lowestProductOf2 = arrayOfInts[0] * arrayOfInts[1];
+        // I don't know why we have args of eles here 
+          // instead of just arrayOfInts:
+  let highest = Math.max(arrayOfInts[0], arrayOfInts[1]);
+  let lowest = Math.min(arrayOfInts[0], arrayOfInts[1]);
+        
+  if(arrayOfInts.length < 3) {
+    return "Array has fewer than 3 elements."
+  }
+  
+  // Step 2: Loop but start at 2, since we did some stuffs already
+  for(let i = 2; i < arrayOfInts.length; i++) {
+    const currentNum = arrayOfInts[i]
+    
+  // Step 3: Compare currentNum to our variables
+    highestProductOf3 = Math.max(
+      highestProductOf3,
+      currentNum * lowestProductOf2, 
+      currentNum * highestProductOf2);
+    
+    highestProductOf2 = Math.max(
+      highestProductOf2, 
+      currentNum * highest,
+      currentNum * lowest);
+      
+    lowestProductOf2 = Math.min(
+      lowestProductOf2, 
+      currentNum * highest,
+      currentNum * lowest);
+      
+    highest = Math.max(
+      highest, 
+      currentNum);
+    
+    lowest = Math.min(
+      lowest, 
+      currentNum);
+  }
+  
+  // Step 4: Return highest prod of 3!
+  return highestProductOf3;
+}
 
