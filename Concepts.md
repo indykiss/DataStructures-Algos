@@ -244,7 +244,6 @@ Used to find a target number in a sorted array
 
 Binary search in code. Basically memorize! :) 
 
-
     function binarySearch(target, nums) {
         // We make a floor and a ceiling indices to keep track 
         let floorIndex = -1;
