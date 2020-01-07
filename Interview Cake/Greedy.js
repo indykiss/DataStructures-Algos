@@ -114,6 +114,8 @@ function highestProductOf3(arrayOfInts) {
 }
 
 
+
+
 // You have an array of integers, and for each index you want to find the 
 // product  of every integer except the integer at that index.
 // WITHOUT using division. 
@@ -126,5 +128,56 @@ function highestProductOf3(arrayOfInts) {
 
 // by calculating:
 //   [7 * 3 * 4,  1 * 3 * 4,  1 * 7 * 4,  1 * 7 * 3]
+
+// Edge case: zeros and if input only has 1 integer. 
+    // Negative nums are fine, just gets multipled. Same with zeros. 
+
+
+function getProductsOfAllIntsExceptAtIndex(intArray) {
+  
+  // Strategy: Get the product for all numbers before the index 
+    // Get the product for all numbers after the index 
+    // At the index number we're looking at in our return arr, 
+      // multiply together to get total product (except at index!)
+    
+     
+  if(intArray.length < 2) {
+    throw new Error("Can't do this");
+  }
+  
+  let prodOfAllExceptAtIndex = []
+  let preIndexProduct = 1;
+  let postIndexProduct = 1;
+  
+  // Step 2: Get the product of all the indices BEFORE the index
+  for(let i = 0; i < intArray.length; i++) {
+    // Reassign the arr at index to be preIndexProd
+    prodOfAllExceptAtIndex[i] = preIndexProduct;
+    
+    // Make the preIndexProd an actual prod by multiplying
+      // currentNum for the next iteration
+    preIndexProduct = preIndexProduct * intArray[i] ;
+  }
+  
+  // Step 3: Get the product of all the indices AFTER the index
+    // by looping from the end of the arr
+  for(let j = intArray.length -1; j >=0; j--) {
+    // The index in our arr is the preIndexProduct TIMES 
+      // the new postIndexProduct
+    prodOfAllExceptAtIndex[j] =
+      prodOfAllExceptAtIndex[j] * postIndexProduct;
+
+    // Do maths so we can use a new postIndexProd for next iteration
+    postIndexProduct = postIndexProduct * intArray[j];
+  }
+
+  // Step 4: Return answer
+  return prodOfAllExceptAtIndex;  
+}
+
+// Since only using loops, this is O(n) time
+  // We only create 1 array, O(n) space
+
+
 
 
