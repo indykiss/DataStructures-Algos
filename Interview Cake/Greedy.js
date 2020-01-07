@@ -181,7 +181,7 @@ function getProductsOfAllIntsExceptAtIndex(intArray) {
 
 
 
-// Write a function for doing an in-place ↴ shuffle of an arr.
+// Write a function for doing an in-place shuffle of an arr.
 
 // The shuffle must be "uniform," meaning each item in the original arr 
 // must have the same probability of ending up in each spot in the final arr.
@@ -189,4 +189,44 @@ function getProductsOfAllIntsExceptAtIndex(intArray) {
 // Assume that you have a function getRandom(floor, ceiling) for getting 
 // a random integer that is >= floor and <= ceiling.
 
+
+// Strategy: Randomize the order of eles in an array
+  // Make a getRandom function 
+  // As we loop, pull a random index/value from the current 
+    // index til the end of array
+  // Swap the current index/value with this new random index/value;
+
+function getRandom(floor, ceiling) {
+  return Math.floor(Math.random() * (ceiling - floor + 1)) + floor;
+}
+
+function shuffle(array) {
+
+  // Shuffle the input in place
+  if(array.length < 2) {
+    return array;
+  }  
+  
+  // Step 1: Loop through arr
+  for(let i = 0; i < array.length -1; i++) {
+    // Make a variable that uses getRandom to pick an ele 
+      // in the arr that hasn't been picked already, so 
+      // looking from index to end of arr 
+      const randomIndex = getRandom(i, array.length - 1);
+      const randomValue = array[i];
+    
+      // Place random ele in spot by swapping random index & value
+        // with the index we're iterating at
+      if(randomIndex !== i) {
+        array[i] = array[randomIndex];
+        array[randomIndex] = randomValue;
+      }
+  }
+}
+
+// This is O(n) time bc of the loop and O(1) space bc it's
+  // arr manipulation in place
+// RN: This is called teh Fisher-Yates shuffle algorithm 
+  
+  
 
