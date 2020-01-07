@@ -236,13 +236,17 @@ Useful for these types of questions:
 
 ## Binary search 
 
-Used to find a target number in a sorted array
+Used to find a target number in a sorted array. Note: array must already be sorted! 
+   
     1. Find a middle number. Is it bigger or smaller than target?
         Tells us if target is in the left or right half, which... 
-    2. Divides the problem in half. Rule out the other half. 
+    2. Divides the problem in half. Rule out the other half that doesn't contain the target.
     3. Do steps #1-2 with the new half, until we find the target. 
 
-Binary search in code. Basically memorize! :) 
+Binary search time cost is O(lg(n)), since we are dividing the problem so it's not O(n)
+in terms of equal in and equal out, but not O(1). 
+
+Binary search in code. This is the iterative approach. Better for time and space! : 
 
     function binarySearch(target, nums) {
         // We make a floor and a ceiling indices to keep track 
