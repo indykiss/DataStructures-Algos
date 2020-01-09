@@ -86,3 +86,24 @@ function findRotationPoint(words) {
 // iteration is constant time b/c it's some math and 
 // string comparison.
 // Since we only save some variables, it's O(1) space.
+
+
+
+
+// Find the duplicate integer in the arr 
+
+// If there's multiple duplicates, just find the 1st. 
+// Optimize for space.
+
+// Assumption: There's always at least 1 duplicate
+
+
+
+
+
+
+
+
+
+
+
