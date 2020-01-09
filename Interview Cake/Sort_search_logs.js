@@ -54,16 +54,11 @@ function findRotationPoint(words) {
     // and ceiling, then our target isn't here
   while(floorIndex + 1 < ceilingIndex) {
     
-    // S3: Find the halfway point
-    const distance = ceilingIndex - floorIndex;
-    const halfDistance = Math.floor(distance/2);
+    // S3: Find the halfway point and guess index/value
+    const guessIndex = Math.floor(floorIndex + ((ceilingIndex - floorIndex) / 2));
+    const guessValue = words[guessIndex]
     
-    // S4: Make a guess index/ value to check out 
-    const guessIndex = floorIndex + halfDistance;
-    const guessValue = words[guessIndex]; 
-    
-    
-    // S5: If guess is after or is 1st word, let's move 
+    // S4: If guess is after or is 1st word, let's move 
       // right (move right means move floor)
     if(guessValue >= firstWord) {
       floorIndex = guessIndex 
@@ -72,7 +67,7 @@ function findRotationPoint(words) {
         ceilingIndex = guessIndex;  
     }
     
-    // S6: If ceiling meets the floor, then we got it!
+    // S5: If ceiling meets the floor, then we got it!
     if(floorIndex + 1 === ceilingIndex) {
       break;
     }
