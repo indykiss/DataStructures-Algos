@@ -197,7 +197,7 @@ function sortScores(unorderedScores, highestPossibleScore) {
   // Sort the scores in O(n) time
 
   // Make an arr
-  const scoreCounts = [];
+  const scoreCounts = new Array(highestPossibleScore + 1).fill(0)
   const sortedScores = [];
   
   // Add scores into new arr
@@ -206,7 +206,7 @@ function sortScores(unorderedScores, highestPossibleScore) {
   });
   
   // Every time there's a num 
-  for(let score = highestPossibleScore; score >= 0; i--) {
+  for(let score = highestPossibleScore; score >= 0; score--) {
     const count = scoreCounts[score];
     
     // We push into sortedScores the number of times that num appears
