@@ -330,9 +330,11 @@ So what's our total time cost? O (n * log(2)(n))
 Because the log(2)(n) comes from the number of times we have to cut n in half to get down to subarrays of just 1 element (our base case). The additional n comes from the time cost of merging all nn items together each time we merge two sorted subarrays.
 
 
-## Binary tree 
+## Binary Tree Data Structure
 
 A binary tree is a tree where each node has 2 or fewer children nodes. A perfect tree is when every node has 2 children nodes. 
+
+The children are referred to left and right nodes. In a branch with a node having two children nodes, the left node is left and right is right. Node.left and node.right is a way to refer to them. 
 
 One algo that's asked often is, "given a number of nodes, what's the tree's height, as in how many levels of nodes there are?"
 
@@ -340,8 +342,82 @@ Basically as we go down each level, the number of nodes progressively doubles. S
 
 For all perfect trees, the number of nodes in the last level of the tree will be (n + 1)/2 -- +1 because the first level of tree is one, so the number of nodes will always be odd in a perfect tree. Half.ish of the nodes will be in the last level, because of the whole doubling at every level thing.
 
-SO to find the height of a perfect tree, that breaks down mathmatically to be this: 
+SO to find the height of a perfect tree, that breaks down mathmatically to (n is total of nodes and h is height): 
     h = log(2)(n+1) 
+
+
+## Graph Data Structure
+
+A graph organizes items in an interconnected network. Each item is a node (or vertex). Each connection is an edge. 
+
+Pros: Really good when there's connections: Facebook users and friends, cities and highways, etc. 
+
+Cons: Not super time efficient. Bad at scaling. Most graphs are minimum of O(n* lg(n)) time efficiency. 
+
+Directed vs undirected graphs: In directed graphs, there's direction to the edges. A node points to another node. 
+In undirected graphs, the edges are arrowless connections. 
+
+Cyclic vs acyclic: If there's a cycle somewhere in the graph (a bunch of nodes connected in a hexagon or a shape of somesort-- unbroken series of nodes that connect to each other), then it's cyclic. No cycles are acyclic. 
+
+Weighted vs unweighted: Instances where the each connection has some sort of weight. Weight could signify distance or cost or time to travel between locations. 
+
+Legal coloring: Basically each node is colored and no adjacent node has the same color. If there are nodes next to each other who are all blue, then that is illegal coloring, for example. 
+
+#### Representation of Graphs in code
+
+Edge list: A list of all the edges. Helpful to pair list of nodes with edges, bc sometimes a node isn't connected with an edge. 
+
+          const graph = [[0, 1], [1, 2], [1, 3], [2, 3]];
+
+Adjacency list: A list where the index represents the node and the value is a list of the node's neighbors. 
+
+        const graph = [
+          [1],
+          [0, 2, 3],
+          [1, 3],
+          [1, 2],
+        ];
+
+We can also use an object to do this, where the key is the node and the value is a list of that node's neighbors. 
+
+          const graph = {
+                  0: [1],
+                  1: [0, 2, 3],
+                  2: [1, 3],
+                  3: [1, 2],
+          };
+
+Adjacency Matrix: A matrix of 0s and 1s that indicates where the node X is connected to node Y. 0 is no and 1 is yes, of course. 
+
+          const graph = [
+          [0, 1, 0, 0],
+          [1, 0, 1, 1],
+          [0, 1, 0, 1],
+          [0, 1, 1, 0],
+        ];
+
+Since node 3 has edges to nodes 1 and 2, graph[3][1] and graph[3][2] have value 1. :( 
+
+
+#### Algos with Graphs
+
+Depth first and breadth first searches will answer alll the questions when it comes to graphs. Like basically. 
+
+Is there a path between these two nodes in this undirected graph? 
+        Run a depth first search or breadth first search from one node to see if you reach the other. 
+        
+What's the shortest path between these two nodes in an undirected, unweighted graph? 
+        Run Breadth first search from one node and backtrack until you reach the second. 
+        NOTE that Breadth first always find the shortest path, when the graph is undirected and unweighte. 
+        Depth first does not find the shortest path. 
+       
+Can this undirected graph be colored with two colors? 
+        Run a breadth first search, assign colors as nodes are visited. 
+        Abort if we ever try to assign a node a color that's different from the color it already has. 
+
+Does this undirected graph have a cycle? 
+        Run a breadth first search and keep track of the number of times we visit a node. 
+        If we've seen it, then yes, the graph has a cycle. 
 
 
 ## In place algos 
