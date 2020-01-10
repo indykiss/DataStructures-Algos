@@ -92,3 +92,124 @@ function isBalanced(treeRoot) {
   // S7: If we haven't disqualifed the tree, then it's superbalanced
   return true;
 }
+
+
+
+
+
+
+// Write a function to check that a binary 
+// tree is a valid binary search tree. 
+
+// Strat: Set up tests to see if a node is a left child. If it is
+  // then it must be less than its parent. 
+  // Or if it's right, it must be more than parent. 
+  // Since we're looking at a branch in each subtree, use DFS
+// Do this by using a depth first walk through the tree, 
+  // test each node for validity as we go
+  // Validity being: node.left < node parent, node.right > node parent
+  // We'll use a largest number each node must be greater than 
+    // and smallest it be be less then (upper and lower bounds)
+  
+// Edge: No root = yes a BST
+
+// Two ways to do this. Recursively (pretty but not time/space 
+// efficient). AND iteratively. 
+
+
+
+class BinaryTreeNode {
+  constructor(value) {
+    this.value = value;
+    this.left  = null;
+    this.right = null;
+  }
+
+  insertLeft(value) {
+    this.left = new BinaryTreeNode(value);
+    return this.left;
+  }
+
+  insertRight(value) {
+    this.right = new BinaryTreeNode(value);
+    return this.right;
+  }
+}
+
+
+// Iterative!
+function isBinarySearchTree(treeRoot) {
+
+  // Determine if the tree is a valid binary search tree
+
+  // S2: Start at root. Make fake lower and upper bounds
+  
+  const nodeAndBoundsStack = [];
+  nodeAndBoundsStack.push({
+    node: treeRoot,
+    lowerBound: Number.NEGATIVE_INFINITY,
+    upperBound: Number.POSITIVE_INFINITY    
+  })
+
+  // Depth-first traversal 
+  while(nodeAndBoundsStack.length) {
+    const{ node, lowerBound, upperBound } = 
+      nodeAndBoundsStack.pop();
+      
+      // Make sure node is valid to continue 
+      if(node.value <= lowerBound || node.value >= upperBound) {
+        return false;
+      }
+      
+      // If it's a left child node, it has to be smaller than the 
+        // current node (parent node)
+      if(node.left) {
+        nodeAndBoundsStack.push({
+          node: node.left,
+          lowerBound,
+          upperBound: node.value
+        });
+      }
+      
+      // if it's a right child node, it must be bigger than parent
+      if(node.right) {
+        nodeAndBoundsStack.push({
+          node: node.right, 
+          lowerBound: node.value,
+          upperBound
+        })
+      }
+  }
+  
+  // If all nodes passed the tests, then we have a superbalanced tree
+  return true;
+
+}
+
+
+// Recursive!
+// S1: Add a second and third input parameter for lower/upper bounds
+function isBinarySearchTree2(treeRoot) {
+
+  // Determine if the tree is a valid binary search tree
+
+  // S2: Start at root. Make fake lower and upper bounds
+  lowerBound = Number.NEGATIVE_INFINITY;
+  upperBound = Number.POSITIVE_INFINITY;
+
+  // S2b: If tree root doesn't exist, then yes BST
+  if(!treeRoot) {
+    return true;
+  }
+  
+  //S3:  If treeRoot is not within the bounds, not BST
+  if(treeRoot.value >= upperBound || treeRoot.value <= lowerBound) {
+    return false;
+  }
+  
+  // S4: Let's check if the left and right node are in the bounds
+    // by recursing ???
+  return isBinarySearchTree2(treeRoot.left, lowerBound, treeRoot.value)
+    && isBinarySearchTree2(treeRoot.right,  treeRoot.value, upperBound);
+}
+
