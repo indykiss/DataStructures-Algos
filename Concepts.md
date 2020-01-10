@@ -403,21 +403,42 @@ Since node 3 has edges to nodes 1 and 2, graph[3][1] and graph[3][2] have value 
 
 Depth first and breadth first searches will answer alll the questions when it comes to graphs. Like basically. 
 
-Is there a path between these two nodes in this undirected graph? 
+###### Is there a path between these two nodes in this undirected graph? 
         Run a depth first search or breadth first search from one node to see if you reach the other. 
         
-What's the shortest path between these two nodes in an undirected, unweighted graph? 
+###### What's the shortest path between these two nodes in an undirected, unweighted graph? 
         Run Breadth first search from one node and backtrack until you reach the second. 
         NOTE that Breadth first always find the shortest path, when the graph is undirected and unweighte. 
         Depth first does not find the shortest path. 
        
-Can this undirected graph be colored with two colors? 
+###### Can this undirected graph be colored with two colors? 
         Run a breadth first search, assign colors as nodes are visited. 
         Abort if we ever try to assign a node a color that's different from the color it already has. 
 
-Does this undirected graph have a cycle? 
+###### Does this undirected graph have a cycle? 
         Run a breadth first search and keep track of the number of times we visit a node. 
         If we've seen it, then yes, the graph has a cycle. 
+
+
+## Breadth-first search
+
+Breadth-first search is a way to explore a tree or graph by looking at the nodes one step away, then two steps away. 
+
+Kinda like throwing a stone in a cave pond. You explore the nodes that ripple out from the starting point, until we reach all the nodes.  
+
+Pros: Finds the shortest path between the starting node and any other node. 
+Cons: Generally takes more memory than the depth-first search, since we are looking at all the nodes. Breadth and all. 
+
+
+## Depth-first search (also called depth-first traversal) 
+
+Depth-first search is a way to explore a tree or graph by traveling down one node branch to the end, then turning around if couldn't find the thing, then traveling down another branch, etc, until we find the find we want. 
+
+Kinda like being in a maze and going down each hallway option until we find the exit. 
+
+Pros: DFS generally takes less memory than BFS. 
+Can use recursion here pretty easily. 
+Cons: Does not find the shortest path to a node. 
 
 
 ## In place algos 
@@ -459,6 +480,8 @@ A greedy algorithm builds up a solution by choosing the option that looks the be
 A time-saving algo pattern that reduces time but increases space.
 
 Create an arr/hash where each index/key represents the inputs while the values represent the number of times each input appeared. 
+
+This is really good for things like sorting an arr of numbers, with a highest number parameter.
 
         const counts = {};
         
