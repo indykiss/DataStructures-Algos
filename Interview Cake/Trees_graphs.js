@@ -213,3 +213,9 @@ function isBinarySearchTree2(treeRoot) {
     && isBinarySearchTree2(treeRoot.right,  treeRoot.value, upperBound);
 }
 
+  
+ // O(n) space and O(n) time 
+// Smoosh patterns together to get answer 
+// It's not about "this is X problem, lets do X"
+  // It's a little bit that and a little bit
+    // smoosh smoosh smoosh
