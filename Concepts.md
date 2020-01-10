@@ -442,6 +442,13 @@ Can use recursion here pretty easily.
 
 Cons: Does not find the shortest path to a node. 
 
+Note that BREADTH first uses a queue and DEPTH first uses a stack. 
+
+This will help us decide which of the two to use. 
+
+Are we looking for a solution that would needs a first in, first out (queue! therefore breadth) OR a last in, last out
+(stack! therefore depth). Are we visiting nodes in the order we see them (queue) or the last seen node first (stack)? 
+
 
 ## In place algos 
 
