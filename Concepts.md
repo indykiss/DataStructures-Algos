@@ -427,6 +427,7 @@ Breadth-first search is a way to explore a tree or graph by looking at the nodes
 Kinda like throwing a stone in a cave pond. You explore the nodes that ripple out from the starting point, until we reach all the nodes.  
 
 Pros: Finds the shortest path between the starting node and any other node. 
+
 Cons: Generally takes more memory than the depth-first search, since we are looking at all the nodes. Breadth and all. 
 
 
@@ -438,6 +439,7 @@ Kinda like being in a maze and going down each hallway option until we find the 
 
 Pros: DFS generally takes less memory than BFS. 
 Can use recursion here pretty easily. 
+
 Cons: Does not find the shortest path to a node. 
 
 
