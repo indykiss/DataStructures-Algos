@@ -21,3 +21,8 @@ https://www.facebook.com/careers/life/preparing-for-your-software-engineering-in
 Interview Cake
 
 Talk about code out loud to people.
+
+Harvard CS50: https://www.youtube.com/watch?v=y62zj9ozPOM&list=PLhQjrBD2T3828ZVcVzEIhsHVgjANGZveu 
+
+Coding interview university: https://github.com/jwasham/coding-interview-university 
+  - When I'm done with my 5 resources (Interview cake, facebook hacker rank, 2 udemy courses, some leetcodes). 
