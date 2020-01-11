@@ -371,6 +371,10 @@ Cons: BSTs are never the fastest for anything. There's no O(1) time option for a
 
 A graph organizes items in an interconnected network. Each item is a node (or vertex). Each connection is an edge. 
 
+The number of degrees a graph has refers to the number of edges connected to the node. The maximum possible degrees refers to the maximum number of connections to other nodes a node can have. 
+
+In DIRECTED graphs, ie ones with the arrows, there are in-degrees and out-degrees, referring to the arrows pointing to that node and arrows pointing out of that node. 
+
 Pros: Really good when there's connections: Facebook users and friends, cities and highways, etc. 
 
 Cons: Not super time efficient. Bad at scaling. Most graphs are minimum of O(n* lg(n)) time efficiency. 
@@ -383,6 +387,8 @@ Cyclic vs acyclic: If there's a cycle somewhere in the graph (a bunch of nodes c
 Weighted vs unweighted: Instances where the each connection has some sort of weight. Weight could signify distance or cost or time to travel between locations. 
 
 Legal coloring: Basically each node is colored and no adjacent node has the same color. If there are nodes next to each other who are all blue, then that is illegal coloring, for example. 
+
+RN: Graphs can have loops. Essentially a node that's connected to itself (like the line connecting nodes; one line just connects to itself). This can be an edge case for us to consider.
 
 #### Representation of Graphs in code
 
