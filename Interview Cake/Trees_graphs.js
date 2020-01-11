@@ -318,11 +318,145 @@ function findSecondLargest(rootNode) {
   }
 }
  
-
- // O(h) time where h is tree height  
+// O(h) time where h is tree height  
   // if tree is balanced, that means O(lg(n))
   // IF not, O(n) time
 // And O(1) space
 
+  
+  
 
+
+  
+// Given an undirected graph with maximum degree DD, 
+// find a graph coloring using at most D+1 colors.
+
+
+// Break down in small bits:
+// Undirected, so no arrows 
+// Maximum number of colors = D +1 
+
+// Example: Graph has a maximum number of degrees as 
+  // 2. So 3 colors are allowed. 
+  
+// Qs: To confirm, we want to make sure that the graph
+// is colored legally? 
+  // No 2 nodes of the same color are adjacent 
+
+// Example input: 
+// const a = new GraphNode("a")
+// const b = new GraphNode("b")
+// const c = new GraphNode("c")
+
+// a.neighbors.add(b);
+// b.neighbors.add(a);
+// b.neighbors.add(c);
+// c.neighbors.add(b);
+
+// Expected output: {[a],color1; 
+  // [b], color2; 
+  // [c], color1} 
+  // Or something, whatever
+
+// Strat: Look at each node and assign color thats legal
+  // based on previous color 
+  // Loop through node's neighbors and check if color
+    // is taken. If not by any, change the color
+
+
+class GraphNode {
+  constructor(label) {
+    this.label = label;
+    this.neighbors = new Set();
+    this.color = null;
+  }
+}
+
+function colorGraphInefficient(graph, colors) {
+
+  // Create a valid coloring for the graph
+  graph.forEach(node =>{
+    // make an illegal colors set and legal colors arr
+    const illegalColors = new Set();
+    const legalColors = [];
+    // if a nodes neighbor has a color
+      // that color is now illegal
+    node.neighbors.forEach(neighbor => {
+      if(neighbor.color !== null) {
+        illegalColors.add(neighbor.color);
+      }
+    })
+    // look at each color. if it's legal, move into 
+    // legal arr
+    colors.forEach(color => {
+      if(!illegalColors.has(color)) {
+        legalColors.push(color)
+      }
+    })
+    // assign first legal color to node
+    node.color = legalColors[0];
+  })
+}
+
+/*
+Time/space: Iterate through all nodes in graph. 
+  Iterate through all neighbors of each node 
+    to capture the illegal colors
+  Iterates through all the colors to find the legal
+    colors 
+We can do better by stopping once we find 1 legal color
+  
+Time?
+  N number of nodes + M illegal colors + 1 
+  * 2 most neighbors per node (if not 2, def a constant)
+ = O(N + M) Best possible option for time efficiency! 
+ 
+ Space? 
+ illegalColors is O(D), D being number of colors 
+  Increases as number of nodes in graph increase.
+  Every other action is constant. 
+  
+  
+Edge cases: 
+Nodes with no edges? 
+    Still works b/c we're looking at an arr of them, 
+    not transversing
+Any cycles in graph?    
+    Still works because we accounting for the neighboring
+    colors.
+Any loops? 
+    This could be a problem. BC we are saying that a neighbor
+    is itself. Which will mess up our illegalColors arr
+    Throw error if this happens
+*/
+
+function colorGraph(graph, colors) {
+
+  // S1: Loop through graph and find illegal colors
+  graph.forEach(node =>{
+    const illegalColors = new Set();
+
+    // Take care of edge case of node in a loop
+    if(node.neighbors.has(node)) {
+      throw new Error("Can't color this node legally")
+    }
+      
+    // S2: If a nodes neighbor has a color, its illegal
+    node.neighbors.forEach(neighbor => {
+      if(neighbor.color !== null) {
+        illegalColors.add(neighbor.color);
+      }
+    });
+  
+    // S3: Look at each color. If it's legal, assign it to node
+    for(let i = 0; i < colors.length; i++) {
+      const color = colors[i]; 
+      
+      if(!illegalColors.has(color)) {
+        node.color = color;
+        return;
+      }
+    }
+  })
+}
 
