@@ -219,3 +219,110 @@ function isBinarySearchTree2(treeRoot) {
 // It's not about "this is X problem, lets do X"
   // It's a little bit that and a little bit
     // smoosh smoosh smoosh
+  
+  
+  
+  
+  
+  
+  
+// Write a function to find the 2nd largest element 
+// in a binary search tree.
+
+// Start by finding the largest element 
+// Since it's a BST, we know that the "rightmost"
+// element is going to be the largest 
+
+
+class BinaryTreeNode {
+  constructor(value) {
+    this.value = value;
+    this.left  = null;
+    this.right = null;
+  }
+
+  insertLeft(value) {
+    this.left = new BinaryTreeNode(value);
+    return this.left;
+  }
+
+  insertRight(value) {
+    this.right = new BinaryTreeNode(value);
+    return this.right;
+  }
+}
+
+// Find largest iteratively. Keep looking to right child 
+// node until one doesnt exist anymore
+function findLargest(rootNode) {
+  
+  if(!rootNode) {
+    throw new Error("Needs a node")
+  }
+  
+  let current = rootNode;
+  
+  // Keep looking for current.right node (largest)
+    // once there's not any left, current.value is biggest
+  while(current) {
+    if(!current.right) {
+      return current.value;
+    }
+    current = current.right;
+  }
+}
+
+
+// Start: The 2nd largest node will be the largest' parent 
+// EXCEPT IF the largest has a left (no right obvi)
+  // no right, bc if it had a right, it wouldn't be 
+  // largest subtree. 
+// So we have a couple cases here
+
+
+function findSecondLargest(rootNode) {
+
+  // Find the second largest item in the BST
+  
+  // Edge: Needs at least 2 nodes
+  if(!rootNode || (!rootNode.left && !rootNode.right)) {
+    throw new Error("Needs at least 2 nodes")
+  }
+  
+  let current = rootNode
+  
+  // S1: We cycle through each node and check on 
+    // the situation for that current node
+  
+  while(current) {
+    
+    // S2: If we have a left subtree but not a right subtree
+      // then current node is the largest, so 2nd
+      // largest must be the largest in left subtree
+    if(current.left && !current.right) {
+      return findLargest(current.left)
+    }
+      
+    // S3: If we have a right child, but that right child
+      // node doesn't have any children. 
+      // THEN right child is largest AND current is 2nd 
+    if(current.right && 
+      (!current.right.left && !current.right.right)) {
+      return current.value;
+    }
+    
+   // S4: Else, we have a right subtree with >1 ele,
+      // so largest/ 2nd largest are somewhere so we 
+      // keep on stepping right 
+    current = current.right;
+  }
+}
+ 
+
+ // O(h) time where h is tree height  
+  // if tree is balanced, that means O(lg(n))
+  // IF not, O(n) time
+// And O(1) space
+
+
+
