@@ -1,25 +1,22 @@
-// Girl scout cookies
+/* 
+Girl scout cookies
 
-// In order to win the prize for most cookies sold, my friend Alice 
-// and I are going to merge our Girl Scout Cookies orders and enter as one unit.
+In order to win the prize for most cookies sold, my friend Alice 
+and I are going to merge our Girl Scout Cookies orders and enter as one unit.
+Each order is represented by an "order id" (an integer).
 
-// Each order is represented by an "order id" (an integer).
+We have our lists of orders sorted numerically already, in arrays. 
+Write a function to merge our arrays of orders into one sorted array.
 
-// We have our lists of orders sorted numerically already, in arrays. 
-// Write a function to merge our arrays of orders into one sorted array.
+For example:
+const myArray = [3, 4, 6, 10, 11, 15];
+const alicesArray = [1, 5, 8, 12, 14, 19];
 
-// For example:
+console.log(mergeArrays(myArray, alicesArray));
+logs [1, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 19]
 
-// const myArray = [3, 4, 6, 10, 11, 15];
-// const alicesArray = [1, 5, 8, 12, 14, 19];
-
-// console.log(mergeArrays(myArray, alicesArray));
-// logs [1, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 19]
-
-
-// I am a sorting algo 
-// The main algo.ie part are the edge cases 
-
+I am a sorting algo, mostly the edge cases
+*/
 
 function mergeArraysTooSimple(myArray, alicesArray) {
 
@@ -80,46 +77,46 @@ function mergeArrays(myArray, alicesArray) {
 }
 
 
+/*
+Your company built an in-house calendar tool called HiCal. 
+You want to add a feature to see the times in a day when everyone is available.
 
-// Your company built an in-house calendar tool called HiCal. 
-// You want to add a feature to see the times in a day when everyone is available.
+To do this, you’ll need to know when any team is having a meeting. 
+In HiCal, a meeting is stored as objects ↴ with integer properties startTime 
+and endTime. These integers represent the number of 30-minute blocks past 9:00am.
 
-// To do this, you’ll need to know when any team is having a meeting. 
-// In HiCal, a meeting is stored as objects ↴ with integer properties startTime 
-// and endTime. These integers represent the number of 30-minute blocks past 9:00am.
+For example:
 
-// For example:
+{ startTime: 2, endTime: 3 }  // meeting from 10:00 – 10:30 am
+{ startTime: 6, endTime: 9 }  // meeting from 12:00 – 1:30 pm
 
-// { startTime: 2, endTime: 3 }  // meeting from 10:00 – 10:30 am
-// { startTime: 6, endTime: 9 }  // meeting from 12:00 – 1:30 pm
+Write a function mergeRanges() that takes an array of multiple 
+meeting time ranges and returns an array of condensed ranges.
 
-// Write a function mergeRanges() that takes an array of multiple 
-// meeting time ranges and returns an array of condensed ranges.
+For example, given:
+  [
+  { startTime: 0,  endTime: 1 },
+  { startTime: 3,  endTime: 5 },
+  { startTime: 4,  endTime: 8 },
+  { startTime: 10, endTime: 12 },
+  { startTime: 9,  endTime: 10 },
+]
 
-// For example, given:
-//   [
-//   { startTime: 0,  endTime: 1 },
-//   { startTime: 3,  endTime: 5 },
-//   { startTime: 4,  endTime: 8 },
-//   { startTime: 10, endTime: 12 },
-//   { startTime: 9,  endTime: 10 },
-// ]
+your function would return:
+  [
+  { startTime: 0, endTime: 1 },
+  { startTime: 3, endTime: 8 },
+  { startTime: 9, endTime: 12 },
+]
 
-// your function would return:
-//   [
-//   { startTime: 0, endTime: 1 },
-//   { startTime: 3, endTime: 8 },
-//   { startTime: 9, endTime: 12 },
-// ]
-
-// We get an input of meetings
-// Find the times that meetings overlap! 
+We get an input of meetings
+Find the times that meetings overlap! 
+*/
 
 function mergeRanges(meetings) {
 
   // Merge meetings into ranges that overlap
   
-
   // Step 1: Sort start times to be in order
   const sortedMeetings = meetings.sort((a,b) => {
     return a.startTime - b.startTime
@@ -144,10 +141,8 @@ function mergeRanges(meetings) {
         // Step 4: Else, leave them separate. 
         // We know there's no overlap so we can add this range
         mergedMeetings.push(currentMeeting);
-      
       }
     }
-  
  return mergedMeetings;
 }
 
@@ -158,25 +153,28 @@ mergeRanges([{ startTime: 1, endTime: 3 }, { startTime: 2, endTime: 4 }])
 
 
 
-// Write a function that takes an array of characters 
-// and reverses the letters in place.
 
+/*
+Write a function that takes an array of characters 
+and reverses the letters in place.
+
+  Reverse the input array of characters in place
+    in place meaning without making a copy,
+    thus saving time & space, but alters original arr
+    which can be bad bc of side effects
+  
+  One way to do this, IF it wasn't in place
+      const newArr = []
+      for(let i = arrayOfChars.length -1 ; i >= 0; i--) {
+        newArr.push(arrayOfChars[i]);
+      }
+      return newArr;
+
+  BUT to do this IN PLACE, we need to swap elements
+*/
+  
 function reverse(arrayOfChars) {
 
-  // Reverse the input array of characters in place
-    // in place meaning without making a copy,
-    // thus saving time & space, but alters original arr
-    // which can be bad bc of side effects
-  
-  // One way to do this, IF it wasn't in place
-      // const newArr = []
-      // for(let i = arrayOfChars.length -1 ; i >= 0; i--) {
-      //   newArr.push(arrayOfChars[i]);
-      // }
-      // return newArr;
-
-  // BUT to do this IN PLACE, we need to swap elements
-  
   // Step 1: Establish the 2 eles to swap
   let leftIndex = 0;
   let rightIndex = arrayOfChars.length - 1;
@@ -191,26 +189,25 @@ function reverse(arrayOfChars) {
     leftIndex++; 
     rightIndex--; 
   }
-  
 }
 
 
 
+/*
+Take an array of chars and reverses the order of the words in place
 
-// Take an array of chars and reverses the order of the words in place
+Input: const message = [ 'c', 'a', 'k', 'e', ' ',
+'p', 'o', 'u', 'n', 'd', ' ',
+'s', 't', 'e', 'a', 'l' ];
 
-// Input: const message = [ 'c', 'a', 'k', 'e', ' ',
-// 'p', 'o', 'u', 'n', 'd', ' ',
-// 's', 't', 'e', 'a', 'l' ];
+reverseWords(message)
+console.log(message.join(''));
 
-// reverseWords(message)
-// console.log(message.join(''));
+Expected output: 'steal pound cake'
 
-// Expected output: 'steal pound cake'
-
-// Assumptions: Only letters, no punctuation or numbers, and 
-// every word is separated by a space 
-
+Assumptions: Only letters, no punctuation or numbers, and 
+every word is separated by a space 
+*/
 
 function reverseWords(message) {
 
@@ -228,8 +225,8 @@ function reverseWords(message) {
       // If it's the end of the message or we hit a space
       if(i === message.length || message[i] === " ") {
         // We go to the next word to reverse that one
-      reverseChars(message, currentWordStartIndex, i - 1);
-      currentWordStartIndex = i + 1;
+        reverseChars(message, currentWordStartIndex, i - 1);
+        currentWordStartIndex = i + 1;
       }
   }
   return message;
@@ -265,46 +262,50 @@ function reverseChars(message, firstIndex, lastIndex) {
 
 
 
-// Is this cafe serving food in the same order people are ordering them? 
+/*
+Is this cafe serving food in the same order people are ordering them? 
 
-// There's a cafe where some customers are saying that people who order 
-// after them are getting served first! Big problem. 
+There's a cafe where some customers are saying that people who order 
+after them are getting served first! Big problem. 
 
-// The owner made 3 arrays keeping track of takeOutOrders, dineInOrders, and 
-// servedOrders.
+The owner made 3 arrays keeping track of takeOutOrders, dineInOrders, and 
+servedOrders.
 
-// Given all three, write a function to check that service 
-// is first-come, first-served. 
+Given all three, write a function to check that service 
+is first-come, first-served. 
 
-// Example input:
-// Take Out Orders: [1, 3, 5]
-// Dine In Orders: [2, 4, 6]
-// Served Orders: [1, 2, 4, 6, 5, 3]
-// Output: False 
+Example input:
+Take Out Orders: [1, 3, 5]
+Dine In Orders: [2, 4, 6]
+Served Orders: [1, 2, 4, 6, 5, 3]
+Output: False 
 
-// Example input: 
-// Take Out Orders: [1, 3, 5]
-// Dine In Orders: [2, 4, 6]
-// Served Orders: [1, 2, 3, 5, 4, 6]
-// Output: True
+Example input: 
+Take Out Orders: [1, 3, 5]
+Dine In Orders: [2, 4, 6]
+Served Orders: [1, 2, 3, 5, 4, 6]
+Output: True
+
+
+Check if we're serving orders first-come, first-served
+  
+1st in served must be 1st in dineIn or takeOut 
+  So we're gonna check the 1st order, throw it away as its
+  been accounted for then continue to 2nd served order 
+    
+Then we do this again. So use recursion to meet
+  the base case of everything being checked 
+  Eventually, we will throw out all the eles in servedOrders
+  if the order is first come, first serve
+  
+Edge cases: Empty values in takeOut or dineIn. takeOut or 
+  dineIn are not equal
+  
+*/
+
 
 function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
-
-  // Check if we're serving orders first-come, first-served
-  
-  // 1st in served must be 1st in dineIn or takeOut 
-    // So we're gonna check the 1st order, throw it away as its
-    // been accounted for then continue to 2nd served order 
-    
-  // Then we do this again. So use recursion to meet
-    // the base case of everything being checked 
-    // Eventually, we will throw out all the eles in servedOrders
-    // if the order is first come, first serve
-  
-  // Edge cases: Empty values in takeOut or dineIn. takeOut or 
-    // dineIn are not equal
-  
-  
+ 
   // Recursive base case: We've popped off everything
   if(servedOrders.length === 0) {
     return true; 
@@ -334,18 +335,20 @@ function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
     
 }
 
-// The time and spece costs for this are O(n2) BECAUSE  
-// while most of the equation is constant, we use recursion and .slice.  
-// Slice costs O(m) where m is the resulting array's size. 
-// Since we use .slice twice, essentially we are doing this math: 
-  // (n-1) + (n-2) + ... 2 + 1 
-    // Where n-1 is the 1st slice and n-2 is the second, giving us 
-// O(n2)
+/*
+The time and spece costs for this are O(n2) BECAUSE  
+while most of the equation is constant, we use recursion and .slice.  
+Slice costs O(m) where m is the resulting array's size. 
+Since we use .slice twice, essentially we are doing this math: 
+  (n-1) + (n-2) + ... 2 + 1 
+    Where n-1 is the 1st slice and n-2 is the second, giving us 
+O(n2)
 
-// If we want to optimize (ask the interviewer), we can iterate instead! 
+If we want to optimize (ask the interviewer), we can iterate instead! 
 
-// Also lets complicate a little more and make sure that every order 
-  // has been served (not assuming we did)
+Also lets complicate a little more and make sure that every order 
+  has been served (not assuming we did)
+ */
 
 function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
 
@@ -385,10 +388,8 @@ function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
     takeOutIndex != takeOutOrders.length) {
       return false;
   }
-
   return true;
-
 }
 
-// This final solution gives us O(n)/ linear time and O(1)/ constant space 
+// O(n)/ linear time and O(1)/ constant space 
 
