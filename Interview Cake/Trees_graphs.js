@@ -468,6 +468,8 @@ function colorGraph(graph, colors) {
 /* Find the shortest path from startNode to 
 endNode, given a network.
 
+Make a mesh network: 
+
   const network = {
   'Min'     : ['William', 'Jayden', 'Omar'],
   'William' : ['Min', 'Noam'],
@@ -486,5 +488,104 @@ should have this route:
 
   ['Jayden', 'Amelia', 'Adam']
   
-*/ 
+Get the shortest path from startNode to endNode 
+This seems like a undirected, unweighted graph 
+  (ask interviewer to confirm)
+  Undirected because a person can send messages both 
+  ways, so no distinction there 
+  No nums, so unweighted
+Shortest path -> breadth first traversal
+
+Edge cases: 
+Invalid input
+  Throw error
+
+If there's no route
+  It's ok, message won't be delivered
+*/
   
+  
+class Queue {
+  constructor() {
+    this.queue = [];
+    this.size = 0;
+  }
+
+  enqueue(item) {
+    this.queue.unshift(item);
+    this.size += 1;
+  }
+
+  dequeue() {
+    this.size -= 1;
+    return this.queue.pop();
+  }
+}
+
+// Use breadth first algo
+// Find the shortest route in the network between two ppl
+
+function getPath(graph, startNode, endNode) {
+
+  // Edge: No start or end Node
+  if(!startNode || !endNode) {
+    throw new Error("Need a start or end node")
+  }
+  
+  // S1: Make a queue and add the startNode to it 
+  const nodesToVisit = new Queue();  
+  nodesToVisit.enqueue(startNode);
+
+  // S2: Keep track of the nodes && path we've seen
+  const howWeReachedEndNode = {};
+  howWeReachedEndNode[startNode] = null;
+  
+  // S3: Loop through nodes. Enque/ dequeue to reduce size
+  while(nodesToVisit.size > 0) {
+    // S4: Look @ 1st node. Remove it in the queue
+    const currentNode = nodesToVisit.dequeue();
+    
+    // S5: Check if current node is the end. 
+        // If yes, return the path we looked at
+    if(currentNode === endNode) {
+      return findPath(howWeReachedEndNode, startNode, endNode);
+      // We found everything minus path finding. Then added in helper func
+    }
+
+    // S6: K, havent seen it. Let's move on. Add it to path and 
+      // queue up next node to keep looking
+    graph[currentNode].forEach(neighbor => {
+      if(!howWeReachedEndNode.hasOwnProperty(neighbor)) {
+        nodesToVisit.enqueue(neighbor);
+        howWeReachedEndNode[neighbor] = currentNode;
+      }
+    })    
+  }
+  
+  // S7: If there's no path
+  return null;
+}
+
+
+function findPath(howWeReachedEndNode, startNode, endNode) {
+  const shortestPath = [];
+  
+  // S1: Start from end of path and go backwards 
+  let currentNode = endNode;
+  
+  // S2: startNode is null, hence why we go backwards
+  while(currentNode !== null) {
+    shortestPath.push(currentNode);
+    currentNode = howWeReachedEndNode[currentNode];
+  }
+  
+  // S3: We're tracing path backwards so need to 
+  // reverse it to have it start correctly
+  return shortestPath.reverse();
+}
+  
+// Time: O(N + M), where N is the number of nodes and 
+// M is the number of neighbors for each node
+// Space: Constant amount of info per node. O(N) space
+
+
