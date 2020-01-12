@@ -477,6 +477,14 @@ Are we looking for a solution that would needs a first in, first out (queue! the
 (stack! therefore depth). Are we visiting nodes in the order we see them (queue) or the last seen node first (stack)? 
 
 
+## Overlapping sub-problems 
+
+A problem has overlapping sub-problems if we're solving the same issue multiple times. 
+
+Usually can solve this with recursive solutions. 
+
+## Memoization
+
 ## In place algos 
 
 Occasionally I'll be asked to complete an algo, in-place. Something I've already seen. In-place, destructivly altering input, algos are really good for saving time and space BUT since we're destroying the input, it's not very good for code outside of the function. Ex: 
