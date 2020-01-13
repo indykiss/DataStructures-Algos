@@ -589,3 +589,140 @@ function findPath(howWeReachedEndNode, startNode, endNode) {
 // Space: Constant amount of info per node. O(N) space
 
 
+  
+  
+  
+/*
+Find the first duplicate that appears in an array. 
+in O(n) time [literally the lowest possible as we must iterate]
+AND O(1) SPACE, which is hard 
+
+
+Strat for normal solving: Binary search 
+Assumption: There is at least 1 duplicate 
+Inputs are always integers 
+
+Find a number that appears more than once ... in O(n) time
+  
+In a BS, I need to make a ceiling and a floor for each the 
+  bottom half and the top half
+  And a midpoint
+And a guess index/value 
+Then update ceiling/ floor as we go 
+Also need to sort it I think? So that whenever there's 2 things 
+in a row that are the same, that's a dupe 
+
+
+Strat for super optimizing space: 
+Think about it like this is a linked list, where the position (position 
+is not index. position = index + 1) exists. 
+The value in linked list is the integer value. 
+The pointer is pointing to the next position in the arr. 
+
+Linked List is O(n) space, so can't use that. But will
+THINK about it as a linked list. 
+
+Thinking about it as a linked list, with the end of the arr 
+  as the head of the LL
+There would be a cycle of pointers around the area of a dupe
+  The 1st node we hit in the cycle always has at least 2 incoming
+  pointers. 
+Find the beginning of the cycle in order to find the dupe
+  We can do this by finding the length of the cycle. 
+  We would use 2 pointers:
+    One starts at the beg of the list (end of arr)
+    Second is at the end of list (beg of arr)
+    We move each pointer one node at a time 
+    When the two pointers converge, that is the start of the cycle
+
+
+Work backwards! 
+S1: We know that the position of the node w/
+multiple incoming pointers is a duplicate in our arr, because the 
+nodes that have pointed to it must have the same value.
+
+S2: We find a node with multiple incoming points by finding the
+1st node in a cycle. 
+
+S3: We find the first node in a cycle by finding the length of the
+cycle and the advancing two pointers: one starting from the end 
+and one starting from the front. And find where they converge. 
+They will meet at the first node in the cycle. 
+
+S4: Find the length of the look by remembering a position in
+the cycle and count the number of steps it takes to get back
+to that position 
+
+S5: We get inside a cycle by starting at the head (end of arr)
+and walking n steps. We know the head of the list is at 
+n+ 1 position 
+
+*/
+
+
+function findDuplicate(intArray) {
+
+  const n = intArray.length - 1;
+
+  // S1: GET INSIDE CYCLE
+    // Start at posiition n+1 and walk n steps to find 
+    // a position definitely within a cycle
+  let positionInCycle = n + 1 
+  for(let i = 0; i < n; i++) {
+    // Subtract 1 from current position so we can step ahead 
+      // BC 2nd position in arr = ele at index 1
+    positionInCycle = intArray[positionInCycle - 1];
+  }
+  
+  // S2: FIND LENGTH OF CYCLE
+    // Find length by remembering a position inside cycle 
+    // and count the steps it takes to get back to that position
+    // This gives us the head and length of cycle 
+  const rememberedPositionInCycle = positionInCycle;
+  let currentPositioninCycle = intArray[positionInCycle - 1];
+  let cycleCount = 1; 
+  
+  while(positionInCycle !== rememberedPositionInCycle) {
+    currentPositioninCycle = intArray[currentPositioninCycle - 1];
+    cycleCount += 1;
+  }
+  
+  
+  // S3: FIND 1ST NODE OF THE CYCLE
+    // Create 2 pointers, starting at opposite ends 
+      // 1. Position n+1
+      // 2. Position n+1, as many steps as the cycle length 
+    let startPointer = n + 1;
+    let endPointer = n - 1;
+    for(let i = 0; i < cycleCount; i++) {
+      endPointer = intArray[endPointer - 1];
+    }
+    
+  // S4: GO UNTIL POINTERS ARE IN SAME POSITION
+    // This is the 1st node in the cycle 
+    // The 1st node in the cycle have multiple pointers at it
+    // So we know its position is where the dupe is
+  while(startPointer !== endPointer) {
+    startPointer = intArray[startPointer - 1]; 
+    endPointer = intArray[endPointer - 1]; 
+  }
+  
+  // RETURN THE DUPE
+  return startPointer;
+
+}
+
+/*
+Input: [2,1,2,3] => 2 
+
+O(n) time. Worst thing is a loop.
+O(1) space. We only make variables to store. 
+
+Lesson for this one: 
+  SHIT BE CRAY but it's fine bc interviewers always expect to 
+  give hints. It's important to know how to drop what I'm doing
+  and accept those hints. Adjust. And code to whats being said. 
+  I need to work on coding based on what's being said. 
+  Think about it all in smaller pieces. 
+*/
+
