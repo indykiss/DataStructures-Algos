@@ -9,6 +9,9 @@ It's a little unorganized at the moment, as I'm using a few resources vaguely st
 
 Will organize this soon! 
 
+Note to self: Just go through these! It's ok to not understand things. I will go back and review as I see these same problems in LC. Reviewing is where ya learn. Seeing things the first time is just to familiarize myself with the problem. 
+
+
 ### Read me!
 https://medium.com/@XiaohanZeng/i-interviewed-at-five-top-companies-in-silicon-valley-in-five-days-and-luckily-got-five-job-offers-25178cf74e0f
 
