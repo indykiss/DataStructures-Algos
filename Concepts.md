@@ -477,13 +477,93 @@ Are we looking for a solution that would needs a first in, first out (queue! the
 (stack! therefore depth). Are we visiting nodes in the order we see them (queue) or the last seen node first (stack)? 
 
 
-## Overlapping sub-problems 
+## Overlapping sub-problems - Dynamic programming
 
 A problem has overlapping sub-problems if we're solving the same issue multiple times. 
 
 Usually can solve this with recursive solutions. 
 
-## Memoization
+## Memoization - An example of dynamic programming, yay!
+
+Memoization is when the function MEMORIZES the results for given inputs. This makes sure that the function doesn't run inputs it has already seen. 
+
+This makes recursive problems become much more time and space efficient. 
+
+Ex: Let's look at Fibonacci, assume positive nums
+
+        function fib(n) {
+         // Return if 0 or 1
+           if(n === 0 || n === 1) {
+                return n;
+           }
+          // Else, recurse. Add prev num or 2nd previous num
+           return fib(n-1) + fib(n-2);
+        }
+
+If we think about this, the call stack of fib using recursion is a tree of calls. fib(5) -> fib(4) & fib(3) -> fib(3) & fib(2) -> fib(2) & fib(1) -> fib(2) & fib(1) -> fib(1) & fib(1) -> fib(1) & fib(1). 
+        
+LOTS of duplicate calls. Super inefficient!  
+
+Here we can use memorization to reduce the calls and just insert memoized results. 
+We can wrap the function in a class that stores an instance property, memo, that maps inputs to outputs. Then we can just check the memo to see if we've done this thing before. And if not, we can save our thing to the memo to prevent future duplicate calculations. 
+
+        class Fibber{
+            constructor() {
+               this.memo = {} 
+            }
+
+            fib(n){
+               if(n === 0 || n === 1) {
+                  return n
+               }
+               // Have we calculated this already?  
+               if(this.memo.hasOwnProperty(n)) {
+                  console.log('grabbing memo[${n}]');
+                  return this.memo[n];  
+               }
+               
+               console.log('computing fib(${n}) fyi');
+               const result = this.fib(n-1) + this.fib(n-2);
+               
+               // Then memoize this
+               this.memo[n] = result;
+               return result;
+            }
+        }
+
+If we look at our imaginary tree of calls, now no node gets called more than twice. 
+
+More efficient yay.
+
+
+## Bottom up algos - More dynamic programming, YAY! 
+
+Approaching an algo "bottoms up" basically just means we look at it by starting from the beginning. In recursion, we start from the end and work backwards. 
+
+Bottom up is an alternative to recursion. 
+
+Ex: Let's say we want to return all the products from 1 to n: 
+
+     function product1ToN(n) {
+        if(n > 1) {
+           return n * product1ToN(n-1)
+        } else {
+          return 1;
+        }
+     }
+This builds a call stack of O(n), which makes space O(n), no bueno. 
+
+Instead, we can do this bottom up: 
+
+     function product1ToN(n) {
+        let result = 1;
+        for(let num = 0; num <= n; num++) {
+           result = result * num;
+        }
+        return result;
+     }
+This is O(n) time and O(1) space. 
+
 
 ## In place algos 
 
