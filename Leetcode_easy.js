@@ -1,3 +1,23 @@
+/*
+
+Index: 
+1. Verifying Alien Dictionary 
+2. Add Binary
+3. Valid Palindrome
+4. Valid Palindrome II
+5. First bad version
+6. Merge sorted array 
+7. Add strings 
+8. Diameter of a binary tree (dfs) 
+9. Two Sum
+10. Intersection of two arrays 
+
+
+*/
+
+
+
+
 // Need to quickly make a couple tests for these, just to practice. Super simple ones
 
 // Verifying Alien Dictionary
@@ -293,6 +313,46 @@ var twoSum = function(nums, target) {
         }
     }    
 }
+
+
+/* 
+Intersection of Two Arrays
+
+I DID THIS ALMOST BY MYSELF! 
+Vague amount of googling and a glance at strategy (not code) in a C++
+solution AND I DID IT. I'm doing ok. 
+
+Given two arrays, write a function to compute their intersection.
+
+Nums1: [4,9,5]
+Nums2: [9,4,9,8,4]
+Output: [9,4]
+
+Find the elements in nums2 that also exist in nums1
+Order doesn't matter. 
+Exclude duplicate values.
+
+var intersection = function(nums1, nums2) {
+    
+    // Remove duplicates. Move nums1 into a Set. 
+    
+    const nums1Set = new Set(nums1);
+        // O(n) space^
+    let result = []
+    
+    // Loop through nums2
+    for(let i = 0; i < nums2.length; i++) {
+        let currentNum = nums2[i];
+        
+        if(nums1Set.has(currentNum) && !result.includes(currentNum)) {
+            result.push(currentNum);
+        }
+    }
+        // O(n) time^ 
+    
+    // Any number thats in nums2 and nums1Set.has() goes in results
+    return result;
+};
 
 
 
