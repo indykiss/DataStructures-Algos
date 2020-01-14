@@ -93,7 +93,6 @@ var addBinary = function(a, b) {
 var isPalindrome = function(s) {
     
     // Assumptions: Empty input is a palindrome. 
-    
     // Edge cases: There are spaces and punctuations
     
     // Reading a str forward and backward is the same
@@ -114,7 +113,6 @@ var isPalindrome = function(s) {
     // Step 3: Compare original str with reversed to see if palindrome
     return reversedS === cleanS
 }
-
 
 
 // Really just for very simple palindromes, no spaces or punctuation
@@ -180,6 +178,42 @@ const isPalindrome = (s) => s === s.split("").reverse().join("");
 // Then 4 is the first bad version. 
 
 
+/*
+
+Given a number. Return this number and any number after as the bad number. 
+Bad number = floor. Highest number is the ceiling. 
+Anything between and including floor/ ceiling is bad. 
+
+Binary search! 
+
+*/
+
+var solution = function(isBadVersion) {
+    /**
+     * @param {integer} n Total versions
+     * @return {integer} The first bad version
+     */
+    return function(n) {
+        // Binary search
+        
+        // Make midpoint, start, and end. Needs to be var bc scope
+        var start = 1;
+        var end = n;
+        
+        // While start is less than end 
+        while(start < end) {    
+        let midpoint = Math.floor(start + (end - start)/ 2)
+                    
+            if(isBadVersion(midpoint)) { // change ceiling to mid. Go left
+                end = midpoint;
+            } else {  // change floor to mid. Go right
+                start = midpoint+1;
+            }
+        }
+        // Return the start of the bad version
+        return start;
+    };
+};
 
 
 
@@ -259,7 +293,6 @@ var diameterOfBinaryTree = function(root) {
     
     return diameter;
     
-    
     // Let's make a depth-first search transversal 
     function dfs(node, height) {
         // If there's no nodes, we return diameter of 0
@@ -277,9 +310,7 @@ var diameterOfBinaryTree = function(root) {
         // Update the largest number of edge so far
         return Math.max(left, right) + 1;
     }
-    
 };
-
 
 // Input [1,2,3,4,5] => 3 
 
@@ -332,6 +363,8 @@ Find the elements in nums2 that also exist in nums1
 Order doesn't matter. 
 Exclude duplicate values.
 
+*/
+
 var intersection = function(nums1, nums2) {
     
     // Remove duplicates. Move nums1 into a Set. 
@@ -349,7 +382,6 @@ var intersection = function(nums1, nums2) {
         }
     }
         // O(n) time^ 
-    
     // Any number thats in nums2 and nums1Set.has() goes in results
     return result;
 };
