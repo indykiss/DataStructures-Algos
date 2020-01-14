@@ -1,5 +1,4 @@
 /*
-
 Index: 
 1. Verifying Alien Dictionary 
 2. Add Binary
@@ -11,22 +10,21 @@ Index:
 8. Diameter of a binary tree (dfs) 
 9. Two Sum
 10. Intersection of two arrays 
-
-
 */
 
 
 
+/*
+Need to quickly make a couple tests for these, just to practice. Super simple ones
 
-// Need to quickly make a couple tests for these, just to practice. Super simple ones
+Verifying Alien Dictionary
+In an alien language, surprisingly they also use english lowercase letters, but possibly in a different order. The order of the alphabet is some permutation of lowercase letters.
+Given a sequence of words written in the alien language, and the order of the alphabet, return true if and only if the given words are sorted lexicographicaly in this alien language.
 
-// Verifying Alien Dictionary
-// In an alien language, surprisingly they also use english lowercase letters, but possibly in a different order. The order of the alphabet is some permutation of lowercase letters.
-// Given a sequence of words written in the alien language, and the order of the alphabet, return true if and only if the given words are sorted lexicographicaly in this alien language.
-
-// Input: words = ["hello","leetcode"], order = "hlabcdefgijkmnopqrstuvwxyz"
-// Output: true
-// Explanation: As 'h' comes before 'l' in this language, then the sequence is sorted.
+Input: words = ["hello","leetcode"], order = "hlabcdefgijkmnopqrstuvwxyz"
+Output: true
+Explanation: As 'h' comes before 'l' in this language, then the sequence is sorted.
+*/
 
 var isAlienSorted = function(words, order) {
     // Words are the words we're looking at
@@ -74,21 +72,21 @@ var addBinary = function(a, b) {
     
 };
 
+/*
+Valid Palindrome
 
-// Valid Palindrome
+Given a string, determine if it is a palindrome, 
+considering only alphanumeric characters and ignoring cases.
 
-// Given a string, determine if it is a palindrome, 
-// considering only alphanumeric characters and ignoring cases.
+Note: For the purpose of this problem, we define empty string 
+as valid palindrome.
 
-// Note: For the purpose of this problem, we define empty string 
-// as valid palindrome.
+Example 1:
+Input: "A man, a plan, a canal: Panama"
+Output: true
 
-// Example 1:
-// Input: "A man, a plan, a canal: Panama"
-// Output: true
-
-// Actually need to add in punctuation
-
+Actually need to add in punctuation
+*/
 
 var isPalindrome = function(s) {
     
@@ -177,7 +175,6 @@ const isPalindrome = (s) => s === s.split("").reverse().join("");
 
 // Then 4 is the first bad version. 
 
-
 /*
 
 Given a number. Return this number and any number after as the bad number. 
@@ -234,9 +231,18 @@ var solution = function(isBadVersion) {
 
 // Output: [1,2,2,3,5,6]
 
+// IF can use sort: 
+var merge = function(nums1, m, nums2, n) {
+  nums1.splice(m, nums1.length)
+  nums2.push(...nums2.splice(0, n));
+  nums1.sort((a, b) => a - b)
 
-
-
+// If can't use sort, it's a whole thing: 
+    // https://www.interviewcake.com/question/javascript/merge-sorted-arrays?course=fc1&section=array-and-string-manipulation 
+    
+    
+    
+    
 
 // Add Strings 
 
