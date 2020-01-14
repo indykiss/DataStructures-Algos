@@ -72,6 +72,10 @@ var addBinary = function(a, b) {
     
 };
 
+
+
+
+
 /*
 Valid Palindrome
 
@@ -240,7 +244,53 @@ var merge = function(nums1, m, nums2, n) {
 // If can't use sort, it's a whole thing: 
     // https://www.interviewcake.com/question/javascript/merge-sorted-arrays?course=fc1&section=array-and-string-manipulation 
     
+/*  THIS WAS MY ATTEMPT WITHOUT USING SORT. DID NOT GET CORRECT, BUT THINKING IS ALMOST THERE? 
+Merge 2 sorted arrays. They are already sorted. Ignore 0s. 
+Merging nums2 INTO nums1
+Assumption: Nums1 always big enough to take nums2 -- this is weird dynamic array prob in other languages
+
+Input:
+[1,2,3,0,0,0] 
+// The 0,0,0 thing is because arrs in other languages aren't dymanic. JS is always dynamic, as in don't need to specify the length at the beginning 
+[2,5,7]
+
+[1, 2, 2, 3, 5, 7]
+
+Compare 1st index in both arrs. Iterate through nums1, bc that will always be bigger in length
+Smallest value of the 2 1st indices gets pushed into nums1
+Keep going until n reaches 0, decrement n as we go
+
+*/
+
+// IF can't use sort:
+var merge = function(nums1, m, nums2, n) {
+    // JS arrs are dymanic, we don't need the extra 0s at the end
+    nums1 = nums1.splice(m, nums1.length)
     
+    // Keep track of the indices
+    let currentIndexNums1 = 0;
+    let currentIndexNums2 = 0;
+    let currentMergedIndex = 0;
+    const result = [];
+    
+    while(currentMergedIndex < (nums1.length + nums2.length)) {
+        const isNums1Done = currentIndexNums1 >= nums1.length;
+        const isNums2Done = currentIndexNums2 >= nums1.length;
+
+        if(!isNums1Done && nums1[currentIndexNums1] < nums2[currentIndexNums2]) {
+            result.push(nums1[currentIndexNums1]);
+            currentIndexNums1++ 
+        } 
+        
+        if(!isNums2Done && nums2[currentIndexNums2] < nums1[currentIndexNums1]){
+            result.push(nums2[currentIndexNums2]);
+            currentIndexNums2++;
+        }
+        currentMergedIndex++;
+    }
+    
+    return result;
+};
     
     
 
