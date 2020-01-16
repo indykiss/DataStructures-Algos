@@ -303,3 +303,93 @@ class ChangeMemoize{
   }
 }
 
+
+
+
+
+
+/*
+You are in a fancy cake vault. 
+
+Given an arr of cake types and their value, and the amount 
+you can carry, find the most valuable haul you can steal. 
+
+Another name: Unbounded Knapsack problem
+
+Overlapping subproblems. Finding solution is solving 
+the same mini prob over and over.
+
+Build up to the given weight capacity, 1 capacity at a time, 
+using the max values from the previous capacities. 
+
+Assumptions: All are positive values. 
+Edge: Minimum cake weigh exceeds duffel bag capacity. 
+Cakes can be 0. Weight capacity can be zero. 
+
+Can't do max per lb cake, because could be outliers in combo of
+cake weights and capacities. 
+
+Lesson: This gives us the optimal answer BUT it's very inefficient. 
+Sometimes it's better to have a quicker, good answer than a 
+slow, but best answer. 
+
+*/
+
+/*
+Strat: Bottom-up approach to find max value at our duffel's weightCapacity
+  from 0 to weight capacity 
+  We make an arr where the indices are capacities and values 
+  are the max value at that capacity. 
+  At each capacity, we want to know the max monetary value we can carry
+  So we go through each cake to see if we should take it. 
+    Best monetary value is:
+      This particular cake plus the best value we have remaining in 
+        our capacity. Which we've been storing in our arr. 
+O(n*k) time, where n is number of cake types and k is capacity
+O(k) space, where k is capacity
+*/
+
+function maxDuffelBagValue(cakeTypes, weightCapacity) {
+
+  // Calculate the maximum value we can carry
+  
+  // S1: Make an arr that stores the maximum possible value   
+    // at every integer capacity from 0 to weightCapacity
+    // Starting each index with value 0
+  const maxValuesAtCaps = new Array(weightCapacity + 1).fill(0);
+
+  // S2: Loop through the capacities until until our capacity
+  for(let currentCap = 0; currentCap <= weightCapacity; currentCap++) {
+    let currentMaxValue = 0;
+    
+    // Loop through the cake types.
+      // We use a for loop instead of forEach because we have infinity in there
+    for(let j = 0; j < cakeTypes.length; j++){
+      const cakeType = cakeTypes[j];
+      
+      // Edge: If cake weights 0 and has a positive value. Infinite monies!
+      if(cakeType.weight === 0 && cakeType.value > 0) {
+        return Infinity;
+      }
+      
+      // If cake weight is less than our capacity
+      if(cakeType.weight <= currentCap) {
+        // Should we use this cake? 
+          // If yes, the most weight we can include in addition to the cake
+          // we're adding is the current capacity minus cake's weight.
+          // So we find max value at that integer capacity in maxValuesAtCaps
+        const maxValueUsingCake = cakeType.value + maxValuesAtCaps[currentCap - cakeType.weight];
+        // NOW we check if we want this cake
+          // How does the value with the cake compare to currentMaxValue?
+        currentMaxValue = Math.max(maxValueUsingCake, currentMaxValue);
+      }
+    }
+
+  // Add each capacity's max value to our arr so we can use them 
+    // when calculating all the remaining capacities 
+  maxValuesAtCaps[currentCap] = currentMaxValue;
+  }  
+  
+  // Return the value at the capacity we're looking for
+  return maxValuesAtCaps[weightCapacity];
+}
