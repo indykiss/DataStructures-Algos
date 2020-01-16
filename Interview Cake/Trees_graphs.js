@@ -40,59 +40,60 @@ class BinaryTreeNode {
     // If there's more than 2 dif leaf depths 
     // If there's 2 than are more than 1 apart 
   
-// Edge: Like 0 leaves is superbalanced
+// Edge: Like 0 leaves total = superbalanced
 
 function isBalanced(treeRoot) {
-
   // Determine if the tree is superbalanced
-  
-  if(treeRoot === 0) {
+  // Edge: if tree has no root
+  if(!treeRoot) {
     return true;
   }
   
   // S1: Keep track of all the depths and the nodes 
   const depths = [];
-  nodes.push([treeRoot, 0])
+  const nodes = [];
+  nodes.push([treeRoot, 0]);
   
   // S2: Loop for as long as the nodes exist basically 
-  while(node.length) {
+    // Goal is to disqualify a tree
+  while(nodes.length) {
     
     // S3: Pop a node and its depth from top of our stack
     const nodePair = nodes.pop();
     const node = nodePair[0];
     const depth = nodePair[1];
     
-    // S4: If there is no left or right node of this leave
+    // S4: If there is no left or right node 
     if(!node.left && !node.right) {
+      
       // We haz a leaf. Now what's its depth? 
-        // If it is new, we add it to our list of depths
+        // We only care if it has a new depth
       if(depths.indexOf(depth) < 0) {
         depths.push(depth);
-      }
-      
+
       // S5: Check if theres's an unbalanced tree 
         // 1. If there's more than 2 different depths 
         // 2. If there's 2 leaf depths that are more than 1 apart
-        if(depths.length > 2) {
-          return false
-        } // Math.abs in case depths[1] is a larger number than [0]
-        else if(depths.length === 2 && 
-          Math.abs(depths[0] - depths[1] > 1)){
+              // Math.abs in case depths[1] is a larger number than [0]
+        if((depths.length > 2) || 
+          (depths.length === 2 && Math.abs(depths[0] - depths[1]) > 1)
+        ){
           return false;
-        } else {
-      // S6: We no haz leaf. Let's keep going down 
-        if(node.left) {
-          nodes.push([node.left, depth + 1])
-        }
-        if(node.right) {
-          nodes.push([node.right, depth + 1])
         }
       }
-  }    
+      // S6: We no haz leaf. Let's keep going down 
+    } else {
+      if(node.left) {
+        nodes.push([node.left, depth + 1]);
+      }
+      if(node.right) {
+        nodes.push([node.right, depth + 1]);
+      }
+    }
+  }
   // S7: If we haven't disqualifed the tree, then it's superbalanced
-  return true;
+  return true;  
 }
-
 
 
 
