@@ -155,3 +155,151 @@ function fib(n) {
 
 
 
+
+
+/*
+Write a function that, given an amount of monies and an array of 
+denominations, computes the number of ways to make the 
+amount of money with the available denominations. 
+
+
+Strat: Break down into subproblems. Look at denominations and do maths. 
+Check out amount left.
+
+S1: Make this recursively 
+S2: Add memoizations 
+  Still is recursive. It just reduces calls by saving duplicate ones
+S3: Change to bottoms up approach instead. Great way to reduce recursion
+  Look at the denominations possible then move up to the total
+  
+
+(5, [0.25, 0.50, 1])
+ => # of ways I can make the total with the denominations
+ 
+ Lessons: Dynammic is like next level greedy. 
+*/
+ 
+ 
+ 
+ 
+/* 
+Best! O(n*m) time with n is amount of money and m is number 
+of denominations
+O(n) space 
+
+Use bottoms up method to build a table waysOfDoingNCents
+such that waysOfDoingNCents[k] is how many times we can get
+to k cents using our denominations 
+
+
+Here's how waysOfDoingNCents would look in successive iterations 
+of our function for amount=5 and denominations=[1,3,5].
+
+  ===========
+  key:
+  a = higherAmount
+  r = higherAmountRemainder
+  ===========
+  
+  ============
+  for coin = 1:
+  ============
+  [1, 1, 0, 0, 0, 0]
+   r  a
+  
+  [1, 1, 1, 0, 0, 0]
+      r  a
+  
+  [1, 1, 1, 1, 0, 0]
+         r  a
+  
+  [1, 1, 1, 1, 1, 0]
+            r  a
+  
+  [1, 1, 1, 1, 1, 1]
+               r  a
+  
+  ============
+  for coin = 3:
+  =============
+  [1, 1, 1, 2, 1, 1]
+   r        a
+  
+  [1, 1, 1, 2, 2, 1]
+      r        a
+  
+  [1, 1, 1, 2, 2, 2]
+         r        a
+  
+  ============
+  for coin = 5:
+  =============
+  [1, 1, 1, 2, 2, 3]
+   r              a
+  
+  
+  final answer: 3
+
+
+*/
+    
+function changePossibilities(amount, denominations) {
+
+  // Initalize a new array of zeros with indices that add up to amount
+  const waysOfDoingNCents = new Array(amount + 1).fill(0);
+  waysOfDoingNCents[0] = 1;
+  
+  denominations.forEach(denom => {
+    for(let higherAmount = coin; higherAmount <= amount; higherAmount++) {
+      const higherAmountRemainder = higherAmount - coin;
+      waysOfDoingNCents[higherAmount] += waysOfDoingNCents[higherAmountRemainder];
+    }
+  })
+  
+  return waysOfDoingNCents[amount];
+
+}
+
+ 
+ 
+// Good! But just uses memoize + recursion. 
+class ChangeMemoize{
+  
+  constructor() {
+    this.memo = {}
+  }
+
+  changePossibilities(amountLeft, denominations, currentIndex = 0) {
+    // Check our memo and stop if we have it already 
+    const memoKey = [amountLeft, currentIndex].join(', ');
+    if(memo.hasOwnProperty(memoKey)) {
+      console.log("grabbing memo")
+      return this.memo[memoKey];
+    }
+    // base: got it
+    if(amountLeft === 0) {
+      return answer;
+    }
+    //Bad: oh no, over shot
+    if (amountLeft < 0) {
+      return 0;
+    }
+    //Edge: we're out of denominations 
+    if(currentIndex === denominations.length) {
+      return 0; 
+    }
+    console.log("checking ways to make amountleft w/ denominations")
+    // Pick a current coin
+    const currentCoin = denominations[currentIndex]
+    // how many possibilities can we get 
+    let possibilities = 0;
+    while(amountLeft > 0) {
+      possibilities += changePossibilities(amountLeft, denominations, currentIndex + 1)
+      amountLeft = amountLeft - currentCoin;
+    }
+    // save this in our memo: 
+    this.memo[memoKey] = possibilities;
+    return possibilities;
+  }
+}
+
