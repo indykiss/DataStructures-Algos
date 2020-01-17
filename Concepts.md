@@ -330,6 +330,43 @@ So what's our total time cost? O (n * log(2)(n))
 Because the log(2)(n) comes from the number of times we have to cut n in half to get down to subarrays of just 1 element (our base case). The additional n comes from the time cost of merging all nn items together each time we merge two sorted subarrays.
 
 
+## Queue Data Structure 
+
+A queue is like a british line of people; first in, first out order. 
+
+Enqueue = put the item in the queue (end of the queue). 
+
+Dequeue = remove the item from the queue (front of the queue).
+
+Times queues are used:
+- During breadth first traversals
+- Printers, like physical printers 
+- Processes in a CPU as they wait for their turn to run 
+
+Implement a queue with a linked list. 
+- To enqueue, insert at the tail of the linked list 
+- To dequeue, remove at the head of the linked list 
+
+Pros: Very fast operations. All are constant time. 
+
+
+## Stack Data Structure 
+
+A stack is like literally a stack of pancakes. Add new pancake to the top. Eat the top pancake. 
+
+Push = Adds to the stack. 
+
+Pop = Removes from the stack. 
+
+Can use an array (js: array, other languages dynamic array) OR a linked list. 
+
+Pros: Very fast operations. All are constant time. 
+
+Times stacks are used:
+- During DEPTH first traversals 
+- Call stack is a stack. As per its name implies 
+- String parsers
+
 ## Binary Tree Data Structure
 
 A binary tree is a tree where each node has 2 or fewer children nodes. A perfect tree is when every node has 2 children nodes. 
