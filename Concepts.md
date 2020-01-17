@@ -329,6 +329,11 @@ In code, recursively:
 So what's our total time cost? O (n * log(2)(n))
 Because the log(2)(n) comes from the number of times we have to cut n in half to get down to subarrays of just 1 element (our base case). The additional n comes from the time cost of merging all nn items together each time we merge two sorted subarrays.
 
+## Why use stacks or queues instead of arrays? 
+
+While we can't use indices in queues/ stacks, it IS VERY time efficient. Constant efficiency for all operations. 
+
+That's because we have to build individual operations to add/ remove things. This means we're not reshuffling the entire data structure when we make a change, like what happens when we're dealing with an array. 
 
 ## Queue Data Structure 
 
