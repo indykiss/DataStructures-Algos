@@ -199,3 +199,80 @@ function getClosingParen(sentence, openingParenIndex) {
 // O(1) space because we only have a constant to store
 
 
+
+
+/*
+Building a braces/brackets/parentheses validator. 
+
+Determine if the input is valid. 
+
+Ex: 
+"{ [ ] ( ) }" should return true
+"{ [ ( ] ) }" should return false
+"{ [ }" should return false
+
+Strat: Make a stack. Increment openers; if matching closers 
+appear next, pop off the complement opener. 
+If a non-complement-closer or a new opener appears, 
+return false? 
+
+Iterate through the string. 
+1. Each closer must correspond to most recent opener 
+2. Every opener/ closer is in a pair 
+
+If stack is empty when we see a closer, then false. 
+
+*/
+
+// "( [ ] )" == true 
+// "{ ( ]" == false
+// "] ]" == false
+
+
+function isValid(code) {
+  // S1: Create hash of openers/ closers to ID relationship
+  const openersAndClosers = {
+    "(" : ")", 
+    "[" : "]", 
+    "{" : "}"
+  };
+  // Create openers/ closers to ID chars as we loop
+  const openers = new Set(["(", "[", "{"]);
+  const closers = new Set([")", "]", "}"]);
+  const stack = [];
+  
+  // S2: Loop through input to evaluate  
+  for(let i = 0; i < code.length; i++) {
+    const char = code.charAt(i); 
+
+  // S3: Push openers into stack. 
+    // Pop opener off when corresponding closer appears
+    if(openers.has(char)) {
+      stack.push(char);
+    }
+    
+    if(closers.has(char)) {
+      // If no openers in stack, then false
+      if(stack.length === 0) {
+        return false;
+      }
+    
+      // Check if the last element in stack is matching opener
+        // Using the last ele in stack as value to find key
+      if(openersAndClosers[stack.pop()] !== char) {
+        return false;
+      }
+    }
+  }
+  
+  // S4: If all openers have corresponding closers, we're good
+  if(stack.length === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// O(n) time bc of loop and O(n) space bc of stack
+
+
