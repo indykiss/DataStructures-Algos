@@ -168,3 +168,85 @@ function reverse(headOfList) {
 // O(n) time bc loop, constant space bc variables only 
 
 
+
+
+
+
+/*
+You have a linked list and want to find the kth to last node.
+
+Write a function kthToLastNode() that takes an integer
+k and the headNode of a singly-linked list, and 
+returns the kth to last node in the list.
+
+Strat: Basically like pretending the linked list has index.
+Find the length of the list. Minus k from length
+and return the node at that place. 
+
+We have to look at every element in the list 
+since we need to find the length, so O(n) time minimum. 
+
+Lesson: Always check for bad input. 
+Both approaches are same time and space BUT second approach
+is a little better because we're accessing the node the 2nd 
+time quickly after seeing it the first time. 
+This would mean we access the processor's cache, which 
+would make the 2nd algo a little faster. 
+
+*/
+
+
+class LinkedListNode {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+
+// O(n) time and constant space
+function kthToLastNodeOneWay(k, head) {
+  // S1: Track list length, currentNode, distance
+    // Start at 1 so we count the head
+  let listLength = 1;
+  let currentNode = head;
+  const distance = listLength - k;
+  // S2: Find the length of the linked list by 
+    // counting the nodes as we loop through the list
+  while(currentNode.next) {
+    currentNode = currentNode.next;
+    listLength += 1;
+  }
+  // S3: Return the node that's listLength - k
+    // through another loop, starting from head
+  kthNode = head;
+  for(let i = 0; i < distance; i++) {
+     kthNode = kthNode.next;
+  }
+  // S4: Now that we've looped the distance, return this node
+  return kthNode;
+}
+
+
+// Another way to do this! With O(n) time and constant space
+function kthToLastNode(k, head) {
+  // Edge: If K is zero/ negative. Check for bad input
+  if(k < 1) {throw new Error("Can't do this.")}
+  // S1: Create two pointers to track the variables that are
+    // left and right of a stick with k node length 
+  let leftNode = head;
+  let rightNode = head;
+  // S2: Move rightNode to kth node 
+  for(let i = 0; i < k - 1; i++) {
+    rightNode = rightNode.next;
+  }
+  // S3: Move leftNode and rightNode down the list w/
+    // a distance of K between them until right hits the end
+  while(rightNode.next) {
+    leftNode = leftNode.next;
+    rightNode = rightNode.next;
+  }
+  // S4: Since leftNode is K nodes behind rightNode
+    // leftNode is now Kth to the last node
+  return leftNode;
+}
