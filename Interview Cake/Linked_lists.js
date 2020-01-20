@@ -117,3 +117,54 @@ function containsCycle(firstNode) {
 
 // O(n) time, bc while loop through list
   // O(1) space, bc only storing variables
+
+
+
+
+/*
+Reverse a linked list, in-place. 
+
+Input: head of the list
+Output: new head of the list
+
+Reverse the pointers, starting from the head. 
+
+*/
+
+
+class LinkedListNode {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+function reverse(headOfList) {
+
+  // S1: Define our nodes 
+  let currentNode = headOfList;
+  let nextNode = null;
+  let previousNode = null;
+  
+  // S2: Loop through list, until no more nodes
+  while(currentNode) {
+    
+    // Change pointer to the next element, so we can 
+      // prepare to move forward
+    nextNode = currentNode.next;
+    
+    // Reverse the next pointer;
+    currentNode.next = previousNode;
+
+    // Step forward 
+    previousNode = currentNode;
+    currentNode = nextNode; 
+  }
+
+  // S3: Return the last node we see, which is the new head
+  return previousNode;
+}
+
+// O(n) time bc loop, constant space bc variables only 
+
+
