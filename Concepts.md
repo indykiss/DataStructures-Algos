@@ -125,11 +125,38 @@ All arrs in JS are by default dynamic. In other languages, the number of indices
 
 ## Linked lists 
 
-A linked list is a collection of data broken down by nodes, in which each node contains two main things- data and a reference to the next node; reference is called  a pointer. A linked list will always (unless number of nodes is less than 2), have a head and a tail node.
+A linked list is a collection of data broken down by nodes, in which each node contains two main things- data and a reference to the next node; reference is called  a pointer. 
 
-Linked lists allow run-time efficient data manipulation. Often constant time. If the data set in the structure is quite large, when we insert or remove a new node, there’s no need to reorganize the entire structure like what happens when you add/remove an element to an array.
+A linked list will always (unless number of nodes is less than 2), have a head and a tail node. Note: sometimes people refer to tail as everything other than head; clarify where needed. 
+
+Pros: Linked lists allow run-time efficient data manipulation. Often constant time. If the data set in the structure is quite large, when we insert or remove a new node, there’s no need to reorganize the entire structure like what happens when you add/remove an element to an array. Flexible size. 
+
+Cons: Costly lookups. Takes O(n) time to walk through head to nth term. Most computers' caches prefer reading sequential addresses in memory over scattered addresses. Linked lists use scattered addresses, so usually accessing the elements in a  linked lists are actually slower than arrays, though theoretically both should be O(n). 
 
 Very fast prepend and append, but very slow lookups, compared to arrays.
+
+                Worst Case
+        space	O(n)
+        prepend	O(1)
+        append	O(1)
+        lookup	O(n)
+        insert	O(n)
+        delete	O(n)
+        
+In JS, we need to implement a linked list, since it's not really built in. 
+
+        const a = new LinkedListNode(5);
+        const b = new LinkedListNode(1);
+        const c = new LinkedListNode(9);
+
+        a.next = b;
+        b.next = c;
+        
+        
+#### Doubly linked lists
+
+In a doubly linked list, items are doubly linked: pointers to the next AND the previous nodes. 
+This lets us traverse the list forwards and backwards. 
 
 
 ## Hash tables 
