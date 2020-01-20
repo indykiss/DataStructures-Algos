@@ -62,3 +62,58 @@ Note the problems:
   then now those points point to a dangling node, one that's not 
   reachable by walking down our list anymore. 
 */
+
+
+
+
+
+/*
+You have a singly-linked list and want to check if 
+it contains a cycle.
+
+Define a cycle: 
+When a node points to a node we've seen already. 
+Returns a boolean if yes cycle. 
+
+We have to look at every value at least once, so there's
+a minimum time efficiency of O(n). 
+
+Strat: Create two pointers. One pointer slowly loops the linked list
+while the other goes normally. 
+If there is a loop, the normal runner will overlap the 
+slower runner. 
+If there isn't a loop, the normal runner will hit the end. 
+*/
+
+class LinkedListNode {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+
+function containsCycle(firstNode) {
+  
+  // S1: We're making two runners to run through list
+  const slowRunner = firstNode;
+  const fastRunner = firstNode; 
+  
+  // S2: Until we hit the end of the list, we go
+  while(fastRunner && fastRunner.next) {
+    slowRunner = slowRunner.next;
+    fastRunner = fastRunner.next.next;
+    
+    // S3: If the fast runner laps the slow runner, 
+      // there is a cycle
+    if(fastRunner === slowRunner) {
+      return true;
+    }
+    
+  }
+  // S4: Fast runner hits the end, no cycle
+  return false;
+}
+
+// O(n) time, bc while loop through list
+  // O(1) space, bc only storing variables
