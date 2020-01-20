@@ -228,7 +228,7 @@ function kthToLastNodeOneWay(k, head) {
 }
 
 
-// Another way to do this! With O(n) time and constant space
+// Another, better, way to do this! With O(n) time and constant space
 function kthToLastNode(k, head) {
   // Edge: If K is zero/ negative. Check for bad input
   if(k < 1) {throw new Error("Can't do this.")}
