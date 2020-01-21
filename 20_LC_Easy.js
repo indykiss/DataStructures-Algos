@@ -1,6 +1,10 @@
 /* 
 11. Merge Two Sorted Lists
 12. Happy number
+13. Reorder data in log files = ???
+14. Reverse integer
+15. Fizz Buzz
+16. Reverse String
 
 
 */
@@ -79,3 +83,167 @@ var isHappy = function(n) {
     // Num seems unhappy
     return false;  
 };
+
+
+
+
+
+/*
+Reorder data in log files. 
+
+You have an array of logs.  Each log is a space delimited string of words.
+
+For each log, the first word in each log is an alphanumeric identifier.  Then, either:
+
+Each word after the identifier will consist only of lowercase letters, or;
+Each word after the identifier will consist only of digits.
+We will call these two varieties of logs letter-logs and digit-logs.  
+It is guaranteed that each log has at least one word after its identifier.
+
+Reorder the logs so that all of the letter-logs come before any digit-log.  
+The letter-logs are ordered lexicographically ignoring identifier, with the identifier used in case of ties.  The digit-logs should be put in their original order.
+
+Return the final order of the logs.
+
+Input: 
+logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"]
+Output: 
+["let1 art can","let3 art zero","let2 own kit dig","dig1 8 1 5 1","dig2 3 6"]
+
+Strat: Custom sort
+All the eles with lets go first. Ignore the nums for now.
+Then all the eles with dig. Order by num
+
+Treat the log like 2 different case. Loop through log, and push all lets in 1 arr. 
+Push all dig in seond arr. Splice arrs together, with letters ordered. 
+
+Lesson: String manipulation can be complicated. Should learn how to use .substr
+IDK. THIS ANSWER DOESNT EVEN PASS THE TESTS. 
+But I've spent too much time on this already. 
+
+*/
+
+
+
+var reorderLogFiles = function(logs) {
+    // Create separate arrs for letter and digit logs
+    let letters = [],
+        digits = []
+    
+    // Separate logs into letters and digits
+    logs.forEach(log => {
+        let substr = log.substr(log.indexOf(' ') + 1);
+        let isDigit = !isNaN(Number(substr.charAt(0)));
+        
+        if(isDigit) {
+            digits.push(log);
+        } else {
+            letters.push(log);
+        }
+    });
+    
+    // Sort letters arr 
+    letters.sort((a,b) => {
+        let strA = a.substr(a.indexOf(' ') + 1)
+        let strB = b.substr(b.indexOf(' ') + 1)
+        
+        if(strA === strB) {
+            a.localeCompare(b);
+        } 
+        
+        return strA.localeCompare(strB);
+    })
+    
+    // Push together and return 
+    return [...letters, ...digits];
+};
+
+
+
+
+
+/*
+Reverse an integer. 
+
+Assumptions: Negative numbers are possible.
+
+Strat: Make it into a string, then arr, then reverse. 
+Then back into a number, using parseInt(). 
+If negative number, need to 
+multiply the input's sign with this num to get ans.
+
+Took me a minute; had to google .join() and .parseInt(), but was ok. 
+Had to look up the 32 bit part, but that was ok. 
+*/
+
+var reverse = function(x) {
+    
+    let reversed = x.toString().split('').reverse().join('')
+    // 123 => "123" => [1,2,3] => [3,2,1] => "321"
+    let answer = parseInt(reversed);
+    // If number is negative;
+    if(x < 0) {
+        answer = answer * -1
+    }
+    // Edge: Can only take nums within 32 bit integer range
+    if(answer <= -2147483648 || answer >= 2147483648 ) {
+        return 0; 
+    }
+    return answer;
+};
+
+
+
+/*
+Fizz Buzz
+Write a program that outputs the string representation of numbers from 1 to n.
+
+But for multiples of three it should output “Fizz” instead of the number 
+and for the multiples of five output “Buzz”. For numbers which are multiples 
+of both three and five output “FizzBuzz”.
+*/
+
+var fizzBuzz = function(n) {
+    let arr = []
+    for(let i = 1; i <= n; i++) {
+        if(i % 15 === 0) {arr.push("FizzBuzz")}
+        else if(i % 3 === 0) {arr.push("Fizz")}
+        else if(i % 5 === 0) {arr.push("Buzz")}
+        else {arr.push(i.toString())}
+    }
+    return arr;
+};
+
+
+
+
+
+
+
+
+/*
+Reverse string, in-place
+Write a function that reverses a string, with O(1) space used.  
+The input string is given as an array of characters char[].
+
+Input: ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
+*/
+
+// Really slow because of loop and .splice
+var reverseStringSlow = function(s) {
+    for(let i = 0; i < s.length; i++) {
+        s.splice(i, 0, s.pop());
+    }
+};
+
+// Faster. Swap things.
+var reverseString = function(s) {
+    let i = 0;
+    let j = s.length - 1;
+    while(i < j) {
+        [s[i], s[j]] = [s[j], s[i]]
+        i++;
+        j--;
+    }    
+}
