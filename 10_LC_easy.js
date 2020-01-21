@@ -236,10 +236,12 @@ var solution = function(isBadVersion) {
 // Output: [1,2,2,3,5,6]
 
 // IF can use sort: 
-var merge = function(nums1, m, nums2, n) {
-  nums1.splice(m, nums1.length)
-  nums2.push(...nums2.splice(0, n));
-  nums1.sort((a, b) => a - b)
+var merge = function(nums1, m, nums2, n) {   
+    nums2.splice(n, nums2.length - n);
+    nums1.splice(m, nums1.length - m, ...nums2);
+    nums1.sort((a, b) => a - b);
+};
+
 
 // If can't use sort, it's a whole thing: 
     // https://www.interviewcake.com/question/javascript/merge-sorted-arrays?course=fc1&section=array-and-string-manipulation 
