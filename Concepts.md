@@ -220,6 +220,24 @@ OR, and this is much better, we use a set and spread operator to make a new arr:
     console.log(uniq)
 
 
+
+## General programming 
+
+#### Short circuit evaluation 
+
+Strategy to avoid unnecessary work. Program stops as soon as something's off. 
+
+Here is a code example. If Becky isn't even in the friends array, then the code stops immediately. Nothing else gets evaluated. 
+          if (friends.hasOwnProperty('Becky') && friends['Becky'].isFreeThisFriday()) {
+                  inviteToBoardGameNight(friends['Becky']);
+        }
+
+
+
+
+
+
+
 ## Log maths
 
 Log is the inverse of exponentiating. 
