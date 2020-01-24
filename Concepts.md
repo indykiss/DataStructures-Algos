@@ -232,10 +232,62 @@ Here is a code example. If Becky isn't even in the friends array, then the code 
                   inviteToBoardGameNight(friends['Becky']);
         }
 
+#### Garbage collection / Manual memory management
+
+A garbage collector automaticall frees up space in a program that is not being used. Once a function is returned, we don't have reference to it anymore. In JS, garbage collection is automatic. In other languages, have to do that manually. 
 
 
+#### Closures 
 
+A closure is essentially a variable outside itself. 
 
+Ex: We'd say that the message is "closed over" by sayMessage(). 
+        const message = 'The British are coming.';
+        function sayMessage(){
+          alert(message); // Here we have access to message,
+          // even though it's declared outside this function!
+        }
+
+Closures are good because they can create an instance variable (nextGeneratedId) that can change over time and affect the behavior of a function. Ex:
+
+        // Function for getting the id of a dom element,
+        // giving it a new, unique id if it doesn't have an id yet
+        const getUniqueId = (() => {
+          let nextGeneratedId = 0;
+          return element => {
+            if (!element.id) {
+              element.id = `generated-uid-${nextGeneratedId}`;
+              nextGeneratedId++;
+            }
+            return element.id;
+          };
+        })();
+        
+        // Somewhere else in the codebase...
+        // ...
+
+        // WHOOPS--FORGOT I WAS ALREADY USING THIS FOR SOMETHING
+        nextGeneratedId = 0;
+
+Good because it keeps the instance variable (nextGeneratedId) private within the function, in case we call it later on in the function. 
+
+#### Mutable vs immutable objects
+
+A mutable object is one that can be changed after its created. Immutable objects can't be. 
+
+In JS, everything is mutable by default except strings. 
+
+Can freeze an object to be immutable though if desired: 
+
+        const array  = [4, 9];
+
+        // Make it immutable
+        Object.freeze(array);
+
+        array[0] = 1;
+        // array is still [4, 9]
+
+Mutable changes are food because its all in-place, but notice that all references to the object will change too. 
 
 
 ## Log maths
