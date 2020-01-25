@@ -100,3 +100,58 @@ function findYOverlap(rect1, rect2) {
 }
 
 
+
+
+
+
+
+
+/*
+Write a class TempTracker with these methods:
+
+insert()—records a new temperature
+
+getMax()—returns the highest temp we've seen 
+
+getMin()—returns the lowest temp we've seen
+
+getMean()—returns the mean of all temps we've seen 
+
+getMode()—returns a mode of all temps we've seen 
+- If multiple modes, return any
+
+Optimize for space and time. 
+Favor speeding up the getter methods getMax(), 
+getMin(), getMean(), and getMode() over speeding up
+the insert() method.
+
+Input: Fahrenheit integers, 0-110 
+
+Implement methods to track the max, min, mean, and mode
+
+
+*/
+
+
+class TempTracker {
+  insert(temperature) {
+
+  }
+
+  getMax() {
+    return 0;
+  }
+
+  getMin() {
+    return 0;
+  }
+
+  getMean() {
+    return 0;
+  }
+
+  getMode() {
+    return 0;
+  }
+}
+
