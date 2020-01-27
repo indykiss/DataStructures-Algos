@@ -134,24 +134,57 @@ Implement methods to track the max, min, mean, and mode
 
 
 class TempTracker {
+  constructor() {
+    // For min and max:
+    this.minTemp = null;
+    this.maxTemp = null;
+    // For mean:
+    this.numOfTemps = 0;  
+    this.tempSum = 0;
+    this.mean = 0;
+    // For mode:
+    this.maxOccurences = 0;
+    this.mode = null;
+    this.occurences = new Array(111).fill(0);
+  }
+  
   insert(temperature) {
-
+    // For min/ max
+    if(this.minTemp === null || temperature < this.minTemp) {
+      this.minTemp = temperature;
+    }
+    if(this.maxTemp === null || temperature > this.maxTemp) {
+      this.maxTemp = temperature;
+    }
+    // For mean:
+    this.numOfTemps++;
+    this.tempSum += temperature;
+    this.mean = this.tempSum/ this.numOfTemps;
+    // For mode: 
+    this.occurences[temperature]++;
+    if(this.occurences[temperature] > this.maxOccurences) {
+      this.mode = temperature;
+      this.maxOccurences = this.occurences[temperature];
+    }
   }
 
-  getMax() {
-    return 0;
+  getMax(temp) {
+    return this.maxTemp;
   }
 
-  getMin() {
-    return 0;
+  getMin(temp) {
+    return this.minTemp;
   }
 
   getMean() {
-    return 0;
+    return this.mean;
   }
 
   getMode() {
-    return 0;
+    return this.mode;
   }
 }
+
+// O(1) time and O(1) space
+
 
