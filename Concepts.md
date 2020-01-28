@@ -61,6 +61,100 @@ How to read binary?
                 Yes to 1, no to 2, yes to 4, no to 8, no to 16, yes to 32. 
                 Adds to 37! 
 
+#### Negative numbers in binary 
+Negative numbers are typically represented in binary using two's complement encoding. In two's complement, the leftmost digit is negative, and the rest of the digits are positive.
+
+How to count from -5 to 5 using two's complement 
+
+        Decimal	Binary	Interpretation
+        -5−5	1011	-8 + 0 + 2 + 1
+        -4−4	1100	-8 + 4 + 0 + 0
+        -3−3	1101	-8 + 4 + 0 + 1
+        -2−2	1110	-8 + 4 + 2 + 0
+        -1−1	1111	-8 + 4 + 2 + 1
+        00	0000	0 + 0 + 0 + 0
+        11	0001	0 + 0 + 0 + 1
+        22	0010	0 + 0 + 2 + 0
+        33	0011	0 + 0 + 2 + 1
+        44	0100	0 + 4 + 0 + 0
+        55	0101	0 + 4 + 0 + 1
+
+
+#### Bitwise AND operation 
+
+The AND operation takes two bits and returns 1 if both bits are 1. Otherwise, it returns 0.
+
+        1 & 1  →  1
+        1 & 0  →  0
+        0 & 1  →  0
+        0 & 0  →  0
+
+When performing AND on two integers, the AND operation is calculated on each pair of bits (the two bits at the same index in each number). Notice that it's focusing on the bits at the SAME INDEX for the numbers we're looking at. It's like consent; we need two yeses to turn on the 1. If it's a yes (1) and a no (0), then it's a no. 
+
+          5 & 6  // gives 4
+
+        // at the bit level:
+        //     0101  (5)
+        //   & 0110  (6)
+        //   = 0100  (4)
+
+#### Bitwise OR operation 
+
+The OR operation takes two bits and returns 1 if EITHER of the bits are 1. Otherwise, it returns 0.
+
+        1 | 1  →  1
+        1 | 0  →  1
+        0 | 1  →  1
+        0 | 0  →  0
+        
+When performing OR on two integers, the OR operation is calculated on each pair of bits (the two bits at the same index in each number). Opposite of consent; it only needs one yes (1) in order to flip the switch on. 
+
+        5 | 6  // gives 7
+
+        // At the bit level:
+        //     0101  (5)
+        //   | 0110  (6)
+        //   = 0111  (7)
+
+#### Bitwise XOR (eXclusive OR)
+
+The XOR operation returns 1 IF ONLY 1 of the pair of bits are 1. Otherwise, returns 0.
+
+        1 ^ 1  →  0
+        1 ^ 0  →  1
+        0 ^ 1  →  1
+        0 ^ 0  →  0
+
+When performing XOR on two integers, the XOR operation is calculated on each pair of bits (the two bits at the same index in each number).
+
+         5 ^ 6  // gives 3
+
+        // At the bit level:
+        //     0101  (5)
+        //   ^ 0110  (6)
+        //   = 0011  (3)
+
+
+#### Bitwise NOT
+
+The NOT bitwise operation takes one set of bits, and for each bit returns 0 if the bit is 1, and 1 if the bit is 0.
+It reverses each bit at the index from yes/no to no/yes. 
+
+        ~ 0  →  -1
+        ~ 1  →  -2
+
+When performing NOT on an integer, each bit of the integer is inverted.
+
+        ~ 5  // gives -6
+
+        // At the bit level:
+        //   ~ 0000 0101  (5)
+        //   = 1111 1010  (-6)
+        
+        
+#### Bit Shifting
+        
+        
 
 ## Fixed width integers
 
