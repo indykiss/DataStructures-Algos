@@ -9,7 +9,7 @@ Index of 10 medium leetcodes
 6. Number of islands 
 7. Rotten oranges 
 8. Longest palindrome substring
-9. Spiral Matrix -- not done. Do again
+9. Spiral Matrix -- one off? Idk why? 
 
 
 */
