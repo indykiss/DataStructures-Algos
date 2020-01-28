@@ -67,17 +67,17 @@ Negative numbers are typically represented in binary using two's complement enco
 How to count from -5 to 5 using two's complement 
 
         Decimal	Binary	Interpretation
-        -5−5	1011	-8 + 0 + 2 + 1
-        -4−4	1100	-8 + 4 + 0 + 0
-        -3−3	1101	-8 + 4 + 0 + 1
-        -2−2	1110	-8 + 4 + 2 + 0
-        -1−1	1111	-8 + 4 + 2 + 1
-        00	0000	0 + 0 + 0 + 0
-        11	0001	0 + 0 + 0 + 1
-        22	0010	0 + 0 + 2 + 0
-        33	0011	0 + 0 + 2 + 1
-        44	0100	0 + 4 + 0 + 0
-        55	0101	0 + 4 + 0 + 1
+        -5	1011	-8 + 0 + 2 + 1
+        -4	1100	-8 + 4 + 0 + 0
+        -3	1101	-8 + 4 + 0 + 1
+        -2	1110	-8 + 4 + 2 + 0
+        -1	1111	-8 + 4 + 2 + 1
+        0	0000	 0 + 0 + 0 + 0
+        1	0001	 0 + 0 + 0 + 1
+        2	0010	 0 + 0 + 2 + 0
+        3	0011	 0 + 0 + 2 + 1
+        4	0100	 0 + 4 + 0 + 0
+        5	0101	 0 + 4 + 0 + 1
 
 
 #### Bitwise AND operation 
@@ -152,9 +152,61 @@ When performing NOT on an integer, each bit of the integer is inverted.
         //   = 1111 1010  (-6)
         
         
-#### Bit Shifting
+#### Bit Shifting: I'm confused, I'll need to look at this again 
         
-        
+A bit shift shifts each digit over left one or right one. There are 3 types of bit shifts: left, logical right, arithmetic right. 
+
+      >>
+      Shift left: Pops off the most valuable bit, the one all the way to the left, and we add a zero to the right end. 
+      A single left shift multiplies a binary number by 2:
+          0010 << 1  →  0100
+          0010 << 2  →  1000
+
+        Ex: 
+          0010 << 1  →  0100
+          0010 is 2
+          0100 is 4
+
+      >>> 
+      Logical right shift: Pops off the least valuable bit, the one all the way to the right. We add a zero to the left end. 
+      For positive numbers, a single logical right shift divides a number by 2, throwing out any remainders.
+          1011 >>> 1  →  0101
+          1011 >>> 3  →  0001
+          
+        Ex:
+          0101 >>> 1  →  0010
+          0101 is 5
+          0010 is 2
+     
+      >>
+      Arithmetic right shift: When shifting right with an arithmetic right shift, the least-significant bit is lost. 
+      And the most-significant bit is copied. 
+      Languages handle arithmetic and logical right shifting in different ways. 
+      Javascript provides two right shift operators: >> does an arithmetic right shift and >>> does a logical right shift.
+          1011 >> 1  →  1101
+          1011 >> 3  →  1111
+          0011 >> 1  →  0001
+          0011 >> 2  →  0000
+
+     Examples of arithmetic VS logical right shift 
+       // Arithmetic shift
+            1011 >> 1  →  1101
+            1011 is -5
+            1101 is -3
+
+        // Logical shift
+            1111 >>> 1  →  0111
+            1111 is -1
+            0111 is  7
+     
+     
+#### Integer Overflow
+
+Most computers use 32 or 64 bits of storage. Sometimes integers are ssooooo big, they don't fit. Integer overflow!
+
+In JS, there arent't technically integers. There's 64 bit floats. If integers get too big, it returns infinity instead. 
+
+
 
 ## Fixed width integers
 
