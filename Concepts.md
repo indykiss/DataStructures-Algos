@@ -265,6 +265,31 @@ We can express strings as arrays of 8-bit chars, in ASCII:
 
 Not a thing in JS. But basically they are variables that let you read or modify another variable. This fixes the issue of needing eles in an arrs to be the same size,but makes the arr not cache-friendly. 
 
+## Triangular series
+
+A triangular series is a series of numbers where each number could be the row of an equilateral triangle.
+
+So 1, 2, 3, 4, 5 is a triangular series, because you could stack the numbers like a triangle. Their sum is 15, which makes 15 a triangular number. 
+
+A triangular series always starts with 1 and increases by 1 with each number.
+
+Take the example above. Notice that if we add the first and last numbers together, and then add the second and second-to-last numbers together, they have the same sum! This happens with every pair of numbers until we reach the middle. If we add up all the pairs of numbers, we get:
+
+        1 + 8 = 9
+        2 + 7 = 9
+        3 + 6 = 9
+        4 + 5 = 9
+
+
+This is true for every triangular series:
+- Pairs of numbers on each side will always add up to the same value.
+- That value will always be 1 more than the series’ nn.
+
+This gives us a pattern:
+
+n^2 + n / 2
+
+
 ## Dynamic arrays 
 
 All arrs in JS are by default dynamic. In other languages, the number of indices in an arr has to be declared. Dynamic arrs' size increases as necessary. 
