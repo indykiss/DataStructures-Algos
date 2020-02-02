@@ -27,3 +27,57 @@ function findRepeat(numbers) {
 }
 
 // O(n) time and O(1) space
+
+
+
+
+/*
+Suppose we had an arr of n integers sorted in ascending order. 
+How quickly could we check if a given integer is in the arr?
+
+Strat: Array is sorted. 
+We want to quickly check if integer is in the arr. 
+Binary search! Check the midpoint, move floor and ceiling 
+depending on if the desired integer is less than or greater
+than midpoint.
+
+
+*/
+
+
+function contains(array, value) {
+
+  // Check if an integer is present in the array
+  // if(array.length === 0) {
+  //   throw new Error("Not an array")
+  // }
+  if(array.length === 1 && array[0] === value) {
+    return true;
+  }
+  
+  let floor = 0;
+  let ceiling = array.length - 1;
+  let firstInt = array[0];
+  
+  while(floor + 1 < ceiling) {
+    const guessIndex = Math.floor((floor + ceiling) / 2)
+    const guessValue = array[guessIndex];
+    
+    if(value === guessValue) {
+      return true;
+    }
+    
+    if(guessIndex >= firstInt) {
+      floor = guessIndex;
+    } else {
+      ceiling = guessIndex; 
+    }
+    
+  }
+  
+  return false;
+
+}
+
+// O(lg(n)) time and O(1) space
+
