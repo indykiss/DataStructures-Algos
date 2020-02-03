@@ -117,3 +117,66 @@ function rand5() {
 // Possibly an infinite loop if we always get 6 or 7
 // O(1) space
 
+
+
+
+
+/*
+You have a function rand5() that generates a random 
+integer from 1 to 5. Use it to write a function rand7() 
+that generates a random integer from 1 to 7.
+
+rand5() returns each integer with equal probability. 
+rand7() must also return each integer with 
+equal probability.
+
+Call rand5() twice
+
+rand5() + 0.5 rand5() floored
+
+*/
+
+// Ok, not great. Not equal chance of 1-7
+function rand5() {
+  return Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+}
+
+function rand7() {
+  // Implement rand7() using rand5()
+  return rand5() + Math.floor(rand5()/2);
+}
+
+for (let i = 0; i < 14; i++) {
+  console.log(rand7());
+}
+
+
+
+// Best way to do this:
+// Use a 2-dimensional array
+// Use first roll to pick the row
+// Use the 2nd roll to pick the column 
+function rand7Table() {
+  
+  const results = [
+    [1,2,3,4,5],
+    [6,7,1,2,3],
+    [4,5,6,7,1],
+    [2,3,4,5,6],
+    [7,0,0,0,0]
+  ]
+  
+  while(true) {
+    // Roll the die
+    const row = rand5() - 1;
+    const col = rand5() - 1;
+    
+    // If we hit an extra outcome, reroll
+    if(row === 4 && column > 0) {
+      return rand7Table;
+    }
+    return results[row][col]
+  }
+  
+  
+}
