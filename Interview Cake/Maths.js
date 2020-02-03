@@ -81,3 +81,39 @@ function contains(array, value) {
 
 // O(lg(n)) time and O(1) space
 
+
+
+
+
+/*
+You have a function rand7() that generates 
+a random integer from 1 to 7. Use it to write 
+a function rand5() that generates a random integer 
+from 1 to 5.
+
+rand7() returns each integer with equal 
+probability. rand5() must also return each 
+integer with equal probability.
+
+Lesson: 
+
+*/
+
+
+function rand7() {
+  return Math.floor(Math.random() * (7 - 1 + 1)) + 1;
+}
+
+function rand5() {
+  // Simply just reroll when we get larger than 5
+  let randomNum = rand7();
+  
+  while(randomNum > 5) {
+    randomNum = rand7();
+  }
+  return randomNum;
+}
+
+// Possibly an infinite loop if we always get 6 or 7
+// O(1) space
+
