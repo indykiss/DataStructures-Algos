@@ -1,5 +1,5 @@
 # Data structures and algos and big O, oh my! 
-As a bootcamp graduate with a good amount of practical software engineering under my belt, I've realized that my knowledge of data structures and algorithms are a bit lacking. Not having a traditional computer science background will do that to ya. 
+As a bootcamp graduate with a good amount of practical software engineering under my belt, I've realized that my knowledge of data structures and algorithms are a bit lacking, by not having a traditional computer science background.
 
 So I'm going to review concepts and think about how to solve problems. 
 
