@@ -176,7 +176,88 @@ function rand7Table() {
       return rand7Table;
     }
     return results[row][col]
+  } 
+}
+
+
+
+
+
+/*
+A building has 100 floors. 
+One of the floors is the highest floor an 
+egg can be dropped from without breaking.
+
+If an egg is dropped from above that floor, 
+it will break. If it is dropped from that floor 
+or below, it will be completely undamaged and 
+you can drop the egg again.
+
+
+Given two eggs, find the highest floor 
+an egg can be dropped from without breaking, 
+with as few drops as possible.
+
+Strat: 
+Drop egg from 1 moving up 1 floor at a time
+
+Use the first egg to check every even floor.
+If it breaks, we know the floor is the one before. 
+Worst case: 99 breaks, best case 2 breaks
+
+Or use a binary approach; starting at the mid of the range. 
+If that egg breaks, use the second egg from 1 - midpoint.
+Else, keep dividing in half until breaks for the 2nd
+egg to go one by one. 
+Worst case: 50 breaks, best case is 48/49 breaks
+
+Can balance this out by skipping 10 floors at a time. 
+Breaks at 20. 2nd egg goes from 11- 19 one by one. 
+Worst case: 19 drops. 
+
+In simple words:
+- Use the 1st egg to get a rough estimation of range. Skip
+every 10 floors for ex.
+We want to decrease the number of floors we skip by 1 every
+increment, so we can keep our worst case drops constant.
+By decreasing, we're reducing the range of WHATS LEFT 
+to drop, which means we can drop the 2nd egg fewer times.
+- Use the 2nd egg to get a precise measure, starting from
+last point 1st egg didnt break to 1st egg breaking point,
+going up 1 floor at a time
+
+*/
+
+
+// Assuming building has 100 floors
+
+function myFunction(arg) {
+
+  // write the body of your function here
+  let egg1 = 0;
+  let egg2 = 0;
+  
+  let floorsToGo = 10;
+  const topFloor = 100;
+  let prevGoodFloor = 0;
+  let badFloor = 0;
+  
+  
+  for(let i = 0; i <= topFloor; i+(floorsToGo-1)) {
+    // helper function for when egg1 breaks 
+    floorsToGo += 10;
+    prevGoodFloor = i;
+    badFloor = whereEggBreaks
   }
   
+  // helper function for 2nd egg
+  for(let i = lastGoodFloor; i < whereEggBreaks; i++) {
+    return // where the 2nd egg breaks
+  }
   
+
 }
+
+// run your function through some test cases here
+// remember: debugging is half the battle!
+console.log(myFunction('test input'));
