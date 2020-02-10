@@ -1,4 +1,7 @@
-# Concepts to remember
+# Topics to learn
+
+Index:
+
 
 Read me! As much as possible: https://www.geeksforgeeks.org/data-structures/
 
