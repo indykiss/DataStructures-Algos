@@ -123,3 +123,38 @@ function jumpingOnNums(c) {
     return count;
 }
 
+
+
+
+/*
+Count the number of times a appears in an string with 
+an infinite length
+
+- Repeat the string of s until the output's length = n
+- In this new string, count how many times a appears
+
+Strategy:
+- Divide n by s.length to get # of times to loop
+    - Push s into newStr this many times
+- Take the remainder and push a spliced string of [0,remainder] / remainder - 1;
+- Loop through the new string and count up the number of As
+- Must deal with edge case of infinity
+*/
+
+// Sample input: (aabc, 10) -> aabcaabcaa -> Output: 6
+// Complete the repeatedString function below.
+function repeatedString(s, n) {
+    let count = 0
+    let newStr = ''
+    const totalNumLoops = Math.floor(n/s.length);
+    const remainder = n % s.length;
+    let i;
+
+    while(i < totalNumLoops) {
+        newStr.concat(s);
+        i++;
+    }
+
+    newStr.concat(s.slice[0, remainder + 1]);
+    return newStr;
+}
