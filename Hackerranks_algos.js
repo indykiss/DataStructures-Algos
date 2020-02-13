@@ -89,7 +89,6 @@ function countingValleys(n, s) {
 }
 
 
-// Not done, just saving
 /*
 Jumping on numbers.
 0 is safe, 1 is dangerous.
@@ -108,23 +107,18 @@ Strategy:
 - Count each time we iterate 
 */
 
-function jumpingOnNums(c) {
-    let count = 0;
+// Complete the jumpingOnClouds function below.
+function jumpingOnClouds(c) {
+    let jumps = -1;
 
     for(let i = 0; i < c.length; i++) {
-        if(c[i+1] === 1) {
-            i += 1;
+        if(i < c.length - 2 && c[i+2] == 0){
+            i++;
         }
-        if(c[i+1] === 0 && c[i+2] === 0) {
-            i += 1;
-        }
-        count += 1;
+        jumps++
     }
-    return count;
+    return jumps;
 }
-
-
-
 
 /*
 Count the number of times a appears in an string with 
