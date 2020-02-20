@@ -1,55 +1,54 @@
-// Make an anagram 
-
-// NOT WORKING
-
-
 /*
 Strategy:
 - Anagram = when both strings contain the same number of letters 
 - Create two hashs, key is letter, value is num of times letter occurs 
-- Sort to be alphabetical 
 - We're looking for MIN NUMBER of deletions needed for the two strs to be anagrams 
-    - Make the dictionaries for the two strs, then count the number of differences
-    from A-Z
-     - Loop through both strings:
-        - 
-        - If hash1 has a key that hash2 DOESNT have, then increment count by that value and delete that key/value from hash1 
-        - If hash1 and hash2 has the SAME key, compare values. If values are not equal, find the difference, add the difference into count. Delete key/value from hash1
-    - Now that we checked hash1. Loop through hash2. 
+    - Make the dictionaries for the two strs
+    - Then count the number of differences 
+        - Loop through both strings and check the opposite str's hash
+        - Now that we checked hash1. Loop through hash2. 
 
 // Input: (cde, abc) => 4. We need to delete c & d from str1 and a & c from str2
 */
+
 
 function makeAnagram(a, b) {
     const str1 = {};
     const str2 = {};
     let count = 0; 
     
-    // Create the two dictionaries for a and b
+    // Create the two dictionaries for a & b. Can be helper
     for(let i = 0; i < a.length; i++) {
-        if(str1.hasOwnProperty[a[i]]) {
+        if(!str1[a[i]]) {
+            str1[a[i]] = 1;
+        } else { 
             str1[a[i]] += 1;
         }
-        str1[a[i]] = 1;
     }
     for(let i = 0; i < b.length; i++) {
-        if(str2.hasOwnProperty[b[i]]) {
+        if(!str2[b[i]]) {
+            str2[b[i]] = 1;
+        } else {
             str2[b[i]] += 1;
         }
-        str2[b[i]] = 1;
     }
-    // Problem here
-    // Increment count for every char that str1 and str2 don't have in common
-    for(let i = 0; i < a.length; i++) {
-        if(str2.hasOwnProperty(a[i])) {
-            str2[a[i]]--;
-            count++;
+    // Increment count for every difference in chars
+    for(let i in str1){
+        if(str1[i] && str2[i]){
+            if(str1[i] > str2[i]){
+                count = count+ str1[i] - str2[i]
+            }
+            if(str1[i] < str2[i]){
+                count = count + str2[i] - str1[i]
+            } // Nothing to do if str1[i] === str2[i]
+        }
+        else{
+            count = count + str1[i]
         }
     }
-    for(let i = 0; i < b.length; i++) {
-        if(str1.hasOwnProperty(b[i])) {
-            str1[b[i]]--;
-            count++;
+    for(let i in str2) {
+        if(str2[i] && !str1[i]) {
+            count = count + str2[i]
         }
     }
     return count;
