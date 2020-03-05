@@ -8,8 +8,9 @@ a linked list?
  
 */
 
+
 var mergeKLists = function(lists) {
-    if(!lists) {return null;}
+    if(lists.length === 0) {return null;}
     // Make a priority queue for looking at the different 
         // lists within the input
     while(lists.length > 1) {
@@ -22,6 +23,7 @@ var mergeKLists = function(lists) {
     }
     return lists[0];
 };
+
 
 function mergeLister(l1,l2) {
     // Make a new temporary node 
@@ -46,13 +48,12 @@ function mergeLister(l1,l2) {
         // And we move along the new list
         temp = temp.next; 
     }
-    // Once we hit the end of either list 
-    // Push rest of other list into our new list
-    if(!l1){
-        temp.next = l2;
+    // If the other list is null, we want to add our list in
+    if(l1 !== null){
+        temp.next = l1;
     }
-    if(!l2) {
-        temp.next = l1; 
+    if(l2 !== null) {
+        temp.next = l2; 
     }
     // Return the outcome
     return newNode.next;    
