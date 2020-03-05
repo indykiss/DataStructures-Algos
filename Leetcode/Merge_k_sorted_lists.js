@@ -12,6 +12,9 @@ Strategy:
 - Then we push the merged list at the end of our lists param. When we only have that one list left in our list of lists, we return it. 
    - This last list is our final merged list. 
  
+Time and space:
+ - Constant space; only making constants and a temp node. 
+ - Time: O(N * log(n)) because of our merge helper function
 */
 
 
