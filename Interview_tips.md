@@ -9,7 +9,7 @@ That week, redo the problems you know very well. Build some extra confidence in 
 
 Reinforcing problem-solving patterns goes a longer way than practicing new problems. Reinforce patterns!
 1. Brainstorm the algo in pseudocode. Ask interviewer if good to start coding. 
-2. Barf out the algo with comments and like "add helper function that does X" here. 
+2. Throw out the algo with comments and like "add helper function that does X" here as the first 2-3 mins walk through.
 3. Debug and make it work. 
 
 #### Stuck? How to unstick? 
