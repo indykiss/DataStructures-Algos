@@ -3,8 +3,14 @@
  
 Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
 
-Pull out every element in the linked list. Push it into an arr then readd it into 
-a linked list? 
+Strategy:
+- Create a helper than manages the comparison of elements within 2 lists. 
+  - Parameter is 2 lists. We make a temp node that creates the head of the new merged list. 
+  - While loop for length of both lists. Compare the 1st val of each. Whichever is smaller gets two things done to it. 
+    - It becomes the next val for our temp. AND we increment along in that list (the one with the smol val). 
+- Our main function loops through the overall input of lists. And shifts off two lists and compares them with our helper function. 
+- Then we push the merged list at the end of our lists param. When we only have that one list left in our list of lists, we return it. 
+   - This last list is our final merged list. 
  
 */
 
