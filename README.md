@@ -1,6 +1,3 @@
-March 6th: Note to self from transferring from work to home laptop; I am working on leetcodes. BUT need to go work on fb hackerrank now. 
-
-
 # Data structures and algos and big O, oh my! 
 As a bootcamp graduate with a good amount of practical software engineering under my belt, I've realized that my knowledge of data structures and algorithms are a bit lacking, by not having a traditional computer science background.
 
