@@ -10,8 +10,6 @@ Recursion:
 
 Hash tables:
 - Frequency queries: https://www.hackerrank.com/challenges/frequency-queries/problem 
-- Ice cream shop: https://www.hackerrank.com/challenges/icecream-parlor/problem 
-  - Buy all the ice cream in the whole universe basically 
 - Count triplets: https://www.hackerrank.com/challenges/count-triplets-1/problem 
 - Sherlock and anagrams: https://www.hackerrank.com/challenges/sherlock-and-anagrams/problem  
 
@@ -59,3 +57,6 @@ Search:
 https://www.hackerrank.com/challenges/making-candies/problem 
 
 
+? 
+https://www.hackerrank.com/challenges/new-year-chaos/problem 
+ 
