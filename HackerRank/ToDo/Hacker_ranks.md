@@ -1,6 +1,6 @@
-/*
 
-This is a list of the hackerranks that I need to work on for the next week. 
+
+## This is a list of the hackerranks that I need to work on for the next week. 
 Divided by section. Top of each section are the easier Qs. 
 
 Recursion: 
@@ -16,7 +16,6 @@ Hash tables:
 - Sherlock and anagrams: https://www.hackerrank.com/challenges/sherlock-and-anagrams/problem  
 
 Arrays:
-- Minimum swaps to sort array 
 - Pairs: https://www.hackerrank.com/challenges/pairs/problem  
 - Array manipulation: https://www.hackerrank.com/challenges/crush/problem 
 
@@ -60,5 +59,3 @@ Search:
 https://www.hackerrank.com/challenges/making-candies/problem 
 
 
-
-*/
