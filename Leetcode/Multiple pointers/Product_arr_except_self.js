@@ -1,5 +1,3 @@
-
-
 /*
 Product of Array Except Self
 
@@ -25,7 +23,6 @@ O(n) time
 [1,2,3,4] => 
 [24,12,8,6]
 
-
 Note: Was sooo much easier the 2nd time around!
 */ 
 
@@ -47,3 +44,25 @@ var productExceptSelf = function(nums) {
     }
     return arr;
 }
+
+
+
+
+
+// Attempt # 1
+var productExceptSelf = function(nums) {
+    let prodAllMinusIndex = [];
+    let preIndexProd = 1;
+    let postIndexProd = 1;
+    // Get product of all preIndex. Loop starting from front
+    for(let i = 0; i < nums.length; i++) {
+        prodAllMinusIndex[i] = preIndexProd;
+        preIndexProd = preIndexProd * nums[i];
+    }
+    // Get product of all postIndex. Loop starting from back
+    for(let i = nums.length - 1; i >=0 ; i--) {
+        prodAllMinusIndex[i] = prodAllMinusIndex[i] * postIndexProd;
+        postIndexProd = postIndexProd * nums[i];
+    }
+    return prodAllMinusIndex;
+};

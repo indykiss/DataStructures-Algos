@@ -1,6 +1,3 @@
-
-
-
 #### Closures
 
 A closure is a function that accesses a variable outside itself.

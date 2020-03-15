@@ -25,3 +25,25 @@ var diameterOfBinaryTree = function(root) {
     }
     return height;
 }
+
+
+// Attempt #1
+var diameterOfBinaryTree = function(root) {
+    let diameter = 0; 
+    dfs(root);
+    return diameter;
+    // Let's make a depth-first search transversal 
+    function dfs(node, height) {
+        // If there's no nodes, we return diameter of 0
+        if(!node) return 0;
+            // Node.left and node.right are built in functions for trees that 
+            // print the nodes on the left and on the right. Left as in 
+            // the children nodes that are left
+        const left = dfs(node.left);
+        const right = dfs(node.right);
+        // Update diameter at every node 
+        diameter = Math.max(diameter, left + right);
+        // Update the largest number of edge so far
+        return Math.max(left, right) + 1;
+    }
+};

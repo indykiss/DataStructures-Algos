@@ -4,6 +4,10 @@ Explain how to utilize a two pointer technique in arrays [one starts at front, o
 and linked lists [one iterates at one rate and another iterates at another rate]. 
 
 
+## Swapping things:
+When we want to swap the values of s[i] and s[j]:
+  [s[i], s[j]] = [s[j], s[i]]
+
 
 ## Overlapping sub-problems 
 
@@ -12,11 +16,9 @@ A problem has overlapping sub-problems if we're solving the same issue multiple 
 Usually can solve this with recursive solutions. 
 
 
-
 ## Greedy Algo 
 
 A greedy algorithm builds up a solution by choosing the option that looks the best at every step. The cashier making change example; she tries to get the largest option for every bill taken out of the cash register as possible until goal is met. 
-
 
 
 ## Counting 
@@ -35,7 +37,6 @@ This is really good for things like sorting an arr of numbers, with a highest nu
               counts[item] = 1
             }
           });
-
 
 
 ## In place algos 

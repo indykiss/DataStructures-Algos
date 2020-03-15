@@ -16,8 +16,6 @@ random_index: the index of the node (range from 0 to n-1) where random
 Ex:
 Input: head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
 Output: [[7,null],[13,0],[11,4],[10,2],[1,0]]
-
-
 */
 
 var copyRandomList = function(head) {
