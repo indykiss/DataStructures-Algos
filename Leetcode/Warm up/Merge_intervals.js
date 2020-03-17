@@ -9,7 +9,63 @@ Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
 */
 
 
-// 2nd try. Easier to get part of the way there, but needed to see the solution. Also not passing an edge case? 
+
+
+
+
+
+// Attempt #3 timed for 15 minutes. CLOSE but WRONG  
+var merge = function(intervals) {
+    // Edge case
+    if(intervals.length < 2) {return intervals}
+    // S1: Sort the arrs such that the 1st ele is smaller 
+    intervals = intervals.sort((a,b) => a[0] - b[0]);
+    // S2: Loop through, start at 1 and look at last arr
+    for(var i = 1; i < intervals.length; i++) {
+        let arr1 = intervals[i-1];
+        let arr2 = intervals[i];
+        // If arr1's 2nd ele < arr2's 2nd ele. YES MERGE
+        if(arr2[0] <= arr1[1]) {
+            intervals[i] = [Math.min(arr1[0], arr2[0]), Math.max(arr1[1], arr2[1])]
+            intervals.splice(i - 1, i);
+            i = i -1;
+        }
+    }
+    return intervals;
+}
+
+
+// CORRECT ANSWER. DO IT THIS WAY:
+var merge = function(intervals) {
+    // Edge case: It's like 1 arr
+    if(intervals.length < 2) {
+        return intervals;
+    }
+    // S1: Sort it to make comparison easier
+    intervals = intervals.sort((a,b) => a[0] - b[0])
+    // S2: Loop though intervals and ID the eles needed 
+    for(var i = 1; i < intervals.length; i++) {
+        let previousArr = intervals[i-1]
+        let currentArr = intervals[i]
+        // S3: If floor of currentArr is in previous arr, push merged arr in result
+        if(currentArr[0] <= previousArr[1]) {
+          intervals[i] = [Math.min(previousArr[0],currentArr[0]), Math.max(previousArr[1],currentArr[1])] 
+          intervals.splice(i-1, 1)            
+          i = i - 1;  // After merge, the arr becomes shorter
+        }
+    }
+    // S4: Return that baby
+    return intervals;
+};
+
+
+
+
+
+
+
+// 2nd try. WRONG BUT ALMOST 
+// Easier to get part of the way there, but needed to see the solution. 
 var merge = function(intervals) {
     
     if(intervals.length < 2) {return intervals}
