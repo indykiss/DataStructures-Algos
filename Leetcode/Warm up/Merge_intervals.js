@@ -6,15 +6,18 @@ Given a collection of intervals, merge all overlapping intervals.
 Input: [[1,3],[2,6],[8,10],[15,18]]
 Output: [[1,6],[8,10],[15,18]]
 Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
+
+
+Sort! Takes O(n logn)
+Actually kinda a mergesort problem.
+We sort. Then we merge. 
 */
 
 
 
-
-
-
-
 // Attempt #3 timed for 15 minutes. CLOSE but WRONG  
+// BUT very close. I understood the problem quickly. 
+// But need to execute interval merge better
 var merge = function(intervals) {
     // Edge case
     if(intervals.length < 2) {return intervals}
