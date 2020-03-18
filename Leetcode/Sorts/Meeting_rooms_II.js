@@ -35,7 +35,7 @@ var minMeetingRooms = function(intervals) {
     // S3: Loop through the arr of meetings 
     for(let i = 1; i < intervals.length; i++) {
         let start = intervals[i][0];
-        let end = intervals[i][1]
+        let end = intervals[i][1]; 
         
         // S4: What is the earliest room avail
         let earliest = Math.min(...earliestEnds);
