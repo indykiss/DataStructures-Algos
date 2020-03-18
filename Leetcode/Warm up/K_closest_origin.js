@@ -15,6 +15,30 @@ Strategy:
 */
 
 
+
+
+// Attempt #2, good 
+var kClosest = function(points, K) {
+    // S1: Sort by distance 
+    const sorted = points.sort((a,b) => distanceFinder(a) -distanceFinder(b))
+    
+    // S2: Slice the sorted arr by 0 to K 
+    return sorted.slice(0, K)
+} 
+
+// Helper for distance 
+var distanceFinder = function([x,y]) {
+    return (x * x) + (y * y);
+}
+
+
+
+
+
+
+
+
+
 // Attempt #1: Do me again but harder version
 var kClosest = function(points, K) {
     let sortedPoints = points.sort((a,b) => distance(a) - distance(b))

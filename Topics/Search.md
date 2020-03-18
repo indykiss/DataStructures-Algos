@@ -10,6 +10,33 @@ Used to find a target number in a sorted array. Note: array must already be sort
 Binary search time cost is O(lg(n)), since we are dividing the problem so it's not O(n)
 in terms of equal in and equal out, but not O(1). 
 
+
+
+Binary search recursively. ROUGHLY 
+
+    const binarySearch = function(arr,target,floor,ceiling) {
+        let floor = 0;
+        let ceiling = arr.length;
+        
+        // Base case:
+        if(floor > ceiling) {
+            return -1; 
+        }
+        // ID the midpoint
+        let midpoint = Math.floor(floor + (ceiling - floor)/ 2)
+                // start + (end-start) bc stack overflow 
+        
+        // IF the midpoint is greater than X, we want to make midpoint become the ceiling. IF midpoint is less than X, we want to make midpoint become the floor. 
+        if(arr[midpoint] === target) {
+            return midpoint;
+        } else if(arr[midpoint] > value) {
+            return binarySearch(arr, target, floor, midpoint - 1)
+        } else {
+            return binarySearch(arr, target, midpoint + 1, ceiling)
+        }
+    }
+
+
 Binary search in code. This is the iterative approach. Better for time and space! : 
 
     function binarySearch(target, nums) {
@@ -43,6 +70,7 @@ Binary search in code. This is the iterative approach. Better for time and space
         }
         return false;
     }
+
 
 We will use log maths to figure out the time cost for binary search. Since we are cutting nums in half x number of times until we get the target, we can solve for X using this formula: 
     n * (1/2)^x = 1
