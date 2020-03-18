@@ -49,6 +49,13 @@ In code, recursively:
         )
     }
 
+    function merge (node1, node2) {
+        var result = [];
+        while (node1.length > 0 && node2.length > 0)
+            result.push(node1[0] < node2[0]? node1.shift() : node2.shift());
+        return result.concat(node1, node2);
+    }
+
 So what's our total time cost? O (n * log(2)(n))
 Because the log(2)(n) comes from the number of times we have to cut n in half to get down to subarrays of just 1 element (our base case). The additional n comes from the time cost of merging all nn items together each time we merge two sorted subarrays.
 
@@ -70,7 +77,7 @@ const mergeSort = function(arrA, arrB) {
         }
     }
     // In situations where there's an unequal length of arrs, we just concat both on 
-    return arr.concat(arrA,arrB; 
+    return arr.concat(arrA,arrB); 
 }
 
 // Add a step to the above if we are given 1 arr 
@@ -95,7 +102,7 @@ const mergeSort = function(unsorted) {
         }
     }
     // In situations where there's an unequal length of arrs, we just concat both on 
-    return arr.concat(arrA,arrB; 
+    return arr.concat(arrA,arrB); 
 }
 
 
