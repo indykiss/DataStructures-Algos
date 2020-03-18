@@ -8,7 +8,32 @@
 // Assumptions: Perfect tree with each node having 2 children nodes 
 // Edge cases: 1 node
 
-// Do me again. Not clear on this
+
+
+
+// Attempt #3. better but do me again 
+var diameterOfBinaryTree = function(root) {
+    let diameter = 0;
+    dfs(root);
+    return diameter;
+    
+    function dfs(node) {
+        // dfs on left and right 
+        if(!node) {return 0}
+        const left = dfs(node.left);
+        const right = dfs(node.right); 
+        
+        // Update diameter at every step
+        // Check if last diameter or new left+right is bigger
+        diameter = Math.max(diameter, left+right);
+        // End goal is returning the biggest diameter we have
+        return Math.max(left, right) + 1; 
+    }
+};
+
+
+
+// Attempt #2
 var diameterOfBinaryTree = function(root) {
     let height = 0; 
     dfs(root);
@@ -47,3 +72,4 @@ var diameterOfBinaryTree = function(root) {
         return Math.max(left, right) + 1;
     }
 };
+

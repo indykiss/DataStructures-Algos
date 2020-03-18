@@ -10,7 +10,7 @@ Strategy:
 Merge sort
     S1: Divide in half. Treat the left half and right half to merge sort. Do this recursively 
     S2: Base case of if nums is at 1, we return it 
-Quicksort:
+Quicksort
     S1: Recursive solution. Pick a pivot point. 
     S2: Add all the values in the arr to the left if it's smaller.
     Add all the values that are larger into the right arr. 

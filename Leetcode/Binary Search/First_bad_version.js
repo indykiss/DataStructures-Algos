@@ -24,6 +24,11 @@ Bad number = floor. Highest number is the ceiling.
 Anything between and including floor/ ceiling is bad. 
 
 Binary search! 
+
+Time is O(logn) since we're looking at halfing the number 
+of elements we look at during each iteration. 
+
+
 */
 
 var solution = function(isBadVersion) {

@@ -30,3 +30,22 @@ var intersection = function(nums1, nums2) {
     }
     return result;
 } 
+
+
+// Attempt #1
+var intersection = function(nums1, nums2) {
+    // Remove duplicates. Move nums1 into a Set. 
+    const nums1Set = new Set(nums1);
+        // O(n) space^
+    let result = []
+    // Loop through nums2
+    for(let i = 0; i < nums2.length; i++) {
+        let currentNum = nums2[i];
+        
+        if(nums1Set.has(currentNum) && !result.includes(currentNum)) {
+            result.push(currentNum);
+        }
+    }
+    // Any number thats in nums2 and nums1Set.has() goes in results
+    return result;
+};

@@ -14,6 +14,7 @@ Output: [1,2,3,4]
 Strategy:
 - Implement a binary search to find the closest elements to X
 - Use a two pointer approach to find the window of K elements around the particular X target 
+
 */
 
 

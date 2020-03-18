@@ -126,8 +126,9 @@ function quickSort(arr) {
     // Base: Return the element in the arr
     if(arr.length <= 1) {return arr}
 
-    // Make a pivot, and two arrs for left and right
-    const pivot = Math.floor(arr.length/2)
+    // Make a pivot. Start at 1st ele always
+        // Make two arrs for left and right
+    const pivot = nums[0]
     let left = []
     let right = []
 
