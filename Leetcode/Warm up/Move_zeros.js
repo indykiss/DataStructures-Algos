@@ -11,6 +11,9 @@ Loop through the arr, if it's zero push it to end of arr. And remove 0 from plac
 Else, do nothing.
 */
 
+
+
+
 var moveZeroes = function(nums) {
     for(var i = nums.length; i >= 0; i--) {
         if(nums[i] === 0) {

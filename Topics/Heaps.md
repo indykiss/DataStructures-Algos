@@ -22,3 +22,6 @@ Parent = index / 2
 Left = index * 2 
 Right = (index * 2) + 1
 
+## Priority Queues
+
+One common way to implement a priority queue is with a heap. 

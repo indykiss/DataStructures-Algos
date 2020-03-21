@@ -13,6 +13,40 @@ Strat:
 Looking for where there's commonalities within both arrs. No dupes
 */
 
+
+
+// Attempt #4: I think the important thing here to remember is 
+// that we need to ID the use of making sets.  
+
+var intersection = function(nums1, nums2) {
+    const res = [];
+    const set1 = new Set(nums1);
+    const set2 = new Set(nums2);
+    
+    for(let ele of set1) {
+        if(set2.has(ele)) {
+            res.push(ele)
+        }
+    }
+    return res;
+}
+
+
+
+// Attempt #3
+var intersection = function(nums1, nums2) {
+    const res = [];
+    const set1 = new Set(nums1);
+    const set2 = new Set(nums2);
+    
+    for(let val of set1) {
+        if(set2.has(val)) {
+            res.push(val)
+        }
+    }
+    return res;
+};
+
 // Do me again. I took way too long 
 var intersection = function(nums1, nums2) {
     let result = [];

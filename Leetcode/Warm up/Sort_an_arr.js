@@ -24,6 +24,62 @@ Quicksort
 
 
 
+
+// Attempt #3: Really good!!! Only 1 tiny mistake 
+
+
+// Quicksort practice
+
+var sortArray = function(nums) {
+    const pivot = nums[0];
+    const left = [];
+    const right = [];
+    
+    if(nums.length < 2) {return nums}
+    
+    for(let i = 1; i < nums.length; i++) {
+        if(nums[i] <= pivot) {
+            left.push(nums[i]);
+        } else {
+            right.push(nums[i]);
+        }
+    }
+    return [...sortArray(left), pivot, ...sortArray(right)];
+} 
+
+
+// Mergesort 
+var sortArray = function(nums) {
+    // Create midpoint to divide the two arrs 
+    // Divide the two arrs into left and right 
+    // Want to make a base case then recurse on the left and right 
+        // Merge left and right 
+
+    if(nums.length < 2) {return nums}
+    
+    const mid = Math.floor(nums.length/2);
+    const left = sortArray(nums.slice(0, mid));
+    const right = sortArray(nums.slice(mid));
+    
+    return merge(left, right);
+} 
+
+var merge = function(first, second) {
+    const res = [];    
+    while(first.length > 0 && second.length > 0) {
+        if(first[0] <= second[0]) {
+            res.push(first[0]);
+            first.shift();
+        } else {
+            res.push(second[0]);
+            second.shift();
+        }
+    }
+    return res.concat(first, second)
+}
+
+
+
 // Attempt #2! Got quick sort pretty quickly. Mergesort needed some help
 
 // Mergesort: Recursive
