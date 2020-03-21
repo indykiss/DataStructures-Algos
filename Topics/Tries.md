@@ -4,10 +4,22 @@
 
 Tries are like trees of letters.
 
+See more here: https://www.interviewcake.com/concept/javascript/trie? 
+
 We use a trie when we want to validate words. Questions like: 
 - Does this word exist in this dictionary? 
 
-A trie is implemented like this:
+
+Pros:
+- Sometimes space efficient if we store lots of words that start with similar patterns.
+- Good for questions like "how many words start with choco." Word variation algorithms = make a triieeee. Another option would be putting the words in a set. 
+
+Cons:
+- USUALLy space inefficient since characters are 1 byte each. 
+- Gotta implement by hand 
+
+
+A trie is implemented like this, which we must do by hand. 
 
 // A node is a letter node within the true
 let Node = fun function() {
