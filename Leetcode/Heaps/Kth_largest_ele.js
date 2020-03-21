@@ -19,7 +19,7 @@ var findKthLargest = function(nums, k) {
     // Edge cases 
     if(!nums || !nums.length) {return -1};
 
-    let heap = new MinHeap(k);
+    let heap = new minHeap(k);
 
     // Add every number into the heap 
     for(let num in nums) {
