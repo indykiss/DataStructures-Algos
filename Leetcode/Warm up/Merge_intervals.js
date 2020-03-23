@@ -9,8 +9,6 @@ Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
 
 
 Sort! Takes O(n logn)
-Actually kinda a mergesort problem.
-We sort. Then we merge. 
 */
 
 

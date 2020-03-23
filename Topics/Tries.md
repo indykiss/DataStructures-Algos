@@ -22,7 +22,7 @@ Cons:
 A trie is implemented like this, which we must do by hand. 
 
 // A node is a letter node within the true
-let Node = fun function() {
+let Node = function() {
     // List of keys
     this.keys = new Map();
     // Is the letter we're looking at the end of a word?

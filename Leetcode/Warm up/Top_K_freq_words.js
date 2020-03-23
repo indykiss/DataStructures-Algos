@@ -25,6 +25,38 @@ Strat:
 // Super do me again. Amazon LOVES these Qs
 
 
+// Attempt #2
+
+var topKFrequent = function(words, k) {
+
+    // Make a hash of word: occurences
+    let hash = {};
+    for(let i = 0; i < words.length; i++) {
+        if(hash[words[i]]) {
+            hash[words[i]] = hash[words[i]] + 1;
+        } else {
+            hash[words[i]] = 1;
+        }
+    }
+    
+    // Sort the keys by char number of occurences   
+        // In ties, make it alphabetical 
+    let sortedHash = Object.keys(hash).sort((a,b) => {
+        let temp = hash[b] - hash[a]
+        
+        if(hash[b] === hash[a]) {
+            return a.localeCompare(b)
+        } else {
+            return temp;
+        }
+    })
+    // Slice from 0 to K
+    return sortedHash.slice(0,k);
+} 
+
+
+
+
 // Attempt #1
 var topKFrequent = function(words, k) {
     let hash = {};
