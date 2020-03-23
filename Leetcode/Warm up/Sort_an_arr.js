@@ -25,6 +25,76 @@ Quicksort
 
 
 
+
+
+
+
+
+
+
+// Attempt #4: Better! 
+
+
+// Quicksort
+var sortArray = function(nums) {
+
+    // Base case:
+    if(nums.length < 2) {return nums};
+    
+    // Make pivot and left and right
+    const pivot = nums[0];
+    const left = [];
+    const right = [];
+    
+    // Assign in left or right
+        // Start the loop at 1 bc we're using nums[0] as pivot
+    for(let i = 1; i < nums.length; i++) {
+        if(nums[i] <= pivot) {
+            left.push(nums[i]);
+        } else {
+            right.push(nums[i])
+        }
+    }
+    // Recurse 
+    return [...sortArray(left), pivot, ...sortArray(right)];
+}
+
+
+// Mergesort 
+var sortArray = function(nums) {
+    // Base case 
+    if(nums.length < 2) {return nums}
+
+    // Make midpoint, divide the arr
+    let mid = Math.floor(nums.length/2);;
+    const left = sortArray(nums.slice(0,mid));
+    const right = sortArray(nums.slice(mid));
+    
+    return merge(left, right)
+}    
+
+var merge = function(first,second) {
+    const res = [];
+    
+    while(first.length > 0 && second.length > 0) {
+        if(first[0] <= second[0]) {
+            res.push(first[0]);
+            first.shift();
+        } else {
+            res.push(second[0]);
+            second.shift();
+        }
+        
+    }
+    return res.concat(first,second);
+}
+
+
+
+
+
+
+
 // Attempt #3: Really good!!! Only 1 tiny mistake 
 
 
