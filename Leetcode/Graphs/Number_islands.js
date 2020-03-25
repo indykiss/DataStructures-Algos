@@ -20,6 +20,62 @@ set at 0 to mark it as visted. Count the number of root nodes that trigger DFS.
 This number would be the number of islands, since each DFS trigger is an island. 
 */
 
+
+
+
+
+
+
+
+
+
+
+
+// Attempt # 2: Did ok, but need to do again
+    // Definitely had to look at the solution too much
+
+var numIslands = function(grid) {
+    if(!grid) {return 0}
+    let islands = 0;
+    
+    const dfs = function(row, col) {
+        const dirs = [[0,-1], [1,0], [0,1], [-1,0]];
+        
+        grid[row][col] = "0";
+        
+        dirs.forEach(dir => {
+            let posX = row + dir[0]
+            let posY = col + dir[1];
+            
+            // Check that we're on the board. Check if we find a 1. If we do, trigger another dfs to find the other 1s
+            if(posX >= 0 && posY >= 0 &&
+              posX < grid.length && posY < grid[0].length &&
+               grid[posX][posY] === "1") {
+                dfs(posX, posY);
+            }
+        })
+    }
+    
+    for(let row = 0; row < grid.length; row++) {
+        for(let col = 0; col < grid[row].length; col++) {
+            if(grid[row][col] === "1") {
+                dfs(row, col);
+                islands += 1;
+            }
+        }
+    }
+    return islands;
+};
+
+
+
+
+
+
+
+
+
+
 var numIslands = function(grid) {
     
     // Edge: Valid input 
