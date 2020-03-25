@@ -14,6 +14,42 @@ comes after the current word's ith ele, we're good to continue
 */
 
 
+
+
+// Attempt # 2: Needed lots of hints. Do me again 
+var isAlienSorted = function(words, alphabet) {
+    
+    for(let i = 1; i < words.length; i++) {
+        let second = words[i];
+        let first = words[i-1];
+        
+        if(!comparer(first, second, alphabet)) {
+            return false;
+        } 
+    }
+    return true;
+};
+
+var comparer = function(first, second, alphabet) {
+    // Loop through the smallest word
+    for(let i = 0; i < Math.min(first.length, second.length); i++) {
+        let firstIndex = alphabet.indexOf(first[i]);
+        let secondIndex = alphabet.indexOf(second[i]);
+        
+        if(firstIndex < secondIndex) {
+            return true;
+        }
+        if(secondIndex < firstIndex) {
+            return false;
+        }
+    }
+}
+
+
+
+
+
+
 var isAlienSorted = function(words, order) {
     // Loop through words. Check if prevWord & currentWord fit alien alphabe
     for(let i = 1; i < words.length; i++) {
