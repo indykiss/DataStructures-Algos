@@ -20,7 +20,7 @@ Right child = (index * 2) + 2;
 OR, depending on where we're looking
 Parent = index / 2
 Left = index * 2 
-Right = (index * 2) + 1
+Right = (index * 2) + 1s
 
 ## Priority Queues
 

@@ -97,6 +97,7 @@ Pros: Finds the shortest path between the starting node and any other node.
 
 Cons: Generally takes more memory than the depth-first search, since we are looking at all the nodes. Breadth and all. 
 
+Breadth first search uses a queue to track the children that have already been looked at. 
 
 
 ## Depth-first search (also called depth-first traversal) 
@@ -109,6 +110,11 @@ Pros: DFS generally takes less memory than BFS.
 Can use recursion here pretty easily. 
 
 Cons: Does not find the shortest path to a node. 
+
+Depth first search uses a recursive solution to go DEEP down each tree branch or deep down a graph's child. 
+
+
+## Use Breath first or depth first??
 
 Note that BREADTH first uses a queue and DEPTH first uses a stack. 
 

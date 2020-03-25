@@ -16,6 +16,109 @@ Strategy:
 
 
 
+// Attempt #3: Heap version. 
+// I just copied. I hate heaps 
+
+
+class Heap {
+    constructor() {
+        this.heap = [];
+    }
+    parent(i) {
+        return Math.floor(i-1/2);
+    }
+    leftChild(i) {
+        let left = i*2 - 1;
+        if(left < this.heap.length) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    rightChild(i){
+        let right = i*2 - 2;
+        if(right < this.heap.length) {
+            return true; 
+        } else {
+            return false; 
+        }
+    }
+    insert(item) {
+        this.heap.push(item);
+        this.bubbleUp();
+    }
+    remove() {
+        if(this.heap.length) {
+            let item = heap[0];
+            this.heap[0] = this.heap[this.heap.length-1]
+            this.heap.pop();
+            this.bubbleDown();
+            return item; 
+        } else {
+            return false;
+        }
+    }
+    hasParent(i) {
+        if(i > 0 && i < this.heap.length) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    swap(left, right) {
+        let temp = this.heap[left]
+        this.heap[left] = this.arr[right];
+        this.heap[right] =  temp;
+    }
+    bubbleUp() {
+        let i = this.heap.length-1;
+
+        while(this.hasParent(i) && this.heap[i][0] < this.heap[this.leftChild(i)[0]]) {
+            this.swap(i, this.parent(i));
+            i = this.parent(i); 
+        }
+    }
+    bubbleDown() {
+        let index = 0;
+        while(this.leftChild(index)){
+            let smallChildIndex = this.leftChild(index);
+            if(this.rightChild(index)){
+                 if(this.heap[this.rightChild(index)][0] < this.heap[this.leftChild(index)][0]){
+                smallChildIndex = this.rightChild(index) 
+            }        
+            }
+               
+            if(this.heap[index][0] < this.heap[smallChildIndex][0]){
+                break;
+            }
+            else this.swap(index, smallChildIndex)
+            index = smallChildIndex;
+        }
+    }
+}
+
+var kClosest = function(points, K) {
+    let que = new Heap();
+    let result = []
+    points.forEach((point, index) => {
+        let distance = point[0] ** 2 + point[1] ** 2
+        que.insert([distance, index])
+        
+        
+    } )
+    
+    for(let i=0; i<K; i++){
+        let item = que.remove()
+        console.log(item)
+        result.push(points[item[1]])
+    }
+    
+    return result;
+};
+
+
+
+
 
 // Attempt #2, good 
 var kClosest = function(points, K) {
