@@ -27,6 +27,87 @@ This number would be the number of islands, since each DFS trigger is an island.
 
 
 
+// Attempt #3. Lovely. But do me again 
+// BFS solution with a queue of the ones
+var numIslands = function(grid) {
+    let count = 0;
+    if(!grid) return false;
+
+    const dfs = function(row, col) {
+        // Make a queue of 1s
+        let queue = [[row, col]]
+
+        // While we have a queue, let's eval
+        while(queue.length) {
+            let [posX, posY] =  queue.pop();
+            
+            grid[row][col] = 0;
+
+            const dirs = [[0,-1], [0,1], [-1,0], [1,0]];
+            
+            dirs.forEach(dir => {
+                let newX = posX + dir[0];
+                let newY = posY + dir[1];
+                
+                // Check that we're on the grid still and that the pos that we're evaluating is a 1
+                if(newX < grid.length && newX >= 0 && 
+                    newY >= 0 && newY <= grid[0].length && 
+                   grid[newX][newY] === 1) {
+                    queue.push([newX, newY])
+                }
+            })
+        }
+    }
+    
+    for(let row = 0; row < grid.length; row++) {
+        for(let col = 0; col < grid[row].length; col++) {
+            if(grid[row][col] === 1) {
+                dfs(row,col);
+                count++; 
+            }
+        }
+    }
+    return count;
+}
+
+
+
+// DFS solution 
+var numIslands = function(grid) {
+    let count = 0;
+    if(!grid) return false;
+    
+    const dfs = function(row,col) {
+        const dirs = [[0,-1], [0,1], [-1,0], [1,0]];
+        
+        // Looking at the position we're in as 0
+        grid[row][col] = "0"
+        
+        dirs.forEach(dir => {
+            let posX = row + dir[0];
+            let posY = col + dir[1];
+            
+            // Check that we're on the grid still and that the pos that we're evaluating is a 1
+            if(posX < grid.length && posX >= 0 && 
+              posY >= 0 && posY <= grid[0].length && 
+               grid[posX][posY] === "1") {
+                dfs(posX, posY);
+            }
+        })
+    }
+    
+    for(let row = 0; row < grid.length; row++) {
+        for(let col = 0; col < grid[row].length; col++) {
+            if(grid[row][col] === 1) {
+                bfs(row,col);
+                count++; 
+            }
+        }
+    }
+    return count;
+}
+
+
 
 
 

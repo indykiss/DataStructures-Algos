@@ -12,6 +12,48 @@ Sort! Takes O(n logn)
 */
 
 
+// Attempt #3
+var merge = function(intervals) {
+    if(intervals.length < 2) return intervals;
+    
+    intervals = intervals.sort((a,b) => a[0] - b[0])
+    
+    for(let i = 1; i < intervals.length; i++) {
+        let prev = intervals[i-1];
+        let curr = intervals[i];
+
+        if(prev[1] >= curr[0]) {
+            let x = Math.min(prev[0], curr[0]);
+            let y = Math.max(prev[1], curr[1]);
+            
+            intervals[i] = [x,y];
+            // Remove prev bc we've merged it with curr 
+            intervals.splice(i-1,1)
+            // Go back one step to make sure that we're looking at all the arrs in the intervals 
+            i = i - 1;
+        }
+    }
+    return intervals;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Attempt #3 timed for 15 minutes. CLOSE but WRONG  
 // BUT very close. I understood the problem quickly. 

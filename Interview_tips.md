@@ -7,6 +7,17 @@ Always always always listen to the interviewer. They're testing problem solving 
 Sleep very well the week before the interivew :) 
 That week, redo the problems you know very well. Build some extra confidence in coding ability! 
 
+
+For during the interivew:
+1. Ask clarifying questions about assumptions. Valid input. Always integers/ strs/ etc! Ask about edge cases. 
+2. Think outloud my strategy for solving a problem. Ask if that sounds ok. 
+3. QUICKLY jot down psuedo-code notes to track thinking 
+4. CODE IT UP. It does not need to be perfect. Syntax does not need to be perfect. We will not run the code. 
+5. Finished.ish? Stuck? Go back with an input and walk it through each step. 
+6. Remember we need to evaluate the big O time and space of the solution you come up with 
+7. Think about how to make the solution more efficient. AND how to update the code to reflect the new change
+
+
 Reinforcing problem-solving patterns goes a longer way than practicing new problems. Reinforce patterns!
 1. Brainstorm the algo in pseudocode. Ask interviewer if good to start coding. 
 2. Throw out the algo with comments and like "add helper function that does X" here as the first 2-3 mins walk through.

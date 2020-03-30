@@ -23,9 +23,60 @@ O(n) time
 [1,2,3,4] => 
 [24,12,8,6]
 
-Note: Was sooo much easier the 2nd time around!
 */ 
 
+// Attempt #3. Not bad. Needed to do it the bad long way, then 
+// remembered the short way almost completely 
+
+var productExceptSelf = function(nums) {
+    const res = [];
+    let prev = 1;
+    let post = 1; 
+    
+    for(let i = 0; i < nums.length; i++) {
+        res[i] = prev;
+        prev = prev * nums[i]
+    }
+    
+    for(let j = nums.length - 1; j >= 0; j--) {
+        res[j] = res[j] * post;        
+        post = post * nums[j];
+    }
+    return res;
+} 
+
+// var productExceptSelf = function(nums) {
+    
+//     const preProds = [];
+//     let prevProds = 1;
+//     const postProds = [];
+//     let postProd = 1;
+//     const res = [];
+    
+//     for(let i = 0; i < nums.length; i++) {
+//         let add1 = nums[i] * prevProds; 
+//         preProds.push(add1)
+//         prevProds = prevProds * nums[i]
+//     }
+    
+//     for(let j = nums.length - 1; j > 0; j--) {
+//         let add2 = nums[j] * postProd;
+//         postProds.push(add2);
+//         postProd = postProd * nums[j];
+//     }
+    
+//     while(preProds.length && postProds.length) {
+//         res.push(preProds[0] * postProds[0]);
+//         preProds.unshift();
+//         postProds.unshift();
+//     }
+//     return res;
+    
+// };
+
+
+
+// Attempt #2 
 var productExceptSelf = function(nums) {
     const arr = [];
     let pre = 1;
