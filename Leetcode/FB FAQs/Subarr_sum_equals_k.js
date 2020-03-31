@@ -18,6 +18,32 @@ A hash does not equal a map.
 
 */
 
+// Attempt #2. Not great. Do me again 
+var subarraySum = function(nums, k) {
+    const map = new Map();
+    let count = 0; 
+    let sum = 0;
+        
+    map.set(0,1);
+    
+    for(let i = 0; i < nums.length; i++) {
+        let curr = nums[i];
+        sum += curr;
+        if(map.has(sum-k)) {
+            count += map.get(sum-k);
+        } 
+        if(map.has(sum)) {
+            map.set(sum, map.get(sum) + 1);
+        } else {
+            map.set(sum,1)
+        }
+    }
+    return count;
+};
+
+
+
+
 var subarraySum = function(nums, k) {
     // S1: Make a map and a counter
         // Initialize the map 
