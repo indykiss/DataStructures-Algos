@@ -17,8 +17,61 @@ move elements in/out of stacks as we enqueue and dequeue.
 */
 
 
+// Attempt #2
+class MyQueue {
+    constructor() {
+        this.inStack = [];
+        this.outStack = [];
+    }
+    
+    push(x) {
+        this.inStack.push(x);
+    }
+    
+    pop() {
+        while(this.inStack.length !== 0) {
+            this.outStack.push(this.inStack.pop());
+        }
+        let firstEle = this.outStack.pop();
+        
+        while(this.outStack.length !== 0) {
+            this.inStack.push(this.outStack.pop());            
+        }
+        return firstEle;
+    }
+    
+    peek() {
+        while(this.inStack.length !== 0) {
+            this.outStack.push(this.inStack.pop());
+        }
+        
+        let peekFront = this.outStack.pop();
+        this.outStack.push(peekFront);
+        
+        while(this.outStack.length !== 0) {
+            this.inStack.push(this.outStack.pop());            
+        }
+        return peekFront;
+    }
+    
+    
+    empty() {
+        if(this.inStack.length !== 0) {
+            return false; 
+        } else {
+            return true;
+        }
+    }
+    
+}
 
-// Remember me: do me again 
+
+
+
+
+
+
+// Attempt #1
 
 class MyQueue {
     constructor() {
