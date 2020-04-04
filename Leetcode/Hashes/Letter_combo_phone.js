@@ -12,8 +12,41 @@ Strat:
 - Loop through digits, 
 */
 
+
+
+// Never would've gotten this
+
+var letterCombinations = function(digits) {
+    let res = [];
+    const mappings = [,,['a','b','c'],['d','e','f'],['g','h','i'],['j','k','l'],['m','n','o'],['p','q','r','s'],['t','u','v'],['w','x','y','z']];
+    
+    for(let i = 0; i < digits.length; i++) {
+        let dig = digits[i];
+        if(res.length === 0) {
+            res = mappings[+dig];
+        } else {
+            res = comboMaker(res, mappings[+dig])
+        }
+    }
+    return res;
+};
+
+
+var comboMaker = function(res, mapping) {
+    let temp = [];
+    
+    mapping.forEach(function(e) {
+        temp = temp.concat(res.map(function(item) {
+            return item + e 
+        }));
+    });
+    return temp;
+}
+
+
+
 // Ya I hate this but it gives me basic strat
-var letterCombinations = functeion(digits) {
+var letterCombinations = function(digits) {
     const result = []
     const mappings = [,,['a','b','c'],['d','e','f'],['g','h','i'],['j','k','l'],['m','n','o'],['p','q','r','s'],['t','u','v'],['w','x','y','z']];
     

@@ -21,6 +21,42 @@ Next time! Do me with a stack:
 https://leetcode.com/problems/trapping-rain-water/discuss/400555/Clean-JavaScript-solutions-(brute-force-dynamic-programming-stack-two-pointers)
 */
 
+
+// Attempt #2: Almost good!
+var trap = function(heights) {
+    if(!heights) return false;
+    let vol = 0; 
+    
+    for(let i = 0; i < heights.length; i++) {
+        let leftPeak = 0;
+        let rightPeak = 0;
+        // Left peak
+        for(let j = 0; j < i; j++) {
+            if(heights[j] > leftPeak) {
+                leftPeak = heights[j]
+            }
+        }
+        // Right peak
+        for(let k = heights.length-1; k > i; k--) {
+              if(heights[k] > rightPeak) {
+                rightPeak = heights[k]
+            }      
+        }
+        let add_h20 = Math.min(leftPeak, rightPeak) - heights[i];
+        
+        if(add_h20 > 0) {
+            vol = vol + add_h20            
+        }
+    }
+    return vol;
+}
+
+
+
+
+
+
+// Attempt #1
 var trap = function(heights) {
     let total_water = 0;
 
