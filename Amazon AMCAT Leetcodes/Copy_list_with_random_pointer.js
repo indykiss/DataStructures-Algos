@@ -18,6 +18,34 @@ Input: head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
 Output: [[7,null],[13,0],[11,4],[10,2],[1,0]]
 */
 
+
+// Attempt 2. Practice again
+var copyRandomList = function(head) {
+    
+    if(!head) return null;
+    
+    let map = new Map();
+    let n = head;
+    
+    while(n) {
+        map.set(n, new Node(n.val));
+        n = n.next;
+    }
+    
+    n = head;
+    while(n) {
+        map.get(n).next = map.get(n.next) || null;
+        map.get(n).random = map.get(n.random) || null;
+        n = n.next; 
+    }
+    
+    return map.get(head);
+};
+
+
+
+
+
 var copyRandomList = function(head) {
     if(!head) {return null}
     
