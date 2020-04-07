@@ -26,34 +26,30 @@ This number would be the number of islands, since each DFS trigger is an island.
 
 
 
-
 // Attempt #3. Lovely. But do me again 
 // BFS solution with a queue of the ones
 var numIslands = function(grid) {
     let count = 0;
-    if(!grid) return false;
 
-    const dfs = function(row, col) {
-        // Make a queue of 1s
-        let queue = [[row, col]]
-
-        // While we have a queue, let's eval
+    if(!grid) return false; 
+    
+    const bfs = function(row, col) {        
+        const queue = [[row,col]];
+         
         while(queue.length) {
-            let [posX, posY] =  queue.pop();
-            
-            grid[row][col] = 0;
-
-            const dirs = [[0,-1], [0,1], [-1,0], [1,0]];
+            let dirs = [[0,-1], [1,0], [0,1], [-1,0]];
+            let [x,y] = queue.pop();
+            grid[x][y] = "0"
             
             dirs.forEach(dir => {
-                let newX = posX + dir[0];
-                let newY = posY + dir[1];
-                
-                // Check that we're on the grid still and that the pos that we're evaluating is a 1
-                if(newX < grid.length && newX >= 0 && 
-                    newY >= 0 && newY <= grid[0].length && 
-                   grid[newX][newY] === 1) {
-                    queue.push([newX, newY])
+                let posX = dir[0] + x;
+                let posY = dir[1] + y;
+
+                if(posX >= 0 && posY >= 0 &&
+                   posX < grid.length &&
+                   posY <= grid[0].length &&
+                  grid[posX][posY] === "1") {
+                    queue.push([posX,posY])
                 }
             })
         }
@@ -61,16 +57,15 @@ var numIslands = function(grid) {
     
     for(let row = 0; row < grid.length; row++) {
         for(let col = 0; col < grid[row].length; col++) {
-            if(grid[row][col] === 1) {
-                dfs(row,col);
-                count++; 
+            if(grid[row][col] == "1") {
+                count++;
+                bfs(row,col);
             }
         }
     }
-    return count;
+    return count;   
 }
-
-
+    
 
 // DFS solution 
 var numIslands = function(grid) {

@@ -30,29 +30,73 @@ Output: Return a list of integers representing the critical nodes.
 Example:
 
 Input: numNodes = 7, numEdges = 7, edges = [[0, 1], [0, 2], [1, 3], [2, 3], [2, 5], [5, 6], [3, 4]]
+Ouput: [2, 3, 5]
+
+[[0,1], [1,2], [2,3], [2,1], [3,4]] => [3] 
 
 [Write out the graph]
-
-Ouput: [2, 3, 5]
 
 
 Tip: For two particularly hard tests to pass, you r result should contain edges such that for an edge (a, b) 
 a < b. i.e. if you have a critical edge (2,1), change it to (1, 2) when adding to resultant list.
 */
 
-
 /*
 Strategy:
 Find the edges that do not lead to a cycle. 
-
 Use a DFS to look at the nodes. 
-
 rank = time stamp of the DFS
 minObs = lowest rank seen on the path we're on (as we're traversing)
-
 Ya I have no idea what's going on here. 
 
 */
+
+
+// N = servers, connections = edges
+const criticalConnections = (n, connections) => {
+
+    const graph = graphMaker(n, connections);
+    // Track visited servers and essential servers
+    const visited = new Set();
+    const essential = [];
+
+    // DFS search through the graph
+    const dfs = function(s1, s2) {
+
+        visited.add(s1.val);
+
+        s1.kids.forEach(kid => {
+            
+
+        })
+
+
+    }
+
+
+    dfs(graph[connections[0][0], connection[0][1]])
+}
+
+
+// Make a graph that outputs a hash of hash. server: {val, kids: []}
+const graphMaker = function(n, connections) {
+    const network = {};
+    for(let i = 0; i < n; i++) {
+        network[i] = {val: i, kids = []}
+    }
+    connections.forEach(connect => {
+        network[connect[0]].kids.push(connect[1]);
+        network[connect[1]].kids.push(connect[0]);
+    })
+    return network;
+}
+
+// [[0,1], [1,2], [2,3], [2,1], [3,4]] => [3] 
+// network: { 0: {i, kids: [1]}, 1: {i, kids: [1,2]}  ... }
+
+
+
+
 
 const criticalConnections = (n, connections) => {
     // Create the graph to traverse through
