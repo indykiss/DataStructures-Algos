@@ -22,7 +22,6 @@ When the query matches a word up to vowel errors, you should return the first su
 If the query has no matches in the wordlist, you should return the empty string.
 Given some queries, return a list of words answer, where answer[i] is the correct word for query = queries[i].
 
- 
 
 Example 1:
 
