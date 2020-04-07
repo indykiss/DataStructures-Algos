@@ -20,6 +20,40 @@ Strategy:
 - Return the length of the endTimes array
 */
 
+
+
+
+var minMeetingRooms = function(intervals) {
+    let earliestEnds = [];
+    if(intervals == null || intervals.length == 0) {return 0}
+    if(intervals.length < 2) {return 1}
+
+    intervals = intervals.sort((a,b) => a[0] - b[0])
+    
+    earliestEnds.push(intervals[0][1]);
+    
+    for(let i = 1; i < intervals.length; i++) {
+        let start = intervals[i][0];
+        let end = intervals[i][1]
+        let earliest = Math.min(...earliestEnds);
+        
+        if(start < earliest) {
+            earliestEnds.push(end); 
+        } else {
+            earliestEnds[earliestEnds.indexOf(earliest)] = end
+        }
+
+    }
+    return earliestEnds.length;
+};
+
+
+
+
+
+
+
+
 var minMeetingRooms = function(intervals) {
     
     // Edge
