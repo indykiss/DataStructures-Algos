@@ -15,6 +15,19 @@ Strategy:
 */
 
 
+// attempt #5
+var kClosest = function(points, K) {
+    points = points.sort((a,b) => distance(a) - distance(b))
+    return points.slice(0,K)
+}
+
+
+var distance = function(arr) {
+    let x = arr[0];
+    let y = arr[1]
+    return (x*x + y*y)
+}
+
 
 // Attempt #4: No heaps. Fuck heaps. Took 5 mins  
 var kClosest = function(points, K) {
