@@ -22,6 +22,26 @@ Strat:
 */
 
 
+
+// Top K frequent elements: given arr of nums
+var topKFrequent = function(nums, k) {
+    // num: num of occurences
+    let seen = {}
+    nums.forEach(num => {
+        if(seen[num]) {
+            seen[num] = seen[num] + 1;
+        } else {
+            seen[num] = 1;
+        }
+    })
+    // {1:3, 2:2, 3:1}
+    const sortedSeen = Object.keys(seen)
+    .sort((a,b) => seen[b] - seen[a])
+    // {1:3, 2:2, 3:1}
+    return sortedSeen.slice(0, k);   
+};
+
+// Top k frequent words: given words
 var topKFrequent = function(words, k) {
 
     const hash = {};
