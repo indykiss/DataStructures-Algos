@@ -9,6 +9,37 @@ a list of non-empty words, determine if s can be segmented into
 a space-separated sequence of one or more dictionary words.
 */
 
+
+// Attempt #2
+
+var wordBreak = function(s, wordDict) {
+    const dict = new Set(wordDict);
+    const seen = new Set();
+    const queue = [0]
+    
+    // BFS through the queue 
+    while(queue.length) {
+        let start = queue.shift();
+        
+        if(!seen.has(start)) {
+            for(let end = start + 1; end <= s.length; end++) {
+
+                if(dict.has(s.slice(start,end))) {
+                    if(end === s.length) {
+                        return true;
+                    }
+                queue.push(end);
+                seen.add(start)
+                }
+            }            
+        }
+    }
+    return false;
+}
+
+
+
+// Attempt #1
 var wordBreak = function(s, wordDict) {
     // Make a dictionary set 
     const dict = new Set(wordDict);
