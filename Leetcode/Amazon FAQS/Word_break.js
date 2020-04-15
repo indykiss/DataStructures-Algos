@@ -9,7 +9,6 @@ a list of non-empty words, determine if s can be segmented into
 a space-separated sequence of one or more dictionary words.
 */
 
-
 // Attempt #2
 
 var wordBreak = function(s, wordDict) {
