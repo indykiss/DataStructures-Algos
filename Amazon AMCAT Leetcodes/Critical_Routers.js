@@ -51,6 +51,58 @@ Ya I have no idea what's going on here.
 
 */
 
+const criticalConnections = (n, connections) => {
+    // Create the graph to traverse through
+    const graph = createGraph(n, connections);
+
+    // Don't traverse over things we've already seen 
+    const visited = new Set();
+    let rank = 0;
+    const output = [];
+    
+    // Make a DFS function
+    function dfs(node, parent) {
+        visited.add(node.val);
+        // Lowest rank and rank are default rank
+        node.rank = rank;
+        node.minObs = rank;
+        // Increment rank as we go
+        rank++;
+        // DFS. Don't visit parents. Just visit children nodes 
+        node.children.forEach((child) => {
+            if(child === parent) {return;}
+            // If we've seen the child already, just peek at its value
+            if(visited.has(child)) {
+                node.minObs = Math.min(node.minObs, graph[child].minObs);
+                return;
+            } else {                                                                                                      
+                // Traverse and update the minObs to take the min value if its min
+                node.minObs = Math.min(node.minObs, dfs(graph[child], node.val));
+            }
+            // If node.rank > child.minObs, the edge between node and child
+            // is a bridge since that edge will never lead back to the node itself along the way.
+            if (node.rank < graph[child].minObs) output.push([node.val, child]);
+        })
+        return node.minObs;
+    };
+    
+    dfs(graph[connections[0][0]], connections[0][0]);
+    return output;
+};
+
+
+function createGraph(n, connections) {
+    const output = {};
+    for (let i = 0; i < n; i++) {
+        output[i] = { val: i, children: [], rank: -Infinity, minObs: Infinity };
+    }
+    connections.forEach((connection) => {
+        output[connection[0]].children.push(connection[1]);
+        output[connection[1]].children.push(connection[0]);
+    });
+    return output;
+}
+
 
 // N = servers, connections = edges
 const criticalConnections = (n, connections) => {
