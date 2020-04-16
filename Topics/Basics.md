@@ -5,9 +5,7 @@ Read me! As much as possible: https://www.geeksforgeeks.org/data-structures/
 
 ## Abstract data structures vs real data structures
 
-Abstract DSes are self-created those. Linked lists, queues, stack based queues, tree maps, hash maps are examples of abstract DS. 
-
-
+Abstract DSes are self-created structures. Linked lists, queues, stack based queues, tree maps, hash maps are examples of abstract DS. 
 
 ## RAM
 

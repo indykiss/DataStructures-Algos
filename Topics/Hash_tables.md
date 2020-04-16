@@ -9,7 +9,6 @@ A hash table is a dictionary like data structure that maps keys to values. It al
       'LED': 50000,
       };
     
-
 Really useful for when we want to keep track of counts per char in a string. 
 
 Sometimes when there's duplicates within the keys, there can be a hash collision. Which is bad. It's rare, but if we are dealing with a hash collision, we can have each array slot hold a pointer to a linked list with the key/value pair, instead of the usual having the value itself in that slot. 

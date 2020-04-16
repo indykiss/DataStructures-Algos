@@ -9,7 +9,7 @@ That week, redo the problems you know very well. Build some extra confidence in 
 
 
 For during the interivew:
-1. Ask clarifying questions about assumptions. Valid input. Always integers/ strs/ etc! Ask about edge cases. 
+1. Ask clarifying questions about assumptions. Valid input. Expected output. Always integers/ strs/ etc! Ask about edge cases. Write down an example input and output. 
 2. Think outloud my strategy for solving a problem. Ask if that sounds ok. 
 3. QUICKLY jot down psuedo-code notes to track thinking 
 4. CODE IT UP. It does not need to be perfect. Syntax does not need to be perfect. We will not run the code. 
@@ -79,6 +79,28 @@ Remember the star method, remember to add specifics (show, don't tell). Every qu
 Be memorable. Be yourself. 
 
 Rn: Biggest strength-type questions? Say things that other people have said about me (annual reviews, projects, hackathon etc). 
+
+
+#### Runtime efficiency 
+
+Big O is how time scales with respect to some input variables. 
+
+If/else, no loops = O(1) constant 
+
+Loop = O(n) where n is the input / Linear
+
+Nested loops = O(n^2) / Quadratic 
+    EXCEPT for instances where the 2nd nested loop is a smaller subset of the 1st loop
+    EX: Two arrs as inputs and we want to loop through both in 1 loop
+    This would be O(a * b) where a = arr1.length and b = arr2.length 
+        function stuff (arr1, arr2) {
+            for(let i = 0, i < arr1.length; i++) {
+                for(let j = 0; j < arr2.length; j++)
+            }
+        }
+
+Sorting = 
+
 
 #### Imposter syndrome 
 
