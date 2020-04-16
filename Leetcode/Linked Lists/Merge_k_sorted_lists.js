@@ -18,6 +18,49 @@ Time and space:
 */
 
 
+
+
+
+
+
+
+var mergeKLists = function(lists) {
+    if(lists.length === 0) return null;
+    
+    // Look at the list of linked lists
+    while(lists.length > 1) {
+        let list1 = lists.shift();
+        let list2 = lists.shift();
+        const merged = mergingLists(list2, list2)
+        lists.push(merged);
+    }
+    return lists[0];
+};
+
+// Merge two linked lists into 1 
+var mergingLists = function(list1, list2) {
+    const newNode = new ListNode(0)
+    let res = new ListNode(0)
+
+    while(list1 !== null && list2 !== null) {
+        if(list1.val < list2.val) {
+            res.next = list1;
+            list1 = list1.next;
+        } else {
+            res.next = list2; 
+            list2 = list2.next; 
+        }
+        res = res.next;
+    }
+    if(list1 == null) res.next = list2;
+    if(list2 == null) res.next = list1;
+    return res.next;
+}
+
+
+
+
+
 var mergeKLists = function(lists) {
     if(lists.length === 0) {return null;}
     // Make a priority queue for looking at the different 
