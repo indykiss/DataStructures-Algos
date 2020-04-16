@@ -3,10 +3,34 @@
 
 #### Object oriented Qs
 
+Object-oriented programming (OOP) is a style of programming that focuses on using objects to design and build applications.
+
+OOP organizes the program to combine data and functionality and wrap it inside something called an “Object”.
+
+OOP uses objects to build functional blocks of info and classes that act like blueprints for those objects. 
+
+Designing a online shopping system, we'd make shopping cart, customer, products all as objects. The customer object would have attributes like username, password, address from a Class. 
+
+FOUR PRINCIPLES OF OBJECT ORIENTED PROGRAMMING:
+- Encapsulation: Binding data together and keeping it private from other objects 
+- Abstraction: Hiding all but the most revelant data about an object.
+- Inheritance: Where classes are created from existing ones 
+- Polymorphism: An object can take different forms. Can be used in different situations.
+
+USE ME:
+https://jamboard.google.com/d/1FJF_6_NHFs3Cc8_P8iVHpOfT-gtfzTp4phlrHluFOAs/viewer 
+
+In object oriented design interviews, we want to ID four things:
+- Use case diagram. Whole system + what happens 
+- Class diagram. Look at responsibilities of the system 
+- Seqeuence diagram. 
+
+Steps to an OO design question:
+- Clarifying questions
+- Clarify the main entities in the system and their behaviors 
 
 
-
-
+#### Other
 
 Big O is how time scales with respect to some input variables. 
 
