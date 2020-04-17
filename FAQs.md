@@ -1,5 +1,16 @@
 #### FAQs
-
+ 
+- Customer Obsession – it really is all about the impact/benefit to the customer! (internal and external)
+- Insist on the Highest Standards
+- Bias for action
+- Invent and Simplify
+- Ownership
+- Earns Trust
+- Think big
+- Learn & Be Curious
+- Deliver Results
+- Have Backbone, Disagree and Commit
+- Dealing with Ambiguity (not an LP, but important)
 
 #### Object oriented Qs
 
@@ -28,6 +39,24 @@ In object oriented design interviews, we want to ID four things:
 Steps to an OO design question:
 - Clarifying questions
 - Clarify the main entities in the system and their behaviors 
+- Use case model:
+    - Use case description 
+    - Triggers
+    - Actors 
+    - Preconditions / Possible failures
+    - Goals 
+    - Steps of execution 
+- Class Diagram 
+    - Boxes with the actors/ objects WITH FIELDS w/ data types
+    - Interactions between the objects
+- Sequence Diagram
+    - Options with conditions
+    - Classes for the objects from prev: go on the top
+    - Actions are lines across 
+    - Make functions ex: getRandomCoin(), etc
+- Activity Diagram 
+    - Boxes with activities
+
 
 
 #### Other
