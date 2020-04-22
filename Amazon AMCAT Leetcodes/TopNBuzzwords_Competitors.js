@@ -54,7 +54,7 @@ A teammate of yours has built a webcrawler that extracts a list of quotes about 
 You need to take these quotes and identify which toys are mentioned most frequently. Write an algorithm that 
 identifies the top N toys out of a list of quotes and list of toys.
 
-Your algorithm should output the top N toys mentioned most frequently in the quotes.
+Your algorithm should output the top N toys mentioned most ly in the quotes.
 
 Input:
 The input to the function/method consists of five arguments:
