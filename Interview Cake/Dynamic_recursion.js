@@ -15,7 +15,6 @@ Strat: Break it down into subproblems
 
 Lesson: Break the problem down "by hand" then translate that into code. 
 We knew this. But like, more reinforcement. 
-
 */
 
 
