@@ -21,7 +21,6 @@ Strategy:
             Ex: We loop at the 2nd letter, that will filter the prefix down
 - Pop the 1st three of those into answer, in their own array 
 - Return that answer
-
 */
 
 
