@@ -67,5 +67,25 @@ var myAtoi = function(str) {
     } else {
         return s;
     }
-    
+}
+
+// Attempt #2
+
+var myAtoi = function(str) {
+    const min = Math.pow(-2, 31);
+    const max = min * - 1 - 1
+
+    let s = str.trim();
+    if(s === '') return 0;
+
+    s = s.split(' ');
+    s = parseInt(str[0]);
+
+    if(Number.isNaN(s)) {
+        return 0;
+    } else if (s < min) {
+        return max;
+    } else {
+        return s;
+    }
 }
