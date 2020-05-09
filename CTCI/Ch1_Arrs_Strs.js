@@ -16,3 +16,44 @@ couple of days off.
 I'm building in an automatic Sunday off rest day. :) 
 Hopefully that'll prevent burnout. 
 */
+
+/* Arrays and Hashes 
+Arrays: Easy manipulation 
+Hashes: Great for quick lookups 
+*/
+
+
+// Q1: Implement an algo to determine if a str has all unique chars. Without using
+// a new datastructure? 
+
+
+// "abc" => true 
+// "abbc" => false
+
+
+// With a new data structure
+var uniqStr = function(str) {
+    const tracker = new Set(); 
+    const arr = str.split('');
+
+    arr.forEach(char => {
+        if(tracker.has(char)) {
+            return false;
+        } else {
+            tracker.add(char);
+        }
+    });
+    return true;
+}
+
+// Without a new data structure
+var uniqStrNoDS = function(str) {
+    for(let i = 0; i < str.length; i++) {
+        let char = str[i]
+        if(str.slice(-1, i).includes(char)) {
+            return false; 
+        }
+    }
+    return true;
+} 
+
