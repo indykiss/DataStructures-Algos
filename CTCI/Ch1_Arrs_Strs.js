@@ -57,3 +57,43 @@ var uniqStrNoDS = function(str) {
     return true;
 } 
 
+
+
+// Q2: Implement a function void reverse in C/C++ which reverse a null terminated str. 
+// SKIP
+
+// Q3: Given two strs, write a function to decide if one is a permutation of the other. 
+
+// cat, tac => true 
+// {c: 1, a: 1, t:1} => post sort: {a:1, c:1, t:1}
+// {t: 1, a:1, c:1} => post sort:  {a:1, c:1, t:1}
+// can sort if we need to to make sure hashes are actually equal 
+// if hashes are equal, then true. 
+
+var permutation = function(str1, str2) {
+
+    const hash1 = hashMaker(str1);
+    const hash2 = hashMaker(str2);
+
+    if(hash1 === hash2) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// sort => O(n * log n)
+var hashMaker = function(str) {
+    const hash = {};
+    str = str.lowerCase().sort((a,b) => a - b);
+
+    for(let i = 0; i < str.length; i++) {
+        if(hash.has(str[i])) {
+            hash[str[i]] = hash[str[i]] + 1;
+        } else {
+            hash[str[i]] = 1; 
+        }
+    }
+    return hash;
+}
+
