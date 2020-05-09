@@ -62,6 +62,8 @@ var uniqStrNoDS = function(str) {
 // Q2: Implement a function void reverse in C/C++ which reverse a null terminated str. 
 // SKIP
 
+
+
 // Q3: Given two strs, write a function to decide if one is a permutation of the other. 
 
 // cat, tac => true 
@@ -128,3 +130,33 @@ var replaceSpaceBetter = function(str) {
     return res.join('');
     // "I%20like%20C"
 }
+
+
+
+// Q5: Implement a method to perform string compression using counts of repeated strs. 
+// aabbcc => a2b2c2 
+// aabbcca => a2b2c2a1 
+
+
+var strCompress = function(str) {
+    let res = ""
+    let counter = 1;
+
+    for(let i = 1; i < str.length; i++) {
+        if(str[i-1] == str[i]) {
+            counter++;
+        } else {
+            res.concat(str[i]).concat(counter);
+            counter = 0;
+        }
+    }
+
+    if(res.length > str.length) {
+        return str;
+    } else {
+        return res;
+    }
+}
+
+
+
