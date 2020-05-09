@@ -97,3 +97,34 @@ var hashMaker = function(str) {
     return hash;
 }
 
+
+
+// Q4: Replace all spaces in a string with "%20."
+// "I like candy"
+// [I, like, candy]
+// "I%20like$20candy"
+
+var replaceSpace = function(str) {
+    const arr = str.split(' ');
+    return arr.join('%20');
+}
+
+var replaceSpaceBetter = function(str) {
+    // str: "I like C"
+    const arr = str.split('');
+    // arr: [I, ,l,i,k,e, ,c]
+
+    const res = [];
+
+    for(let i = 0; i < str; i++) {
+        if(str[i] === " ") {
+            res.push('%20');
+        } else {
+            res.push(str[i]);
+        }
+    }
+    // res: [I,%20,l,i,k,e,%20,C]
+
+    return res.join('');
+    // "I%20like%20C"
+}
