@@ -159,6 +159,58 @@ var strCompress = function(str) {
 }
 
 
+// Q6: Given an image represented by an MxN matrix, where each pixel in the image is 4 bytes,
+// write a method to rotate the image by 90 degrees. In place? 
+
+[[1,2,3,4]
+[4,3,2,1]]
+M -> 2 
+N -> 4 
+2 x 4
+[[4,1]
+[3,2]
+[2,3]
+[1,4]]
+
+var rotate90 = function(row, col) {
+    const rotated = [];
+    for(let i = 0; i < row.length; i++) {
+        const temp = [];
+        for(let j = col[i].length; j > 0; j--) {
+            temp.push(col[i][j]);
+        }
+        rotated.push(temp);
+    }
+    return rotated;
+}
+
+// Better: Look at it like layers 
+// Make the rows become columns
+    // We want to swap the last element in the arr with the first, etc
+        // So like w're swapping the last col w/ 1st col, etc
+        // TWO POINTER APPROACH 
+
+var rotate90 = function(matrix) {
+    for(let layer = 0; layer < matrix.length/ 2; layer++) {
+        let first = matrix[layer];
+        let last = matrix.length - 1 - layer; 
+
+        for(let i = first; i < last; i++) {
+            let offset = i - first; 
+            let top = matrix[first][i];
+            // left swap with top
+            matrix[first][i] = matrix[last-offset][first];
+            // bottom swap with left
+            matrix[last-offet][first] = matrix[last][last-offset];
+            // right swap with bottom 
+            matrix[last][last-offset] = matrix[i][last];
+            // top swap with right
+            matrix[i][last] = top;
+        }
+    }
+}
 
 
+// Q7: Write al algo such that if an element in an MxN matrix is 0, it's entire row
+// AND col are also set to 0. 
 
