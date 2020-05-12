@@ -214,3 +214,30 @@ var rotate90 = function(matrix) {
 // Q7: Write al algo such that if an element in an MxN matrix is 0, it's entire row
 // AND col are also set to 0. 
 
+var makeRowColZero = function(matrix) {
+    let rowTrack = new Set();
+    let colTrack = new Set();
+
+    // store the row and col index with value 0
+    for(let row = 0; row < matrix.length; row++) {
+        for(let col = 0; col < matrix[row].length; col++) {
+            if(matrix[row][col] === 0) {
+                rowTrack.add(row); 
+                colTrack.add(col);
+            }
+        }
+    }
+    // Set rows and cols to 0 
+    for(let row = 0; row < matrix.length; row++) {
+        for(let col = 0; col < matrix[row].length; col++) {
+            if(matrix[row] || matrix[col]) {
+                matrix[row][col] = 0;
+            }
+        }
+    } 
+
+}
+
+
+
+
