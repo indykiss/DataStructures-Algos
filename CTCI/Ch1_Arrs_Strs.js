@@ -235,8 +235,35 @@ var makeRowColZero = function(matrix) {
             }
         }
     } 
-
 }
+
+
+
+// Q8: Assume you have a method isSubstring that checks if one word is a substring of another word. 
+// Given str1 & str2, check if str1 is a rotation of str1 using only one call to isSubstring. 
+
+// "waterbottle" => "erbottlewater"
+
+
+var isSubstring = function(str1, str2) {
+    if(str1.includes(str2) || str2.includes(str1)) {
+        return true;
+    }
+}
+
+var strRotationChecker = function(str1, str2) {
+    let len = str1.length; 
+    let str1str1 = "";
+    
+    if(len = str2.length && len > 0) {
+        str1str1 = str1 + str1;
+        return isSubstring(str1str1, str2);
+    }
+    return false;
+}
+
+
+
 
 
 
