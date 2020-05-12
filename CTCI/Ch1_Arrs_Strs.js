@@ -162,16 +162,6 @@ var strCompress = function(str) {
 // Q6: Given an image represented by an MxN matrix, where each pixel in the image is 4 bytes,
 // write a method to rotate the image by 90 degrees. In place? 
 
-[[1,2,3,4]
-[4,3,2,1]]
-M -> 2 
-N -> 4 
-2 x 4
-[[4,1]
-[3,2]
-[2,3]
-[1,4]]
-
 var rotate90 = function(row, col) {
     const rotated = [];
     for(let i = 0; i < row.length; i++) {
@@ -209,6 +199,7 @@ var rotate90 = function(matrix) {
         }
     }
 }
+
 
 
 // Q7: Write al algo such that if an element in an MxN matrix is 0, it's entire row
