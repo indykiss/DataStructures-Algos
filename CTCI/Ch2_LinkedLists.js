@@ -107,7 +107,6 @@ var deleteMiddle = function(list) {
 }
 // Now if there's only access to that middle node 
 var deleteMiddle = function(node) {
-
     if(node == null || node.next == null) {
         return false; 
     }
@@ -115,6 +114,15 @@ var deleteMiddle = function(node) {
     node.val = next.val;
     node.next = next.next; 
     return true;
+}
+
+
+
+// Q4: Partition a linked list around a value x, such that all nodes less than x
+// come before all nodes greater than or equal to x. 
+
+var partitionLinkedList = function(list) {
+
 }
 
 
