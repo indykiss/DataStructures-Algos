@@ -88,3 +88,33 @@ var findKthLast = function(list, k) {
     return p1;
 }
 
+
+
+// Q3: Delete a node in the middle of a singly linked list.
+
+var deleteMiddle = function(list) {
+    let length = list.size; 
+    let middle = Math.floor(length/2);
+    let counter = 0;
+
+    let node = list.head; 
+    while(node !== null) {
+        counter++;
+        if(counter == middle) {
+            node.prev.next = node.next.next;
+        }
+    }
+}
+// Now if there's only access to that middle node 
+var deleteMiddle = function(node) {
+
+    if(node == null || node.next == null) {
+        return false; 
+    }
+    next = node.next; 
+    node.val = next.val;
+    node.next = next.next; 
+    return true;
+}
+
+
