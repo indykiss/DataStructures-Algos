@@ -63,4 +63,28 @@ var removeDupes = function(list) {
 
 
 
-// Q2
+// Q2: Implement an algo to find the kth to last element of a singly linked list. 
+
+var findKthLast = function(list, k) {
+    if(k <= 0) return null;
+
+    // two pointer solution
+    let p1 = head; 
+    let p2 = head;
+
+    // move p2 forward k number of times into the list
+    for(let i = 0; i < k - 1; i++) {
+        if(p2 == null) return null;
+        p2 = p2.next; 
+    }
+    if(p2 == null) return null;
+    
+    // Move p1 and p2 at the same speed. 
+        // When p2 hits the end, p1 will be at the right spot
+    while(p2.next !== null) {
+        p1 = p1.next;
+        p2 = p2.next;
+    }
+    return p1;
+}
+
