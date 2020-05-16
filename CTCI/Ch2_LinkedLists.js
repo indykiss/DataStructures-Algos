@@ -2,7 +2,6 @@
 /*
 Linked lists
 
-
 A linked list is a collection of data broken down by nodes, 
 in which each node contains two main things- data and a reference 
 to the next node; reference is called  a pointer. A linked list will 
@@ -15,4 +14,53 @@ what happens when you add/remove an element to an array.
 
 Very fast prepend and append, but very slow lookups, compared to arrays.
 
+One thing that's useful for LL is using two pointers 1 faster and 1 slower.
+
+Recursive solutions can be fundamental to solving it. 
 */
+
+// Q1: Write code to remove duplicates from an unsorted linked list. 
+
+/*
+node = val, next
+*/
+
+var removeDupes = function(list) {
+    const n = list.length; 
+    const dupeTracker = {};
+    let previous = null;
+
+    while (n !== null) {
+
+        if(dupeTracker.hasOwnProperty(n.val)) {
+            previous.next = n.next; 
+        } else {
+            dupeTracker.add(n.val, true);
+            previous = n;
+        }
+        n = n.next;
+    }
+}
+
+// Now do it without a hash table
+
+var removeDupes = function(list) {
+
+    if(list.head == null) return; 
+
+    let current = list.head;
+    while(current !== null) {
+        let runner =  current;
+        while(runner.next !== null) {
+            if(runner.next.data == current.data) {
+                runner.next = runner.next.next;
+            } else {
+                runner = runner.next;
+            }
+        }
+    }
+}
+
+
+
+// Q2
