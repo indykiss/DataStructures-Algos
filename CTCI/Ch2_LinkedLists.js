@@ -199,3 +199,37 @@ var partition = function(node, x) {
 
 
 
+// Q5: You have two numbers represented by a linked list, where each node 
+// has a single digit. The digits are stored in reverse order. 
+// Write a function that adds the two numbers and returns sum as linked list. 
+
+// (2 -> 1 -> 3) + (4 -> 5 -> 6) 312 + 654 = 966 Output: (6 -> 6 -> 9)
+
+var addReverse = function(l1, l2, carry) {
+
+    // Recurse: Done when there's no carry and both lists are null 
+    if(l1 == null && l2 == null && carry == 0) return null;
+
+    let result = new Node(carry, null, null); 
+
+    // Let's do maths on the tails
+    let value = carry;
+    if(l1 != null) {
+        value = value + l1.val;
+    }
+    if(l2 != null) {
+        value = value + l2.val;
+    }
+
+    result = value % 10;
+
+    // Recurse:
+    if(l1 !== null || l2 != null || value >= 10) {
+        let more = addReverse(l1 == null ? null : l1.next,
+                              l2 == null ? null: l2.next, 
+                              value >= 10 ? 1: 0)
+    result.setNext(more);
+    }
+    return result;
+}
+
