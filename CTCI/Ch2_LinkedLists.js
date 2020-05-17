@@ -121,8 +121,81 @@ var deleteMiddle = function(node) {
 // Q4: Partition a linked list around a value x, such that all nodes less than x
 // come before all nodes greater than or equal to x. 
 
-var partitionLinkedList = function(list) {
+var partitionLinkedList = function(list, x) {
+    // loop through list; check if val is < x, move into 1 box 
+    // if greater than x, move into different box
+    // at the end, combine the two new linked lists 
+    let lessThanX = new LinkedList;
+    let greaterThanX = new LinkedList; 
 
+    let n = list.head; 
+    while(n.next !== null) {
+        if(n.val < x) {
+            lessThanX.add(n);
+        } else {
+            greaterThanX.add(n);
+        }
+    }
+    // Merge the linked lists: this is a bad way to do this 
+    return lessThanX + greaterThanX;
 }
+
+var add = function(node) {
+    let n = new Node(node);
+    let current; 
+
+    if(this.head === null) {
+        this.head = n; 
+    } else {
+        current = this.head; 
+        // Get to the tail of the linked list to add new node 
+        while(current.next) {
+            current = current.next;
+        }
+        current.next = n; 
+    }
+    this.size++;
+}
+
+// Another, better way to do the above: 
+var partition = function(node, x) {
+    let beforeStart = new Node();
+    let afterStart = new Node();
+    let beforeEnd = new Node();
+    let afterEnd = new Node();
+
+    while(node != null) {
+        let next = node.next; 
+        node.next = null; 
+        // Insert the node into end of BEFORE list
+        if(node.val < x) {
+            if(beforeStart == null) {
+                beforeStart = node; 
+                beforeEnd = beforeStart;
+            } else {
+                beforeEnd.next = node;
+                beforeEnd = node; 
+            }
+        } else if (node.val >= x) {
+        // Insert node into end of AFTER list
+            if(afterStart == null) {
+                afterStart = node; 
+                afterEnd = afterStart; 
+            } else {
+                afterEnd.next = node; 
+                afterEnd = node; 
+            }
+        }
+        node = next; 
+    }
+
+    if(beforeStart == null) {
+        return afterStart;
+    }
+    // Merge the two lists 
+    beforeEnd.next = afterStart;
+    return beforeStart;
+}
+
 
 
