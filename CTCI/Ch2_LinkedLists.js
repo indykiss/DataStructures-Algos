@@ -283,3 +283,29 @@ var findCycle = function(head) {
     // NOW they are both at the start of the loop 
     return fast; 
 }
+
+
+
+// Q7: Implement a function to check if a linked list is a palindrome 
+    // 1 -> 2 -> 3 -> 2 -> 1 : True 
+
+var palindrome = function(head) {
+    // Reverse the list and compare. If original and reversed are equal, true
+    let arr = [];
+
+    while(head !== null) {
+        arr.push(head.val);
+        head = head.next; 
+    }
+    if(arr.length == 1) return true
+
+    let reversed = arr.reverse();
+
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] !== reversed[arr.length-i-1]) {
+            return false;
+        }
+    }
+    return true; 
+}
+
