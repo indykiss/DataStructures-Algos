@@ -206,7 +206,6 @@ var partition = function(node, x) {
 // (2 -> 1 -> 3) + (4 -> 5 -> 6) 312 + 654 = 966 Output: (6 -> 6 -> 9)
 
 var addReverse = function(l1, l2, carry) {
-
     // Recurse: Done when there's no carry and both lists are null 
     if(l1 == null && l2 == null && carry == 0) return null;
 
@@ -233,3 +232,54 @@ var addReverse = function(l1, l2, carry) {
     return result;
 }
 
+
+
+// Q6: Given a circular linked list, find the node that leads to the cycle.
+// A -> B -> C -> D -> E -> C 
+    // Returns C 
+
+// Nope, but I'm keeping: 
+var findCycle = function(list) {
+    let cycleTracker = new Set();
+    let node = list.head;
+    while (node.next !== null) {
+        if(cycleTracker.has(node.val)) {
+            return node.val;
+        } else{
+            cycleTracker.add(node.val);
+        }
+        node = node.next; 
+    }
+}
+
+// Real solution is creating a fast and a slow pointer
+    // IF the fast pointer ever hits the same value as the slow pointer, then 
+    // return the slow pointer
+
+var findCycle = function(head) {
+    let slow = head; 
+    let fast = head; 
+
+    // Find meeting point
+    while (fast !== null && fast.next !== null) {
+        slow = slow.next; 
+        // fast goes 2 steps for every 1 step that slow goes 
+        fast = fast.next.next;
+        if(slow == fast) { // we has a collision
+            break;
+        }
+    }
+
+    // No cycle
+    if(fast == null || fast.next == null) return null;
+
+    // Move slow to the head. Keep fast as meeting point. Each are K 
+    // steps away from loop start. If they move at same pace, they meet at loop start
+    slow = head; 
+    while(slow != fast) {
+        slow = slow.next; 
+        fast = fast.next; 
+    }
+    // NOW they are both at the start of the loop 
+    return fast; 
+}
