@@ -290,7 +290,8 @@ var findCycle = function(head) {
     // 1 -> 2 -> 3 -> 2 -> 1 : True 
 
 var palindrome = function(head) {
-    // Reverse the list and compare. If original and reversed are equal, true
+    // Reverse the list and compare. If original and reversed are equal, true  
+        // Do this by adding values into an array and hitting reverse 
     let arr = [];
 
     while(head !== null) {
