@@ -67,5 +67,47 @@ class StackMaker {
         // }
         // return smallest;
     }
-
 }
+
+
+
+/* Q3: Imagine a literal stack of plates. If the stack gets too high, 
+ it'll topple. So in real life, we'd create a new stack of plates when the 
+ first stack gets too high. 
+ Create a class SetOfStacks that mimics this. Create a threshold of what 
+ too high would be. Push and pop. 
+*/
+
+class SetOfStacks {
+
+    constructor() {
+        this.set = [[1,2,3,4,5], [6,7,8,9,10], []];
+        this.threshold = 5;
+    }
+
+    createNewStack() {
+        this.set.push([]);
+    }
+
+    push(ele) {
+        if(this.set.pop.length >= this.threshold) {
+            createNewStack();
+            this.set[-1].push(ele);
+        } else {
+            this.set[-1].push(ele);
+        }
+    }
+
+    pop() {
+        this.set[-1].pop();
+    }
+}
+
+
+
+/* Q4: In the classic problem of the towers of Hanoi, you have 3 towers 
+and N disks of different sized to slide onto each tower. 
+The puzzle starts
+
+
+*/
