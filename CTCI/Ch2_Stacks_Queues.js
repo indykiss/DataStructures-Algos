@@ -110,8 +110,46 @@ and N disks of different sized to slide onto each tower.
 The puzzle starts with disks sorted in asc order from top to bottom. 
 You have the following constraints:
 - Only one disk can be moved at one top 
-- A disk is dlie off the top of the tower onto the next tower
+- A disk is slid off the top of the tower onto the next tower
 - A disk can only be placed on top of a larger disk 
 Write a program to move the disks from the first tower to the last using stacks. 
 */
+
+// All towers are last in, first out. All three are stacks.
+
+
+
+
+
+// Q5: Implement a queue using two stacks 
+
+// Queue: First in, first out
+class MyQueue {
+
+    constructor() {
+        this.inStack = [];
+        this.outStack = [];
+    }
+    // [1,2,3]
+    // pop => pulls out the 1, returns [2,3]
+
+    push(ele) {
+        this.inStack.push(ele);
+    }
+
+    pop() {
+        // inStack: [1,2,3]
+        // outStack: [2,3,1]
+        if(this.outStack.length === 0) {
+            while(this.inStack.length > 0) {
+                this.outStack.push(this.inStack.pop());
+            }
+        }
+        return this.outStack.pop();
+    }
+
+
+}
+
+
 
