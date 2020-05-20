@@ -122,17 +122,15 @@ Write a program to move the disks from the first tower to the last using stacks.
 
 
 // Q5: Implement a queue using two stacks 
-
 // Queue: First in, first out
 class MyQueue {
-
     constructor() {
         this.inStack = [];
         this.outStack = [];
     }
+
     // [1,2,3]
     // pop => pulls out the 1, returns [2,3]
-
     push(ele) {
         this.inStack.push(ele);
     }
@@ -147,9 +145,11 @@ class MyQueue {
         }
         return this.outStack.pop();
     }
-
-
 }
+
+
+
+// Q6:
 
 
 
