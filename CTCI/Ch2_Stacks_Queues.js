@@ -107,7 +107,11 @@ class SetOfStacks {
 
 /* Q4: In the classic problem of the towers of Hanoi, you have 3 towers 
 and N disks of different sized to slide onto each tower. 
-The puzzle starts
-
-
+The puzzle starts with disks sorted in asc order from top to bottom. 
+You have the following constraints:
+- Only one disk can be moved at one top 
+- A disk is dlie off the top of the tower onto the next tower
+- A disk can only be placed on top of a larger disk 
+Write a program to move the disks from the first tower to the last using stacks. 
 */
+
