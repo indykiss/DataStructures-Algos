@@ -118,6 +118,8 @@ Write a program to move the disks from the first tower to the last using stacks.
 // All towers are last in, first out. All three are stacks.
 
 
+// Ugh I'm just going to skip this one
+
 
 
 
