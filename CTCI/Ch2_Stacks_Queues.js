@@ -150,7 +150,26 @@ class MyQueue {
 
 
 
-// Q6: 
+/* Q6: Write a program to sort a stack in ascending order with biggest items 
+on top. 
+You can use other stacks, but can't copy the elements into a new DS 
+This ascStack supports push, pop, peek, and isEmpty. 
+    When they say "this thing supports x, y, z functions" that means that those
+    functions already exist. No need to do anything here. 
+*/
+
+function sortStack(unsorted) {
+    const sorted = [];
+    
+    while(unsorted.length !== 0) {
+        let ele = unsorted.pop();
+
+        while(!sorted.isEmpty && unsorted.peek > ele) {
+            sorted.oush(ele);
+        }
+    }    
+}
+// O(n^2) time and O(n) space
 
 
 
