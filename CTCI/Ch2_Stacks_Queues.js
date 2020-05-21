@@ -173,3 +173,48 @@ function sortStack(unsorted) {
 
 
 
+/* Q7: An animal shelter has dogs and cats. They only allow the oldest of each 
+to be adopted. Queue. First in, first out system. 
+Create the shelter DS with dequeue, enqueue, dequeuePuppy, dequeueKitty. 
+You may use linked lists.
+*/
+
+class Shelter {
+
+    constructor() {
+        // Both linked lists that track age and name
+        this.dogs = [];
+        this.cats = [];
+    }
+
+    enqueue(animal) {
+        if(animal.isDog()) this.dogs.add(animal);
+        if(animal.isCat()) this.cats.add(animal);
+    }
+
+    dequeuAny() {
+        if(this.dogs.size === 0) return this.dequeueCat();
+        if(this.cats.size === 0) return this.dequeueDog();
+
+        let dog = this.dog.peek();
+        let cat = this.cat.peek();
+        if(isOlder(cat, dog)) {
+            return dequeueCat(); 
+        } else {
+            return dequeueDog();
+        }
+    }
+
+    dequeueDog() {
+        return this.dogs.first();
+    }
+
+    dequeueCat() {
+        return this.cats.first();
+    }
+
+    isOlder(cat, dog) {
+        if(cat.age > dog.age) return true;
+    }
+
+}
