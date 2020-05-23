@@ -28,6 +28,38 @@ Depth-first search is a way to explore a tree or graph by traveling down
 one node branch to the end, then turning around if couldn't find the thing, 
 then traveling down another branch, etc, until we find the find we want. 
 
+
+DFS:
+var search = function(root) {
+    if(root == null) return;
+    visit(root);
+    root.visited = true; 
+    root.forEach(n in root.next) {
+        if(n.visited == false) {
+           search(n)
+        }
+    }
+}
+
+BFS:
+var search = function(root) {
+    let queue = [];
+    visit(root);
+    root.visited = true; 
+    queue.enqueue(root); // Add root to end of the queue
+
+    while(!queue.isEmpty) {
+        let r = queue.dequeue();
+        root.forEach(let n in r.adjacent) {
+            visit(n);
+            n.visited = true;
+            queue.enqueue(n);
+        }
+    }
+}
+
+
+
 */
 
 
