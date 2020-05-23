@@ -1,4 +1,3 @@
-
 /*
 Trees and graphs aren't linear, so harder to traverse. 
 Worst and average time can vary really wildly too. 
@@ -22,4 +21,7 @@ In-order:
 Post-order: 
 Pre-order: 
 */
+
+
+// Q1: 
 
