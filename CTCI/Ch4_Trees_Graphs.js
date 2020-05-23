@@ -58,10 +58,68 @@ var search = function(root) {
     }
 }
 
-
-
 */
 
 
-// Q1: 
+// Q1: Implement a function to check if a binary tree is balanced. 
+    // That is left side and right side of the tree height differs by 
+    // max 1 level. 
 
+var balanced = function(root) {
+    let left = root.left; 
+    let right = root.right; 
+
+    // Count height for left branch and right branch
+
+    if(dfs(left) + 1 < dfs(right) || dfs(left) + 1 > dfs(right)) {
+        return false; 
+    } else {
+        return true; 
+    }
+
+}
+
+// Returns height branch
+var dfs = function(root) {
+    let height = 0; 
+
+    if(!root) return;
+    let left = dfs(root.left);
+    let right = dfs(root.right);
+
+    height = Math.max(height, left + right);
+
+    return Math.max(left, right) + 1;
+}
+
+
+
+// Q2: Given a directed graph, design an algo to find out whether there
+// is a route between two nodes. 
+
+
+var route = function(graph, first, second) {
+
+
+    // traverse the 
+
+}
+
+
+
+// Q3: Given a sorted (increasing order) array, right an algo to make a
+    // binary search tree with minimal height,s being every branch has 2 leaves. 
+
+var convertArrToBST = function(arr) {
+
+    // arr: [1,2,3,4,5,6]
+    // rules?   
+        // root would be the 
+
+
+}
+
+
+
+// Q4:  Given a binary tree, design an algo that creates a linked list of all 
+// the nodes at each depth. 
