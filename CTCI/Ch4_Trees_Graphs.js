@@ -20,6 +20,14 @@ Traversing a tree:
 In-order:
 Post-order: 
 Pre-order: 
+
+Breadth-first search is a way to explore a tree or graph by looking 
+at the nodes one step away, then two steps away. 
+
+Depth-first search is a way to explore a tree or graph by traveling down
+one node branch to the end, then turning around if couldn't find the thing, 
+then traveling down another branch, etc, until we find the find we want. 
+
 */
 
 
