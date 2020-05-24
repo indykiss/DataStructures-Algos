@@ -123,3 +123,8 @@ var convertArrToBST = function(arr) {
 
 // Q4:  Given a binary tree, design an algo that creates a linked list of all 
 // the nodes at each depth. 
+    // Ex: If there is a tree with depth D, you'll have D linked lists. 
+
+
+
+// Q5: 
