@@ -65,32 +65,57 @@ var search = function(root) {
     // That is left side and right side of the tree height differs by 
     // max 1 level. 
 
-var balanced = function(root) {
-    let left = root.left; 
-    let right = root.right; 
+var checkHeight = function(root) {
+    if(root == null) return 0; 
 
-    // Count height for left branch and right branch
+    // Check if the left subbranch is balanced
+    let leftHeight = checkHeight(root.left);
+        if(leftHeight == -1) return -1;  
+    
+    // Check if the right subbranch is balanced 
+    let rightHeight = checkHeight(root.right); 
+        if(rightHeight == -1) return -1;
 
-    if(dfs(left) + 1 < dfs(right) || dfs(left) + 1 > dfs(right)) {
-        return false; 
+    let heightDiff = leftHeight - rightHeight;
+
+    if(Math.abs(heightDiff) > 1) {
+        return -1; 
+    } else {
+        return Math.max(leftHeight, rightHeight) + 1; // Return the height
+    }
+}
+
+var isBalanced = function(node) {
+    if(checkHeight(node) == -1) {
+        return false;
     } else {
         return true; 
     }
-
 }
 
-// Returns height branch
-var dfs = function(root) {
-    let height = 0; 
+// Runs in O(N) time and O(log N) space
 
-    if(!root) return;
-    let left = dfs(root.left);
-    let right = dfs(root.right);
 
-    height = Math.max(height, left + right);
-
-    return Math.max(left, right) + 1;
-}
+// // OK but inefficient:
+// var balanced = function(root) {
+//     let left = root.left; 
+//     let right = root.right; 
+//     // Count height for left branch and right branch
+//     if(dfs(left) + 1 < dfs(right) || dfs(left) + 1 > dfs(right)) {
+//         return false; 
+//     } else {
+//         return true; 
+//     }
+// }
+// // Returns height branch
+// var dfs = function(root) {
+//     let height = 0; 
+//     if(!root) return;
+//     let left = dfs(root.left);
+//     let right = dfs(root.right);
+//     height = Math.max(height, left + right);
+//     return Math.max(left, right) + 1;
+// }
 
 
 
