@@ -203,5 +203,46 @@ var createLevelLinkedLists = function(root, lists, lvl) {
 
 
 
+// Q5: Implement a function to see if a binary tree is a binary search tree. 
+    // BST has left node that's smaller than parent and right node that's larger than parent 
+    // Note: BST lefts must be MINIMUM num and same with right for MAX num 
+    // 10 - (L) 8  (R) 15 - (L) 12 
+    // NOT a binary search tree since 12 is larger than 10
 
-// Q5: 
+// Convert the BST to an array and check if it's sorted    
+var copyBST = function(root, arr = []) {
+    if(root == null) return;
+
+    copyBST(root.left, arr);
+    arr[index] = root.val;
+    index++;
+    copyBST(root.right, arr);
+}
+
+var checkBST = function(root) {
+    let arr = [root.size];
+    copyBST(root, arr);
+    for(let i = 1; i < arr.length; i++) {
+        if(arr[i] < arr[i-1]) return false;
+    }
+    return false; 
+}
+
+// Create min and max stacks. As we go left, update left. As we go right, update right. 
+
+var checkBST = function(node, min, max) {
+    if(node == null) return true;  // base case 
+
+    if(node.val <= min || node.val > max) {
+        return false;
+    } 
+
+    if(!checkBST(node.left, min, node.val)) {
+        return false;
+    }
+    if(!checkBST(node.right, node.val, max)) {
+        return false;
+    }
+    return true;
+}
+

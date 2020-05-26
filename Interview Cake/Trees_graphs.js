@@ -184,7 +184,6 @@ function isBinarySearchTree(treeRoot) {
   
   // If all nodes passed the tests, then we have a superbalanced tree
   return true;
-
 }
 
 
