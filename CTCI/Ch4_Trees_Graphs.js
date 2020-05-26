@@ -18,8 +18,17 @@ the tree and all non-leaf nodes have exactly two children.
 Traversing a tree:
 
 In-order:
+    1. Traverse the left subtree, i.e., call Inorder(left-subtree)
+    2. Visit the root.
+    3. Traverse the right subtree, i.e., call Inorder(right-subtree)
 Post-order: 
+    1. Traverse the left subtree, i.e., call Postorder(left-subtree)
+    2. Traverse the right subtree, i.e., call Postorder(right-subtree)
+    3. Visit the root.
 Pre-order: 
+    1. Visit the root.
+    2. Traverse the left subtree, i.e., call Preorder(left-subtree)
+    3. Traverse the right subtree, i.e., call Preorder(right-subtree)
 
 Breadth-first search is a way to explore a tree or graph by looking 
 at the nodes one step away, then two steps away. 
@@ -96,38 +105,52 @@ var isBalanced = function(node) {
 // Runs in O(N) time and O(log N) space
 
 
-// // OK but inefficient:
-// var balanced = function(root) {
-//     let left = root.left; 
-//     let right = root.right; 
-//     // Count height for left branch and right branch
-//     if(dfs(left) + 1 < dfs(right) || dfs(left) + 1 > dfs(right)) {
-//         return false; 
-//     } else {
-//         return true; 
-//     }
-// }
-// // Returns height branch
-// var dfs = function(root) {
-//     let height = 0; 
-//     if(!root) return;
-//     let left = dfs(root.left);
-//     let right = dfs(root.right);
-//     height = Math.max(height, left + right);
-//     return Math.max(left, right) + 1;
-// }
-
+/* OK but inefficient:
+var balanced = function(root) {
+    let left = root.left; 
+    let right = root.right; 
+    // Count height for left branch and right branch
+    if(dfs(left) + 1 < dfs(right) || dfs(left) + 1 > dfs(right)) {
+        return false; 
+    } else {
+        return true; 
+    }
+}
+// Returns height branch
+var dfs = function(root) {
+    let height = 0; 
+    if(!root) return;
+    let left = dfs(root.left);
+    let right = dfs(root.right);
+    height = Math.max(height, left + right);
+    return Math.max(left, right) + 1;
+}
+*/
 
 
 // Q2: Given a directed graph, design an algo to find out whether there
 // is a route between two nodes. 
-
+    // A simple BFS (use a queue), tracking the nodes we've visited
 
 var route = function(graph, first, second) {
+    let queue = []; 
+    let visited = {first: true}
 
+    queue.push(first);
 
-    // traverse the 
-
+    while(queue.length > 0) {
+        let node = queue.pop();
+        if(node == second) {
+            return true;
+        } 
+        for(let i = 0; i < graph.length; i++) {
+            if(visited[i] == false) {
+                queue.add(visited[i]);
+                visited[i] = true;
+            }
+        }
+    }
+    return false; 
 }
 
 
@@ -135,20 +158,49 @@ var route = function(graph, first, second) {
 // Q3: Given a sorted (increasing order) array, right an algo to make a
     // binary search tree with minimal height,s being every branch has 2 leaves. 
 
-var convertArrToBST = function(arr) {
+// S1: Use the middle of the array as the root, take the left subarr as left branch
+// and right subarray as right branch. 
+// S2: Recurse 
 
-    // arr: [1,2,3,4,5,6]
-    // rules?   
-        // root would be the 
+var convertArrToBST = function(arr, start, end) {
 
+    if(end < start) return null;
 
+    let mid = Math.abs((start +  end) / 2);
+    let node = arr[mid];
+
+    node.left = convertArrToBST(arr, start, mid-1);
+    node.right = convertArrToBST(arr, mid+1, end);
+    return node; 
 }
 
 
 
-// Q4:  Given a binary tree, design an algo that creates a linked list of all 
-// the nodes at each depth. 
-    // Ex: If there is a tree with depth D, you'll have D linked lists. 
+/* Q4:  Given a binary tree, design an algo that creates a linked list of all 
+ the nodes at each depth. 
+     Ex: If there is a tree with depth D, you'll have D linked lists. 
+Do a preorder traversal where we pass in level + 1 to the next recursive call. 
+*/
+
+var createLevelLinkedLists = function(root, lists, lvl) {
+
+    if(root == null) return; // base case
+
+    let list = null; 
+
+    if(lists.size() == lvl) {
+        list = new LinkedList();
+        // Levels are traversed in order. So it's this is the first time we're looking at
+        // level i, we must have seen levels 0 through i-1. So we can add this lvl to the end 
+        lists.add(list);
+    } else {
+        list = lists.get(lvl);
+    }
+    list.add(root); 
+    createLevelLinkedLists(root.left, lists, lvl + 1);
+    createLevelLinkedLists(root.right, lists, lvl + 1);
+}
+
 
 
 
