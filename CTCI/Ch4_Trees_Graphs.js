@@ -229,7 +229,6 @@ var checkBST = function(root) {
 }
 
 // Create min and max stacks. As we go left, update left. As we go right, update right. 
-
 var checkBST = function(node, min, max) {
     if(node == null) return true;  // base case 
 
@@ -245,4 +244,13 @@ var checkBST = function(node, min, max) {
     }
     return true;
 }
+
+
+
+/* Q6: Write an algo to find the next node of a given node in a binary search tree. 
+ Assume that each node has a link to its parent.
+
+"Next" node means in-order successor of the given node. 
+*/
+
 
