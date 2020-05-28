@@ -250,7 +250,50 @@ var checkBST = function(node, min, max) {
 /* Q6: Write an algo to find the next node of a given node in a binary search tree. 
  Assume that each node has a link to its parent.
 
-"Next" node means in-order successor of the given node. 
+"Next" node means in-order successor of the given node:
+
+So in-order means:
+ - Travel from left subtree to root/ current node to right subtree. 
+Order is left subtree to current node to right subtree. 
+
+SO if we have the current node, we are just looking for the node that's on the 
+right subtree. BUT what happens if there isn't a right subtree?
+
+If there isn't a right subtree, the next node is the given node's parent.
+    IF the parent hasn't been traversed. 
 */
+
+// var pseudoCode = function(n) {
+//     if(n has a right subtree) {
+//         return leftmost child of the right subtree 
+//     } else {
+//         while(n is the right child of n.parent) {
+//             n = n.parent; // Go up the tree
+//         }
+//         return n.parent; 
+//     }
+// }
+
+var inOrderTraversal = function(n) {
+    if(n == null) return null; 
+
+    // Found right child so return its leftmost node of right subtree
+    if(n.parent == null || n.right != null) {
+        return leftMostChild(n.right);
+    // Case scenario when there is no right subtree
+    } else {
+        let temp = n;
+        let parent = temp.parent; 
+        // Go up until we're on left instead of right 
+        while(parent != null && parent.left != temp) {
+            temp = parent;
+            // continue loop
+            parent = parent.parent;
+        }
+        return parent; 
+    }
+}
+
+
 
 
