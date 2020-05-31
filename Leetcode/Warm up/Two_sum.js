@@ -9,6 +9,44 @@ and you may not use the same element twice.
 O(n) solution as we loop once
 */
 
+
+
+// Algoexepert: 
+// O(n^2) time and O(1) space
+function twoNumberSum(array, targetSum) {
+	for(let i = 0; i < array.length - 1; i++) {
+		let first = array[i];
+		
+		for(let j = i + 1; j < array.length; j++) {
+			let second = array[j];
+			
+			if(first + second == targetSum) {
+				return [first, second]; 
+			}
+		}
+	}
+	return [];
+}
+
+// O(n) time and O(n) space
+function twoNumberSum(array, targetSum) {
+	let haveWeSeen = {}
+  
+	for(let i = 0; i < array.length; i++) {
+		let ele = array[i];
+		const partner = targetSum - ele;
+		
+		if(partner in haveWeSeen) {
+			return [ele, partner];
+		} else {
+			haveWeSeen[ele] = true;
+		}
+	}
+	return [];
+}
+
+
+
 var twoSum = function(nums, target) {
     // Make a hash 
     let hash = {}
