@@ -38,3 +38,31 @@ var closestValue = function(root, target, min = null) {
     }
     
 };
+
+
+// Algoexpert: 
+
+// Average: O(log n) time and O(log n) space
+// Worst: O(n) time and O(n) space
+
+function findClosestValueInBst(tree, target) {
+	return findClosesteValueBSTHelper(tree, target, Infinity)
+}
+
+function findClosesteValueBSTHelper(tree, target, closest) {	
+	// Base case for recursion
+	if(tree === null) return closest;
+			
+	// Math to find the closest
+	if(Math.abs(target - closest) > Math.abs(target - tree.value)) {
+		closest = tree.value;
+	}
+	
+	if(target < tree.value) {
+			return findClosesteValueBSTHelper(tree.left, target, closest)
+		} else if(target > tree.value) {
+			return findClosesteValueBSTHelper(tree.right, target, closest)
+		} else {
+			return closest;
+		}
+}
