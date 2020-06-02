@@ -45,7 +45,10 @@ var closestValue = function(root, target, min = null) {
 
 // With recursion:
 // Average: O(log n) time and O(log n) space
-// Worst: O(n) time and O(n) space
+    // O(log n) because we loop and will probs find it before we reach end of the 
+    // inputted tree
+// Worst: O(n) time and O(n) space 
+    // Worst time if the tree is just 1 long branch and we have to go through it all
 
 function findClosestValueInBst(tree, target) {
 	return findClosesteValueBSTHelper(tree, target, Infinity)
@@ -73,7 +76,10 @@ function findClosesteValueBSTHelper(tree, target, closest) {
 // Without recurison:
 // Saves space because ?? 
 // Average time: O(log n) time and O(1) space 
+    // O(log n) because we loop slightly and will probs find it before we reach end of the 
+    // inputted tree
 // Worst: O(n) time and O(1) space;
+    // Worst time if the tree is just 1 long branch and we have to go through it all
 
 function findClosestValueInBst(tree, target, closest = 0) {
     let current = tree; 
