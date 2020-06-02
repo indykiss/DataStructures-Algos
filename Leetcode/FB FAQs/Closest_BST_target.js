@@ -42,6 +42,8 @@ var closestValue = function(root, target, min = null) {
 
 // Algoexpert: 
 
+
+// With recursion:
 // Average: O(log n) time and O(log n) space
 // Worst: O(n) time and O(n) space
 
@@ -59,10 +61,36 @@ function findClosesteValueBSTHelper(tree, target, closest) {
 	}
 	
 	if(target < tree.value) {
-			return findClosesteValueBSTHelper(tree.left, target, closest)
-		} else if(target > tree.value) {
-			return findClosesteValueBSTHelper(tree.right, target, closest)
-		} else {
-			return closest;
-		}
+		return findClosesteValueBSTHelper(tree.left, target, closest)
+	} else if(target > tree.value) {
+		return findClosesteValueBSTHelper(tree.right, target, closest)
+	} else {
+		return closest;
+    }
 }
+
+
+// Without recurison:
+// Saves space because ?? 
+// Average time: O(log n) time and O(1) space 
+// Worst: O(n) time and O(1) space;
+
+function findClosestValueInBst(tree, target, closest = 0) {
+    let current = tree; 
+
+    while(current !== null) {
+        // What's closest? 
+        if(Math.abs(target - closest) > Math.abs(target - current.value)) {
+            closest = current.value;
+        } 
+        if(target < current.value) {
+            current = current.left; 
+        } else if (target > current.value) {
+            current = current.right; 
+        } else {
+            break;
+        }
+    }
+    return closest; 
+}
+
