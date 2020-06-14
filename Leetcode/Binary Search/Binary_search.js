@@ -18,7 +18,6 @@ function binarySearch(array, target) {
 
 // [3,4,5,6,7,8] target: 7
 function binarySearchHelper(array, target, lowerBound, upperBound) {
-
 	while(lowerBound <= upperBound) {
 		const mid = Math.floor((lowerBound + upperBound) / 2)
 		const aprox = array[mid];
@@ -33,4 +32,23 @@ function binarySearchHelper(array, target, lowerBound, upperBound) {
 		}
 	}
 	return -1;
+}
+
+
+
+
+// Recursive solution:
+function binarySearch(array, target) {
+	return binarySearchHelperRec(array, target, 0, array.length - 1)	
+}
+function binarySearchHelperRec(array, target, lowerBound, upperBound) {
+	if(upperBound < lowerBound) return -1;
+	const aprox = Math.floor((lowerBound + upperBound)/2);
+	if(target == array[aprox]) {
+		return aprox;
+	} else if(target < array[aprox]) {
+		return binarySearchHelperRec(array, target, lowerBound, aprox - 1);
+	} else {
+		return binarySearchHelperRec(array, target, aprox + 1, upperBound);
+	}
 }
