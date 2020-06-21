@@ -46,3 +46,4 @@ function isPalindrome(str) {
     }
     return str == reversedStr;
 }
+
