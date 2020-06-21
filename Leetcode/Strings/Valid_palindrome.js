@@ -24,3 +24,25 @@ var isPalindrome = function(s) {
     }
     
 }
+
+
+
+
+// Algoexpert:
+// O(n) time and O(1) space
+function isPalindrome(string) {
+    let reversed = string.split('').reverse().join('');
+    if(reversed == string) {
+          return true;	
+    } else {
+          return false;
+    }
+}
+
+function isPalindrome(str) {
+    let reversedStr = '';
+    for(let i = str.length - 1; i >= 0; i--) {
+        reversedStr += str[i]
+    }
+    return str == reversedStr;
+}
