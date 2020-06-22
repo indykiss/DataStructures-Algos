@@ -6,6 +6,11 @@ Three sum
 
 Find all the triplets in the given array that add to 
 the target sum. 
+
+O(n^2) time and O(n) space since we're holding an array that
+can have a lot of triplets
+
+Leetcode and algoexpert
 */
 function threeNumberSum(array, targetSum) {
     array = array.sort((a,b) => a-b)
