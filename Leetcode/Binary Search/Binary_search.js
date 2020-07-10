@@ -52,3 +52,20 @@ function binarySearchHelperRec(array, target, lowerBound, upperBound) {
 		return binarySearchHelperRec(array, target, aprox + 1, upperBound);
 	}
 }
+
+
+// Recursive practice:
+function binarySearch(array, target) {
+	return binarySearchHelperRec(array, target, 0, array.length - 1)	
+}
+function binarySearchHelperRec(array, target, lowerBound, upperBound) {
+	if(upperBound < lowerBound) return -1;
+	const aprox = Math.floor((lowerBound + upperBound)/2);
+	if(target == array[aprox]) {
+		return aprox;
+	} else if(target < array[aprox]) {
+		return binarySearchHelperRec(array, target, lowerBound, aprox - 1);
+	} else {
+		return binarySearchHelperRec(array, target, aprox + 1, upperBound);
+	}
+}
