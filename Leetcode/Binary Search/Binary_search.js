@@ -69,3 +69,4 @@ function binarySearchHelperRec(array, target, lowerBound, upperBound) {
 		return binarySearchHelperRec(array, target, aprox + 1, upperBound);
 	}
 }
+
