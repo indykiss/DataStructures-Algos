@@ -65,3 +65,29 @@ var isAnagram = function(s, t) {
     return true;
 };
 
+
+
+
+// Practice:
+
+var isAnagram = function(s, t) {
+    // Keep 1 map to count common characters & num of appearances
+    const count = {};
+    // Count the chars in s
+    for(let i = 0; i < s.length; i++) {
+        let char = s[i]
+        count[char] = (count[char] || 0) + 1;
+    }
+    // Decrement char count in t
+    for(let i = 0; i < t.length; i++) {
+        let char = t[i]
+        if(!count[char]) {return false;}         
+        count[char]--;
+    }   
+    // If not equal, false else true
+    if(s.length !== t.length) {
+        return false;
+    }
+    return true;
+};
+
