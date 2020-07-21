@@ -65,3 +65,20 @@ var twoSum = function(nums, target) {
         }
     }    
 }
+
+
+
+var twoSum = function(arr, target) {
+    const seen = {};
+    
+    for(let i = 0; i < arr.length; i++) {
+        let partner = target - arr[i];
+        let found = seen[partner]
+        
+        if(found !== undefined) return [i, found]
+        
+        seen[arr[i]] = i;
+    }
+    
+    return false;
+}
