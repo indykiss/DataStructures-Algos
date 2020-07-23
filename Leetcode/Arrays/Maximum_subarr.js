@@ -19,7 +19,6 @@ what the arr eles equal that largest sum
 
 
 
-
 var maxSubArray = function(nums) {
     let largestSum = nums[0];
     let bestSoFar = -Infinity; 
