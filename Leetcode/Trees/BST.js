@@ -38,5 +38,13 @@ class BST {
           // If BST has only 1 node, no remove
       return this;
     }
+
+    getMinValue() {
+        if(this.left === null) {
+            return this.value;
+        } else {
+            return this.left.getMinValue();
+        }
+    }
   }
 
