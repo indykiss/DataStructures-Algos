@@ -14,6 +14,17 @@ Strategy:
 - Then we want to slice the array until k 
 */
 
+var kClosest = function(points, k) {
+    points = points.sort((a,b) => distance(a) - distance(b));
+    return poits.slice(0,k);
+}
+var distance = function(pt) {
+    let x = pt[0];
+    let y = pt[1];
+    return (x*x + y*y);
+}
+
+
 
 // attempt #5
 var kClosest = function(points, K) {
