@@ -1,7 +1,8 @@
 /*
 Move Zeroes
 
-Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements. Do this in-place. 
+Given an array nums, write a function to move all 0's to the end 
+of it while maintaining the relative order of the non-zero elements. Do this in-place. 
 
 Example:
 Input: [0,1,0,3,12]
@@ -24,3 +25,13 @@ var moveZeroes = function(nums) {
         }
     }
 };
+
+
+var moveZeros = function(nums) {
+    for(let i = nums.length; i>=0; i--) {
+        if(nums[i] == 0) {
+            nums.splice(i,1);
+            nums.push([0]);
+        }
+    }
+}
