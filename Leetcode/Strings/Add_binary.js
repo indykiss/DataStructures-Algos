@@ -39,3 +39,20 @@ var addBinary = function(a, b) {
         // translate sum back into binary then string 
     return (num1 + num2).toString(2);
 };
+
+
+
+var addBinary = function(a, b) {
+    let sum = 0
+
+    // Convert binary to numbers
+    let binaryA = BigInt("0b" + a);
+    let binaryB = BigInt("0b" + b);
+    
+    // Add them together 
+    sum = binaryA + binaryB; 
+    
+    // Convert back to binary
+        // .toString(base of 2)
+    return sum.toString(2);
+}
