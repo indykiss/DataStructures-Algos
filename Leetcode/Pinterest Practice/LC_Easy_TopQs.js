@@ -43,4 +43,18 @@ var removeDuplicates = function(nums) {
 // Intersection of two arrays
 
 
-// Two Sum
+// Two Sum - Given an arr and a target, return the two indices that sum up to the target
+// [2,3,4], 6 => [0,2]
+var twoSum = function(nums, target) {
+    let seen = {};
+    
+    for(let i = 0; i < nums.length; i++) {
+        let curr = nums[i],
+            partner = target - curr,
+            partnerID = seen[partner];
+        if(partnerID !== undefined) {
+           return [partnerID, i]
+        }
+        seen[curr] = i;
+    }
+}
