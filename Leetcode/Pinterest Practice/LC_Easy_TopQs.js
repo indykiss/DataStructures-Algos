@@ -39,12 +39,28 @@ var removeDuplicates = function(nums) {
     return i;
 } 
 
+// Given an array, rotate the array to the right by k non-negative steps
+// Input: nums = [-1,-100,3,99], k = 2
+// Output: [3,99,-1,-100]
+// Explanation: 
+// rotate 1 steps to the right: [99,-1,-100,3]
+// rotate 2 steps to the right: [3,99,-1,-100]
+var rotate = function(arr, k) {
+    let i = 0; 
 
-// Intersection of two arrays
-
+    while (i < k) {
+        // Really all the "shifting" is just moving nums off 
+        // the end and adding to the front
+        let numToPop = arr.pop();
+        arr.unshift(numToPop);
+        i++;
+    }
+    return arr;
+}
 
 // Two Sum - Given an arr and a target, return the two indices that sum up to the target
 // [2,3,4], 6 => [0,2]
+
 var twoSum = function(nums, target) {
     let seen = {};
     
@@ -56,5 +72,25 @@ var twoSum = function(nums, target) {
            return [partnerID, i]
         }
         seen[curr] = i;
+    }
+}
+
+// Single number: Given an arr of ints, every ele appears twice except for 1. Find the single one.
+// [2,3,2,3,4] => 4
+var singleNumber = function(arr) {
+    let hash = {};
+    // create hash of arr w/ vals & # of occurences
+    for(let i = 0; i < arr.length; i++) {
+        if(hash[arr[i]]) {
+            hash[arr[i]] = 2;
+        } else {
+            hash[arr[i]] = 1;
+        }
+    }
+    // Need to loop thru hash
+    for(var j in hash) {
+        if(hash[j] == 1) {
+            return j;
+        }
     }
 }
