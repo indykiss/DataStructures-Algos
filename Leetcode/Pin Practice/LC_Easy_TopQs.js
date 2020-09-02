@@ -21,6 +21,8 @@ Topics include:
 */
 
 
+// Arrays! 
+
 // Remove duplicates in place
 // We just track the arr's LENGTH. So we just need to count the num of uniq vals
 var removeDuplicates = function(nums) {
@@ -94,3 +96,24 @@ var singleNumber = function(arr) {
         }
     }
 }
+
+
+// Strings! 
+
+// Reverse a string in-place; don't allocate additional space
+    // Two pointer approach
+
+// ["a", "r", "e"] => ["e", "r", "a"]
+var reverseString = function(s) {
+    let i = 0;
+    let j = s.length -1; 
+    
+    while(i < j) {
+        if(i !== j) {
+            [s[i], s[j]] = [s[j], s[i]]
+        }
+        i++;
+        j--;
+    }
+    return s;
+};
