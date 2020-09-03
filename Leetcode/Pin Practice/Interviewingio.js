@@ -1,7 +1,4 @@
-
-
 /*
-
 Secret Santa
 
 Build an algo that takes in an input of an array of names and 
@@ -14,7 +11,6 @@ Edge cases:
 - Issue when there is an odd number of input eles and we have the even 
 people picking each other. Ex: A:B, B:C, D: undefined
 */
-
 
 
 // ["Kat", "Fred", "Joe"]
