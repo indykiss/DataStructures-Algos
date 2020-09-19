@@ -2,6 +2,12 @@
 
 /* We have a N times N matrix that resemble s u d o k u
  Write an algo that checks if the matrix given is valid or not. 
+
+This was for one of the p i n t e r e s t challenges, which I had passed
+all the tests but did not continue. 
+
+All good, this was a fun problem to work through. I probably took 
+way too long (3 hrs of the 4 hrs the system allotted). 
 */
 
 function checkSud(matrix) {
