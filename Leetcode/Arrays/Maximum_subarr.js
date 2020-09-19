@@ -18,7 +18,7 @@ what the arr eles equal that largest sum
 */
 
 
-
+// best: 
 var maxSubArray = function(nums) {
     let largestSum = nums[0];
     let bestSoFar = -Infinity; 
@@ -29,4 +29,21 @@ var maxSubArray = function(nums) {
         if(bestSoFar > largestSum) largestSum = bestSoFar;
     }
     return largestSum; 
+};
+
+
+// Sept again:
+var maxSubArray = function(arr) {
+    let maxSum = arr[0], 
+        bestSoFar = 0;
+
+    for(let i = 0; i < arr.length; i++) {
+        if(bestSoFar < 0) bestSoFar = arr[i];
+            else bestSoFar = arr[i] + bestSoFar;
+
+        if(bestSoFar > maxSum) {
+            maxSum = bestSoFar; 
+        }
+    }
+    return maxSum;
 };
