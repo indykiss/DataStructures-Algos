@@ -18,3 +18,22 @@ var fizzBuzz = function(n) {
     return arr;
 };
 
+
+
+// Another practice:
+function fizzBuzz(num) {
+    let res = [];
+
+    for(let i = 1; i <= num; i++) {
+        if(i % 5 === 0 && i % 3 === 0) {
+            res.push("FizzBuzz");
+        } else if(i % 5 === 0) {
+            res.push("Buzz");
+        } else if(i % 3 === 0) {
+            res.push("Fizz")
+        } else {
+            res.push(`${i}`) // Reminder: When I want to add variables into a string, `${variable}`
+        }
+    }
+    return res;
+}

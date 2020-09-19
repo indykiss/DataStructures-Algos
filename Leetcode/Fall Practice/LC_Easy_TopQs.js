@@ -6,8 +6,6 @@ I've started it before but kept stopping because it's a bit hard for me sometime
 
 But going through as much of this as I can should be helpful in refreshing my DSAs.
 
-I'm doing this to prep for Pinterest's code challenge. 
-
 Topics include:
 - Strings 
 - Arrays 
@@ -17,7 +15,9 @@ Topics include:
 - Dynammic programming 
 - Design
 - Math
-- Others 
+- Others
+
+Trying again, Sept. 
 */
 
 
@@ -117,3 +117,47 @@ var reverseString = function(s) {
     }
     return s;
 };
+
+
+
+/*Fizzbuzz
+n = 15,
+
+Return:
+[
+    "1",
+    "2",
+    "Fizz",
+    "4",
+    "Buzz",
+    "Fizz",
+    "7",
+    "8",
+    "Fizz",
+    "Buzz",
+    "11",
+    "Fizz",
+    "13",
+    "14",
+    "FizzBuzz"
+]
+*/
+
+function fizzBuzz(num) {
+    let res = [];
+
+    for(let i = 1; i <= num; i++) {
+        if(i % 5 === 0 && i % 3 === 0) {
+            res.push("FizzBuzz");
+        } else if(i % 5 === 0) {
+            res.push("Buzz");
+        } else if(i % 3 === 0) {
+            res.push("Fizz")
+        } else {
+            res.push(`${i}`) // Reminder: When I want to add variables into a string, `${variable}`
+        }
+    }
+    return res;
+}
+
+
