@@ -1,3 +1,33 @@
+
+
+/*
+Validate Binary Search Tree 
+
+- Definition of a binary search tree:
+Left is less than root, right is greater than root. 
+True for all nodes, so we can make this a recursive solution
+
+Redone for bloomb
+
+*/
+
+// Ya I didn't understand this. Do me again
+var isValidBST = function(root, lower, upper) {
+  // Base case: we've reached the end of the tree w/o returning F, so T
+  if(!root) return true;
+  
+  if(root.val >= upper || root.val <= lower) return false;
+  
+  if(root.left && root.left.val >= root.val) {
+      return false;
+  }
+  if(root.right && root.right.val <= root.val) {
+      return false;
+  }
+  return isValidBST(root.left, lower, root.val) && isValidBST(root.right, root.val, upper)
+};
+
+
 // Given a binary tree, determine if it is a valid binary search tree (BST).
 
 var isValidBST = function(root, lowerBound, upperBound) {
@@ -19,3 +49,5 @@ var isValidBST = function(root, lowerBound, upperBound) {
     return isValidBST(root.left, lowerBound, root.val)
       && isValidBST(root.right,  root.val, upperBound);
   }
+
+
