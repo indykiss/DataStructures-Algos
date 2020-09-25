@@ -12,6 +12,34 @@ Sort! Takes O(n logn)
 */
 
 
+// Bloomb practice. Try again. I forgot the last parts 
+
+
+var merge = function(intervals) {
+    let res = [];
+    
+    intervals = intervals.sort((a,b) => a[0] - b[0]);     // log(n * log n)
+
+    for(let i = 1; i < intervals.length; i++) {
+        let curr = intervals[i],
+            prev = intervals[i-1];
+        
+        if(curr[0] <= prev[1]) {
+            let earliestStart = Math.min(curr[0], prev[0])
+            let latestEnd = Math.max(curr[1], prev[1])
+            intervals[i] = [earliestStart, latestEnd];
+            /* Remove the previous because we've made a copy
+                then go backwards so we can include this new arr
+                in our next evaluation */
+            intervals.splice(i-1, 1);
+            i = i-1;
+        }
+    }
+    return intervals;
+}
+
+
+
 // Attempt #3
 var merge = function(intervals) {
     if(intervals.length < 2) return intervals;
