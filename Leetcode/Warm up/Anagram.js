@@ -12,6 +12,33 @@ If maps are equal, it's an anagram .
 Assumptions: All lower case
 */
 
+
+
+// Bloomb practice, Sept:
+var isAnagram = function(s, t) {
+    let hash = {};
+    
+    for(let char of s) {
+        if(hash[char]) {
+            hash[char] = hash[char] + 1;
+        } else {
+            hash[char] = 1;
+        }
+    }
+    
+    for(let char of t) {
+        if(hash[char]) {
+            hash[char] = hash[char] - 1
+        } else {
+            return false;
+        }
+    }
+
+    return (s.length == t.length) ? true : false;
+}
+
+
+
 // aabbcc, ccbbaa => true 
 // abx, xbc => falce
 var isAnagram = function(s,t) {
