@@ -20,6 +20,31 @@ Explanation: The answer is "wke", with the length of 3.
 Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 */
 
+
+
+// Bloomberg, Sept: 
+var lengthOfLongestSubstring = function(s) {
+    let seen = new Set(),
+        maxLength = 0,
+        start = 0;
+    
+    for(let end = 0; end < s.length; end++) {
+        let char = s[end]
+        
+        while(seen.has(char)) {
+            seen.delete(s[start]);
+            start++;
+        }
+        seen.add(char);
+        maxLength = Math.max(maxLength, end - start + 1)
+    }
+    return maxLength;
+}
+
+
+
+
+// July?
 var lengthOfLongestSubstring = function(s) {
     let map = {};
     let max = 0;
