@@ -1,4 +1,7 @@
+
 /*
+1st interviewing.io Q for fellowship, Sept
+
 Secret Santa
 
 Build an algo that takes in an input of an array of names and 
@@ -52,6 +55,8 @@ function pickFromSet(set, offLimits) {
 
 
 /*
+2nd Interviewio.io Question for fellowship, Sept 2020
+
 Goal: Write a function that takes in 2 dates and returns T/F if they are 1 month apart. 
 
 Ex:
@@ -65,8 +70,6 @@ Notes:
 - I should do a quick project before continuing leetcodes. I shouldn't have forgotten
 how to access elements in a hash and confusion about return/ console.log
 */
-
-
 
 // If there's a new year
 // checkerIfMonthApart({Day: 10, Month: 12, Year: 2019}, {Day: 10, Month: 1, Year: 2020}) // true
@@ -115,4 +118,72 @@ console.log(checkerIfMonthApart({Day: 10, Month: 9, Year: 2020}, {Day: 10, Month
 
 
 
+
+
+// Interviewing.io Question Part 1, 9/26/2020
+
+// ["cat", "dogcacat"] => true
+var subsequence = function(s,t) {
+  
+  let subseq = s.split(''),
+      index = 0;      
+  
+  for(let i = 0; i < t.length; i++) {
+    if(t[i] === subseq[index]) {
+      index++;
+    }  
+  }
+  
+  if(index == subseq.length) {
+    return true;
+  } else {
+    return false;
+  }
+  
+}
+
+console.log(subsequence("cat", "dogcacat")); // true
+console.log(subsequence("cta", "dogcacat")); // false
+console.log(subsequence("ace", "abcde")); // true
+console.log(subsequence("ac", "cade")); // false
+console.log(subsequence("ac", "ac")); // true
+console.log(subsequence("a", "a")); // true
+console.log(subsequence("ac", "cade")); // false
+console.log(subsequence("abcd", "abc")); // false
+console.log(subsequence("", "abc")); // true
+console.log(subsequence("ab", "")); // false
+console.log(subsequence("", "")); // true
+
+
+
+// Part 2
+
+/*
+Univalued Binary Tree
+
+A binary tree is univalued if every node in the tree has the same value.
+
+Return true if and only if the given tree is univalued.
+
+*/
+
+function TreeNode(val, left, right) {
+  this.val = (val===undefined ? 0 : val)
+  this.left = (left===undefined ? null : left)
+  this.right = (right===undefined ? null : right)
+}
+
+var univalue = function(root) {
+  if(!root) return true; // Base
+
+  // Return false here if we've fit a non-univalued node
+  if(root.left && root.left.val != root.val) {
+    return false;
+  }
+  if(root.right && root.right.val != root.val) {
+    return false;
+  }
+  // Recurse action
+  return univalue(root.left) && univalue(root.right);
+}
 
