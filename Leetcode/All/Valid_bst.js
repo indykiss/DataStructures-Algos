@@ -11,7 +11,31 @@ Redone for bloomb
 
 */
 
-// Ya I didn't understand this. Do me again
+// Bloomb did again
+var isValidBST = function(root, lower, upper) {
+  // base case
+  if(!root) return true;
+  
+  // return false things
+  if(root.val >= upper || root.val <= lower) return false;
+  
+  
+  if(root.left && root.left.val >= root.val) {
+      return false
+  }
+  if(root.right && root.right.val <= root.val) {
+      return false;
+  }
+
+  // recursive action
+  return isValidBST(root.left, lower, root.val) && 
+      isValidBST(root.right, root.val, upper);
+}
+
+
+
+
+// Ya I didn't understand this. Do me again. Sept/ bloomb:
 var isValidBST = function(root, lower, upper) {
   // Base case: we've reached the end of the tree w/o returning F, so T
   if(!root) return true;
