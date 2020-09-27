@@ -139,7 +139,6 @@ var subsequence = function(s,t) {
   } else {
     return false;
   }
-  
 }
 
 console.log(subsequence("cat", "dogcacat")); // true
