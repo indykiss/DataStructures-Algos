@@ -19,6 +19,8 @@ Output:
   [1,2],
   []
 ]
+
+Bloomb:
 */
 
 var subsets = function(nums) {
@@ -32,3 +34,29 @@ var subsets = function(nums) {
     return set;
 };
 
+
+
+// Practice again
+var subsets = function(nums) {
+    let set = [[]];
+    nums.forEach(num => {
+        set.forEach(subset => {
+            set.push([...subset, num]);
+        })
+    })
+    return set;
+}
+
+// Another slightly different way
+var subsets = function(nums) {
+    let set = [[]]
+
+    for(let i = 0; i < nums.length; i++) {
+        // we want to loop through the set to concat the new num
+        for(let arr of [...subset]) {
+            set.push(arr.concat(num));
+        }
+    }
+    return set; 
+
+}
