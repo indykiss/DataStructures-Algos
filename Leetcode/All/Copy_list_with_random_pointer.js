@@ -23,13 +23,6 @@ within a map or hash table. Save orig node & copy
 2. Loop thru original ll and create the randomized connections 
 by IDing what the random connection was in the original ll
 and making the copied node's connection the same thing 
-
-
-More space efficient way to do this, but complicated:
-1. Make a copy of each of the nodes in the original LL 
-2. After making each node's copy we want to save that node's
-immediate next node to be that randomized copy
-3. But then we'd next to restore the orig node bc of random connect
 */
 
 
