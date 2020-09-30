@@ -30,6 +30,48 @@ cache.get(4);       // returns 4
 
 
 
+// Bloomb. Do me again def. Sept 
+
+class LRUCache {
+    // First in, first out cache
+        // Ideal: get & put in constant time
+    constructor(capacity) {
+        this.cache = new Map();
+        this.capacity = capacity;
+    }
+    
+    /* Get item from cache
+        If it exists, delete and readd it in
+        to update the cache */
+    get(key) {
+       if(this.cache.has(key)) {
+           let tempVal = this.cache.get(key);
+           this.cache.delete(key);
+           this.cache.set(key, tempVal);
+           return this.cache.get(key);
+       } else {
+           return -1;
+       }
+    }
+    
+    /* Add an item into cache
+        If we've hit capacity, remove least used
+        If item exists, move it to the front by deleting it and adding it back in */
+    put(key, value) {
+        if(this.cache.has(key)) {
+            this.cache.delete(key)
+        }
+        this.cache.set(key, value);
+        
+        if(this.cache.size > this.capacity) {
+            let leastUsed = this.cache.keys().next().value;
+            this.cache.delete(leastUsed);
+        } 
+    }
+}   
+
+
+
 
 
 // Attempt #2, do me again 
