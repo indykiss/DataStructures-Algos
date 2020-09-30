@@ -34,3 +34,19 @@ A hash function takes data, like a string or a file, and converts it into a hash
 For example, here’s the MD5 hash (MD5 is a common hash function) for a file simply containing “cake”:
   DF7CE038E2FA96EDF39206F898DF134D
   
+
+## Hashes vs Maps 
+
+Maps are recently added to ES6. It's the same as hashes in that
+there is a key value pair, but there are some big differences. 
+
+Main differences:
+* Maps have map.set() to add and map.get() to get methods
+* We can loop through maps:
+for(let [key, value] of map) {
+}
+* But you can't loop through hashes/ aka objects
+* Hashes/ also called objects can only have strings as a key
+* Maps let you use objects (like arrs) as a key
+* Maps have map.size() which is how big map is. Hashes don't have this
+* JSON string: Hash's main advantage over maps is their ability to be directly parsed into a JSON str with JSON.stringify();
