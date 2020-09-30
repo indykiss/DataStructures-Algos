@@ -56,7 +56,8 @@ class LRUCache {
     
     /* Add an item into cache
         If we've hit capacity, remove least used
-        If item exists, move it to the front by deleting it and adding it back in */
+        If item exists, move it to the front by deleting it 
+        and adding it back in */
     put(key, value) {
         if(this.cache.has(key)) {
             this.cache.delete(key)
