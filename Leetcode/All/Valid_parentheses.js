@@ -27,6 +27,36 @@ Strat:
     
 */
 
+
+// Sept, Bloomb
+var isValid = function(s) {
+    // Define openers and closers
+    let openersClosers = {
+        "(": ")",
+        "{": "}",
+        "[": "]"
+    }
+    
+    // Create a stack to track my openers
+    let stack = [],
+        arr = s.split('')
+    
+    for(let char of arr) {
+        // If char is an opener
+        if(openersClosers.hasOwnProperty(char)) {
+            stack.push(char);
+        } 
+        // If it's a closer, the stack's top must be the opener else false
+        else if(openersClosers[stack.pop()] !== char) {
+            return false; 
+        }
+    }
+    
+    // If we have any unmatched openers left
+    return stack.length === 0
+}
+
+// March
 var isValid = function(s) {
     const opClose = {
         "(" : ")", 
@@ -47,3 +77,6 @@ var isValid = function(s) {
     }
     return stack.length === 0;  
 };
+
+
+
