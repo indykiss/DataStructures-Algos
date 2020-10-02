@@ -50,3 +50,4 @@ for(let [key, value] of map) {
 * Maps let you use objects (like arrs) as a key
 * Maps have map.size() which is how big map is. Hashes don't have this
 * JSON string: Hash's main advantage over maps is their ability to be directly parsed into a JSON str with JSON.stringify();
+
