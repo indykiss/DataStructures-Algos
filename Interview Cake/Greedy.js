@@ -46,6 +46,21 @@ function getMaxProfit(stockPrices) {
   getMaxProfit([10, 7, 5, 8, 11, 9]);
 
 
+// Bloomb one, Sept. Leetcode: Best time to buy and sell stock 
+  var maxProfit = function(prices) {
+    let maxProfit = prices[1] - prices[0],
+        minPrice = prices[0];
+    
+    if(prices.length < 2) return 0
+    
+    for(let price of prices) {
+        minPrice = Math.min(minPrice, price);
+        maxProfit = Math.max(maxProfit, price - minPrice);
+    }
+    return maxProfit;
+};
+
+
 
 
 
