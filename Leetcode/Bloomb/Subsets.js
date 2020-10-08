@@ -23,6 +23,18 @@ Output:
 Bloomb:
 */
 
+// Basically copied and pasted. :[ 
+var subsets = function(nums) {
+    let set = [[]];
+    
+    nums.forEach(num => {
+        set.forEach(subSet => {
+          set.push([...subSet, num])  
+        })
+    })
+    return set;
+};
+
 var subsets = function(nums) {
     let set = [[]]
     
