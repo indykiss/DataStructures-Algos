@@ -30,6 +30,44 @@ cache.get(4);       // returns 4
 
 
 
+// Bloomb. Did this twice 
+class LRUCache {
+    
+    constructor(capacity) {
+        this.cache = new Map();
+        this.capacity = capacity;
+    }
+    
+    get(key) {
+        // If the cache has the key, we want to return the value
+        // And remove and readd to the top
+        if(this.cache.has(key)) {
+            let temp = this.cache.get(key);
+            this.cache.delete(key);
+            this.cache.set(key, temp);
+            return this.cache.get(key); 
+        } else {
+            return -1;
+        }
+    }
+    
+    // If cache has this key, change the value
+    // If we're at capacity, ID the least commonly used & delete it
+    put(key, value) {
+        if(this.cache.has(key)) {
+            this.cache.delete(key);
+        } 
+        
+        this.cache.set(key, value)
+        
+        if(this.cache.size > this.capacity) {
+            let least = this.cache.keys().next().value;
+            this.cache.delete(least);
+        }
+    }
+}
+
+
 // Bloomb. Do me again def. Sept 
 
 class LRUCache {
