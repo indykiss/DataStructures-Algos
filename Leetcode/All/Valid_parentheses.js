@@ -27,6 +27,34 @@ Strat:
     
 */
 
+// Practice for bloomb
+var isValid = function(s) {
+    let openClose = {
+        "(":")",
+        "{":"}",
+        "[":"]"
+    }
+    let stack = [],
+        arr = s.split('')
+    
+    for(let i = 0; i < arr.length; i++) {
+        let char = arr[i]
+        
+        // ID if the char is an opener & add to stack
+        if(openClose.hasOwnProperty(char)) {
+           stack.push(char);
+        } 
+        // If the char is a closer, then
+        // check if the stack.pop is the corresp. opener
+        else if(char !== openClose[stack.pop()]) {
+           return false;
+        }   
+    }
+    
+    // If we have any unmatched openers left
+    return (stack.length == 0) 
+    
+};
 
 // Sept, Bloomb
 var isValid = function(s) {
