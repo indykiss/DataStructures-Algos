@@ -2,7 +2,10 @@
 /*
 Find K Closest Elements
 
-Given a sorted array, two integers k and x, find the k closest elements to x in the array. The result should also be sorted in ascending order. If there is a tie, the smaller elements are always preferred.
+Given a sorted array, two integers k and x, find the k closest 
+elements to x in the array. The result should also be sorted 
+in ascending order. If there is a tie, the smaller elements 
+are always preferred.
 
 Input: [1,2,3,4,5], k=4, x=3
 Output: [1,2,3,4]
@@ -13,10 +16,23 @@ Output: [1,2,3,4]
 
 Strategy:
 - Implement a binary search to find the closest elements to X
-- Use a two pointer approach to find the window of K elements around the particular X target 
+- Use a two pointer approach to find the window of K elements 
+around the particular X target 
 
 */
 
+var findClosestElements = function(arr, k, x) {
+}
+
+
+
+
+
+
+
+
+
+// July? 
 
 var findClosestElements = function(arr, k, x) {
     // Binary search 
