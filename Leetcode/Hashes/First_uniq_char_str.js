@@ -15,6 +15,27 @@ Strategy:
 - Else, return -1
 */
 
+// Bloomb practice Sept
+var firstUniqChar = function(s) {
+    let arr = s.split(''),
+        hash = {};
+    
+    for(let char of arr) {
+        if(hash[char]) {
+            hash[char]++
+        } else {
+            hash[char] = 1;
+        }
+    }
+    
+    for(let i = 0; i < arr.length; i++) {
+        if(hash[arr[i]] == 1) {
+            return i;
+        }
+    }
+    return -1;
+};
+
 
 var firstUniqChar = function(s) {
     const seen = {};

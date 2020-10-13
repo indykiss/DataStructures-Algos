@@ -32,4 +32,5 @@ Youtube some hashing & hash table videos for simple refresher.
 Be able to talk about collusions. 
 
 
-
+Pattern:
+A search in a sorted collection, think binary search. Minimum # of steps, think BFS. Min/max K elements, think heap. Optimization, think DP. 
