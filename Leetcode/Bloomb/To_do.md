@@ -22,8 +22,6 @@ DO THESE ^ FINISH SOME OF THE ONES I HAVENT DONE
 
 EASY! 
 https://leetcode.com/problems/shortest-word-distance/
-https://leetcode.com/problems/first-unique-character-in-a-string/
-https://leetcode.com/problems/first-unique-number/ 
 https://leetcode.com/problems/binary-tree-vertical-order-traversal/ 
 https://leetcode.com/problems/word-search/ 
 
