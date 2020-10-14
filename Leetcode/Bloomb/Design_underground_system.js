@@ -82,6 +82,70 @@ People can only be at 1 station at a time.
 
 
 
+
+/*
+- Create a map of arrivals that tracks a person's ID with station & time.
+Whenever we check someone in, we add them to this map
+- Create a map that tracks averages (key: value, startStationEndStation: (total, count))
+Increment count when we add a person. Increment total as total amount of travel time   
+*/
+
+
+
+class UndergroundSystem {
+    
+    constructor() {
+        this.arrivals = new Map();
+            // (ID: {startStation, checkInTime: t})
+            // (2, {Wilshire: 1})
+        this.averages = new Map();
+            // (route: [durations]) 
+            // ("Wilshire, Sunset" [3, 4, 5])
+    }
+    
+    checkIn(id, stationName, t) {
+        this.arrivals.set(id, {stationName, checkInTime: t});
+    }
+    
+    checkOut(id, stationName, t) {
+        // Look up the person in arrivals 
+        let person = this.arrivals.get(id);
+        
+        // Create the route: concated start/endStation
+        let route = `${person.stationName}, ${stationName}`
+        
+        // Create the total time
+        let duration = t - person.checkInTime;
+        
+        // Add this route + time into averages. 
+            // IF exists, add values in
+            // IF doesnt already exist, create it 
+        if(this.averages.has(route)) {
+            this.averages.get(route).push(duration);
+        } else {
+            this.averages.set(route, [duration]);
+        }
+        // Delete the person from arrivals
+        this.arrivals.delete(id);
+        
+    }
+    
+    // totalTime/ countOfPpl
+    getAverageTime(startStation, endStation) {
+        let route = this.averages.get(`${startStation}, ${endStation}`);
+        
+        // REDUCE BASICALLY JUST ADDS EVERYTHING IN THE ARR
+        let total = route.reduce((a,b) => a + b),
+            count = route.length;
+        
+        return total/count;
+    }
+    
+    
+}
+
+
+
 // Definitely need to do me again Bloomb
 class UndergroundSystem {
     
@@ -118,6 +182,7 @@ class UndergroundSystem {
     
     getAverageTime(startStation, endStation) {
         const route = this.averages.get(`${startStation}, ${endStation}`);
+        // REDUCE BASICALLY JUST ADDS EVERYTHING IN THE ARR
         let total = route.reduce((a,b) => a + b),
             count = route.length; 
         return total/count;

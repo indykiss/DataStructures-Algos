@@ -5,7 +5,6 @@
 
 Go over the top 10 most frequently asked Bloomberg Qs.
 Esp:
-2 city scheduling 
 Next Greater Element I
 Tree problems: recursive 
 1D candy crush
