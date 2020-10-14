@@ -13,6 +13,33 @@ Assumptions: All lower case
 */
 
 
+// Oct pract
+var isAnagram = function(s, t) {
+    if(s.length !== t.length) {
+        return false;
+    }
+    
+    let hash = {};
+    
+    for(let char of s) {
+        if(hash[char]) {
+            hash[char]++;
+        } else {
+            hash[char] = 1;
+        }
+    }
+    
+    for(let char2 of t) {
+        if(hash[char2]) {
+            hash[char2]--;
+        } else {
+            return false;
+        }
+    }
+    
+    return true;
+};
+
 
 // Bloomb practice, Sept:
 var isAnagram = function(s, t) {
