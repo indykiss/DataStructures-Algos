@@ -22,7 +22,46 @@ The fourth person goes to city B for a cost of 20
 - Need to get the minimum costs to fly people such that 
 every city has exactly n people, which is #ofsubarrs/ 2 
 
+Strat:
+- Vars: # of ppl in city A & city B, totalCost, numOfPplThatCanBeInCity
+- Sort by city A costs in desc order 
+- Loop through the subset and check if ith person goes to A or B. Add cost to 
+totalCost. ELSE if city A/B is maxed out, we want to add the other one 
+- Retun totalCost
 */
+
+
+// Practice me again
+var twoCitySchedCost = function(costs) {
+    let numOfPplA = 0,
+        numOfPplB = 0,
+        totalCost = 0,
+        totalNumPpl = costs.length/2;
+    
+    costs = costs.sort((a,b) => Math.abs(b[0] - b[1]) - Math.abs(a[0] - a[1]))
+    
+    for(let [cityACost, cityBCost] of costs) { 
+        // If person should go to city A
+        if(cityACost< cityBCost && numOfPplA < totalNumPpl) {
+            numOfPplA++;
+            totalCost = totalCost + cityACost;
+        }
+        // If person should go to city B
+        else if(cityBCost < cityACost && numOfPplB < totalNumPpl) {
+            numOfPplB++;
+            totalCost = totalCost + cityBCost;
+        } else {
+            // Where we have to pick the more expensive flight bc other city is full
+            if(numOfPplA < totalNumPpl) {
+                totalCost = totalCost + cityACost;
+            } else {
+                totalCost = totalCost + cityBCost;               
+            }
+        }
+    }
+    
+    return totalCost;    
+}
 
 
 
