@@ -11,8 +11,6 @@ Esp:
 3. Subsets
 4. Min Stack
 5. Validate Binary search tree
-6. Word search
-     Just get basics down for word search
 6. SKIM candy crush
 7. Youtube some hashing & hash table videos for simple refresher. Be able to talk about collusions. 
 + Do some easys rapid fire +
