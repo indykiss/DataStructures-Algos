@@ -17,6 +17,40 @@ Output: 5->4->3->2->1->NULL
 */
 
 
+
+// Bloomb practice Oct
+
+// Iterative 
+var reverseList = function(head) {
+    
+    let prev = null, 
+        next = null,
+        curr = head;
+    
+    while(curr !== null) {
+        [curr.next, prev, curr] = [prev, curr, curr.next]
+    }
+    return prev;   
+}
+
+
+// recursive
+var reverseList = function(head) {
+    // base case 
+     if(head == null || head.next == null) {
+        return head;
+    }
+    // recursive action 
+    let reversedHead = reverseList(head.next);
+    // Curr needs to go 2 spots ahead
+    head.next.next = head
+    head.next = null;
+    
+    return reversedHead;
+}
+
+
+
 // Recursive solution
 
 var reverseList = function(head) {
