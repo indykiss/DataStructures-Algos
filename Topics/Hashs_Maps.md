@@ -1,6 +1,19 @@
 ## Hash tables 
 
 A hash table is a dictionary like data structure that maps keys to values. It allows people to look up a value based off its key. 
+
+Key value pair lookup, with O(1) lookups with O(n) worst case
+
+Collisions: Here's a limited # of 
+hash codes but infinite possible things to go
+into the codes. So we can have collisions when 
+keys share the same code. 
+
+To prevent collisions, we need to do chaining. 
+So basically when there are collisions, we want to store
+them in a linked list. 
+
+
     In order to find keys based off values, we need to loop through all values & keys. Same w/ arrs. Ex:
 
       const lightBulbToHoursOfLight = {

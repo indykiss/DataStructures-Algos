@@ -23,13 +23,58 @@ Quicksort
 
 
 
+// Quick review for bloomb
+
+// Mergesort
+var sortArr =  function(arr) {
+
+    // base case
+    if(arr.length < 2) return arr;
+
+    let mid = Math.floor(arr.length/2);
+    let left = arr.slice(0, mid);
+    let right = arr.slice(mid);
+
+    merge(left, right)
+
+} 
+
+var merge = function(left, right) {
+    const res = [];
+
+    while(left.length > 0 && right.length > 0) {
+        if(left[0] < right[0]) {
+            res.push(left[0]);
+            left.shift();
+        } else {
+            res.push(right[0]);
+            right.shift();
+        }
+    }
+
+    return res.concat(left, right);
+}
 
 
+// Quicksort: 
+var sortArr =  function(arr) {
+    let pivot = nums[0],
+        left = [],
+        right = [];
 
+    // base case
+    if(arr.length < 2) return arr; 
 
-
-
-
+    for(let i = 1; i < nums.length; i++) {
+        if(nums[i] < pivot) {
+            left.push(nums[i])
+        } else {
+            right.push(nums[i])
+        }
+    }
+    // recursive action 
+    return [...sortArr(left), pivot, ...sortArr(right)];
+}
 
 
 // Attempt #4: Better! 
@@ -83,8 +128,7 @@ var merge = function(first,second) {
         } else {
             res.push(second[0]);
             second.shift();
-        }
-        
+        }   
     }
     return res.concat(first,second);
 }
