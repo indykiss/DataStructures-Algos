@@ -8,7 +8,6 @@ Esp:
 Next Greater Element I
 Tree problems: recursive 
 1D candy crush
-Design underground system
 Min Stack
 Binary search tree
 + Do some easys rapid fire 

@@ -186,3 +186,93 @@ var univalue = function(root) {
   return univalue(root.left) && univalue(root.right);
 }
 
+
+
+
+
+/* 
+Interviewing.io, Oct 14, with dude who was very nice and helpful
+
+
+You work in a multinational corporation. It has multiple offices around the world: A,B,C and so on. 
+Every week you are allowed to take one flight and switch locations. You will be granted any vacation 
+days for the location where you are at. So, if A has vacation during week 1, and B has vacation during 
+week 2, you can get two weeks of vacation.
+
+
+Your task is to optimize your total vacation time. Write a function that returns the max 
+number of vacation days per year.
+
+Example:
+You are given an array for each city, with the number of vacation days per week as the elements. 
+In this example, A has no vacation days the first week, and 5 days on the third week. Note that in 
+the example there are only two cities, but your function only gets the cities parameter.
+
+A = [0, 1, 5, 0, 3]
+B = [2, 1, 0, 5, 3]
+
+Max vacation: B, B, A, B, B = 16 days. 
+
+cities = [A, B]
+def max_vacation(cities) -> int:
+  # your implementation here.
+  return 0
+
+- Assume A and B are same length
+- Can have infinite # of cities
+
+Strat:
+- Iterate through all cities to check what the max is at that index
+ */
+
+
+
+
+function max_vacation(cities) {
+  let maxVacayDays = 0,
+      totalWeeks = cities[0].length,
+      week = 0;
+  
+  while(week <= totalWeeks) {
+    
+    let maxDaysInAWeek = 0;
+    
+    for(let city = 0; city < cities.length; city++) {
+      if(cities[city][week] > maxDaysInAWeek) {
+        maxDaysInAWeek = cities[city][week];
+      }
+    }
+    maxVacayDays += maxDaysInAWeek;
+    week++;
+  }
+    
+  return maxVacayDays;
+}
+
+// console.log(max_vacation([[0, 1, 5, 0, 3], [2, 1, 0, 5, 3]]))
+
+
+// Better way to do very lightweight testing:
+var A = [0, 1, 5, 0, 3]
+var B = [2, 1, 0, 5, 3]
+var cities = [A, B]
+
+console.assert(max_vacation(cities) !== 16, {cities: cities})
+
+// Adding an error message: 
+var result = 16
+console.assert(max_vacation(cities) !== result, "Message here %d", {result: result})
+
+// console.assert(true) : Won't show up in console
+// console.assert(false) : Shows up in console, so adjust statement quickly
+
+// console.assert(assertion, obj1 [, obj2, ..., objN]);
+// console.assert(assertion, msg [, subst1, ..., substN]); // C-like message
+
+
+// Resources to study: 
+// https://en.wikipedia.org/wiki/Printf_format_string
+// https://learnxinyminutes.com/docs/javascript/
+// https://learnxinyminutes.com/docs/c/
+// https://github.com/jwasham/coding-interview-university
+// https://developer.mozilla.org/en-US/docs/Web/API/console/assert
