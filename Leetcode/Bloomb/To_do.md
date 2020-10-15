@@ -6,7 +6,6 @@
 Go over the top 10 most frequently asked Bloomberg Qs.
 Esp:
 0. Thursday: 
-1. Longest Substring Without Repeating Characters
 2. Palindrome Number
 3. Subsets
 4. Min Stack

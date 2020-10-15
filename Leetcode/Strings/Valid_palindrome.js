@@ -26,6 +26,19 @@ var isPalindrome = function(s) {
 }
 
 
+// Bloomb warmup Oct
+var isPalindrome = function(x) {
+    if(x < 0)  {
+        return false
+    };
+    
+    let str = x.toString(),
+        arr = str.split(''),
+        reversed = arr.reverse();
+    
+    return str === reversed.join('');
+};
+
 
 
 // Algoexpert:
