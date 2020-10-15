@@ -7,7 +7,6 @@ Go over the top 10 most frequently asked Bloomberg Qs.
 Esp:
 0. Thursday: 
 4. Min Stack
-5. Validate Binary search tree
 6. SKIM candy crush
 7. Youtube some hashing & hash table videos for simple refresher. Be able to talk about collusions. 
 + Do some easys rapid fire +
