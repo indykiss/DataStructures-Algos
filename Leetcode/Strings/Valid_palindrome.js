@@ -12,6 +12,25 @@ Palindrome = when the reverse of the string is equal to the string itself.
 */
 
 
+
+// Without str reverse: Bloomb oct 
+var isPalindrome = function(x) {
+    if(x < 0) return false;
+    
+    let rev = 0,
+        num = x;
+    
+    while(num > 9) {
+        rev = (rev * 10) + (num % 10);
+        num = parseInt(num/10);
+    }
+    
+    rev = rev * 10 + num;
+    
+    return x === rev;
+}
+
+
 var isPalindrome = function(s) {
     let reversedS = s.toLowerCase().replace(/[^a-z0-9]/g, "")
         .split("").reverse("").join("");
