@@ -11,6 +11,36 @@ Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
 Sort! Takes O(n logn)
 */
 
+
+// Bloomb, Oct
+var merge = function(intervals) {
+    intervals = intervals.sort((a,b) => a[0] - b[0]);
+    
+    for(let i = 1; i < intervals.length; i++) {
+        
+        let prev = intervals[i-1],
+            curr = intervals[i];
+        
+        // check if intervals overlap
+        if(prev[1] >= curr[0]) {
+            let x = Math.min(prev[0], curr[0]),
+                y = Math.max(prev[1], curr[1]);
+            
+            // Add this into the intervals arr
+            intervals[i] = [x,y]
+            
+            // Delete the prev num and go backwards one to include this
+            // new arr in the next iteration
+                // intervals.splice(startHere, onlyDeleteThisNum)
+            intervals.splice(i-1, 1)
+            i--;
+        }
+    }
+    return intervals;
+};
+
+
+
 var merge = function(intervals) {
     if(intervals.length < 2) return intervals;
     
