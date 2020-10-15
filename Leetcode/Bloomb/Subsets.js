@@ -23,6 +23,21 @@ Output:
 Bloomb:
 */
 
+
+// Oct. Getting better at this one. Makes sense. 
+var subsets = function(nums) {
+    let res = [[]];
+
+    nums.forEach(num => {
+        res.forEach(arr =>{
+            res.push([...arr, num]);
+        })
+    })
+    
+    return res;
+};
+
+
 // Basically copied and pasted. :[ 
 var subsets = function(nums) {
     let set = [[]];
