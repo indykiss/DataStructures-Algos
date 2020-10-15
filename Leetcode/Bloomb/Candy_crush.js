@@ -127,6 +127,119 @@ var candyCrush = function(board) {
 
 
 
+
+// Basically following along with the above solution
+// Doesnt run but pseudo codes well.ish
+
+
+/*
+1. Iterate through the board
+2. We want to process the board. What's processing? 
+3. Processing: IDing instances where there are at least 3 of the same nums
+in either horiz & vertical 
+4. Once we process the board, we want to adjust the board
+5. Adjusting includes dropping nums down and adding zeros to the top
+*/
+
+
+var candyCrush = function(board) {
+    
+    let isBoardStable = true; 
+    
+    for(let row = 0; row < board.length; row++) {
+        for(let col = 0; col < board[0].length; col++) {
+            // If we're looking at a num
+            if(board[row][col] !== 0) {
+                process(board, row, col);
+            }
+        }
+    }
+    
+    adjust(board);
+        
+    if(!isBoardStable) return candyCrush(board);
+    
+    return board;
+    
+    
+    // Helper functions: 
+    
+    function process(board, row, col) {
+        let currRow = row,
+            currCol = col;
+        
+        // ID 3 nums vertically: count # of eles that match
+        while(Math.abs(board[row][col]) === Math.abs(board[row+1][col])
+             && row < board.length - 1) {
+            currCol++;
+        }
+        
+        // ID 3 nums horizontally: count # of eles that match
+        while(Math.abs(board[row][col]) === Math.abs(board[row][col+1])
+             && col < board[0].length - 1) {
+            currRow++;
+        }
+        
+        let countRows = currRow - row + 1,
+            countCols = currCol - col + 1;
+        
+        // Check that we have 3 eles that match vertical or horizon
+        if(countRows >= 3) {
+            markTheBoard(board, row, col, countRows, "leftToRight");
+            isBoardStable = false;
+        }
+        
+        if(countCols >= 3) {
+            markTheBoard(board, row, col, countCols, "upToDown");          
+            isBoardStable = false;
+        }    
+    }
+    
+    function markTheBoard(board, row, col, count, direction) {
+        if(direction === "leftToRight") {
+            for(let marker = col; marker < col + count; marker++) {
+                board[row][marker] = "drop" 
+            }
+        } else {
+            for(let marker2 = row; marker2 < row + count; marker2++) {
+                board[marker2][col] = "drop" 
+            }            
+        }    
+    }
+
+    function adjust(board) {
+        for(let row = 0; row < board.length; row++) {
+            for(let col = 0; col < board[0].length; col++) {
+                if(board[row][col] === "drop") {
+                    dropEle(board, row, col);
+                }
+            }
+        }    
+    }
+    
+    // drop candies down so just deal with vertical moves
+    function dropEle(board, row, col) {
+        for(let idx = row; idx > 0; idx--) {
+            // move the number down
+            board[idx][col] = board[idx-1][col];
+        }
+        // add a zero to the top
+        board[0][col] = 0
+    }
+    
+    
+    // [6, 0, 8]
+    // [1, 0, 3]
+    // [4, 0, 5]
+    // [4, 7, 9]
+}    
+
+
+
+
+
+
+
 // This 100% was not close to working:
 
 // var candyCrush = function(board) {

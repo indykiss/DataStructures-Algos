@@ -18,6 +18,9 @@ up memory that a program isn't using anymore.
 
 */
 
+
+
+
 class LinkedListNode {
   constructor(value) {
     this.value = value;
