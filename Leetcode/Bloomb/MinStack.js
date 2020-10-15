@@ -13,6 +13,40 @@ getMin() -- Retrieve the minimum element in the stack.
 */
 
 
+
+// Oct bloomb refresh:
+class MinStack {
+    constructor() {
+        this.stack = [];
+    }
+    
+    push(x) {
+        this.stack.push(x);
+    }
+    
+    pop() {
+        this.stack.pop();
+    }
+    
+    top() {
+        let temp = this.stack.pop();
+        this.stack.push(temp);
+        return temp;
+    }
+    
+    getMin() {
+        let min = Infinity;
+        for(let ele of this.stack) {
+            if(ele < min) {
+                min = ele
+            }
+        }
+        return min;
+    }   
+}
+
+
+
 // Bloomb, Sept. Do again for refresher
 class MinStack{
     constructor() {
