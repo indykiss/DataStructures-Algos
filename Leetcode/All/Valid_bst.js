@@ -11,6 +11,54 @@ Redone for bloomb
 
 */
 
+// Oct practice bloomb
+var isValidBST = function(root, lower, upper) {
+    
+  // recursive base case. keep going unless we return false
+  if(!root) return true;
+  
+  // ALSO make sure that the root is within the bounds
+  if(root.val >= upper || root.val <= lower) return false
+  
+  
+  // check that left root exists & that its less than root 
+  if(root.left && root.left >= root.val) return false;
+  
+  
+  // check that right of root exists & that its greater than root
+  if(root.right && root.right <= root.val) return false;
+  
+  
+  // recursive action 
+  return isValidBST(root.left, lower, root.val) 
+  && isValidBST(root.right, root.val, upper);  
+};
+
+
+var isValidBST = function(root, lower, upper) {
+  // base case. we've traversed and never found a false
+  if(!root) return true;
+
+  // Make sure the curr node fits between lower and upper 
+  if(root.val <= lower || root.val >= upper) {
+      return false;
+  }
+  
+  // Check that left isnt less than root and exists
+  if(root.left >= root.val && root.left) {
+      return false;
+  }
+      
+  // Check that right isnt greater than root and exists
+  if(root.right <= root.val && root.right) {
+      return false;
+  }
+      
+  return isValidBST(root.left, lower , root.val) 
+      && isValidBST(root.right, root.val, upper);  
+};
+
+
 // Bloomb did again
 var isValidBST = function(root, lower, upper) {
   // base case
