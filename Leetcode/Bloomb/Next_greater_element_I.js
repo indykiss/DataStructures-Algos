@@ -20,6 +20,35 @@ the end so there's no greater num]
 // [4,1,2]
 // [1,3,4,2]
 // [-1, 3, -1]
+
+
+// Bloomb, Oct:
+var nextGreaterElement = function(nums1, nums2) {
+    let res = [];
+    
+    for(let num1 of nums1) {
+        let greatest = 0,
+            timeToCheck = false;
+            
+        for(let num2 of nums2) {
+            if(num2 === num1) {
+                timeToCheck = true;
+            }
+            if(timeToCheck && num2 > num1) {
+                greatest = num2;
+                break;
+            }
+        }
+        let eleToPush = greatest === 0 ? -1 : greatest
+        res.push(eleToPush);
+    }
+    
+    return res;
+};
+
+
+
+// Sept, bloomb:
 var nextGreaterElement = function(nums1, nums2) {
     let res = [];
     

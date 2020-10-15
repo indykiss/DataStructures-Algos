@@ -276,3 +276,4 @@ console.assert(max_vacation(cities) !== result, "Message here %d", {result: resu
 // https://learnxinyminutes.com/docs/c/
 // https://github.com/jwasham/coding-interview-university
 // https://developer.mozilla.org/en-US/docs/Web/API/console/assert
+
