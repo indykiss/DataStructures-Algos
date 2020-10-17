@@ -15,6 +15,41 @@ comes after the current word's ith ele, we're good to continue
 
 
 
+// Apparently leetcode changed the way this problem is done
+// my previous solutions no longer effing pass the tests
+
+// So new way to do this i guess: oct, fb
+var isAlienSorted = function(words, order) {
+            
+    // Create a map with all the keys and their position in the order string    
+    let keyMap = {};
+    for ( let i = 0; i< order.length; i++ )
+    {
+        keyMap[order[i]] = i;
+    }
+    
+    // Iterate through the words - notice the - 1 since we'll be checking the next word
+    for ( let i = 0; i < words.length - 1; i++ )
+    {
+        const currentWord = words[i];
+        const nextWord = words[i+1];
+        
+        // Iterate through the letters of the current word and compare against next word    
+        for ( let j = 0; j < currentWord.length; j++ )
+        {
+            // Check to see if next word doens't have a character, and if it does, make sure that it's later
+            // in the order index than currentWord's current character
+            if ( nextWord[j] === undefined || keyMap[currentWord[j]] > keyMap[nextWord[j]] ) return false;
+            
+            // If the above passes and they're not the same character, we can move onto the next word comparisons
+            if ( nextWord[j] !== currentWord[j] ) break;
+        }
+    }
+    
+    // If nothing fails above, then the alien words are sorted     
+    return true;
+};
+
 
 // Attempt # 2: Needed lots of hints. Do me again 
 var isAlienSorted = function(words, alphabet) {
