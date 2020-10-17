@@ -12,6 +12,32 @@ Palindrome = when the reverse of the string is equal to the string itself.
 */
 
 
+// Oct, FB 
+var isPalindrome = function(s) { 
+    // lower case and strip punctuation & nums
+    s = s.toLowerCase().replace(/[^a-z0-9]/g, "")
+    
+    let arr = s.split('')
+    
+    // create left and right pointer
+    let l = 0,
+        r = s.length - 1;
+        
+    // while left is less than right, if eles ever not equal
+        // not a palindrome 
+    // bc we use < and not <= we don't worry about center char if odd length
+    while (l < r) {
+        if(arr[l] !== arr[r]) {
+            return false;
+        }
+        // move left more left and right more right
+        l++;
+        r--;
+    }
+    return true;
+};
+
+
 
 // Without str reverse: Bloomb oct 
 var isPalindrome = function(x) {
