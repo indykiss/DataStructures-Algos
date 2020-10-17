@@ -16,6 +16,8 @@ Output: [true,true,true,false,true]
 1. ID what is the greatest number of candies is within the arr
 2. Add extra candies to the ith num of candies. If < greatestNumCandies, false
 
+
+Greedy?
 */
 
 

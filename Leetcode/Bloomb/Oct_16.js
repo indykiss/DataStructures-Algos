@@ -29,7 +29,7 @@ function sorterOfCharsInt(str) {
     // intArr = [7, 1, 3, 2]
     // {0: char, 1: int, 2: char, ....}
     
-    charArr = charArr.sort((a,b) => b - a)); // [a, b, d, z], lamda drop?
+    charArr = charArr.sort((a,b) => b - a); // [a, b, d, z], lamda drop?
     intArr = intArr.sort((a,b) => b - a) // [1, 2, 3, 7] lamda drop?
     
     let resArr = []; // optimize: str instead
