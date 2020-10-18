@@ -14,7 +14,6 @@ https://leetcode.com/problems/first-bad-version/
 https://leetcode.com/problems/move-zeroes/ 
 https://leetcode.com/problems/add-strings/
 https://leetcode.com/problems/read-n-characters-given-read4/ 
-https://leetcode.com/problems/diameter-of-binary-tree/ 
 
 
 Probably would be good to quickly re-go over interview cake,

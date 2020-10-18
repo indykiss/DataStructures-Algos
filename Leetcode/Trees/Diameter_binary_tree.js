@@ -10,6 +10,30 @@
 
 
 
+// Oct, FB: Instincts to run a DFS was right but
+// needed confirmation first. Next time need to just do it
+var diameterOfBinaryTree = function(root) {
+    
+    let diameter = 0;
+    
+    dfs(root);
+    
+    function dfs(root) {
+        
+        if(!root) return 0; // if there are no nodes
+        
+        let left = dfs(root.left);
+        let right = dfs(root.right);
+        
+        // update diameter
+        diameter = Math.max(diameter, left + right);
+
+        // update largest number of edges seen so far
+        return Math.max(left, right) + 1;
+    }
+    
+    return diameter;
+};
 
 
 // Attempt #4: I did not remember this. Do me again
