@@ -38,6 +38,25 @@ var isPalindrome = function(s) {
 };
 
 
+// Another way to do this in case we can't use .splice 
+var moveZeroes = function(nums) {
+    let i = 0,
+        j = 0;
+    
+    // Iterate and switch eles if one is a zero and one isnt
+        // shuffles the zeros to the end 
+    while(j < nums.length) {
+    
+        if(nums[j] !== 0) {
+            [nums[i], nums[j]] = [nums[j], nums[i]];
+            i++;
+        }
+        j++;
+    }
+    return nums;
+}
+
+
 
 // Without str reverse: Bloomb oct 
 var isPalindrome = function(x) {
