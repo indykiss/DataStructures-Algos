@@ -10,9 +10,7 @@ Explanation: Subarray with maximum sum is [5, 1, 3].
 */
 
 
-const max_sub_array_of_size_k = function(k, arr) {
-    // TODO: Write your code here
-  
+const max_sub_array_of_size_k = function(k, arr) {  
     let max = 0,
         start = 0,
         tempSum = 0;
@@ -52,6 +50,41 @@ const max_sub_array_of_size_k = function(k, arr) {
 
 
 
+
+/*
+Strat:
+- Sliding window pattern because we want to return a range
+- Create the window's start and end points
+- Size of window isn't fixed so we will need to increment or decrement
+the window ends based on sum of eles within the window 
+
+*/
+
+var subarraySum = function(nums, k) {
+    
+  let start = 0,
+      maxSum = 0,
+      currWindowSum = 0;
+  for(let end = 0; end < nums.length; end++) {
+      // Add next ele into window 
+      currWindowSum = currWindowSum + nums[end];
+      
+      // Slide window down if 
+      if(end >= k-1) {
+          // Update what the max is
+          maxSum = Math.max(maxSum, currWindowSum);
+          // Remove the start of the window
+          currWindowSum = currWindowSum - nums[start];
+          start++;
+      }
+  }
+  return maxSum;
+};
+
+
+
+
+
 /*   
 Given an array of positive numbers and a
 positive number ‘S’, find the length of the
@@ -87,3 +120,6 @@ function smallest_subarray_with_given_sum(s, arr) {
 
     return minLength;
 }
+
+
+

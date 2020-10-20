@@ -2,14 +2,13 @@
 
 /*
 
-Given a string, find the length of the longest substring without repeating characters.
+Given a string, find the length of the longest substring without 
+repeating characters.
 
 "abcabc" => 'abc' => 3
 
 "bbb" => 'b' => 1
-
 "aabbca" => "bca" => 3
-
 */
 
 
