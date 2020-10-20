@@ -24,8 +24,6 @@ If we ID a window that has letters that
 
 */
 
-// aabccbb k = 2 
-
 var characterReplacement = function(str, k) {
     let start = 0,
         charFreqHash = {},
@@ -60,4 +58,6 @@ var characterReplacement = function(str, k) {
     
     return maxLength;
 };
+
+
 
