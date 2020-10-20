@@ -1,20 +1,23 @@
 
 
-
-# I don't know how to approach the next month as I study for Facebook
-
-Only 1 month, no more pushing it back. 
+# October
 
 
-Leetcode easys under FB:
+### To-dos: 
 
-Do these first then figure out a schedule: 
+## Grokking:
+- Begin grokking patterns 
+- ONLY do the easys and a couple mediums 
 
-https://leetcode.com/problems/read-n-characters-given-read4/ 
+## Leetcodes
+- 5.ish FB mediums
+- 2-3 more FB easys 
 
 
-Probably would be good to quickly re-go over interview cake,
-now that I'm more familiar with DS/A: 1 week max
+## FB Coding Exercises
+- 28 total on the FB site  
 
-Finish the hackerrank packet that FB sent early this year: 2 weeks? 
 
+### Finished:
+- First 10 easys. Should do a few more easys
+- Done 5/ 10 mediums. 
