@@ -37,14 +37,9 @@ function sorterOfCharsInt(str) {
         
     // fix? 
     
-    // [b]   [1, 2]
-    while(charArr.length > 0 && intArr.length > 0) {
-        
-        // hash[1]
+    while(charArr.length > 0 || intArr.length > 0) {
         if(hash[j] === "char") {
-            // resArr: a
             resArr.push(charArr.shift());
-            // 1
             j++;
         } else if(hash[j] === "int") {
             resArr.push(intArr.shift());
@@ -52,10 +47,10 @@ function sorterOfCharsInt(str) {
         }
         
         // [], [8, 9]
-        if(charArr.length === 0 && intArr.length > 0) {
-            resArr.push(...intArr);
-            // res[char, 8, 9]
-        }
+        // if(charArr.length === 0 && intArr.length > 0) {
+        //     resArr.push(...intArr);
+        //     // res[char, 8, 9]
+        // }
     }
     
     // resArr: [a, 1,b,2,d,3,7,z]
