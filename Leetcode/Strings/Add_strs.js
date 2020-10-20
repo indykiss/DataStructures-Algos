@@ -11,6 +11,35 @@ Input:
 No using BigInteger lib or converting number to integer directly
 
 */
+
+
+// Do me again. Oct, FB: 
+var addStrings = function(num1, num2) {
+    let sum = 0,
+        carry = 0,
+        out = "",
+        idx1 = num1.length - 1,
+        idx2 = num2.length - 1,
+        minLength = num1.length > num2.length ? num1.length : num2.length; 
+    
+    for(let i = 0; i < minLength; i++) {
+        sum = parseInt(num1[idx1-i] || 0) 
+            + parseInt(num2[idx2-i] || 0) + carry;
+
+        out = sum%10 + out;
+        
+        carry = Math.floor(sum/10);
+    }
+    
+    if(carry > 0) {
+        out = carry + out;
+    }
+    
+    return out;  
+};
+
+
+
 // Need to just memorize. Do this again
 var addStrings = function(num1, num2) {
     let result= ""; 
