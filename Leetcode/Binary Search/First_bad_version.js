@@ -32,6 +32,7 @@ of elements we look at during each iteration.
 */
 
 // Ya 100% need to do this again. Oct, FB
+// Super confused 
 var solution = function(isBadVersion) {
     // Binary search 
     

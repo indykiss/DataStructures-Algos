@@ -17,6 +17,34 @@ nums2 = [2,5,6],       n = 3
 Output: [1,2,2,3,5,6]
 */
 
+
+
+
+
+// Oct, FB. Definitely do me again. I wasn't paying attention
+var merge = function(nums1, m, nums2, n) {
+    let idx1 = m - 1,
+        idx2 = n - 1;
+    
+    for(let i = m + n - 1; i >= 0; i--) {
+        if(idx2 < 0) {
+            break
+        };
+        
+        if(nums1[idx1] > nums2[idx2]) {
+            nums1[i] = nums1[idx1];
+            idx1--;
+        } else {
+            nums1[i] = nums2[idx2];
+            idx2--;
+        }
+    }
+    
+    return nums1;
+};
+
+
+
 // IF can use sort: 
 var merge = function(nums1, m, nums2, n) {   
     nums2.splice(n, nums2.length - n);
