@@ -31,6 +31,30 @@ of elements we look at during each iteration.
 
 */
 
+// Ya 100% need to do this again. Oct, FB
+var solution = function(isBadVersion) {
+    // Binary search 
+    
+    return function(n) {
+        let start = 0,
+            end = n;
+
+        while(start < end) {
+            let mid = Math.floor(start + (end - start) / 2);
+
+            // change ceiling to mid
+            if(isBadVersion(mid)) {
+                end = mid;
+            } else {
+                // change floor to mid
+                start = mid + 1;
+            }
+        }
+        return start;
+    };
+};
+
+
 var solution = function(isBadVersion) {
     return function(n) {
         // Binary search
