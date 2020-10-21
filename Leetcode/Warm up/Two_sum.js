@@ -21,11 +21,17 @@ function twoSumPointers(arr, sum) {
         runner2 = arr.length-1;
 
     while(runner1 < runner2) {
-        if(arr[runner1] + arr[runner2] === sum) {
-            return [runner1, runner2];
-        } 
-    }
+        let pointersSum = arr[runner1] + arr[runner2];
 
+        if(pointersSum === sum) {
+            return [runner1, runner2];
+        } else if(pointersSum > sum) {
+            runner2--;
+        } else if(pointersSum < sum) {
+            runner1++;
+        }
+    }
+    return false;
 }
 
 
