@@ -54,3 +54,36 @@ var threeSumSmaller = function(nums, target) {
     
     return counter;
 };
+
+
+
+// IF we're tracking the exact triplets instead of count:
+var threeSumSmallerTripletsFinder = function(nums, target) {
+    let triplets = [];
+    
+    nums = nums.sort((a,b) => a-b);
+    
+    for(let i = 0; i < nums.length - 2; i++) {
+        let left = i+1,
+            right = nums.length-1;
+        
+        while(left < right) {
+            let sum = nums[i] + nums[left] + nums[right];
+            
+            if(sum < target) {
+                // because the arr is sorted, once we find a sum < target, ALL NUMS btween 
+                // left and right ARE ALSO combinations less than our target. 
+                // Instead of iterating through them just subtract left from right to get count
+                    // counter = counter + (right-left);
+                for(let j = left; j < right; j++) {
+                    triplets.push([nums[j], nums[i], nums[right]])
+                }
+                left++;
+            } else if(sum >= target) {
+                right--;
+            }
+        }
+    }
+    
+    return counter;
+};
