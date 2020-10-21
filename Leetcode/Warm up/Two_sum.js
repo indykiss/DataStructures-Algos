@@ -11,6 +11,25 @@ O(n) solution as we loop once
 
 
 
+// Two pointer warm up. Grokking, Oct, FB/ Bloomb
+
+function twoSumPointers(arr, sum) {
+
+    arr = arr.sort((a,b) => a - b);
+
+    let runner1 = 0,
+        runner2 = arr.length-1;
+
+    while(runner1 < runner2) {
+        if(arr[runner1] + arr[runner2] === sum) {
+            return [runner1, runner2];
+        } 
+    }
+
+}
+
+
+
 // Algoexepert: 
 // O(n^2) time and O(1) space
 function twoNumberSum(array, targetSum) {
