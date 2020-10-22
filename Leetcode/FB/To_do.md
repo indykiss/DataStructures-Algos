@@ -14,7 +14,7 @@
 ## Great momentum. Keep going!! 1.5 weeks of this and I'll be done! 
 ## Leave the last 2-3 challenges alone so I can go back and review them in Nov. 
 
-## Wed: Work on two pointers! 
+## Thurs: Work on Fast & Slow pointers!!! Only do 5-6 total!!
 
 - Begin grokking patterns 
 - ONLY do the easys and a couple mediums 
@@ -36,4 +36,34 @@
 
 
 # November
+
+
+
+# Sliding window: 
+We have an array or a linked list that we need to 
+find something within a specific range in the arr. 
+
+Exs: 
+- Find the longest substr of repeating chars in a str. 
+- Fruits in a basket. We have 2 baskets and an arr of num. What's the most fruit we can have (longest subarr of 2 ints). 
+- Given an array A of 0s and 1s, we may change up to K values from 0 to 1. Return the length of the longest (contiguous) subarray that contains only 1s. 
+
+# Multiple pointers / Two pointers
+When we have a sorted arr or linked list and we want to find 
+a set of eles that meet a certain requirement. 
+
+Ex:
+- Two sum. We have an arr and a target. Find the 2 nums that equal target. 
+- We have 2 sorted arrs. We want to merge them 
+
+
+# Fast and Slow Pointers 
+Two pointer strategy that move through an arr at different
+speeds. Esp useful in a cyclic linkedlist. 
+
+Basically one goes slow and another goes fast and 
+where they meet is the answer. 
+
+Ex: 
+- Finding the cycle in a linked list 
 
