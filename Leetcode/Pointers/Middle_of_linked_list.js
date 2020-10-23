@@ -43,7 +43,6 @@ var middleNode = function(head) {
 }
 
 
-
 // Brute force. O(n) but we loop through same linked list twice so
 // not super efficient. But I coded this up in 10 mins so BOOM. 
 var middleNode = function(head) {
