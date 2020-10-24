@@ -14,7 +14,7 @@
 ## Great momentum. Keep going!! 1.5 weeks of this and I'll be done! 
 ## Leave the last 2-3 challenges alone so I can go back and review them in Nov. 
 
-## Thurs: Work on Fast & Slow pointers!!! Only do 5-6 total!!
+## Fri: Merge intervals! Six algos total! Don't do more than 6. 
 
 - Begin grokking patterns 
 - ONLY do the easys and a couple mediums 

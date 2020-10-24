@@ -277,3 +277,105 @@ console.assert(max_vacation(cities) !== result, "Message here %d", {result: resu
 // https://github.com/jwasham/coding-interview-university
 // https://developer.mozilla.org/en-US/docs/Web/API/console/assert
 
+
+
+
+
+
+/* LRU Cache: Interviewing.io 
+
+
+Notes:
+
+Cache
+
+Least Recently Used Cache: LRU Cache
+
+Cache of size 2:
+
+set(1, 2)
+set(1, 3)
+
+set(4, 5)   
+
+get(1) 
+
+
+set(6, 7) => evict 4 -> 5
+
+Vars: cache = map, capacity = 2
+
+Set: inserts the key/val pair into cache. If we're past capacity, we want to remove the least recently used. 
+
+Get: we're asking for a key, and want to return the value if this exists. if not, -1. assume all positive ints. Make this key become the most recently used.  changes the order so that the new pair is also the most recently used.
+
+least recent value in map: 
+cache.keys.next.value: gets the 1st value within the map
+
+most recently used:
+if the value already existed, remove the value.
+readd it in. 
+
+new Map()
+- .delete
+- .set 
+- .get 
+
+for( let [key, val] of Map) 
+
+
+- Talk about the DSs before coding 
+- Brush up on CS fundamentals 
+- Practice debugging 
+ */
+
+
+class LRUCache {
+  constructor(capacity) {
+    console.log("Hello Again")
+    this.capacity = capacity;
+    this.cache = new Map();
+  }
+  
+  // Adding into cache
+    // Change the order so this key is now at the top  
+  set(key, val){
+    if(this.cache.has(key)) {
+      this.cache.delete(key);
+    }
+    this.cache.set(key, val);
+    
+    if(this.cache.size > this.capacity) {
+      let least = this.cache.keys.next.value;
+      this.cache.delete(least);
+    } 
+  }
+  
+  
+  
+  // Returning from cache
+    // Update the cache so key is now recently used
+  get(key) {
+    if(this.cache.has(key)) {
+      let temp = this.cache.get(key);
+      this.cache.delete(key);
+      this.cache.set(key, temp);
+      return this.cache.get(key);      
+    
+    } else {
+      return -1;
+    }
+  } 
+}
+
+var cache = new LRUCache(2);
+cache.set(1,1)
+console.log(cache);
+
+
+// console.log(cache.set(1,2))
+// console.log(new LRUCache(2), cache.set(1,1))
+// console.log(LRUCache.set(1,1))
+
+
+
