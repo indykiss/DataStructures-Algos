@@ -83,7 +83,10 @@ Ex:
 # Cyclic sort
 Describes an approach to deal with problems involving arrays containing numbers in a given range.
 
+Key terms: "We are given an unsorted arr with numbers ranging from 
+1 to N" or anything close. 
+
 Ex: 
 - Cyclic sort 
-- Find all missing numbers in an unsorted arr that has 
-1 to N numbers 
+- Find all missing numbers in an unsorted arr that has 1 to N nums
+
