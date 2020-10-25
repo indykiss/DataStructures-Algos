@@ -23,6 +23,8 @@ return that number.
 
 */
 
+// oct, fb/bloomb, grokking. mentally tired. didn't really
+// get there for this one. 
 
 var findDuplicate = function(nums) {
     let i = 0;
