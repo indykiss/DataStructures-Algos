@@ -14,7 +14,7 @@
 ## Great momentum. Keep going!! 1.5 weeks of this and I'll be done! 
 ## Leave the last 2-3 challenges alone so I can go back and review them in Nov. 
 
-## Sat: Merge intervals! Six algos total! Don't do more than 6. 
+## Sun: Cyclic sort! 4-5 algos total only.  
 
 - Begin grokking patterns 
 - ONLY do the easys and a couple mediums 
@@ -37,6 +37,8 @@
 
 
 
+
+
 # Sliding window: 
 We have an array or a linked list that we need to 
 find something within a specific range in the arr. 
@@ -45,6 +47,7 @@ Exs:
 - Find the longest substr of repeating chars in a str. 
 - Fruits in a basket. We have 2 baskets and an arr of num. What's the most fruit we can have (longest subarr of 2 ints). 
 - Given an array A of 0s and 1s, we may change up to K values from 0 to 1. Return the length of the longest (contiguous) subarray that contains only 1s. 
+
 
 # Multiple pointers / Two pointers
 When we have a sorted arr or linked list and we want to find 
@@ -66,4 +69,20 @@ Ex:
 - Finding the cycle in a linked list 
 
 
-# Cyclic Sort 
+# Merge Intervals 
+
+We're looking to find overlapping intervals or merge intervals
+if they do overlap. Intervals being an arr of arrs with starting point
+and end point. 
+
+Ex:
+- Find number of meeting rooms needed.
+- Merge intervals. 
+
+
+# Cyclic sort
+Describes an approach to deal with problems involving arrays containing numbers in a given range. 
+
+Ex: 
+- Find All Numbers Disappeared in an Array
+
