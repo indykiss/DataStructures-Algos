@@ -43,6 +43,8 @@ Edge cases???
 */
 
 
+
+
 // Close but no cigar w/o looking at solution 
 var minMeetingRooms = function(intervals) {
     
@@ -70,9 +72,36 @@ var minMeetingRooms = function(intervals) {
         }
             
     }
-    
     return roomCount;
 };
+
+
+
+
+// Grokking's solution, using a min Heap??? 
+function min_meeting_rooms(meetings) {
+    // sort the meetings by start time
+    meetings.sort((a, b) => a.start - b.start);
+  
+    let minRooms = 0,
+        // Use min-heap to store all the active meetings. 
+        // This min-heap will also be used to find the active meeting 
+        // w/ the smallest end time.
+        minHeap = new Heap([], null, ((a, b) => b.end - a.end));
+
+
+    for (i = 0; i < meetings.length; i++) {
+      // remove all the meetings that have ended
+      while (minHeap.length > 0 && meetings[i].start >= minHeap.peek().end) {
+        minHeap.pop();
+      }
+      // add the current meeting into min_heap
+      minHeap.push(meetings[i]);
+      // all active meetings are in the min_heap, so we need rooms for all of them.
+      minRooms = Math.max(minRooms, minHeap.length);
+    }
+    return minRooms;
+}
 
 
 
