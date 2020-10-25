@@ -13,7 +13,24 @@ Sort! Takes O(n logn)
 
 
 // Bloomb practice. Try again. I forgot the last parts 
-
+var merge = function(intervals) {
+    intervals = intervals.sort((a,b) => a[0] - b[0]);
+    
+    for(let i = 1; i < intervals.length; i++) {
+        let prev = intervals[i-1],
+            curr = intervals[i];
+        
+        if(curr[0] <= prev[1]) {
+            let x = Math.min(curr[0], prev[0]),
+                y = Math.max(curr[1], prev[1]);
+            intervals[i] = [x,y];
+            intervals.splice(i-1,1);
+            i--;   
+        }
+        
+    }
+    return intervals;
+};
 
 var merge = function(intervals) {
     let res = [];
