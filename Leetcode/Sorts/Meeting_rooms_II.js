@@ -5,6 +5,7 @@ Meeting Rooms II
 Given an array of meetings times [start, end], 
 find how many conference rooms we need. 
 
+April:
 Strategy:
 - Sort the meetings by start time 
 - We want to track the end times of the meetings 
@@ -20,6 +21,58 @@ Strategy:
 - Return the length of the endTimes array
 */
 
+
+
+/*
+Oct: FB/ Bloomb, Grokking 
+
+Strat:
+Vars/ DS: roomCount (1), earliestEndTime, arrOfEndTimes
+
+0. Sort the intervals by starting time
+1. Iterate thru the intervals
+2. Prev & curr: overlaps? Yes, increment meeting room. 
+        IF our curr start time is equal to OR later than 
+        our earliestEndTime, no increment. 
+        Change the earliestEndTime and remove that value from 
+        arrOfEndTimes. SO we can then update our earliestEndTime to 
+        become the minimum in the arrOfEndTimes. 
+3. Prev & curr: NO overlap. No need to increment meeting room
+
+Edge cases???
+*/
+
+
+// Close but no cigar w/o looking at solution 
+var minMeetingRooms = function(intervals) {
+    
+    if(intervals == null || intervals.length == 0) return 0;
+    if(intervals.length < 2) return intervals.length;
+        
+    intervals = intervals.sort((a,b) => a[0] - b[0]);
+    
+    let roomCount = 1, 
+        arrOfEndTimes = [intervals[0][1]];
+        
+    for(let i = 1; i < intervals.length; i++) {
+        let start = intervals[i][0],
+            end = intervals[i][1],
+            earliestEnd = Math.min(...arrOfEndTimes);
+        
+        // Checking if we need to increment roomCount
+        if(start < earliestEnd) {
+            arrOfEndTimes.push(end);
+            roomCount++;
+        } else {
+            // ??????
+            // go into the index at earliestEnds & make it equal to curr end 
+            arrOfEndTimes[arrOfEndTimes.indexOf(earliestEnd)] = end;
+        }
+            
+    }
+    
+    return roomCount;
+};
 
 
 
