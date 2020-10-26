@@ -15,8 +15,18 @@ Output: 1->4->3->2->5->NULL
 
 
 Strat: track where we are with counter. As we iterate linked list, 
-we increment counter. If we m in position, and less than n, 
-we reverse linked list. 
+we increment counter. 
+
+1. Loop until we hit start of reversal position. 
+    Increment currPos, update our while loop, and make a start 
+2. When we hit the start of reversal position, we want to make a 
+prev = null so we can implement the basic "reverse linked list"
+algo. Reverse linked list I is the 2nd while loop basically. 
+3. At the end, we need to add anything after the end of reversal
+into a tail? Idk what that's about. 
+4. IDK about the final return. 
+
+Do again I think. 
 */
 
 var reverseBetween = function(head, m, n) {

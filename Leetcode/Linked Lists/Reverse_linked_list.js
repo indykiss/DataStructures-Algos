@@ -21,7 +21,6 @@ Output: 5->4->3->2->1->NULL
 // Bloomb practice Oct
 
 
-
 // Grokking explanation
 var reverse = function(head) {
     let curr = head,
