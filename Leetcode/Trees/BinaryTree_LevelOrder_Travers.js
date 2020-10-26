@@ -22,8 +22,40 @@ Given a binary tree, return the level order traversal of its nodes' values.
 
 */
 
-var levelOrder = function(root) {
 
+// Oct, try again. Grok. FB/ Bloomb
+var levelOrder = function(root) {
+    if(!root) return [];
+
+    let res = [],
+        queue = [];
+
+    queue.push(root);
+
+    // Make a queue 
+    while(queue.length) {
+        let len = queue.length,
+            level = [];
+
+        // Create a loop to add to level
+        for(let i = 0; i < len; i++) {
+            let curr = queue.shift(); // pop ele off queu
+
+            level.push(curr.val);
+            // add anything in the L & R into queue
+            if(curr.left) queue.push(curr.left);
+            if(curr.right) queue.push(curr.right);
+        }
+        res.push(level);
+    }
+    return res;
+}
+
+
+
+
+// Oct
+var levelOrder = function(root) {
     if(!root) return [];
     
     let res = [],

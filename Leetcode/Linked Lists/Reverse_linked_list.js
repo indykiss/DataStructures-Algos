@@ -20,6 +20,43 @@ Output: 5->4->3->2->1->NULL
 
 // Bloomb practice Oct
 
+
+
+// Grokking explanation
+var reverse = function(head) {
+    let curr = head,
+        prev = null;
+
+    while(curr !== null) {
+        next = curr.next; // temp save next node
+        current.next = prev; // reverse curr node 
+        prev = curr; // before we move on
+        // point prev to the curr node 
+        curr = next; // move to our temp saved next 
+    }
+
+    return prev; // prev saved our reversed order 
+}
+// O(n) time and O(1) space
+
+
+// Iterative
+var reverseList = function(head) {
+    let curr = head,
+        prev = null, 
+        next = null;
+    // 1->2->3->4->5->NULL
+    while(curr !== null) {
+        // Swap things around
+        // Start at middle to think of it better 
+        // curr = 3 , 4, 5 => goal: 5 4 3
+        // [4, 2, 3] = [2, 3, 4]
+        [curr.next, prev, curr] = [prev, curr, curr.next];   
+        
+    }
+    return prev;
+}
+
 // Iterative 
 var reverseList = function(head) {
     

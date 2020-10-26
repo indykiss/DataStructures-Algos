@@ -14,10 +14,12 @@
 ## Great momentum. Keep going!! 1.5 weeks of this and I'll be done! 
 ## Leave the last 2-3 challenges alone so I can go back and review them in Nov. 
 
-## Sun: Cyclic sort! 4-5 algos total only.  
+## Monday! Tree breadth first search 
 
-- Begin grokking patterns 
-- ONLY do the easys and a couple mediums 
+# Grokk:
+# I'm already 1/3rd done! After doing this for less than 1 week! I'm doing well!! 
+
+
 
 
 ## Leetcodes
@@ -90,3 +92,21 @@ Ex:
 - Cyclic sort 
 - Find all missing numbers in an unsorted arr that has 1 to N nums
 
+
+# Reverse a linked list 
+When we need to reverse a linked list, particularly in place, 
+or any variation of reversing a linked list. 
+
+- Literally ONLY need to learn like 
+reverse a linked list. AND reverse linked list from 
+points A to B. 
+
+
+# Tree: BFS 
+
+When we need to traverse a tree in a level by
+level order, use BFS. We use a queue to keep 
+track of all the nodes of a level before we
+move to the next level. 
+
+- Binary tree level-order traversal 
