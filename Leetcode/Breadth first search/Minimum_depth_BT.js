@@ -16,8 +16,7 @@ As soon as we find the first LEAF (where there is a null in the left or
 the right), we've found our minimum depth
 */
 
-
-
+// grok. Oct, FB/ Bloomb
 var minDepth = function(root) {
     if(root === null) return 0;
     
