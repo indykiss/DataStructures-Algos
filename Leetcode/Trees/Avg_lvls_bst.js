@@ -18,6 +18,7 @@ Temp queue for the next level
 
 
 // Nice way to see BFS. Grok. Oct, fb/bloomb
+// avgs should be optimized 
 var averageOfLevels = function(root) {
     if(!root) return [];
 
@@ -29,27 +30,24 @@ var averageOfLevels = function(root) {
     while(queue.length > 0) {
         
         let lvl = [],
-            len = queue.length;
+            len = queue.length,
+            sum = 0;
         
         for(let i = 0; i < len; i++) {
             let curr = queue.shift();
             
-            lvl.push(curr.val);
+            sum += curr.val;
             
             if(curr.left) queue.push(curr.left);
             if(curr.right) queue.push(curr.right);
         }
         // find the average in each level then push into res
-        let sum = 0;
-        for(let j = 0; j < lvl.length; j++) {
-            sum += lvl[j];
-        }
-        let avg = sum/lvl.length; 
-        
+        let avg = sum/len; 
         res.push([avg]);
     }
     return res;
 };
+// O(N) time b/c loop where n is number of nodes and O(N) space b/c queue
 
 
 
