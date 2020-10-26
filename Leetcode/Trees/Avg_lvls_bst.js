@@ -15,6 +15,44 @@ BFS: queue to track
 Temp queue for the next level
 */
 
+
+
+// Nice way to see BFS. Grok. Oct, fb/bloomb
+var averageOfLevels = function(root) {
+    if(!root) return [];
+
+    let res = [],
+        queue = [];
+    
+    queue.push(root);
+    
+    while(queue.length > 0) {
+        
+        let lvl = [],
+            len = queue.length;
+        
+        for(let i = 0; i < len; i++) {
+            let curr = queue.shift();
+            
+            lvl.push(curr.val);
+            
+            if(curr.left) queue.push(curr.left);
+            if(curr.right) queue.push(curr.right);
+        }
+        // find the average in each level then push into res
+        let sum = 0;
+        for(let j = 0; j < lvl.length; j++) {
+            sum += lvl[j];
+        }
+        let avg = sum/lvl.length; 
+        
+        res.push([avg]);
+    }
+    return res;
+};
+
+
+
 var averageOfLevels = function(root) {
     let queue = [];
     let res = [];
