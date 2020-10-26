@@ -18,10 +18,7 @@ Output: 5->4->3->2->1->NULL
 
 
 
-// Bloomb practice Oct
-
-
-// Grokking explanation
+// Bloomb/ Fb practice Oct: Grokking explanation
 var reverse = function(head) {
     let curr = head,
         prev = null;
@@ -39,7 +36,8 @@ var reverse = function(head) {
 // O(n) time and O(1) space
 
 
-// Iterative
+
+// Iterative: LC 
 var reverseList = function(head) {
     let curr = head,
         prev = null, 
@@ -56,9 +54,9 @@ var reverseList = function(head) {
     return prev;
 }
 
+
 // Iterative 
 var reverseList = function(head) {
-    
     let prev = null, 
         next = null,
         curr = head;
@@ -70,7 +68,7 @@ var reverseList = function(head) {
 }
 
 
-// recursive
+// recursive: LC
 var reverseList = function(head) {
     // base case 
      if(head == null || head.next == null) {
