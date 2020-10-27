@@ -25,6 +25,44 @@ Strategy:
 */
 
 
+// Grok way to do it. Recursive. More intuitive 
+var hasPathSum = function(root, sum) {
+
+    if(!root) return false; 
+
+    // If we find leaves, the path existed 
+        // and the root.val === sum 
+    if(root.val === sum && !root.left && !root.right) {
+        return true;
+    }
+
+    // Recurse call to traverse left and right 
+    // subtree.
+    return hasPathSum(root.left, root.val + sum) ||
+        hasPathSum(root.right, root.val + sum);
+}
+
+
+// LC, Oct. Bloomb/ FB
+var hasPathSum = function(root, sum) {
+    if(!root) return false;
+
+    // recursive DFS 
+    function dfs(root, pathSum) {
+        if(!root) return false;
+        // We've reached the end of the path and the total of this path
+        // is equal to the sum
+        if(pathSum + root.val === sum && !root.left && !root.right) {
+            return true;
+        }
+        // DFS on the left and right, updating the path's sum
+        return dfs(root.left, root.val + pathSum) || 
+            dfs(root.right, root.val + pathSum);
+    }
+    // Run DFS on the root with an initialized 0 as pathsum
+    return dfs(root, 0);
+};
+
 
 var hasPathSum = function(root, sum) {
     if(!root) return false;

@@ -11,14 +11,14 @@
 ## Strat for Grokking:
 ## Have Grok on left of screen. Look up LC. Do LC on right of screen. 
 ## Double win. Doing grokking + doing a leetcode! 
-## Great momentum. Keep going!! 1.5 weeks of this and I'll be done! 
-## Leave the last 2-3 challenges alone so I can go back and review them in Nov. 
-
-## Monday! Tree breadth first search 
+## Leave the last 2-3 challenges so I can go back and review them in Nov. 
 
 # Grokk:
 # I'm already 1/3rd done! After doing this for less than 1 week! I'm doing well!! 
 
+
+## Tuesday! Tree depth first search (stack, paths). 4-5 algos. 
+# Two heaps if I can. 3 algos max. Just do the easier variations. 
 
 
 
@@ -102,12 +102,18 @@ reverse a linked list. AND reverse linked list from
 points A to B. 
 
 
-# Tree: BFS 
+# Tree: BFS (queue, levels)
 
 When we need to traverse a tree in a level by
-level order, use BFS. We use a queue to keep 
-track of all the nodes of a level before we
-move to the next level. 
+level order, use breadth first search. We use a queue to keep  track of all the nodes of a level before we move to the next level. Space always O(N) where n is the number of nodes. 
 
 - Binary tree level-order traversal 
+- Return an arr of arrs with all the values on each level
+of a binary tree
+- Return the avg of each level in a BT 
 
+
+# Tree: DFS (stack, paths)
+We use recursion, OR A STACK using iterative, to track all the previous (parent) nodes while traversing. This makes our space always O(H) where H is the height of the tree.  
+
+- Binary Tree Path Sum 
