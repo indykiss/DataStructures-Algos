@@ -60,7 +60,7 @@ var letterCasePermutation = function(str) {
         }
     }
 }
-
+// Time: O(2^N) complexity. 
 
 
 // This was my attempt without looking at solution. Super wrong. but almost close
