@@ -24,6 +24,28 @@ Bloomb:
 */
 
 
+// Oct. Another way to solve this using BFS
+
+var subsets = function(nums) {
+    // start with empty subset
+    let res = [[]]
+
+    for(let i = 0; i < nums.length; i++) {
+        let curr = nums[i];
+        // take existing subsets and add new curr to them
+        for(let j = 0; j < res.length; j++) {
+            let sub = subsets[j].slice(0); // clone permutation
+            sub.push(curr); 
+            res.push(sub);
+        }
+    }
+    return res;
+}
+// O(2^N) time since we exponentially add output
+// as we add input size. O(2^N) space for same reason
+
+
+
 // Oct. Getting better at this one. Makes sense. 
 var subsets = function(nums) {
     let res = [[]];

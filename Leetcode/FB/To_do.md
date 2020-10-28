@@ -17,8 +17,7 @@
 # I'm already 1/3rd done! After doing this for less than 1 week! I'm doing well!! 
 
 
-## Tuesday! Tree depth first search (stack, paths). 4-5 algos. 
-# Two heaps if I can. 3 algos max. Just do the easier variations. 
+## Wednesday! Subsets! Do like 6 of these. That's it!  
 
 
 
@@ -117,3 +116,20 @@ of a binary tree
 We use recursion, OR A STACK using iterative, to track all the previous (parent) nodes while traversing. This makes our space always O(H) where H is the height of the tree.  
 
 - Binary Tree Path Sum 
+- Find the root-leaf path that equals given sequence, or 
+equals target sum 
+
+
+# Two Heaps
+When we need to divide eles into a small heap and a 
+larger heap of things. Min heap / max heap. 
+
+Not wasting my time with two heaps right now. If I get 
+min/max heap, I'm screwed. Maybe look at this later when studying for google. 
+
+
+# Subsets 
+When we need to deal with permutations or combinations of a set of elements. 
+Grokking goes over a breadth first way to handle these Qs. 
+
+- Find all possible subsets in an arr of eles
