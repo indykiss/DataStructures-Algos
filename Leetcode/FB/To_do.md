@@ -14,12 +14,16 @@
 ## Leave the last 2-3 challenges so I can go back and review them in Nov. 
 
 # Grokk:
-# I'm already 1/3rd done! After doing this for less than 1 week! I'm doing well!! 
+## After binary search, we just have 5 sections left. We'll be 2/3rd done! 
+## Those 5 are also weird/ fringe things so maybe run thru by Sun. 
 
 
-## Wednesday! Subsets! Do like 6 of these. That's it!  
+## Friday! Modified Binary Search. Do like 4-6 of these
+## Bitwise XOR if we can. It's just 3! Just do 3! 
 
 
+
+# November
 
 ## Leetcodes
 - 5.ish FB mediums
@@ -31,14 +35,11 @@
 ### Finished:
 - First 10 easys. Should do a few more easys
 - Done 5/ 10 mediums. 
+- Mostly will be done with Grok by Nov
 
 
 
-# November
-
-
-
-
+# Grokking patterns summary: 
 
 # Sliding window: 
 We have an array or a linked list that we need to 
@@ -133,3 +134,12 @@ When we need to deal with permutations or combinations of a set of elements.
 Grokking goes over a breadth first way to handle these Qs. 
 
 - Find all possible subsets in an arr of eles
+- Generate parenthese
+
+
+# Modified Binary Search 
+When we have a sorted array, Linked List, or Matrix, we can do a binary search 
+through it.  
+
+
+
