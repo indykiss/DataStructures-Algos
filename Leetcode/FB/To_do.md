@@ -17,8 +17,12 @@
 ## After binary search, we just have 5 sections left. We'll be 2/3rd done! 
 ## Those 5 are also weird/ fringe things so maybe run thru by Sun. 
 
+## Reorganize. I only have time for 40-50 algos for BOTH 
+## bloomberg AND facebook. 
 
-## Saturday! Bitwise XOR. It's just 3! Just do 3! 
+## Skipping Bitwise XOR for now. Can look at if I need to
+
+## Saturday! 
 ## Top K elements. Do 5-6 of these. Then done! only 8 all Sat. 
 
 ## We have to do 3 sections on Sat OR Sun. Pick one. 
@@ -151,3 +155,25 @@ through it.
 - Start, end, midpt (math.floor(start + (end-start)/2)
 - Update start/ end based on where target is 
 
+
+# Bitwise XOR
+
+XOR is a logical bitwise operator that returns 0 (false) if both bits are the same and returns 1 (true) otherwise. In other words, it only returns 1 if exactly one bit is set to 1 out of the two bits in comparison.
+
+A	B	A xor B
+0	0	  0
+0	1	  1
+1	0	  1
+1	1	  0
+
+- Skipped this one bc time is running out. Only 2 weeks til FB/ Bloomb onsite. 
+
+
+# Top 'K' Elements 
+
+Use when we're asked to find the top/ smallest/ largest/ frequent K elements. Frequently asked pattern. 
+
+The best DS that keeps track of K elements is a heap. So the Grokking pattern uses a heap to do this. 
+
+- Alien Dictionary 
+- Find K largest numbers in an arr. 
