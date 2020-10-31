@@ -18,8 +18,15 @@
 ## Those 5 are also weird/ fringe things so maybe run thru by Sun. 
 
 
-## Friday! Modified Binary Search. Do like 4-6 of these
-## Bitwise XOR if we can. It's just 3! Just do 3! 
+## Saturday! Bitwise XOR. It's just 3! Just do 3! 
+## Top K elements. Do 5-6 of these. Then done! only 8 all Sat. 
+
+## We have to do 3 sections on Sat OR Sun. Pick one. 
+## If Sat is very good, I can slack on Sun.
+
+## Sunday: K way merge: Only do like 2-3
+## Dynammic programming, knapsack. Only do 2-3
+## Topological sort, graph: 3-5. Only b/c I haven't done this one much 
 
 
 
@@ -141,5 +148,6 @@ Grokking goes over a breadth first way to handle these Qs.
 When we have a sorted array, Linked List, or Matrix, we can do a binary search 
 through it.  
 
-
+- Start, end, midpt (math.floor(start + (end-start)/2)
+- Update start/ end based on where target is 
 
