@@ -1,15 +1,21 @@
 /*
  Merge k Sorted Lists
  
-Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
+Merge k sorted linked lists and return it as one sorted list.
+Analyze and describe its complexity.
 
 Strategy:
 - Create a helper than manages the comparison of elements within 2 lists. 
-  - Parameter is 2 lists. We make a temp node that creates the head of the new merged list. 
-  - While loop for length of both lists. Compare the 1st val of each. Whichever is smaller gets two things done to it. 
-    - It becomes the next val for our temp. AND we increment along in that list (the one with the smol val). 
-- Our main function loops through the overall input of lists. And shifts off two lists and compares them with our helper function. 
-- Then we push the merged list at the end of our lists param. When we only have that one list left in our list of lists, we return it. 
+  - Parameter is 2 lists. We make a temp node that creates the head 
+  of the new merged list. 
+  - While loop for length of both lists. Compare the 1st val of each. 
+  Whichever is smaller gets two things done to it. 
+    - It becomes the next val for our temp. AND we increment along in 
+    that list (the one with the smol val). 
+- Our main function loops through the overall input of lists. And shifts 
+off two lists and compares them with our helper function. 
+- Then we push the merged list at the end of our lists param. When we only 
+have that one list left in our list of lists, we return it. 
    - This last list is our final merged list. 
  
 Time and space:
@@ -19,14 +25,11 @@ Time and space:
 
 
 
-
-
-
-
-
+// Most intuitive way to do this. Brute force. 
+// Iterate thru lists, look at 2 lists at once and merge those 2. 
+// Add merged back into original lists and keep going until just 1 left 
 var mergeKLists = function(lists) {
     if(lists.length === 0) return null;
-    
     // Look at the list of linked lists
     while(lists.length > 1) {
         let list1 = lists.shift();
@@ -55,6 +58,50 @@ var mergingLists = function(list1, list2) {
     if(list1 == null) res.next = list2;
     if(list2 == null) res.next = list1;
     return res.next;
+}
+
+
+
+
+
+// Grokking. Heap way to do this. 
+// Oct. Fb/ bloomb. Just follow and copy b/c late and am tired
+// also not the best way to do this so MEH
+
+const Heap = require('./collections/heap'); // import Heap
+
+function merge_k_lists(lists) {
+
+    let minHeap = new Heap([], null, (a,b) => b.value - a.value); // value bc linked list
+
+    // put root of each linked list into minheap 
+    lists.forEach(list => {
+        if(list !== null) {
+            minHeap.push(list);
+        }
+    })
+
+    // take root (smallest) from minHeap and add to res linked list 
+    let resHead = null,
+        resTail = null; 
+    
+    while(minHeap.length > 0) {
+        let smallNode = minHeap.pop();
+
+        // if we're first adding to result linked list
+        if(resHead === null) {
+            resHead = smallNode;
+            resTail = smallNode; 
+        } else { // else, add to head.next 
+            resHead.next = smallNode; 
+            resTail = resTail.next; 
+        }
+        // ?? keep going ??
+        if(smallNode.next !== null) {
+            minHeap.push(smallNode.next);
+        }
+    }
+    return resHead;
 }
 
 

@@ -22,14 +22,11 @@
 
 
 ## Saturday! 
-## Top K elements. Do 5-6 of these. Then done!
+K way merge: Only do like 2-3
 
-## We have to do 3 sections on Sat OR Sun. Pick one. 
-## If Sat is very good, I can slack on Sun.
-
-## Sunday: K way merge: Only do like 2-3
-## Dynammic programming, knapsack. Only do 2-3
-## Topological sort, graph: 3-5. Only b/c I haven't done this one much 
+## Sunday: 
+Dynammic programming, knapsack. Only do 2-3
+Topological sort, graph: 3-5. Only b/c I haven't done this one much 
 
 
 
@@ -177,3 +174,20 @@ The best DS that keeps track of K elements is a heap. So the Grokking pattern us
 
 - Find K largest numbers in an arr. 
 - Find K closest points to origin
+
+
+# K-way Merge 
+When we are given "K" sorted arrays, we can use a 
+Heap to do a sorted traversal of all the eles of all 
+arrays. 
+
+We push the smallest (first) ele of each array into a MinHeap to get the overall minimum. 
+
+While inserting eles into the MinHeap, we track which array gave us which element. We can then remove the top element from the heap to get the smallest element,and push the next ele from the same arr, to which this smallest ele belonged, to the heap. 
+
+Repeat until we make a sorted traversal of all elements. 
+
+Ya that doesn't make sense. But an important one to know know to do:
+
+- Merge K Sorted Lists 
+
