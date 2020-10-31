@@ -23,6 +23,7 @@ we want to make start and end become mid. Break loop.
 */
 
 
+// Leetcode. Oct. Grok too. FB/ bloomb
 var searchRange = function(nums, target) {
     let start = 0,
         end = nums.length - 1;
