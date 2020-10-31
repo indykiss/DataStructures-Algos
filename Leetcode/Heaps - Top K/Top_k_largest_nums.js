@@ -45,6 +45,7 @@ O(log n).
 - Return the heap
 */
 
+// oct, fb/ bloomb
 const Heap = require('./collections/heap'); //http://www.collectionsjs.com
 
 function topKNumsHeap(arr, k) {

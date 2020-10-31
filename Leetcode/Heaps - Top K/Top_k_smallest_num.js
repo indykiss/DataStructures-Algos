@@ -25,6 +25,7 @@ Strat:
 
 */
 
+// Oct, fb/ bloomb
 function kthSmallestNum(arr, k) {
     if(k < arr.length) return -1; // edge
 
