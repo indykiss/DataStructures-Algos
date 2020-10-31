@@ -45,6 +45,8 @@ O(log n).
 - Return the heap
 */
 
+const Heap = require('./collections/heap'); //http://www.collectionsjs.com
+
 function topKNumsHeap(arr, k) {
     // insert k eles into min-heap
     // so root is always min
