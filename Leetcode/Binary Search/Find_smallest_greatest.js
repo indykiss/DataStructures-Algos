@@ -23,13 +23,14 @@ mid = Math.floor(start + (end-start) / 2)
 - Update the start/ end based on midpt. 
     - If key is in left or right.
 - IF we find target, go right one and return that char
+
+After while loop, we'll hit start === end + 1
 - IF start < target and right > target AND end - start === 1 
     Return right, char
 
 
 Edge:
 - z -> a 
-
 
 */
 
