@@ -20,10 +20,9 @@
 ## Reorganize. I only have time for 40-50 algos for BOTH 
 ## bloomberg AND facebook. 
 
-## Skipping Bitwise XOR for now. Can look at if I need to
 
 ## Saturday! 
-## Top K elements. Do 5-6 of these. Then done! only 8 all Sat. 
+## Top K elements. Do 5-6 of these. Then done!
 
 ## We have to do 3 sections on Sat OR Sun. Pick one. 
 ## If Sat is very good, I can slack on Sun.
@@ -136,8 +135,9 @@ equals target sum
 When we need to divide eles into a small heap and a 
 larger heap of things. Min heap / max heap. 
 
-Not wasting my time with two heaps right now. If I get 
-min/max heap, I'm screwed. Maybe look at this later when studying for google. 
+Not wasting my time with two heaps right now. Maybe look at this later when studying for google. 
+
+ONLY NEED TO DO MIN AND MAX HEAPS 
 
 
 # Subsets 
@@ -166,7 +166,7 @@ A	B	A xor B
 1	0	  1
 1	1	  0
 
-- Skipped this one bc time is running out. Only 2 weeks til FB/ Bloomb onsite. 
+- Skipped this one bc time is running out. Only 2 weeks til FB/ Bloomb onsite. Do this if doing Google. 
 
 
 # Top 'K' Elements 
@@ -175,5 +175,5 @@ Use when we're asked to find the top/ smallest/ largest/ frequent K elements. Fr
 
 The best DS that keeps track of K elements is a heap. So the Grokking pattern uses a heap to do this. 
 
-- Alien Dictionary 
 - Find K largest numbers in an arr. 
+- Find K closest points to origin
