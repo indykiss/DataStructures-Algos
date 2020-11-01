@@ -1,0 +1,7 @@
+
+
+/*
+General approach for knapsack 
+
+
+*/

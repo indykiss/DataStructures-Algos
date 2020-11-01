@@ -21,9 +21,6 @@
 ## bloomberg AND facebook. 
 
 
-## Saturday! 
-K way merge: Only do like 2-3
-
 ## Sunday: 
 Dynammic programming, knapsack. Only do 2-3
 Topological sort, graph: 3-5. Only b/c I haven't done this one much 
@@ -190,4 +187,9 @@ Repeat until we make a sorted traversal of all elements.
 Ya that doesn't make sense. But an important one to know know to do:
 
 - Merge K Sorted Lists 
+
+
+# Knapsack using Dynammic Programming 
+
+Almost always can solve brute force using a recursive solution. 
 
