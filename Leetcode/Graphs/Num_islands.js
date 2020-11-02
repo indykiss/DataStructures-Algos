@@ -25,7 +25,66 @@ trigger is an island.
 */
 
 
+/*
+Nov. Leetcode. 34 minutes. Off by 1 error added 4 mins to time. 
 
+Strat: BFS - use a queue 
+
+1. Iterate thru grid (nested loop: row, col), ID all 1s 
+Once we id a 1 = land, then we want to trigger
+a BFS the up/down/left/right positions around that
+one.  
+
+2. BFS through the grid.
+Track a queue (arr) of the ones that are around the original one. 
+
+Loop thru while queue has eles. 
+Pop off 1st ele in queue, search around it.
+Don't double count ones, change to 0 if we've processed it. 
+To find the ones, we want to adjust the indices all around
+by 1. We want to be sure we're on grid. 
+As we find ones, add to queue. 
+
+3. Increment count of the numOfIslands (variable). 
+
+Space: O(1) bc just tracking variables and an arr. 
+Time: O(n^2) because we're doing a nested loop
+*/
+var numIslands = function(grid) {
+    let countOfIslands = 0;
+    
+    for(let row = 0; row < grid.length; row++) {
+        for(let col = 0; col < grid[row].length; col++) {
+            let num = grid[row][col];
+            
+            if(num === "1") {
+                bfs(row, col, grid);   
+                countOfIslands++;
+            }      
+        }
+    }
+    return countOfIslands;
+};
+
+function bfs(row, col, grid) {
+    let queue = [];
+    queue.push([row, col]);
+    
+    while(queue.length) {
+        let [x, y] = queue.pop(); 
+        let dirs = [[0, 1], [0, -1], [-1,0], [1,0]];
+        grid[x][y] = "0" // we dont want to double count
+        
+        dirs.forEach(dir => {
+            let newX = dir[0] + x,
+                newY = dir[1] + y;
+            
+            if(newX >= 0 && newY >= 0 && newX < grid.length && newY <= grid[0].length && grid[newX][newY] === "1"){
+                queue.push([newX, newY]);
+            }  
+        })   
+    }
+}
 
 
 

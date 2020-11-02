@@ -27,6 +27,39 @@ Strat:
     
 */
 
+
+// 12 mins. Nov
+var isValid = function(s) {
+    if(s.length < 2) return false;
+  
+    let hash = {"(" : ")",
+               "{" : "}",
+               "[" : "]"};
+    
+    let openers = [];
+    
+    for(let idx = 0; idx < s.length; idx++) {
+        let ele = s[idx];
+        
+        // if opener
+        if(hash.hasOwnProperty(ele)) {
+            openers.push(ele);
+        }
+        // if closer:
+        else {
+            let recent = openers.pop();
+            
+            if(hash[recent] !== ele) {
+                return false;
+            }
+        }
+    }
+    return openers.length === 0 ? true : false;
+} 
+
+
+
+
 var isValid = function(s) {
     const opClose = {
         "(" : ")", 
