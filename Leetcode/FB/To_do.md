@@ -196,3 +196,12 @@ Basically Greedy method of programming.
 - Cashier is making change. Use smallest num of coins 
 - Fancy cake vault 
 
+
+# Topological Sort (Graph)
+Used to find a linear ordering of elements that have 
+dependencies on each other. For example, if event "B" is dependent on event "A" then "A" comes before "B" in
+topological ordering. 
+
+- Course Schedule: https://leetcode.com/problems/course-schedule/discuss/305685/java-script-dfs-100-detect-cycle-in-directed-graph 
+
+- Practice later maybe 
