@@ -28,7 +28,7 @@ Strat:
 */
 
 
-// 12 mins. Nov
+// 12 mins. Nov. Easy. 
 var isValid = function(s) {
     if(s.length < 2) return false;
   
@@ -56,6 +56,7 @@ var isValid = function(s) {
     }
     return openers.length === 0 ? true : false;
 } 
+
 
 
 
