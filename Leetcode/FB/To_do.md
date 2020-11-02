@@ -191,5 +191,8 @@ Ya that doesn't make sense. But an important one to know know to do:
 
 # Knapsack using Dynammic Programming 
 
-Almost always can solve brute force using a recursive solution. 
+Basically Greedy method of programming. 
+
+- Cashier is making change. Use smallest num of coins 
+- Fancy cake vault 
 

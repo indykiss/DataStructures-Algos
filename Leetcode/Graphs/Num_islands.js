@@ -13,11 +13,15 @@ Input:
 
 Output: 1
 
-Strat: Treat the grid like it's an undirected graph and there's an edge between 
+Strat: Treat the grid like it's an undirected graph and 
+there's an edge between 
 adjacent ones. So use depth first search to scan the map. 
-If a node has a 1, then trigger a DFS. Every visited node during search should be
-set at 0 to mark it as visted. Count the number of root nodes that trigger DFS. 
-This number would be the number of islands, since each DFS trigger is an island. 
+If a node has a 1, then trigger a DFS. Every visited node 
+during search should be
+set at 0 to mark it as visted. Count the number of root nodes 
+that trigger DFS. 
+This number would be the number of islands, since each DFS 
+trigger is an island. 
 */
 
 

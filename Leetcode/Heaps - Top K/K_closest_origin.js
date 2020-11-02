@@ -61,7 +61,7 @@ function distanceCalculator(coords) {
 // WITH A HEAP INSTEAD. ALWAYS DO BRUTE FORCE FIRST 
 var kClosest = function(points, k) {
     points = points.sort((a,b) => distance(a) - distance(b));
-    return poits.slice(0,k);
+    return points.slice(0,k);
 }
 var distance = function(pt) {
     let x = pt[0];
