@@ -18,6 +18,41 @@ Strategy:
 
 
 
+
+// Nov: 18 mins to do this 2 ways. 
+// Without heap, 8-10 mins. 
+
+// [[-1,1], [1,2], [2, 2]], k = 2
+function kClosest(points, k) {
+    points = points.sort((a,b) => distCalc(a) - distCalc(b));
+    return points.slice(0, k);
+}
+
+function distCalc(coord) {
+    let x = coord[0],
+        y = coord[1];
+    return x*x + y*y
+}
+
+// Heap. Kinda sorta works! 
+const Heap = require('./collections/heap'); // import heap DS
+
+function kClosestHeap(points, k) {
+    let res = [];
+    
+    let minHeap = new Heap([], null, (a,b) => distCalc(a) - distCalc(b)); 
+    
+    for(let idx = 0; idx < k; idx++) {
+        let root = minHeap.pop();
+        
+        res.push(root);
+    }
+    return res; 
+}
+
+
+
+
 // Oct, Grokking way to do this with a heap. 
 // Fb/ Bloomb. Max heap! Yay, not terrible if I'm importing :) 
 const Heap = require('./collections/heap'); // import Heap. syntax? 
