@@ -12,7 +12,6 @@ Palindrome = when the reverse of the string is equal to the string itself.
 */
 
 
-
 // 5 mins for below, using built in functions
 var isPalindrome = function(s) { 
     let str = s.toLowerCase().replace(/[^a-z0-9]/g, "")
