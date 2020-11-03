@@ -24,6 +24,33 @@ strat:
 */
 
 
+// Like 20 mins and still wrong :( FUCK. THIS WAS AN EASY. Nov 
+var validPalindrome = function (s) {
+    let l = 0, 
+        r = s.length-1, 
+        weCanHaveOneOff = true;
+    
+    while (l < r) {
+        if (s[l] === s[r]) {
+            l++; 
+            r--;
+        }
+        else if (s[l+1] === s[r] && 
+                 s[l+2] === s[r-1] && weCanHaveOneOff) {
+            l++;
+            weCanHaveOneOff = false;
+        }
+        else if (s[l] === s[r-1] && weCanHaveOneOff) {
+            r--; 
+            weCanHaveOneOff = false;
+        } else {
+            return false;
+        }
+    }
+    return true;
+}
+
+
 // Oct, FB. Ya not great. Do this again 
 var validPalindrome = function (s) {
     let l = 0, 
