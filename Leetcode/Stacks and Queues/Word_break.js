@@ -9,8 +9,82 @@ a list of non-empty words, determine if s can be segmented into
 a space-separated sequence of one or more dictionary words.
 */
 
-// Attempt #2
 
+
+
+
+
+
+/* 
+20 mins this way 
+Sliding window approach. Close but major edge case
+ - Word in dict is substr of other word in dict 
+ - SO we miss the remaining leeters
+ "aaaaaaa"   ["aaaa","aaa"]    => true
+*/
+
+var wordBreak = function(s, wordDict) {
+    let start = 0, 
+        charCount = 0,
+        tempStr = "",
+        dictSet = new Set(wordDict);
+    
+    for(let end = 0; end < s.length; end++) {
+        tempStr += s[end];
+        
+        if(dictSet.has(tempStr)) {
+            charCount += tempStr.length;
+            tempStr = "";
+            start = end + 1;            
+        }
+    }
+        
+    if(charCount === s.length) {
+        return true; 
+    } else {
+        return false;
+    }
+};
+
+
+
+// Just copied, Idk wtf's going on 
+// BFS using a queue
+var wordBreak = function(s, wordDict) {
+    
+    const dict = new Set(wordDict),
+          seen = new Set(),
+          queue = [0];
+
+    // bfs
+    while(queue.length > 0) {
+        let start = queue.shift();
+        
+        // Starting char in a word
+        if(!seen.has(start)) {
+            
+            // Using start/ end pointer to check if dict has 
+            for(let end = start+1; end <= s.length; end++) {
+                if(dict.has(s.slice(start, end))) {
+                    // great we found a word, 
+                    // add ending to queue so we can look
+                    // for the next one
+                    queue.push(end);
+                    seen.add(start);
+                    
+                    if(end === s.length) { // we're at end
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+    return false;
+};
+
+
+
+// Attempt #2
 var wordBreak = function(s, wordDict) {
     const dict = new Set(wordDict);
     const seen = new Set();
