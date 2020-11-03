@@ -25,6 +25,38 @@ O(n log n) time: Dictionary: O(n), Sorting: O(n log n).
 O(n) space, creating a dictionary
 */
 
+
+// 15 mins, but needed like 3 hints 
+// Need to learn:
+// let sortedKeys = Object.keys(hash).sort((a,b) => hash[b] - hash[a]); 
+var frequencySort = function(s) {
+    let hash = {},
+        res = "";
+    
+    for(let i = 0; i < s.length; i++) {
+        if(hash[s[i]]) {
+            hash[s[i]] += 1
+        } else {
+            hash[s[i]] = 1;
+        }
+    }
+    // {t: 1, r:1, e:2}
+    
+    // Sort the keys in hash so we know the order of chars desc
+    let sortedKeys = Object.keys(hash).sort((a,b) => hash[b] - hash[a]); 
+        
+    for(let char of sortedKeys) {
+        // Add hash[char]'s number of occurences to res str
+        while(hash[char] > 0) {
+            res += char;
+            hash[char]--;
+        }
+    }
+    return res;
+} 
+
+
+
 var frequencySort = function(s) {
     let hash = {},
         arr = s.split(''),
