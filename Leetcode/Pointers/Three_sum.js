@@ -38,6 +38,51 @@ implementing helper and within the check for when pairSum == targetSum;
 
 
 
+// 35 mins. close but not quite. needed to look at solution. Nov 
+function threeSum(nums) {
+    if(nums.length < 3) return []; 
+    
+    let triplets = [];
+    
+    nums = nums.sort((a,b) => a-b); // ascending sort 
+    
+    for(let idx = 0; idx < nums.length; idx++) {
+        let left = idx + 1,
+            right = nums.length - 1,
+            curr = idx;
+        
+        // skip num dupes
+        if(nums[idx] === nums[idx-1] && idx > 0) {
+            continue;
+        }
+        
+        while(left < right) {
+            let sum = nums[left] + nums[right] + nums[curr];
+            if(sum === 0) {
+                triplets.push([nums[curr], nums[left], nums[right]]);
+                left++;
+                right--;
+                
+                // skip nums we've processed before after we found a match
+                while(nums[left] === nums[left-1]){
+                    left++;   
+                }
+                while(nums[right] === nums[right+1]) {
+                    right--;
+                }
+
+            } else if(sum > 0) {
+                right--;
+            } else if(sum < 0) {
+                left++;
+            }
+        }
+    }
+    return triplets;
+}
+
+
+
 // Most intuitive way to do 3 sum. LC, Oct, Fb/Bloomb
 function threeSum(nums) {
     nums = nums.sort((a,b) => a-b);
@@ -76,7 +121,7 @@ function threeSum(nums) {
 
 
 
-// Grokking, but feels super hard to understand. 
+// Grokking. Same concept as above but using a helper. 
 // O(n^2) anyways. So just learn the other way to do it
 function threeSum(nums) {
     nums = nums.sort((a,b) => a-b);

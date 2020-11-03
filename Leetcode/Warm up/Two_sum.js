@@ -11,6 +11,51 @@ O(n) solution as we loop once
 
 
 
+
+// 5 mins. LC. Nov
+var twoSum = function(nums, target) {
+    let seen = {}; // {key, number: value: index}
+    
+    for(let idx = 0; idx < nums.length; idx++) {
+        let curr = nums[idx]; 
+        let partner = target - nums[idx]; 
+        
+        // check if seen has partner
+        if(seen.hasOwnProperty(partner)) {
+           return [seen[partner], idx];
+        }
+    
+        // add curr to seen
+        seen[curr] = idx; 
+        
+    }
+    return -1;  
+} 
+
+// 7 mins. 2nd solution. Doesnt pass LC but whatever, its right. 
+var twoSum = function(nums, target) {
+    let left = 0, 
+        right = nums.length - 1; 
+    
+    nums = nums.sort((a,b) => a-b); // arr.sort();  
+    
+    while (left < right) {
+        let sum = nums[left] + nums[right];
+        
+        if(sum === target) {
+            return [left, right];
+        } else if(sum < target) {
+            left++;
+        } else if(sum > target) {
+            right--;
+        }
+    }
+    return false;
+} 
+
+
+
+
 // Two pointer warm up. Grokking, Oct, FB/ Bloomb
 
 function twoSumPointers(arr, sum) {
