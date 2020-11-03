@@ -31,7 +31,59 @@ totalCost. ELSE if city A/B is maxed out, we want to add the other one
 */
 
 
-// Practice me again
+
+// 35 mins. Nov.  Not bad. Only needed one big hint:
+// Greedy sort the costs by DIFFERENCE DESCENDING 
+// so the end of the costs arr has smaller diff. between flights
+
+var twoCitySchedCost = function(costs) {
+    let totalCosts = 0, 
+        cityACount = 0, 
+        cityBCount = 0, 
+        capacity = costs.length / 2;
+        
+    // Greedy method: We want to sort by differences in descending order 
+    // This is more dynamic bc we will greedily pick the lowest flight 
+    // when the flight differences is high. When we have to just pick 
+    // whichever towards the end of the iteration, the difference will be lower
+    costs = costs.sort((a,b) => Math.abs(b[0] - b[1]) - Math.abs(a[0] - a[1]));
+    
+    for(let idx = 0; idx < costs.length; idx++) {
+        
+        // One city is at capacity, so let's add person to other city 
+        if(cityACount === capacity) {
+            totalCosts += costs[idx][1];
+            cityBCount++;
+        } else if(cityBCount === capacity) {
+            totalCosts += costs[idx][0];
+            cityACount++;
+        }
+        
+        // Add to city A IF city A's not at capacity
+        else if(costs[idx][0] < costs[idx][1]) {
+            if(cityACount < capacity) {
+                totalCosts += costs[idx][0]; 
+                cityACount++;
+            }
+        }
+        // Add to city B IF city B's not at capacity
+        else if(costs[idx][1] < costs[idx][0]) {
+            if(cityBCount < capacity) {
+                totalCosts += costs[idx][1]; 
+                cityBCount++;
+            }
+        }        
+    }
+    return totalCosts;
+} 
+
+
+
+
+
+
+
+// Practice me again. Oct
 var twoCitySchedCost = function(costs) {
     let numOfPplA = 0,
         numOfPplB = 0,
@@ -62,6 +114,8 @@ var twoCitySchedCost = function(costs) {
     
     return totalCost;    
 }
+
+
 
 
 
