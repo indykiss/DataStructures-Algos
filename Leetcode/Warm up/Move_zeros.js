@@ -14,6 +14,40 @@ Else, do nothing.
 
 
 
+// Like 20+ mins + looked at solution. 
+// Nov. Pathetic. 
+var moveZeroesIterate = function(nums) {
+    // Situation: if we have leading zeros
+    for(let i = nums.length - 1; i >= 0; i--) {
+        let curr = nums[i];
+        
+        if(curr === 0) {
+            let temp = nums.splice(i, 1); // ith index, only slice 1 element 
+            nums.push(temp);
+        }
+    }
+    return nums;
+} 
+
+// What if we can't use .splice? Two pointers
+// Swap using 2 left starting pointers, move the zeros to the end
+// edge: [0, 0, 2]
+var moveZeroes = function(nums) {
+    let r1 = 0,
+        r2 = 0
+    
+    while(r2 < nums.length) {
+        if(nums[r2] !== 0) {
+            [nums[r1], nums[r2]] = [nums[r2], nums[r1]]; 
+            r1++;
+        } 
+        r2++;
+    }
+    return nums;
+}
+
+
+
 // Sept bloomb, do me again:
 var moveZeroes = function(nums) { 
     // If we get a zero, remove it from that spot and add to the end
