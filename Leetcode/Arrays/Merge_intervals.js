@@ -12,6 +12,29 @@ Sort! Takes O(n logn)
 */
 
 
+
+// 20 mins. Forgot backtracking part AGAIN 
+var merge = function(intervals) {
+    intervals = intervals.sort((a,b) => a[0] - b[0]);
+    
+    for(let i = 1; i < intervals.length; i++) {
+        let curr = intervals[i],
+            prev = intervals[i-1];
+        
+        // merge
+        if(curr[0] <= prev[1]) {
+            let x = Math.min(prev[0], curr[0]);
+            let y = Math.max(prev[1], curr[1]);
+            
+            intervals[i] = [x,y]; // add merged interval into arr
+            intervals.splice(i-1, 1); // remove the previous interval
+            i--; // let's count this new merged interval in our next loop
+        }
+    }
+    return intervals;
+};
+
+
 // Bloomb practice. Try again. I forgot the last parts 
 var merge = function(intervals) {
     intervals = intervals.sort((a,b) => a[0] - b[0]);
