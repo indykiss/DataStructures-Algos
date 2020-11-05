@@ -25,6 +25,36 @@ O(n) time
 
 */ 
 
+
+
+
+// Bad. I didn't get close. 1 hr. Redo. 
+// Trick: Do prodBeforeI first then do prodAfterI in a 
+// seperate loop
+var productExceptSelf = function(nums) {
+    let res = Array(nums.length),
+        prodFromLeft = 1,
+        prodFromRight = 1; 
+        
+    // Add to res array prods from left of i
+    for(let i = 0; i < nums.length; i++) {
+        res[i] = prodFromLeft; 
+        prodFromLeft *= nums[i];
+    }
+    
+    // Add to res arr prods from right of i
+    for(let j = nums.length - 1; j >= 0; j--) {
+        res[j] *= prodFromRight;
+        prodFromRight *= nums[j];
+    }
+       
+    return res;
+};
+
+
+
+
+
 // Attempt #3. Not bad. Needed to do it the bad long way, then 
 // remembered the short way almost completely 
 
