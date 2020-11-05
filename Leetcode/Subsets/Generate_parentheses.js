@@ -35,6 +35,40 @@ a closer before an opener.
 */
 
 
+
+// Needed like 4 hints. 30 mins. Nov. 
+var generateParenthesis = function(n) {
+    let res = [];
+    
+    genHelper(openers = n-1, closers = n, "(");
+    
+    return res;
+
+    function genHelper(openers, closers, currStr) {
+        // base 
+        if(openers === 0 && closers === 0) {
+            res.push(currStr);
+            return;
+        }
+        
+        // Add opener
+        if(openers > 0) {
+            genHelper(openers-1, closers, currStr + "(");
+        }
+        // Add closer 
+        if(closers > 0 && closers > openers) {
+            genHelper(openers, closers - 1, currStr + ")");
+        }
+    }
+}
+
+
+
+
+
+
+
+
 var generateParenthesis = function(n) {
     
     const res = [];
