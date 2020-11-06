@@ -23,6 +23,41 @@ Output:
 Bloomb:
 */
 
+// Recursive way to do this. Learn this too, basically 
+var subsets = function(nums) {
+    let res = [[]];
+    
+    // Start helper with empty arr and idx at 0
+    makeNewSet([], 0);
+    
+    function makeNewSet(sub, idx) {
+        // basically at every step, we want to increment
+        // index by one and push into our res arr
+        for(let i = idx; idx < nums.length; idx++) {
+            let curr = nums[idx];
+            makeNewSet([...sub, curr], idx + 1);
+            res.push([...sub, curr]);
+        }
+        
+    }
+    return res;
+};
+
+
+// 10 mins. No hints needed. 
+// O(2^n) time because of nested loop that increases exponentially, same with space for same reason 
+var subsets = function(nums) {
+    let sets = [[]];
+    nums.forEach(num => {
+        sets.forEach(set => {
+          sets.push([...set, num]);  
+        })
+    })
+    
+    return sets;
+};
+
+
 
 // Oct. Another way to solve this using BFS
 
