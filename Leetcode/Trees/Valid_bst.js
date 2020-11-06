@@ -1,4 +1,32 @@
-// Given a binary tree, determine if it is a valid binary search tree (BST).
+
+
+
+// Given a binary tree, check if it is a valid binary search tree (BST).
+
+
+
+// Two off by one mistakes. Warm up with this one again. 
+// 10 mins. 
+
+var isValidBST = function(root, lower, upper) {
+  // base
+  if(root === null) {
+      return true; 
+  }
+  
+  // disqualify if not within bounds
+  if(root.val <= lower || root.val >= upper) {
+      return false;
+  }
+  
+  // recursive action 
+  return isValidBST(root.left, lower, root.val) && 
+      isValidBST(root.right, root.val, upper);
+};
+
+
+
+
 
 var isValidBST = function(root, lowerBound, upperBound) {
 
