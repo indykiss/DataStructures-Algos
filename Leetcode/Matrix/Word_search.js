@@ -41,6 +41,85 @@ as one we've picked, we save that position as a "noGo" position
 
 
 
+
+// Wayyyy off. But really good attempt. 
+
+/*
+Strat: DFS 
+- Iterate thru the board, row & col iteration 
+- Once we find the 1st letter AND can DFS(row, col, 0 (count))
+we can return true. 
+
+    - DFs:
+    - RECURSIVE. If we can find count == word.length, true
+    - Make sure we're on the board 
+    - Save the board's row,col in a temp
+    - Make the board at row,col a "" so we dont look at it again
+    - Look up, down, left, right by calling dfs() on each
+        - Save in a boolean var foundALetter
+    - Add letter back into the mix after we recursed
+    - Return foundALetter
+- If we iterate entirely through the board and never find 
+the word,  return false. 
+*/
+
+var exist = function(board, word) {
+      
+    for(let row = 0; row < board.length; row++) {
+        for(let col = 0; col < board[row].length; col++) {
+            // OFF
+            // Check that we round 1st letter in word 
+            // and also check that the dfs results in true
+            // in that the word can be found
+            if(board[row][col] === word.charAt(0) && dfs(row, col, 0)) {
+                return true;
+            }
+        }
+    }
+        
+    // OFF 
+    // dfs 
+    // if we find the next letter, then we want to 
+    // add it into a queue and pop it off next time 
+    function dfs(row, col, letterCount) { 
+        if(letterCount === word.length) {
+            return true;
+        }
+        
+        // NEED TO SAY THIS: OFF BY 1
+        // Make sure we're on the grid 
+        // Early fail 
+        if(row < 0 || col < 0 || row >= board.length ||
+          col >= board[row].length || board[row][col] != word.charAt(letterCount)) {
+            return false; 
+        }
+        
+        // OFF BY 1: 
+        // save the board's eles before we mark it off
+        let temp = board[row][col];
+        // OFF BY 1: don't look at this letter again 
+        board[row][col] = "0";
+        
+        
+        let foundALetter = dfs(row + 1, col, letterCount + 1) ||
+            dfs(row - 1, col, letterCount + 1) ||
+            dfs(row, col + 1, letterCount + 1) ||
+            dfs(row, col - 1, letterCount + 1);
+        
+        
+        // Add letter back in for other iterations 
+        board[row][col] = temp;
+
+        return foundALetter;
+    }
+    return false;
+};
+
+
+
+
+
+
 var exist = function(board, word) {
     for(let row = 0; row < board.length; row++) {
         for(let col = 0; col < board[row].length; col++) {
