@@ -42,7 +42,8 @@ as one we've picked, we save that position as a "noGo" position
 
 
 
-// Wayyyy off. But really good attempt. 
+// Wayyyy off. But really good attempt. Nov
+// Like 30 for 1st attempt. Another 20 to check over w/ solution
 
 /*
 Strat: DFS 

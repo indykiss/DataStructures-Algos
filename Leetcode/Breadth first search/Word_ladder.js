@@ -1,13 +1,61 @@
 /*
 Word Ladder
 
-Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
+Given two words (beginWord and endWord), 
+and a dictionary's word list, find the length 
+of shortest transformation sequence from beginWord 
+to endWord, such that:
 
 Only one letter can be changed at a time.
 
-Each transformed word must exist in the word list. Note that beginWord is not a transformed word.
+Each transformed word must exist in the word list. 
+Note that beginWord is not a transformed word.
 
 */
+
+
+// Definitely redo. I have no clue what's going on here. 
+// Looked at LC solution. Need to understand the 
+// nested loop part 
+
+var ladderLength = function(beginWord, endWord, wordList) {
+    // Make a dictionary to use .add/ .has/ .delete on wordList
+    let dict = new Set(wordList);
+    
+    // Make a queue. BFS => queue 
+    let count = 1, 
+        queue = [beginWord];
+    
+    while(queue.length) {
+        let next = [];
+        
+        for(let word of queue) {
+            if(word === endWord) {
+                return count;
+            }
+            
+            // Ya I have NO clue 
+            for(let i = 0; i < word.length; i++) {
+                for(let j = 0; j < 26; j++) {
+                    let word2 = word.slice(0, i) + String.fromCharCode(97 + j) + word.slice(i + 1);
+ 
+                    if(dict.has(word2)) {
+                        next.push(word2);
+                        dict.delete(word2);
+                    }
+                }
+            }
+        }
+        queue = next; 
+        count++;
+    }
+    return 0;
+};
+
+
+
+
+
 
 var ladderLength = function(beginWord, endWord, wordList) {
     let isEndWordExists = false;
