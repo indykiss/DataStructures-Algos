@@ -27,6 +27,31 @@ O(n) time
 
 
 
+// Bad. Got close, but too messy. 
+// looked at solution to get it. Got basics only
+var productExceptSelf = function(nums) {
+    let res = [],
+        preProd = 1,
+        postProd = 1;
+    
+    // Before i product
+    for(let i = 0; i < nums.length; i++) {
+        res[i] = preProd; // add the product to the res arr
+        preProd = preProd * nums[i]; // update new product
+    }
+    
+    // After i product
+    for(let j = nums.length - 1; j >=0; j--) {
+        res[j] =  res[j] * postProd; // using 1 arr so multiply what's already there from the previous loop
+        postProd = postProd * nums[j]; // updating what the new product will be
+    }
+    
+    return res;
+} 
+
+
+
+
 
 // Bad. I didn't get close. 1 hr. Redo. 
 // Trick: Do prodBeforeI first then do prodAfterI in a 
