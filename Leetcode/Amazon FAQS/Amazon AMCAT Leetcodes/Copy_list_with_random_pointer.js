@@ -19,6 +19,47 @@ Output: [[7,null],[13,0],[11,4],[10,2],[1,0]]
 */
 
 
+/* Strat: 
+- Make a map of connections
+- Make a new copy that has same head
+- Copy the nodes over from original LL to 
+the copy 
+- Start over. Reset the head 
+- Make the random connections for the copy 
+based on the original 
+*/
+
+
+// Had to copy this. 30 mins. no idea how to start
+// Do again
+var copyRandomList = function(head) {
+    let n = head, // n = use to copy LL
+        connections = new Map(); // head = copy
+    
+    // Copy the nodes from original to copy 
+    // and to connections
+    while(n !== null) {
+        connections.set(n, new Node(n.val));
+        n = n.next; 
+    }
+    
+    // Make the random connections
+    n = head; 
+    while(n !== null) {
+        // create next connection 
+        connections.get(n).next = connections.get(n.next) || null;
+        
+        // randomize 
+        connections.get(n).random =
+            connections.get(n.random) || null;
+        
+        n = n.next;
+    }
+    return connections.get(head); 
+};
+
+
+
 // Attempt 2. Practice again
 var copyRandomList = function(head) {
     
