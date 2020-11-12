@@ -23,6 +23,38 @@ Output:
 */
 
 
+// Just copied again :( 
+    // mild refresh. Nov 
+var wordBreak = function(s, wordDict) {
+    let foundCombos = {},
+        lookup = new Set(wordDict);
+    
+    function findCombinations(start = 0) {
+        if(start === s.length) return [""];
+        if(start in foundCombos) {
+            return foundCombos[start];
+        }
+        
+        let list = [];
+        
+        for(let end = start + 1; end <= s.length; end++) {
+            let word = s.slice(start, end); 
+            if(lookup.has(word)) {
+                let newCombo = findCombinations(end); 
+                
+                for(let str of newCombo) {
+                    list.push([word, ...str]);
+                }
+            }
+        }
+        foundCombos[start] = list;
+        return list;
+    }
+    
+    return findCombinations().map((combo) => combo.join(" "));
+};
+
+
 const wordBreak = (s, wordDict) => {
     const foundCombos = {};
     const dict = new Set(wordDict);

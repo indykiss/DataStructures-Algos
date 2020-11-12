@@ -48,6 +48,43 @@ var wordBreak = function(s, wordDict) {
 
 
 
+
+// Very off. Nov. Just copied 
+var wordBreak = function(s, wordDict) {
+    let queue = []; // queue of indices
+    queue.push(0);
+    let dict = new Set(wordDict);
+    let seen = new Set() // once we process a start index in queue
+        // and found the end, add to seen
+    
+    // bfs 
+    while(queue.length > 0) {
+    
+        let start = queue.shift();
+        
+        // If we haven't seen this before 
+        if(!seen.has(start)) {
+            // Check if dic has substr
+            for(let end = start + 1; end <= s.length; end++) {
+                let substr = s.slice(start, end); 
+                // We found a word, cool. Add new start to queue
+                // Are we at the end? Return true 
+                if(dict.has(substr)) {
+                    queue.push(end); 
+                    seen.add(start);
+                    if(end === s.length) {
+                        return true;
+                    }
+                }
+            }   
+        }
+    }
+    // Never returned true, so false
+    return false; 
+};
+
+
+
 // Just copied, Idk wtf's going on 
 // BFS using a queue
 var wordBreak = function(s, wordDict) {
