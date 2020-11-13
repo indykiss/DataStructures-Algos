@@ -13,6 +13,22 @@ Else, do nothing.
 */
 
 
+// meh, its fine. 
+// needed 3 hints 
+var moveZeroes = function(nums) {
+    let left = 0,
+        right = 0;
+    
+    while(right < nums.length) {
+        if(nums[right] !== 0) {
+            [nums[left], nums[right]] = [nums[right], nums[left]];
+            left++;
+        }
+        right++;
+    }
+    return nums;
+}
+
 
 // Like 20+ mins + looked at solution. 
 // Nov. Pathetic. 
