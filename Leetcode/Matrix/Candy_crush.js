@@ -36,6 +36,109 @@ deleted and numbers get pushed down, with zeros being added at the top.
 
 
 
+/*
+1. Iterate through the board
+2. We want to process the board. What's processing? 
+3. Processing: IDing instances where there are at least 3 of the same nums
+in either horiz & vertical 
+4. Once we process the board, we want to adjust the board
+5. Adjusting includes dropping nums down and adding zeros to the top
+*/
+
+
+
+// Just copied. Fuck thhiiss. So tired. Didnt pass time 
+// Do again :( 
+var candyCrush = function(board) {
+    let isBoardStable = true;
+    
+    for(let row = 0; row < board.length; row++) {
+        for(let col = 0; col < board[0].length; col++) {
+            if(board[row][col] !== 0) {
+                process(row, col, board);
+            }
+        }
+    }
+    
+    adjust(board);
+    
+    if(!isBoardStable) return candyCrush(board);
+    
+    return board;
+    
+    // Process: ID 3 in a row nums 
+    function process(row, col, board) {
+        let newRow = row, 
+            newCol = col; 
+        
+        // Look vert 
+        while(Math.abs(board[row][col]) === Math.abs(board[row+1][col]) 
+             && row < board.length - 1) {
+            newCol++;
+        }
+        // Look horiz 
+        while(Math.abs(board[row][col]) === Math.abs(board[row][col+1]) 
+             && col < board[0].length - 1) {
+            newRow++;
+        }        
+        
+        let countRows = newRow - row + 1,
+            countCols = newCol - col + 1;
+        
+        // Check if we have 3 eles that match vertically or horizontally
+        if(countRows >= 3) {
+            markBoard(board, row, col, countRows, "dropVert");
+            isBoardStable = false;
+        }
+        if(countCols >= 3) {
+            markBoard(board, row, col, countCols, "dropHoriz");
+            isBoardStable = false;
+        }
+    }
+    
+    // Mark Board: ID which nums we want to drop 
+    function markBoard(board, row, col, counter, dir) {
+        if(dir === "dropVert") {
+            for(let marker = col; marker < col + counter; marker++) {
+                board[row][marker] = "DROP";
+            }
+        }
+        else {
+            for(let marker2 = row; marker2 < row + counter; marker2++) {
+                board[marker2][col] = "DROP";
+            }
+        }
+    }
+    
+    // Adjust: ID the eles in the board that we have to drop 
+    function adjust(board) {
+        for(let row = 0; row < board.length; row++) {
+            for(let col = 0; col < board[0].length; col++) {
+                if(board[row][col] === "DROP") {
+                    dropNum(board, row, col);
+                }
+            }
+        }
+    }
+    
+    // DropNum: Drops the number down and adds zeros to the top
+    
+    function dropNum(board, row, col) {
+        for(let i = row; i > 0; i--) {
+            // move the number down 
+            board[i][col] = board[i-1][col];
+        }
+        board[0][col] = 0;
+    }
+    
+}
+
+
+
+
+
+
+
 // Definitely need to do this one again. I didn't do this right at all
 // Sept bloomb
 var candyCrush = function(board) {
