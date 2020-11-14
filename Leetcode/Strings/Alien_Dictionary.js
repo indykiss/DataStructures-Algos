@@ -14,6 +14,39 @@ comes after the current word's ith ele, we're good to continue
 */
 
 
+/*
+Strat:
+- Create a key map that holds all the keys and their positions 
+from the order 
+- Outer loop: Iterate through words, looking at curr and prev words 
+- Inner loop: Iterate through curr & prev and compare the letters
+based on the key map. If we find curr[i] letter is earlier in map 
+dictionary than the prev[i] letter, then return false. 
+- At the end if we never return false, return true
+*/
+
+// Not great :( 
+// Needed 5 hints, still didnt get all tests to pass but fine
+var isAlienSorted = function(words, order) {
+    let map = {};  // {a: 1, b: 2}
+    
+    for(let i = 0; i < order.length; i++) {
+        let char = order[i];
+        map[char] = i;  // map[i] = char;
+    }
+    
+    for ( let i = 0; i < words.length - 1; i++) {
+        const currentWord = words[i];
+        const nextWord = words[i+1];
+        
+        for ( let j = 0; j < currentWord.length; j++ ) {
+            if (nextWord[j] === undefined || map[currentWord[j]] > map[nextWord[j]]) return false;
+            if (nextWord[j] !== currentWord[j] ) break;
+        }
+    }
+    return true;
+} 
+
 
 // Apparently leetcode changed the way this problem is done
 // my previous solutions no longer effing pass the tests
