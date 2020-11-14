@@ -12,6 +12,30 @@ If maps are equal, it's an anagram .
 Assumptions: All lower case
 */
 
+// Nov 10 mins warmup
+var isAnagram = function(s, t) {
+    if(s.length !== t.length) return false;
+
+    let hash = {};
+    
+    for(let letter of s) {
+        if(hash[letter]) {
+            hash[letter]++;
+        } else {
+            hash[letter] = 1;
+        }
+    }
+    
+    for(let letter of t) {
+        if(hash[letter]) {
+            hash[letter]--; 
+        } else if(hash[letter] <= 0 || !hash[letter]) {
+            return false;
+        }
+    }
+    return true;
+} 
+
 
 // Oct pract
 var isAnagram = function(s, t) {
