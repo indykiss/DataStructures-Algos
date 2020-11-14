@@ -30,6 +30,56 @@ that level's nodes into a stack in order to add it at the end
 
 */
 
+
+
+
+/*
+Doubly linked list:
+this.head 
+this.val 
+this.prev 
+this.next 
+this.child ==> there is another lvl we need to flatten 
+
+Strat:
+1. Go through the multilevel doubly LL 
+2. If we come across a node that has a child, we want to move the rest of
+that level's nodes into a stack in order to add it at the end 
+3. For this new child branch, we want to look for more children. 
+4. If there is a new child, add its uncles/ aunt nodes into the stack 
+5. Once we're done finding branches, add the nodes from stack back into LL
+*/
+
+// Didnt get particularly close. Practice more with doubly linked list 
+var flatten = function(head) {
+    if(!head) return head;
+    
+    let stack = [],
+        node = head;
+    
+    while(node) {
+        // If there's a child linked list, add whole LL to stack
+        if(node.child) {
+            if(node.next) {
+                stack.push(node.next);
+            }
+            // NOW readjust next & prev bc linked 
+            node.next = node.child; 
+            node.next.prev = node; 
+            node.child = null;
+        }
+        // If there are things in stack and we're at the end of LL
+        else if(stack.length > 0 && node.next === null) {
+            node.next = stack.pop();
+            node.next.prev = node;
+        }
+        node = node.next;
+    }
+    return head;
+};
+
+
+
 // Doubly linked list node with a child
 function node(val, prev, next, child) {
     this.val = val;

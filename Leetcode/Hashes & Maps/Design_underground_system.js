@@ -91,6 +91,70 @@ Increment count when we add a person. Increment total as total amount of travel 
 */
 
 
+/*
+- Create a map of arrivals that tracks a person's ID with station & time.
+Whenever we check someone in, we add them to this map
+- Create a map that tracks averages (key: value, startStationEndStation: (total, count))
+Increment count when we add a person. 
+Increment total as total amount of travel time 
+*/
+
+// Need the above info and hints. TWO MAPS FOR ARRIVALS AND ROUTES 
+// But solved in 30 mins easy.ish
+class UndergroundSystem {
+    constructor() {
+        this.arrivals = new Map(); // (id: [station, time])
+        this.routes = new Map(); // (startStationendStation: [totalTime, countofPpl])
+    }
+    
+    checkIn(id, stationName, t) {
+        if(this.arrivals.get(id)) {
+            // throw error "Person has already checked in elsewhere"
+            return;
+        }
+        this.arrivals.set(id, [stationName, t]);
+    }
+    
+    checkOut(id, endStation, t) {
+        // add this route to routes so we can calc avg time later 
+        let checkedInData = this.arrivals.get(id), // [startStation, time],
+            startStation = checkedInData[0],
+            checkedInTime = checkedInData[1],
+            timeFromAToB = t - checkedInTime,
+            route = `${startStation}` + `${endStation}` // "beverlySunset"
+        
+        // If route exists, add to total/ count. If doesnt exist, add to routes
+        if(this.routes.get(route)) {
+            let routesData = this.routes.get(route),
+                totalTime = routesData[0],
+                countOfPpl = routesData[1];
+            this.routes.set(route, [totalTime + timeFromAToB, countOfPpl + 1]);
+        } else {
+            this.routes.set(route, [timeFromAToB, 1]);
+        }
+       // delete the person from arrivals
+        this.arrivals.delete(id);
+    }
+    
+    // totalTime/ countOfPpl
+    getAverageTime(startStation, endStation) {
+        let route = `${startStation}` + `${endStation}`
+        
+        let data = this.routes.get(route),
+            totalTime = data[0], 
+            count = data[1];
+        
+        return totalTime/count;
+    }    
+}
+
+// Time: Retrieving/ adding/ deleting data to map = O(1)
+// Space: O(Stations ^2 + People) because tracking routes (which increases) exponentially for every addition of 1 and as we add in ppl we just increase the arrivals map size 
+
+
+
+
+
 
 class UndergroundSystem {
     
