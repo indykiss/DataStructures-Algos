@@ -17,6 +17,33 @@ Output: 5->4->3->2->1->NULL
 */
 
 
+// Warm up 
+// Iterative
+var reverseListIterative = function(head) {
+    let curr = head, 
+        prev = null, 
+        next = null; 
+    while(curr !== null)  {
+        [curr.next, prev, curr] = [prev, curr, curr.next]
+    }
+    return prev;
+}
+
+
+var reverseList = function(head) {
+    // base 
+    if(head === null || head.next === null) {
+        return head;
+    }
+    // recursive action 
+    let reversedHead = reverseList(head.next);
+    
+    // now to reverse 
+    head.next.next = head; 
+    head.next = null;
+    
+    return reversedHead;
+}
 
 // Bloomb/ Fb practice Oct: Grokking explanation
 var reverse = function(head) {
