@@ -81,16 +81,6 @@ People can only be at 1 station at a time.
 */
 
 
-
-
-/*
-- Create a map of arrivals that tracks a person's ID with station & time.
-Whenever we check someone in, we add them to this map
-- Create a map that tracks averages (key: value, startStationEndStation: (total, count))
-Increment count when we add a person. Increment total as total amount of travel time   
-*/
-
-
 /*
 - Create a map of arrivals that tracks a person's ID with station & time.
 Whenever we check someone in, we add them to this map
@@ -99,7 +89,8 @@ Increment count when we add a person.
 Increment total as total amount of travel time 
 */
 
-// Need the above info and hints. TWO MAPS FOR ARRIVALS AND ROUTES 
+// Need the above info and hints. 
+// TWO MAPS FOR ARRIVALS AND ROUTES 
 // But solved in 30 mins easy.ish
 class UndergroundSystem {
     constructor() {
