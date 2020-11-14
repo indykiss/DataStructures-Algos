@@ -11,8 +11,57 @@ Output: "100"
 */
 
 
-// Oct, FB
 
+// Using Big Int library 
+var addBinary = function(a, b) {
+    let convertedA = BigInt("0b" + a),
+        convertedB = BigInt("0b" + b);
+    
+    return (convertedA + convertedB).toString(2);
+} 
+
+
+var addBinaryIterate = function(a, b) {
+    let sum = "";
+    
+    let r1 = a.length - 1,
+        r2 = b.length - 1,
+        carry = false; // Check if there's a carry 
+
+    while(r1 >= 0 || r2 >= 0) {
+        sum = binarySum(r1, r2) + sum;
+        r1--;
+        r2--;
+    }
+    
+    function binarySum(r1, r2) {
+        let miniSum = 0;
+        if(carry) {
+            miniSum++;
+            carry = false;
+        }
+        
+        if(a[r1] === "1") miniSum++;
+        if(b[r2] === "1") miniSum++;
+        
+        if(miniSum >= 2) {
+            carry = true; 
+            miniSum = miniSum - 2;
+        }
+        return miniSum;
+    }
+    
+    // Check if we have any carry at the end 
+    if(carry) {
+        sum = "1" + sum;
+    }
+    
+    return sum;
+}
+
+
+
+// Oct, FB
 // No using BigInt library 
 var addBinary = function(a, b) {
     let sum = "";
