@@ -6,7 +6,7 @@ The number of degrees a graph has refers to the number of edges connected to the
 
 In DIRECTED graphs, ie ones with the arrows, there are in-degrees and out-degrees, referring to the arrows pointing to that node and arrows pointing out of that node. 
 
-Pros: Really good when there's connections: Facebook users and friends, cities and highways, etc. 
+Pros: Really good when thee's connections: Facebook users and friends, cities and highways, etc. 
 
 Cons: Not super time efficient. Bad at scaling. Most graphs are minimum of O(n* lg(n)) time efficiency. 
 

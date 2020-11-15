@@ -62,6 +62,44 @@ function getMaxProfit(stockPrices) {
 
 
 
+/*
+Strat: Brute force
+- Nested for loop 
+    - Outer: num in arr 
+        - Inner: rest of nums in arr
+- maxProfit
+*/
+
+// Nov, Bloomberg. Got it 
+var maxProfit = function(prices) {
+    let maxProfit = prices[1] - prices[0];
+
+    for(let i = 0; i < prices.length; i++) {
+        let buy = prices[i];
+        
+        for(let j = i + 1; j < prices.length; j++) {
+            let sell = prices[j],
+                profit = sell - buy;
+            
+            maxProfit = Math.max(maxProfit, profit);
+        }
+    }
+    
+    if(maxProfit > 0) {
+        return maxProfit;
+    } else {
+        return 0;
+    }
+};
+            
+// [7, 1, 5, 3, 6, 4]    => buy early, sell late         
+// [4, 2, 3, 1, 10] => buy late and sell late 
+// [8, 5, 3, 2] => no profit? minimum loss or -1? 
+// [1, 10, 3, 4, 3] => buy early, sell early
+// [] => market is closed 
+// [5] => need at least 2 prices
+
+
 
 
 /*
