@@ -423,3 +423,94 @@ console.log(cache);
 
 
 
+
+
+
+
+
+
+// Nov 16. Passed 
+
+// "file{1,2,3}.txt" -> ["file1.txt", "file2.txt", "file3.txt"]
+// "{june,july}logs" -> ["junelogs", "julylogs"]
+// "{june,july}logs.{txt,gz}" -> ["junelogs.txt", "junelogs.gz", "julylogs.txt", "julylogs.gz"]
+
+/*
+Strategy: 
+- Vars: str "file"
+- Iterate thru str 
+- If char == {
+  - arr.split(",") [1, 2, 3]
+  - If char == }
+
+- ID position at { and }
+- Slice to get chars btween 
+  - .split at , 
+- Concat the eles within the split arr with the 
+chars pre- and post- {}
+
+*/
+
+// Part 2 of the question: 
+function dashSeparatorMain(str) {
+  let res = [];
+  let arrs = [["junelogs.", "julylogs."], ["txt", "gz"]];
+  
+  for(let i of arrs[0]) {
+    for (let j of arrs[1]) {
+      
+      res.push(i + j);
+    }
+  }
+  console.log(res) 
+  
+}
+
+console.log(dashSeparatorMain("x"));
+
+// Part 1 of the question: 
+function dashSeparator(str) {
+  let opener = 0, 
+      closer = 0, 
+      res = [];
+
+  for(let i = 0; i < str.length; i++) {
+    if(str[i] === "{") {
+      opener = i; 
+    }
+    if(str[i] === "}") {
+      closer = i; 
+    }
+  }  
+  
+  if(opener === 0 && closer === 0) {
+    res.push(str);
+    return res
+  }
+  
+  let data = str.substring(opener + 1, closer).split(","); 
+
+  let preData = str.substring(0, opener - 1),
+    postData = str.substring(closer + 1);  
+
+  for(let subData of data) {
+      let strToAdd = preData + subData + postData; 
+    
+      res.push(strToAdd);
+  }
+
+  return res; 
+}
+
+
+// Note the edge cases:
+// - Only 1 bracket { and }, {,,,,}, {}, etc
+// console.log(dashSeparator("file{1,2,3}.txt"));
+// console.log(dashSeparator("{1,2,3}.txt"));
+// console.log(dashSeparator("{june, july}logs"));
+// console.log(dashSeparator("{}logs"));
+// console.log(dashSeparator("nobrackets")); // returns ["nobrackets"]
+
+
+
+
