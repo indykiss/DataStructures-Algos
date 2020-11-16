@@ -50,6 +50,36 @@ that level's nodes into a stack in order to add it at the end
 5. Once we're done finding branches, add the nodes from stack back into LL
 */
 
+
+
+// Off by 3. Maybe would've barely passed
+var flatten = function(head) {
+    if(!head) return null;
+    
+    let node = head,
+        stack = [];
+    
+    while(node !== null) {
+        if(node.child) {
+            if(node.next) stack.push(node.next); 
+            node.next = node.child; // node.child.val ???
+            node.child.prev = node;
+            node.child = null; // off by 1
+        }    
+            
+        else if (stack.length > 0 && node.next === null) {
+            let newEle = stack.pop();
+
+            node.next = newEle; 
+            node.next.prev = node;
+        }
+        node = node.next; 
+    }
+
+    return head;
+}
+
+
 // Didnt get particularly close. Practice more with doubly linked list 
 var flatten = function(head) {
     if(!head) return head;
