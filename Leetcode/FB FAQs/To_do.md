@@ -5,6 +5,10 @@
 
 
 # ----------------------------------------------#
+
+*One week left. Let's just do a bunncchhh of easies*
+*and practice the mediums we already know*
+
 * ~5x a week, do 4-6 problems from Search Tracker *
 * Move the finished problems to Done column *
 * Call a problem done if I can do it within 30 mins mostly without more than 1-2 hints *

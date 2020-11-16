@@ -34,6 +34,38 @@ queue.length, occupying the lvl
 */
 
 
+// Nov, practice. Not great, 30 mins. 
+var zigzagLevelOrder = function(root) {
+    if(root === null) return [];
+    
+    let res = [],
+        queue = [root],
+        zag = false;
+    
+    while(queue.length > 0) {
+        let lvl = [],
+            len = queue.length;
+        
+        for(let i = 0; i < len; i++) {
+            let curr = queue.shift();
+            
+            if(zag === true) {
+                lvl.unshift(curr.val);
+            } else {
+                lvl.push(curr.val);
+            }
+            
+            if(curr.left) queue.push(curr.left);
+            if(curr.right) queue.push(curr.right);   
+        }
+        res.push(lvl);
+        zag = !zag;
+    }
+    return res;
+};
+
+
+
 // Oct, FB/ Bloomb
 var zigzagLevelOrder = function(root) {
     if(root === null) return [];
