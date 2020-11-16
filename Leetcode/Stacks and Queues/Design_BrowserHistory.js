@@ -22,6 +22,46 @@ current url after forwarding in history at most steps.
 
 
 
+// Close thinking but off in implementation 
+// Half pass maybe at best 
+class BrowserHistory{
+    
+    constructor(homepage) {
+        this.backwards = [homepage];
+        this.forwards = [];
+    }
+    
+    visit(url) { // correct
+        this.backwards.push(url);
+        this.forwards = [];
+    }
+    
+    back(steps) {
+        // As we go back, add urls to forward
+        while(steps && this.backwards.length > 1) {
+            let url = this.backwards.pop();
+            this.forwards.push(url);
+            steps--; 
+        }        
+        // we've moved steps # of urls from backwards to forward
+        // so return the next thing on the backwards arr 
+        return this.backwards[this.backwards.length - 1]
+    }
+    
+    forward(steps) {
+        // As we go forward, add eles to backwards
+        while(steps && this.forwards.length > 0) {
+            let url = this.forwards.pop();
+            this.backwards.push(url);
+            steps--
+        }
+        return this.backwards[this.backwards.length - 1];
+    }
+
+}
+
+
+
 class BrowserHistory {
     constructor(homepage) {
         this.forwardArr = [];
