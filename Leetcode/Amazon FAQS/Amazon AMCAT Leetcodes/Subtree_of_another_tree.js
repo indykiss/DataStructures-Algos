@@ -26,6 +26,63 @@ Return true if they do. False if not.
 */
 
 
+/*
+Strat: 
+- We need to look thru s to find t. 
+- DFS, so we'll use recursion to 
+traverse 
+
+Edge:
+- t can be empty, s can be empty 
+*/
+
+
+// Close enough but wrong 
+var isSubtree = function(s, t) {
+    if(!s) return t;
+
+    let node = s, 
+        node2 = t; 
+            
+    if(node.val === node2.val) {
+        if(dfs(node, node2)) {
+            return true;
+        }
+    } 
+    
+    if(node.left && isSubtree(node.left, node2)) {
+        return true;
+    }
+
+    if(node.right && isSubtree(node.right, node2)) {
+        return true;
+    }
+        
+    return false;
+}
+
+function dfs(node, node2) {
+    // base case 
+    if(node === null && node2 === null) {
+        return true;
+    }        
+        
+    // Return false if one is done
+    if(!node || !node2) {
+        return false;
+    }   
+    // Return false if vals are different
+    if(node.val !== node2.val) {
+        return false;
+    }   
+        
+    // Recursive action
+    return dfs(node.left, node2.left) && 
+            dfs(node.right, node2.right);   
+}
+
+
+
 var isSubtree = function(s, t) {
     // Edge, invalid input
     if(!s) {return t};
