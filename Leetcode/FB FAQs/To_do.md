@@ -28,13 +28,6 @@
 
 
 
-# Vague Nov Schedule: 
-## Nov 1 - Nov 13: Leetcodes
-## Nov 14 - Nov 19: FB coding exercises
-## Nov 20 - Nov 22: Bloomb only 
-
-
-
 
 # October: What did I accomplish?
 
