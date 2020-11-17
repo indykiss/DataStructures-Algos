@@ -12,6 +12,36 @@ Palindrome = when the reverse of the string is equal to the string itself.
 */
 
 
+/*
+Qs:
+- Capitals? yes
+- Punctunation? yes => regex
+- Empty str? true 
+- Goal: t or f 
+
+Strategy:
+- Strip punct & toLowerCase & drop spaces 
+- Two pointers 
+- Convert str -> arr. .reverse(), convert back 
+
+Warm up
+*/
+var isPalindrome = function(s) { 
+    let str = s.toLowerCase().replace(/[^a-z0-9]/g, "")
+    
+    let left = 0, 
+        right = str.length - 1;
+    
+    while(left < right) {
+        if(str[left] !== str[right]) {
+            return false;
+        }
+        
+        left++; 
+        right--;
+    }
+    return true;
+}
 
 
 

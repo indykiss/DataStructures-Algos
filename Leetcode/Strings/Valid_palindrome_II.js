@@ -10,6 +10,39 @@ Output: True
 
 
 
+// [a b o p h y b a]
+// not passing but close enough. warm up nov
+var validPalindrome = function (s) {
+   
+    let str = s.toLowerCase().replace(/[^a-z0-9]/g, ""); 
+    
+    let left = 0, 
+        right = str.length - 1,
+        canSkipOne = true; 
+    
+    while(left < right) {
+        
+        if(str[left] !== str[right]) {
+            if(canSkipOne) {
+                if(str[left + 1] === str[right] 
+                  && str[left+2] === str[right - 1]) {
+                    left++;
+                    canSkipOne = false;
+                } else if(str[right - 1] === str[left]) {
+                    right--; 
+                    canSkipOne = false;      
+                }
+            } else {
+                return false;
+            }
+        } else {
+            left++; 
+            right--;                
+        } 
+    }
+    return true;   
+}
+
 
 /*
 "aba" = > true. auto a palindrome
