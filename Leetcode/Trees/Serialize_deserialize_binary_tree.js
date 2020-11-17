@@ -17,6 +17,37 @@ as "[1,2,3,null,null,4,5]"
 
 */
 
+
+
+// IDK. Just be familiar with this
+var serialize = function(root, res = []) {
+    if(root) {
+        res.push(root.val);
+        res.push(...serialize(root.left));
+        res.push(...serialize(root.right));
+    } else {
+        res.push(null);
+    }
+    return res;
+};
+
+
+var deserialize = function(data = []) {
+    let val = data.shift();
+    
+    if(val === null) {
+        return null;
+    }
+    let node = new TreeNode(val);
+    
+    node.left = deserialize(data);
+    node.right = deserialize(data);
+    
+    return node;
+};
+
+
+
 var serialize = function(root, res = []) {    
     if(root) {
         res.push(root.val);
@@ -40,3 +71,7 @@ var deserialize = function(data = []) {
     
     return node;
 };
+
+
+
+
