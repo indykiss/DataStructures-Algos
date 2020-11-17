@@ -34,6 +34,30 @@ a closer before an opener.
 
 */
 
+// not great but fine 
+var generateParenthesis = function(n) {
+    let res = []; 
+    
+    generateOne(n-1, n, "("); 
+    
+    return res;
+    
+    function generateOne(openers, closers, currStr) {
+        // base:
+        if(openers === 0 && closers === 0) {
+            res.push(currStr); 
+            return;
+        }
+        
+        if(openers > 0) {
+           generateOne(openers - 1, closers, currStr + "(");
+        }  
+        
+        if(closers > openers && closers > 0) {
+            generateOne(openers, closers -1, currStr + ")");
+        } 
+    }    
+}
 
 
 // Needed like 4 hints. 30 mins. Nov. 
