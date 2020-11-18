@@ -53,7 +53,8 @@ function getPermutations(string) {
 
  /*
  
-Write a function fib() that takes an integer nn and returns the nth Fibonacci number.
+Write a function fib() that takes an integer nn and returns the 
+nth Fibonacci number.
  
 Strat: We start with recursion, then memoize, then bottoms up. 
 
