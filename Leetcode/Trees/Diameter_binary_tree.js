@@ -10,6 +10,41 @@
 
 
 
+/*
+We want to search through the search, 
+depth first search, to ID the maximum diameter as we step 
+through each child branch 
+
+refresh dfs with recursion 
+*/
+var diameterOfBinaryTree = function(root) {
+    
+    let maxDiameter = 0;
+    
+    dfs(root);
+    
+    return maxDiameter;
+    
+    function dfs(root) {
+        // base 
+        if(!root) {
+            return 0;
+        }
+        
+        let left = dfs(root.left);
+        let right = dfs(root.right);
+        
+        maxDiameter = Math.max(maxDiameter, left + right)
+        
+        // we want to return what the longest 
+        // edge is
+        return Math.max(left, right) + 1
+    }
+};
+
+
+
+
 // Oct, FB: Instincts to run a DFS was right but
 // needed confirmation first. Next time need to just do it
 var diameterOfBinaryTree = function(root) {
