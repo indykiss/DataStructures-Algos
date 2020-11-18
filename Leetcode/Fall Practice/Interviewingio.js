@@ -514,3 +514,74 @@ function dashSeparator(str) {
 
 
 
+
+
+
+/*
+My Calendar I 
+
+Implent a calendar class that stores events. 
+
+If adding an event, if there's an overlap 
+with an existing event, return false. 
+
+If adding event and no overlap, add to events. 
+
+Approach 1. Use an array of arrays that holds the events 
+O(n) time 
+O(n) space
+
+Approach 2. Use a BST so we can do a binary search 
+O(log n) time average. Worst case is O(n) if not balanced 
+O(n) space which is okay 
+
+*/
+
+
+
+// This is the correct answer. 
+// I didn't even come close to this. 
+class Node {
+  constructor(start, end) {
+    this.left = null; 
+    this.right = null; 
+    this.start = start;
+    this.end = end; 
+  }
+}
+
+class MyCalendar {
+    
+  constructor() {
+      this.root = null;
+  }
+
+  book(start, end) {
+    if(!this.root) {
+        return this.root = new Node(start, end);
+    }
+      
+    return recursion(start, end, this.root);
+      
+    function recursion(start, end, root) {
+         if(root.end<=start){
+               if(root.right) return recursion(start, end, root.right);
+               else{
+                   root.right = new Node(start, end);
+                   return true;
+               }
+           }
+           else if(root.start>=end){
+               if(root.left) return recursion(start, end, root.left);
+               else{
+                   root.left = new Node(start, end);
+                   return true;
+               }
+           }
+         
+           else{
+               return false;    
+           }
+      }
+  }
+}
