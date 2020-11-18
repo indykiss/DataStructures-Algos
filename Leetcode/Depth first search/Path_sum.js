@@ -25,6 +25,22 @@ Strategy:
 */
 
 
+var hasPathSum = function(root, sum) {
+    if(!root) return false;
+    
+    //base
+    if(root.val === sum && !root.left && !root.right) {
+        return true; 
+    }
+    
+    // recursive action
+    return hasPathSum(root.left, sum - root.val) ||
+        hasPathSum(root.right, sum - root.val);
+        // only one has to be true, so ||
+};
+
+
+
 // Grok way to do it. Recursive. More intuitive 
 var hasPathSum = function(root, sum) {
 
