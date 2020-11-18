@@ -100,6 +100,35 @@ Cons: Generally takes more memory than the depth-first search, since we are look
 Breadth first search uses a queue to track the children that have already been looked at. 
 
 
+Basically: BQ -> BREATHE THE Q
+I live and breathe the Q line. 
+
+function doSomething(root) {
+
+    let answer = something/ 0/ [],
+        queue = []; 
+
+    queue.push(root);
+
+    while(queue.length > 0) {
+
+        let len = queue.length; 
+
+        for(let i = 0; i < len; i++) {
+            // DO THINGS THAT 
+            WILL GET US OUR ANSWER 
+
+            if(curr.left) queue.push(curr.left);
+            if(curr.right) queue.push(curr.right);
+        }
+
+    }
+
+    return answer;
+}
+
+
+
 ## Depth-first search (also called depth-first traversal) 
 
 Depth-first search is a way to explore a tree or graph by traveling down one node branch to the end, then turning around if couldn't find the thing, then traveling down another branch, etc, until we find the find we want. 
@@ -112,6 +141,35 @@ Can use recursion here pretty easily.
 Cons: Does not find the shortest path to a node. 
 
 Depth first search uses a recursive solution to go DEEP down each tree branch or deep down a graph's child. 
+
+
+Basically: DS. 
+Deep the stack ? Can use recursion's call stack instead of 
+a literal stack. 
+
+
+function doSomething(root) {
+
+    trigger a thing that makes us do dfs
+
+    return a thing that is our answer
+
+    function dfs(node) {
+        // BASE
+        if(node === null) {
+            return a thing
+        }
+        // DO SOMETHING THAT WILL GET US
+        TOWARDS AN ANSWER 
+        // TRY TO PROVE THE OPPOSITE OF THE 
+        BASE CASE WITH IF STATEMENTS 
+
+        // RECURSIVE ACTION 
+        return dfs(root.left) || or && 
+            dfs(root.right)
+    }
+}
+
 
 
 ## Use Breath first or depth first??
