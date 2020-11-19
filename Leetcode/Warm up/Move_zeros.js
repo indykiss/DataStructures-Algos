@@ -13,6 +13,24 @@ Else, do nothing.
 */
 
 
+// Qs: negatives? 0s are guaranteed? nums are guaranteed? 
+// any decimals? in place or ok to create new arr? 
+// all zeros possible? O(n) time and O(1) space 
+var moveZeroes = function(nums) {
+    let left = 0,
+        right = 0;
+    
+    while(right < nums.length) {
+        
+        if(nums[right] !== 0) {
+            [nums[left], nums[right]] = [nums[right], nums[left]];
+            left++;
+        }
+        right++;
+    }
+    return nums;
+}
+
 // meh, its fine. 
 // needed 3 hints 
 var moveZeroes = function(nums) {
