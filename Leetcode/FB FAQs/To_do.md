@@ -6,8 +6,10 @@
 
 # ----------------------------------------------#
 
-*One week left. Let's just do a bunncchhh of easies*
-*and practice the mediums we already know*
+*Last day! I did the top 5 in the phone screen list*
+*Do only the next 2-3 on that list + Task Scheduler*
+*Copy list with random pointer, BT right side view, task scheduler*
+*Quickly review my "why FB + about me" and look at patterns*
 
 * ~5x a week, do 4-6 problems from Search Tracker *
 * Move the finished problems to Done column *
@@ -22,10 +24,6 @@
 - Top 10 FB mediums, 5 hards.
 - Warm up with FB/ Bloomb easies. (20.ish)
     - Every day do 1-2 easies. 
-
-## FB Coding Exercises: 30. Only 4 days to focus on
-- 30 total on the FB site  
-
 
 
 

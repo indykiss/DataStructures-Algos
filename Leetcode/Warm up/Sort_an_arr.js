@@ -60,6 +60,34 @@ var sortArray = function(nums) {
 }
 
 
+
+// Quicksort:
+function sortArr(arr) {
+    // base case
+    if(arr.length < 2) return arr; 
+
+    // make pivot and left & right vars 
+    let pivot = arr[0],
+        left = [],
+        right = [];
+
+    // assign left or right, depending on its value based 
+    // on relationship to pivot 
+    for(let num of nums) {
+        if(num < pivot) {
+            left.push(num);
+        } else {
+            right.push(num);
+        }
+    }
+
+    // recurse
+    return [...sortArr(left), pivot, ...sortArr(right)];
+}
+// O(n log n) avg time, O(n^2) worst time IF we're 
+// sorting an already sorted array 
+
+
 // Mergesort 
 var sortArray = function(nums) {
     // Base case 
@@ -91,7 +119,34 @@ var merge = function(first,second) {
 
 
 
+// merge sort 
+function sortArr(arr) {
+    // base 
+    if(arr.length < 2) return arr;
 
+    let mid = Math.floor(arr.length/2),
+        left = sortArr(arr.slice(0, mid)), 
+        right = sortArr(arr.slice(mid)); 
+
+    return merge(left, right)
+}
+
+function merge(left, right) {
+    let res = [];
+
+    while(left.length > 0 && right.length > 0) {
+        if(left[0] < right[0]) {
+            res.push(left[0]);
+            left.shift(); // remove 1st ele in arr
+        } else {
+            res.push(right[0]);
+            right.shift();
+        }
+    }
+
+    return res;
+}
+// O(n log n) avg and worst time 
 
 
 
