@@ -564,6 +564,7 @@ class MyCalendar {
     return recursion(start, end, this.root);
       
     function recursion(start, end, root) {
+        //recursive action
          if(root.end<=start){
                if(root.right) return recursion(start, end, root.right);
                else{
@@ -579,6 +580,7 @@ class MyCalendar {
                }
            }
          
+           // base case
            else{
                return false;    
            }

@@ -123,10 +123,9 @@ function doSomething(root) {
         }
 
     }
-
     return answer;
 }
-
+ 
 
 
 ## Depth-first search (also called depth-first traversal) 

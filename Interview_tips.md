@@ -38,7 +38,7 @@ probably more efficient solutions, but would like to try this way 1st.
 
 4. Throw a data strcture at it. 
 - Hashes? Supreme dude at lookups
-- Maps? Ok if need to iterate over all AND leys aren't strs
+- Maps? Ok if need to iterate over all AND keys aren't strs
 
 5. Make some bounds on time & space.
 - I have to at least look at all the items, so I can’t do better than O(n) time.

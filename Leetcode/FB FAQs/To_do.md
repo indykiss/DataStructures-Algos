@@ -26,6 +26,10 @@
     - Every day do 1-2 easies. 
 
 
+# Novemeber: What did I accomplish?
+
+
+## In ~3 weeks, 80 algos total. 
 
 # October: What did I accomplish?
 
