@@ -18,6 +18,20 @@ what the arr eles equal that largest sum
 */
 
 
+var maxSubArray = function(nums) {
+    let maxSum = nums[0],
+        tempSum = nums[0];
+    
+    // [-2, -1, 0, 1, 2]
+    for(let idx = 1; idx < nums.length; idx++) {
+        tempSum = Math.max(nums[idx], tempSum + nums[idx]) 
+        maxSum = Math.max(maxSum, tempSum);
+    }
+    
+    return maxSum;
+};
+
+
 // best: 
 var maxSubArray = function(nums) {
     let largestSum = nums[0];

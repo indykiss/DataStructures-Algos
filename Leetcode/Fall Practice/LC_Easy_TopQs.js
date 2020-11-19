@@ -79,6 +79,59 @@ var twoSum = function(nums, target) {
 
 // Single number: Given an arr of ints, every ele appears twice except for 1. Find the single one.
 // [2,3,2,3,4] => 4
+
+
+/*
+Strategy:
+- 1. hash table, num : num of occurences 
+    - look thru hash to find the num that only appears once 
+
+- 2. sorting the nums O(n log n), iterate thru 0(n) and ID the num that isn't equal
+to the num next to it. Space: O(1)
+
+- faster than O(n)? none 
+*/
+
+
+var singleNumber = function(nums) {
+    let hash = {};
+    
+    for(let num of nums) {
+        if(hash[num]) {
+            hash[num]++;
+        } else {
+            hash[num] = 1;
+        }
+    }
+    
+    for(let num2 of nums) {
+        if(hash[num2] === 1) {
+            return num2;
+        }
+    }
+    
+} 
+
+
+var singleNumberIterate = function(nums) {
+    nums = nums.sort();
+    for(let idx = 1; idx < nums.length; idx++) {
+        let prev = nums[idx-1], 
+            curr = nums[idx];
+        
+        // [2, 2, 4, 4, 1]
+        if(prev !== curr) {
+            if(curr === nums[idx+1]) {
+                return prev;
+            }
+        }
+        idx++;
+    }
+    return nums[nums.length-1];
+};
+
+
+
 var singleNumber = function(arr) {
     let hash = {};
     // create hash of arr w/ vals & # of occurences
