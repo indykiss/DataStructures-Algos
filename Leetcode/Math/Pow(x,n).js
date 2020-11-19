@@ -14,6 +14,23 @@ Explanation: 2-2 = 1/22 = 1/4 = 0.25
 
 */
 
+
+// brute
+var myPowSlow = function(x, n) {
+    if(n < 0) {
+        x = 1/x; 
+        n = -n; 
+    }
+    let ans = 1; 
+    for(let i = 0; i < n; i++) {
+        ans = ans * x;
+    }
+    return ans;
+}
+// O(n) time, O(1) space 
+
+
+
 var myPow = function(x, n) {
     
     // If n is negative, we need to do 1/x and 
