@@ -30,6 +30,48 @@ add subarr to res arr
 
 */
 
+/*
+Strategy: Recursive:
+- Var: res []
+- Rec: (sum, arr, idx)
+    - base case: 
+        - if sum === target, res.push(arr)
+        - if sum > target, return; 
+    - recursive action:
+        - For loop that loops thru candidates.length 
+            - updates sum based on sum + currNum 
+            - updates arr, push currNum into arr 
+            - HERE is the recursive where we 
+            recurse(updatedSum, updatedArr, idx)
+
+*/
+
+// Nov practice 30 mins 
+var combinationSum = function(candidates, target) {
+    let res = []; 
+    
+    recurse(sum = 0, arr = [], idx = 0); 
+    
+    return res; 
+    
+    function recurse(sum, arr, idx) {
+        // base case 
+        if(sum === target) res.push(arr); 
+        if(sum > target) return; 
+        
+        // recursive action
+        for(let i = idx; i < candidates.length; i++) {
+            let updatedSum = sum + candidates[i];
+            
+            let updatedArr = [...arr, candidates[i]];
+            
+            recurse(updatedSum, updatedArr, i);
+        }  
+    } 
+} 
+
+
+
 // Correct and intuitive. Do again. 20 mins, looked
 // at correct solution 
 var combinationSum = function(candidates, target) {
@@ -53,6 +95,7 @@ var combinationSum = function(candidates, target) {
             
     return res;
 } 
+
 
 
 
