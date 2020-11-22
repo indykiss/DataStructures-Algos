@@ -587,3 +587,131 @@ class MyCalendar {
       }
   }
 }
+
+
+
+const _ = require('lodash');
+
+function sayHello() {
+  console.log('Hello, World');
+}
+
+_.times(5, sayHello);
+
+
+/* 
+Your previous Plain Text content is preserved below:
+
+"hello world see g/123 for info"
+["hello world see ", <a href="google.com/123">g/123</a>, " for info"]
+
+
+function linkify(input) {
+}
+
+Notes:
+1. Multiple g/anystring terminated by white space or end of str
+2. g/ not G/
+
+Pattern:
+"hello world see g/123 for info and g/234233/asdas/123 "
+g/ -> "<a href="google.com/" + anystring + "</a>"
+
+
+Strategy:
+- Vars: res arr 
+- Iterate through the input str 
+  - Save anything pre g/ to be added to str
+  - When we hit "g/" within the str, we want to create the href 
+  - Whitespace/ end of str, add rest of str into result arr
+ */
+
+
+//"g/123"
+
+// time: O(n^2)
+// space: O(n) / O(log n)
+
+
+// "gl/123 gl/123 gl/123"
+
+/*
+
+g/12312 => google.com
+
+aol/foo
+aol.com/foo
+
+asdfsadfasdfadsfasdffasd/
+
+*/
+
+
+/*
+[
+  pattern1: (match) => Link
+  pattern2:
+  pattern3:
+]
+
+
+g/12312312
+ag/21323123
+
+
+
+"sffgsdf. sdfg sdfg.  sdfg sdfg"
+*/
+
+
+function linkify(input) {
+  let res = [], 
+      terminalI = 0;
+  
+  
+  // "g/123" 
+  for(let i = 1; i < input.length; i++) {
+    let prev = input[i-1], 
+        curr = input[i];
+    
+    if(prev === "g" && curr === "/") {
+      
+        if(i-2 >= 0) {
+          let preG = input.substring(0, i-2); // off by 1
+        
+          res.push(preG);     
+        }
+    
+            
+        let terminalI = i; 
+            
+      // optimize: 
+        while(input[terminalI] !== " " || terminalI < input.length - 1) {
+            terminalI++;
+        }
+      
+        let gSlashSub = input.substring(i-1, terminalI); 
+        let hrefToAdd = hrefMaker(gSlashSub); 
+      
+        res.push(hrefToAdd); 
+      // ["hello world see ", <a href="google.com/123">g/123</a>]
+    }
+  }
+
+    if(terminalI !== input.length) {
+        res.push(input.substring(terminalI-1));
+    }  
+  
+    return res;
+}
+// ["hello world see ", <a href="google.com/123">g/123</a>, " for info"]
+
+
+
+
+// "g/123" => <a href="google.com/123">g/123</a>
+function hrefMaker(string) {
+}
+
+
+
