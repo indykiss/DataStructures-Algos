@@ -41,6 +41,44 @@ as one we've picked, we save that position as a "noGo" position
 
 
 
+// close enough. 25 mins. other solution better tho 
+var exist = function(board, word) {
+    for(let row = 0; row < board.length; row++) {
+        for(let col = 0; col < board[row].length; col++) {
+            if(board[row][col] === word.charAt(0)) {
+                if(bfs(row, col, 0)) {
+                 return true; 
+                }   
+            }
+        }
+    }
+    function bfs(row, col, indexWord) {
+        // found whole word
+        if(indexWord === word.length) {
+            return true;
+        }  
+        // make sure we're on board
+        if(row < 0 || col < 0 || row > board.length - 1 ||
+          col > board[row].length -1) {
+            return; 
+        } 
+        let temp = board[row][col];
+        board[row][col] = " "
+        // look NSEW - other ways to do this, better? 
+        let dirs = [[0, 1], [0, -1], [-1, 0], [1, 0]]; 
+        dirs.forEach(direc => {
+            let posX = row + direc[0],
+                posY = col + direc[1];
+                        
+            if(board[posX][posY] === word[indexWord]) {
+                bfs(posX, posY, indexWord + 1);
+            }
+        })
+        board[row][col] = temp;
+    }
+    return false;
+};
+
 
 // Wayyyy off. But really good attempt. Nov
 // Like 30 for 1st attempt. Another 20 to check over w/ solution
