@@ -590,24 +590,16 @@ class MyCalendar {
 
 
 
-const _ = require('lodash');
 
-function sayHello() {
-  console.log('Hello, World');
-}
-
-_.times(5, sayHello);
 
 
 /* 
-Your previous Plain Text content is preserved below:
+Write a function linkify
+11/22/2020
 
 "hello world see g/123 for info"
 ["hello world see ", <a href="google.com/123">g/123</a>, " for info"]
 
-
-function linkify(input) {
-}
 
 Notes:
 1. Multiple g/anystring terminated by white space or end of str
@@ -616,7 +608,6 @@ Notes:
 Pattern:
 "hello world see g/123 for info and g/234233/asdas/123 "
 g/ -> "<a href="google.com/" + anystring + "</a>"
-
 
 Strategy:
 - Vars: res arr 
@@ -631,12 +622,10 @@ Strategy:
 
 // time: O(n^2)
 // space: O(n) / O(log n)
-
-
 // "gl/123 gl/123 gl/123"
 
 /*
-
+Part two: 
 g/12312 => google.com
 
 aol/foo
@@ -644,22 +633,13 @@ aol.com/foo
 
 asdfsadfasdfadsfasdffasd/
 
-*/
-
-
-/*
 [
   pattern1: (match) => Link
   pattern2:
   pattern3:
 ]
-
-
 g/12312312
 ag/21323123
-
-
-
 "sffgsdf. sdfg sdfg.  sdfg sdfg"
 */
 
@@ -668,7 +648,6 @@ function linkify(input) {
   let res = [], 
       terminalI = 0;
   
-  
   // "g/123" 
   for(let i = 1; i < input.length; i++) {
     let prev = input[i-1], 
@@ -676,15 +655,14 @@ function linkify(input) {
     
     if(prev === "g" && curr === "/") {
       
-        if(i-2 >= 0) {
-          let preG = input.substring(0, i-2); // off by 1
+      if(i-2 >= 0) {
+        let preG = input.substring(0, i-2); // off by 1
         
-          res.push(preG);     
-        }
-    
-            
-        let terminalI = i; 
-            
+        res.push(preG);     
+      }
+      
+      let terminalI = i; 
+
       // optimize: 
         while(input[terminalI] !== " " || terminalI < input.length - 1) {
             terminalI++;
