@@ -44,6 +44,86 @@ Edge cases???
 
 
 
+// Correct enough!!! 
+// 25 mins 
+const Heap = require("./collections/heap");
+
+var minMeetingRooms = function(intervals) {
+    
+    let count = 0, 
+        minHeap = new Heap(null, [], (a,b) => a-b),
+            // Space: O(n)
+            // time: heapify: O(log(n))
+        intervals = intervals.sort((a,b) => a[0] - b[0]); 
+            // time: O(n log n)
+    
+    for(let meeting of intervals) {
+        let earliestEnd = minHeap.peek(); // O(1)
+        
+        if(meeting[0] > earliestEnd) { // > or =?
+            minHeap.pop(); 
+                // time: O(log n)
+            minHeap.push(meeting[1]);
+        } else {
+            count++;
+        }
+        
+    }
+    return count; 
+};
+
+/*
+Strat for the above, just practicing
+Overlap:
+- [10, 30] [20, 40]
+    10 20 30 
+        20 30 40
+- [20, 40] [10, 30]
+       20 30 40 
+    10 20 30 
+- [5, 10] [0, 20]
+      5 10 
+    0 5 10 20
+- [0, 20] [5, 10]
+    0 10 20
+     5 10
+
+Meeting Rooms II
+
+Edge cases:
+- We have at least 2 meetings 
+- Valid start & end times:
+    [30, 20] => invalid 
+    Yes possible
+- Make sure not ever going < 0 for meeting rooms  
+
+Strategy:
+- Var count (int)
+- Sort the events by starting point 
+- ID IF there is an overlap from previous room 
+- Free up rooms when it's done 
+    - Track a var that holds the earliest end up from 
+    previous rooms. Stack of the earliest ends.
+    Min heap of end times. so root is always minimum
+    Not the best use of space. Or time: heapift when remove 
+    root. => O(log(n))
+   Logics:
+       -If min heap root is < curr start points, remove root and dont
+       implement the conference room. 
+       -Add the new end point to minHeap.
+       - If root > curr start, increment conference room count 
+    
+
+[[0, 30], [5, 10], [15, 20]] => 2 
+
+0-30 : 1 room  5-10 : 2nd room. After end point, we're done 
+so opens the room which lets 15-20 meeting use this room 
+
+*/
+
+
+
+
 
 // Close but no cigar w/o looking at solution 
 var minMeetingRooms = function(intervals) {
