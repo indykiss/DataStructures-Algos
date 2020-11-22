@@ -29,6 +29,9 @@
 
 ## In ~3 weeks, 80 algos total. 
 
+
+
+
 # October: What did I accomplish?
 
 ## In ~2 weeks, I did 70 algos total. Reviewed lots of Grokking problems: 30 refreshes. 40 brand new ones. 
