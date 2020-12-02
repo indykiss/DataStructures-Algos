@@ -1,39 +1,29 @@
 
-# November
-## I have time for 60- 80 algos for BOTH bloomberg & facebook. Do 20- 30 new meds/ hards. Refresh ~40+. 
-
-
 
 # ----------------------------------------------#
 
-*Last day! Do top 10 bloomberg quick refreshes*
-*Quickly review my "why Bloomberg + about me" and look at patterns*
+* Facebook Onsite 
 
-* ~5x a week, do 4-6 problems from Search Tracker *
-* Move the finished problems to Done column *
-* Call a problem done if I can do it within 30 mins mostly without more than 1-2 hints *
+Lots to do! Strategy is TBD 
+
 # ----------------------------------------------#
 
 
 
-# To-dos: 
-## Leetcodes: 60 
-- Top 15 Bloomberg mediums, 10 hards. 
-- Top 10 FB mediums, 5 hards.
-- Warm up with FB/ Bloomb easies. (20.ish)
-    - Every day do 1-2 easies. 
+# December To-dos: 
+* Interview Cake 
+* CS50 
 
 
 # Novemeber: What did I accomplish?
-
-
 ## In ~3 weeks, 80 algos total. 
-
+## F technical call, passed! 
+## Bl onsite, failed :( Reapply in May 
+## See below methodology.
 
 
 
 # October: What did I accomplish?
-
 ## In ~2 weeks, I did 70 algos total. Reviewed lots of Grokking problems: 30 refreshes. 40 brand new ones. 
 
 ## Methodology: Found 70 by guesstimating/ counting commits from mid-Oct to end of Oct. 1 commit = 1 problem. Found 40 uniq by comparing this repo at end of Oct with mid-Oct. See search tracker spreadsheet to check out list of uniq algos (just copied and pasted all the .js files from directory). Did ~120 code commits in Oct, more heavy in 2nd half of Oct. 
