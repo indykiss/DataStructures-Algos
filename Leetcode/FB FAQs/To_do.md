@@ -15,12 +15,11 @@ Lots to do! Strategy is TBD
 * CS50 
 
 
-# Novemeber: What did I accomplish?
+# November: What did I accomplish?
 ## In ~3 weeks, 80 algos total. 
 ## F technical call, passed! 
 ## Bl onsite, failed :( Reapply in May 
 ## See below methodology.
-
 
 
 # October: What did I accomplish?
