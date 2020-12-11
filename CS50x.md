@@ -23,4 +23,14 @@ goes to like some billion. Long goes longer than int.
 - Overflow: the point at which the integer or float that we're looking at has surpassed the number of bits we have (8, 16, 32 bits, etc) in storage. We try to add one, but because we're at capacity, we lose the data. 
 Y2K problem was because of integer overflow. Programmars stored only 2 digits for years (70s/ 80s/ 90s), not 3 digits,so the number 2000 broke systems. 
 
+Pset1: Make pyramid thing with a nested for loop
+
 # Week 2 notes: 
+
+- Reminder: Characters => numbers => binary for computer to understand 
+
+Pset2: Caesar cipher
+
+# Week 3 notes: 
+
+
