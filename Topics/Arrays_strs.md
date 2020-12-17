@@ -40,3 +40,31 @@ We can express strings as arrays of 8-bit chars, in ASCII:
 ## Dynamic arrays 
 
 All arrs in JS are by default dynamic. In other languages, the number of indices in an arr has to be declared. Dynamic arrs' size increases as necessary. 
+
+
+# Arrays
+Strengths:
+- Fast lookups. Retrieving the element at a given index - takes O(1)O(1) time, regardless of the length of the array.
+- Fast appends. Adding a new element at the end of the array takes O(1)O(1) time, if the array has space.
+
+Weaknesses:
+- Fixed size. You need to specify how many elements you're going to store in your array ahead of time. (Unless you're using a fancy dynamic array.)
+- Costly inserts and deletes. You have to "scoot over" the other elements to fill in or close gaps, which takes worst-case O(n) time.
+
+Reminder: arr.slice copies and creates new array, so that takes up extra space. 
+
+# Dynammic arrays
+Strengths:
+- Fast lookups. Just like arrays, retrieving the element at a given index takes O(1) time.
+- Variable size. You can add as many items as you want, and the dynamic array will expand to hold them.
+- Cache-friendly. Just like arrays, dynamic arrays place items right next to each other in memory, making efficient use of caches.
+
+Weaknesses:
+- Slow worst-case appends. Usually, adding a new element at the end of the dynamic array takes O(1) time. But if the dynamic array doesn't have any room for the new item,it'll need to expand, which takes O(n) time.
+
+Why not just extend the existing array? Because that memory might already be taken by another program. So instead, it makes a whole new bigger array. 
+
+- Costly inserts and deletes. Just like arrays, elements are stored adjacent to each other. So adding or removing an item in the middle of the array requires "scooting over" other elements, which takes O(n) time.
+
+
+

@@ -1,3 +1,4 @@
+
 ## Hash tables 
 
 A hash table is a dictionary like data structure that maps keys to values. It allows people to look up a value based off its key. 
