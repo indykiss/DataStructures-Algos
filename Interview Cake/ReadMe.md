@@ -90,3 +90,10 @@ Division: log(b) (x/y) = log(b)(x) - log(b)(y)
 
 Powers: log(b) (x^y) = y * log(b)(x)
 
+
+# Binary Trees
+Binary trees are perfect when they have exactly 2 nodes per each node. 
+
+Two properties of perfect BTs:
+- The number of nodes double at every new level. 
+- The number of nodes in the last level is half of the total nodes in the BT. 

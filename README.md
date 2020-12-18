@@ -34,3 +34,4 @@ https://github.com/lolapriego/coursework
 
 Harvard CS50: https://www.youtube.com/watch?v=y62zj9ozPOM&list=PLhQjrBD2T3828ZVcVzEIhsHVgjANGZveu 
 
+https://github.com/orrsella/soft-eng-interview-prep
