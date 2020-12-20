@@ -97,3 +97,46 @@ Binary trees are perfect when they have exactly 2 nodes per each node.
 Two properties of perfect BTs:
 - The number of nodes double at every new level. 
 - The number of nodes in the last level is half of the total nodes in the BT. 
+
+# Graphs
+- Edge list 
+- Adjacent list 
+- Adjacent matrix
+
+
+# Overlapping subproblems:
+
+- Happens when we need to solve the same subproblems in order to get the solution. 
+Ex: In fibonacci, each number is the sum of the two previous ones — 0, 1, 1, 2, 3, 5, 8, ...
+So here we use this recursive function:
+
+function fib(n) {
+    if(n == 0 || n == 1) {
+        return n; 
+    } 
+
+    return fib(n-1) + fib(n-2);
+}
+
+Because we're solving subproblems that we've solved before, we can now memoize, which is like saving results in a cache. 
+
+So we build a class that saves input/ output relationship. Which saves us calls. 
+
+
+class Memo {
+    constructor() {
+        this.cache = {}; 
+    }
+
+    fib(n) {
+        if(n == 0 || n == 1) {
+            return n; 
+        } 
+        if(this.cache.hasOwnProperty(n)) {
+            return this.cache[n]; 
+        }
+        let res = this.fib(n-1) + this.fib(n-2);
+        this.cache[n] = memo; 
+        return res;
+    }
+}
