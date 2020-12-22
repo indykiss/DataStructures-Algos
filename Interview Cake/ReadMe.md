@@ -1,7 +1,7 @@
 
 # Important things to know, from Interview Cake 
 # Second time running through, very quick 
-# Topics is also interview cake. 
+# "Topics" folder is also interview cake. 
 
 
 # Integer 
@@ -98,13 +98,14 @@ Two properties of perfect BTs:
 - The number of nodes double at every new level. 
 - The number of nodes in the last level is half of the total nodes in the BT. 
 
+
 # Graphs
 - Edge list 
 - Adjacent list 
 - Adjacent matrix
 
 
-# Overlapping subproblems:
+# Overlapping subproblems / Memoization:
 
 - Happens when we need to solve the same subproblems in order to get the solution. 
 Ex: In fibonacci, each number is the sum of the two previous ones — 0, 1, 1, 2, 3, 5, 8, ...
@@ -140,3 +141,137 @@ class Memo {
         return res;
     }
 }
+
+
+# Bottom-Up Algo
+
+Saves memory costs vs recursion's call stacks. 
+
+A bottom-up algo starts from the beginning while recursion starts from the end and works backwards.  
+
+Stack overflow = when there is a call stack overload which costs O(N)
+
+Recursion: 
+function product(n) {
+    let res = 1; 
+
+    // base 
+    if(n == 1) {
+        return res;  
+    }
+
+    n = n * res; 
+
+    product(n-1); 
+}
+
+O(n) memory space complexity, not good
+
+
+Bottom-up build: 
+function product(n) {
+
+    let res = 1; 
+
+    for(let i = 0; i <= n; i++) {
+        res = res * n; 
+    }
+
+    return res; 
+}
+
+O(1) space 
+
+
+* Note - JS and kinda Ruby does something called tail call optimization that optimizes SOME recursive calls to avoid building up a tall call stack. 
+
+
+
+# Linked List
+
+We know this. 
+
+
+
+## General concepts: 
+
+# Short circuit evaluation 
+
+Stops execution early to save time: 
+if (thisThing.exists() && thisThing.isBlue()) {
+    return "It's blue!"
+}
+
+If the thing doesn't exist, the if statement block doesnt run. 
+
+
+# Garbage collection 
+
+Garbage collector automatically frees up memroy that a program isn't using anymore. 
+
+One way that a program handles garbage collection is by:
+1. Figuring out what can't be deleted because it's in use somewhere in memory.
+2. Free up everything else. 
+
+Another way is to track the number of things that reference an object. If that reference count is 0, then free it up. 
+
+In C, garbage collection isn't automatic. You have to manually collect garbage. In JS, it's automatic. 
+
+
+# Closures 
+
+A closure is a function that accesses a variable "outside" itself. For example:
+
+const message = 'The British are coming.';
+
+function sayMessage(){
+  alert(message); // Here we have access to message,
+  // even though it's declared outside this function!
+}
+
+We'd say the message is closed over by sayMessage(). 
+
+One useful thing to do with a closure is to create something like an "instance variable" that can change over time and can affect the behavior of a function.
+
+// Function for getting the id of a dom element giving it a new, unique id if it doesn't have an id yet
+
+const getUniqueId = (() => {
+  let nextGeneratedId = 0;
+  return element => {
+    if (!element.id) {
+      element.id = `generated-uid-${nextGeneratedId}`;
+      nextGeneratedId++;
+    }
+    return element.id;
+  };
+})();
+
+Why did we put nextGeneratedId in an immediately-executed anonymous function? It makes nextGeneratedId private, which prevents accidental changes from the outside world:
+
+// Function for getting the id of a dom element giving it a new, unique id if it doesn't have an id yet
+let nextGeneratedId = 0;
+const getUniqueId = element => {
+  if (!element.id) {
+    element.id = `generated-uid-${nextGeneratedId}`;
+    nextGeneratedId++;
+  }
+  return element.id;
+};
+
+// ...
+// Somewhere else in the codebase...
+// ...
+
+// WHOOPS--FORGOT I WAS ALREADY USING THIS FOR SOMETHING
+nextGeneratedId = 0;
+
+
+
+# Mutable vs immutable objects 
+
+A mutable object can be changed, while an immutable object can't be changed. 
+
+In JS, everything except for strings are mutable. 
+
+Things being mutable is nice because that means we can make changes in place, without allocating a new object. 
+BUT note that any changes means all references to that object will reflect the change. 
