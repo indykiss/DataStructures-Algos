@@ -275,3 +275,128 @@ In JS, everything except for strings are mutable.
 
 Things being mutable is nice because that means we can make changes in place, without allocating a new object. 
 BUT note that any changes means all references to that object will reflect the change. 
+
+
+# Binary numbers 
+
+Note: Binary numbers can be negative OR positive. 
+If it's something called "two's complement," we're saying that it's negative. 
+
+The first 1 in the binary representation equals to a negative number. 
+
+Ex: 
+
+1111 = 8 + 4 + 2 + 1 = 15 
+OR 
+1111 = -8 + 4 + 2 + 1 = -1 
+
+So if we're looking to convert base 2 into decimal (as in converting binary to base 10), we should ask if we could also be dealing with "two's complement."
+
+
+# Bitwise AND 
+
+Both need to be true to return the operation: 
+
+1 & 1 = 1 
+1 & 0 = 0
+0 & 1 = 0 
+0 & 0 = 0
+
+Ex: 
+5 & 6 = 4
+Because:
+  101
++ 110 
+------
+100
+
+= 4 
+
+# Bitwise OR 
+
+1 | 1  →  1
+1 | 0  →  1
+0 | 1  →  1
+0 | 0  →  0
+
+Ex:
+5 | 6 = 7 
+
+ 101
++110
+-----
+111 
+
+= 7
+
+
+# Bitwise XOr
+
+The XOR means "exclusive or" which basically takes two bits and returns 1 if ONLY one of the bits is 1. Exactly 1. 
+
+1 ^ 1  →  0
+1 ^ 0  →  1
+0 ^ 1  →  1
+0 ^ 0  →  0
+
+Ex: 
+5 ^ 6 = 3
+ 101
++110
+-----
+ 011
+
+
+# Bitwise NOT = flips things 
+
+The NOT bitwise operation inverts bits. A 0 becomes a 1. A 1 becomes a 0.
+
+The NOT operator is often written as a tilde character ("~"):
+
+~ 0000 0101
+= 1111 1010
+
+Ex: 
+~ 5 = - 6 
+
+~ 0000 0101
+= 1111 1010
+
+Two complement of 1010 =
+-6 
+
+
+# Bit shifting 
+
+A bit shift moves each digit in a number's binary representation left or right. There are three main types of shifts:
+
+- Left shift 
+0010 << 1  →  0100
+0010 << 2  →  1000
+
+- Logical right shift 
+1011 >>> 1  →  0101
+1011 >>> 3  →  0001
+
+- Arithmetic right shift
+When shifting right with an arithmetic right shift, the least-significant bit is lost and the most-significant bit is copied.
+
+Languages handle arithmetic and logical right shifting in different ways. Javascript provides two right shift operators: >> does an arithmetic right shift and >>> does a logical right shift.
+
+1011 >> 1  →  1101
+1011 >> 3  →  1111
+
+
+# Integer overflow 
+
+When we try to save a number that's TOO big,like over 32 bit or 64 bit, that's an integer overflow. 
+
+JS technically doesn't have integers- there are only 64 bit floats. If we try to use a number bigger than that, the num gets represented as infinity. 
+
+Normal languages (Python/ Ruby) will automatically reallocate the space for you. 
+
+Other languages (Java/ C) will throw out the highest bit. Like if we had 11 and needed to add another 1 to the front, it'll become 00. 
+
+Using longs instead of integers can help this. 
+
+

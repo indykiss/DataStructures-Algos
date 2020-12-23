@@ -1,6 +1,6 @@
 Designing a URL shortening service like TinyURL:
 
-1. Establish parameters and goals
+1. Establish parameters and design goals
 - User interacts with site, inputs long url, gets back a unique shortened URL. 
 - The short URL redirects to the long URL. 
 - Should users be able to customized the short link? 
@@ -35,6 +35,14 @@ User: username, email, secure_password
 URL: longUrl, shortUrl, expirationDate, userID
 
 We'd want a NoSQL store since there's so many objects and this is non-relational. 
+
+Generally, when looking at DBs, there are two main types:
+- Relational databases 
+- NoSQL type databases. 
+
+In general (this is a simplification), relational databases are great for systems where you expect to make lots of complex queries involving joins and such—in other words, they're good if you're planning to look at the relationships between things a lot. NoSQL databases don't handle these things quite as well, but in exchange they're faster for writes and simple key-value reads.
+
+
 
 5. High level design 
 step 1: given an input of a long url, we create a short url. Possibly we can use a random string generator, 8 characters. Append that to the tinyurl.com domain and that's work. We should definitely save each of these randomly generated domains, to prevent duplicates. 
