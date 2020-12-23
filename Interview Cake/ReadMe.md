@@ -400,3 +400,34 @@ Other languages (Java/ C) will throw out the highest bit. Like if we had 11 and 
 Using longs instead of integers can help this. 
 
 
+
+
+# Maths 
+
+Triangular series:
+- A series of number where each num could be a row in an equilateral triangle. 
+
+Ex:
+1, 2, 3 4, 5
+The sum is 15, which makes 15 a triangular number 
+
+In a triangular series, the pairs of nums on the opposite ends will add up to each other. This value is always 1 more than number of nums in the series. 
+
+Ex for 1,2,3,4:
+1 + 4 = 5 
+2 + 3 = 5 
+
+Total sum is 10. 
+
+Same with 1,2,3,4,6 etc  
+
+The formula for this would be:
+(n^2 + n) / 2 = sum;
+Where n is the number of nums in the series.
+
+
+If we know the sum, but don't know n we can do:
+(n^2 + n) / 2 = numberThatWeKnow;
+
+
+
