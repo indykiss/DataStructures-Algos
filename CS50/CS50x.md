@@ -34,3 +34,11 @@ Pset2: Caesar cipher
 # Week 3 notes: 
 
 
+
+
+
+# Week 5: Data Structures 
+
+Arrays traditionally have limited number of slots. When you need to add more elements to the array, we need to:
+- Allocate more memory 
+- Copy the elements from old memory to new memory spot 
