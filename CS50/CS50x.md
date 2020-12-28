@@ -42,3 +42,31 @@ Pset2: Caesar cipher
 Arrays traditionally have limited number of slots. When you need to add more elements to the array, we need to:
 - Allocate more memory 
 - Copy the elements from old memory to new memory spot 
+
+In an array, we need a continous section of space (bits) in the computer's memory. 
+
+Memory wise, Linked Lists are great over using arrays because they can use pointers to the next value in a very different section of memory. Especially useful over arrays when there's not enough CONTINUOUS space to make an array. 
+
+Like if our empty space is all over the place in the computer's memory, we can ID where there's enough space for a value and its pointer (the node), then the next chunk where there's space for a value and a pointer, and just keep going. 
+
+Linked Lists let us add dynammically to the list, so we don't need to resize & move original content, like we would in an array. But we lose our random access ability/ and use of index to ID the value of node. 
+
+BASICALLY, linked lists lets us grow and shrink things dynammatically BUT arrays let us have random access/ binary search. 
+
+Hash tables: Key-value pair, Collisions, etc. Fast lookups. 
+
+Trees: Binary search tree lets us combine the idea of pointers (left and right) and have O(log n) look up time. 
+
+Tries: Basically trees to use to look up words. Top level is A-Z, then each level has an array node of A-Z (second letter), then another pointer to arr node of A-Z (third letter), etc. LOTS of memory, bc of all the arrs, but very quick search time. Constant time lookup (O(1))-- the constant being the length of the longest word. 
+
+Queue - FIFO 
+Enqueue - add things to the queue 
+Dequeue - remove things from the queue
+
+Stack - LIFO
+Push - add things to stack 
+Pop - remove things from stack
+
+Dictionary:
+Anything that has keys and values
+A hash table is an example of a dictionary 
