@@ -70,3 +70,53 @@ Pop - remove things from stack
 Dictionary:
 Anything that has keys and values
 A hash table is an example of a dictionary 
+
+
+
+# Week 6: Python 
+
+Using python > C
+
+Whitespaced, so no need for curly brackets or semi colons.
+
+Ex: 
+
+let counter = 0; 
+for(let i = 0; i < 10; i++) {
+    console.log("meep");
+    counter++;
+}
+
+
+In Python:
+
+counter = 0
+for i in range(10):
+    print("meep")
+    count += 1
+
+
+Python data types:
+- Bool
+- Float
+- Int
+- Str
+
+Python also has new DSs over C:
+- Range
+- List (aka arrays)
+- Tuple (sequence of immutable vals, ie cant change)
+- Dict (hash table, key:val pairs)
+- Set (set of uniq nums)
+
+
+Instead of ||, it's or
+
+Python is great for data science because ints can't overflow; there are no upper bounds. 
+
+Hashes: key-value pairs. Keys are usually strings, values can be whatever. 
+
+Dictionary = abstract data type 
+Hash table = data structure
+
+We use hash table to implement dictionary.  
