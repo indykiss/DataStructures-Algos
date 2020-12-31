@@ -119,4 +119,10 @@ Hashes: key-value pairs. Keys are usually strings, values can be whatever.
 Dictionary = abstract data type 
 Hash table = data structure
 
-We use hash table to implement dictionary.  
+We use hash table to implement dictionary.
+
+
+
+# Week 6: SQL 
+
+
