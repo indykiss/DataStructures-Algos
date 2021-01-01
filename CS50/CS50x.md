@@ -1,11 +1,11 @@
 
 
-# Week 0 notes:
+# Week 0: Scratch
 
 
 
 
-# Week 1 notes: 
+# Week 1: C 
 Go back and look at transcript for exact summary but:
 
 - Compiler goal is to make input code run through algo 
@@ -25,13 +25,16 @@ Y2K problem was because of integer overflow. Programmars stored only 2 digits fo
 
 Pset1: Make pyramid thing with a nested for loop
 
-# Week 2 notes: 
+# Week 2: Arrays 
 
 - Reminder: Characters => numbers => binary for computer to understand 
 
 Pset2: Caesar cipher
 
-# Week 3 notes: 
+# Week 3: Algos 
+
+
+# Week 4: Memory 
 
 
 
@@ -123,6 +126,15 @@ We use hash table to implement dictionary.
 
 
 
-# Week 6: SQL 
+# Week 7: SQL 
+
+
+
+
+
+
+
+
+# Week 8: Information 
 
 

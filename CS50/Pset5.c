@@ -26,8 +26,12 @@ unsigned int hash(const char *word) {
 
 
 // Load dictionary into memory- C specific bullshit 
+bool load(const char *dictionary) {
+
+
+}
 
 
 
-
+// How many words are in dictionary? 
 
