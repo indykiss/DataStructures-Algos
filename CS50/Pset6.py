@@ -1,6 +1,9 @@
 
 # Thank God we are now in Python 
 
+# Do the things we did before but now in python
+# because python is much easier 
+
 
 # Hello
 from cs50 import get_string

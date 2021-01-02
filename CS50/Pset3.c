@@ -5,6 +5,15 @@
 #include <stdio.h>
 #include <string.h>
 
+
+// Key points:
+// Manipulate data, create own data structure
+// Take a leetcode easy and complicate it to become LC medium 
+// i.e: take a simple prob, solve it, complicate it, then solve it again
+
+
+
+
 // Max number of candidates
 #define MAX 9
 

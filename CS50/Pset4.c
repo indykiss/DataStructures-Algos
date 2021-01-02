@@ -6,6 +6,12 @@
 // Instructions: https://cs50.harvard.edu/x/2020/psets/4/filter/less/#:~:text=submit50%20cs50/problems/2020/x/filter/less
 
 
+// Key points:
+// Manipulate vars & nested for loops & else if/else ifs
+
+
+
+
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {

@@ -4,6 +4,12 @@
 
 
 
+// Key points:
+// Greedy algo: make change and understand nested for loops
+
+
+
+
 // Make change, greedy algo
 int main(void)
 {

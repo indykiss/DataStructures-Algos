@@ -142,7 +142,42 @@ Draw a pyramid of x height can be done with recursion:
 
 # Week 4: Memory 
 
+Binary = count with 0s and 1s 
+Base ten = decimal system = uses 0-9 
+Hexadecimal = count up to 16 digits, 0-9 and A-F
+Used for colors and other things 
 
+Pointers = used to point to the address of a variable 
+
+In some languages (ex C):
+    str s = "hi"
+    str t = "hi"
+
+    if (s == t) print "false"
+
+BC the variables are pointing to the address/ the instance of the string, not string itself. 
+
+In python/ js, this isn't a thing. 
+
+
+Memory leak:
+Slow down the computer and uses a ton of memory. Happens when we forget to free up memory after being done using it, so it can be used elsewhere. 
+
+Valgrind in C lets us check if we have a memory leak. 
+
+Swap:
+    function swap(a,b) {
+        let temp = a; 
+        a = b; 
+        b = temp; 
+    }
+
+
+Memory layout of a computer:
+- machine code, global variables, heap, stack  
+
+
+With pointers, we can open files like csvs within our code to do things 
 
 
 

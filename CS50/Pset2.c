@@ -7,6 +7,12 @@
 #include <stdlib.h>
 
 
+// Key points:
+// Use helper functions and manipulate data
+
+
+
+
 // Caesar
 int main(int argc, string argv[])
 {
