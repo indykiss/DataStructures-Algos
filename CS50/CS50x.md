@@ -65,11 +65,79 @@ Pset1: Make pyramid thing with a nested for loop
 
 # Week 2: Arrays 
 
+“Compiling” source code into machine code is actually made up of smaller steps:
+- preprocessing
+    import libraries 
+- compiling
+    takes source code and converts to assembly code
+- assembling
+    takes assembly code and converts it into binary (machine code)
+- linking
+    contents of prev compiled libraries are combined with the binary of this program
+
+Debugging:
+- Use things other than console.log()/ print()
+- Debug interactively by:
+    - Create breakpoint in the code 
+    - Run the debugger, look at the panel that lists variables
+    - Step over the next line to keep seeing how variables are being changed 
+
+RAM - Random Access Memory. Chips in our computers that store things
+
+Arrays - Data structure used to store variables one after the other, in a continuous chunk of memory. 
+
+Strings are basically arrays of characters. That's why we can do this:
+    str = "welp" 
+    str[1] = "e"
+
 - Reminder: Characters => numbers => binary for computer to understand 
+
+- C: argc and argv are two variables that our main function will now get, when our program is run from the command line. 
+- argc is the argument count, or number of arguments, and argv is an array of strings that are the arguments. 
 
 Pset2: Caesar cipher
 
 # Week 3: Algos 
+
+- Linear search - look at everything one at a time 
+- Binary search - in a sorted arr/ bst, we can search based on parameters, divide problem by half 
+
+Big O:
+- O(n2), O(n log n), O(n) (linear search), O(log n) (binary search), O(1)
+
+- Computer scientists might also use big Ω, big Omega notation, which is the lower bound of number of steps for our algorithm. 
+- Big O is the upper bound of number of steps, or the worst case, and typically what we care about more.
+
+- Data structures are containers that hold other kinds of data types
+
+Sorting:
+
+- Bubble sort: Large values are "bubbled" to the right:
+    Repeat n–1 times
+        For i from 0 to n–2
+            If i'th and i+1'th elements out of order
+                Swap them
+Bubble sort is O(n^2) time complexity 
+
+- Selection sort: Remember the smallest number we've seen, then swap it with the first num in the list, then look for 2nd smallest and swap it with the 2nd num in list, etc. 
+    For i from 0 to n–1
+        Find smallest item between i'th item and last item
+        Swap smallest item with i'th item
+Selection sort is O(n^2) time complexity 
+
+- Recursion: occurs when a function or algorithm refers to itself.
+Draw a pyramid of x height can be done with recursion:
+
+
+- Mergesort: Uses recursion to sort. O(n log n) time 
+    If only one item
+    Return
+    Else
+        Sort left half of items
+        Sort right half of items
+        Merge sorted halves
+
+
 
 
 # Week 4: Memory 
