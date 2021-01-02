@@ -1,29 +1,67 @@
 
 
+# ----------------------------------------------------#
+
+* CS 50 *
+
+What's up?
+
+I'm taking CS50x online to further solidify basic CS concepts. 
+
+This doc is a file of notes from class. I started taking this in 2020: https://cs50.harvard.edu/x/2020 
+
+But I didn't finish the course in time, and now the 2021 version has a few more psets & lectures/ slightly different content: https://cs50.harvard.edu/x/2021/ 
+
+In the interest of time (studying schedule), I'm running through the last ~3 lectures quickly and letting a few psets in C be uncompleted. I do not enjoy C. Python is great, I'd like to focus on the Python psets, refresh SQL, and quickly touch on web dev. 
+
+Each pset file in this folder is going to have overarching lessons listed at the top. Even if the pset itself isn't complete/ isn't passing all the tests, I'd like to make sure I'm understanding the overall points. 
+
+# ----------------------------------------------------------#
+
+
+
+
 # Week 0: Scratch
 
+Computer science = problem solving. Taking inputs and manipulating it to generate outputs. Take a problem and find the solution. 
+
+Binary is how computers store data. In 0s and 1s. 
+
+Data- all data- can be represented using binary. Colors, pictures (pixels), emojis, letters (ASCII- mapping of letters to numbers to binary), videos, etc. 
+
+Algorithms = step by step instructions for solving a particular problem, with varying time and space complexity. As in resources needed to run the algo. 
 
 
 
 # Week 1: C 
-Go back and look at transcript for exact summary but:
 
-- Compiler goal is to make input code run through algo 
-to convert to binary so computer can give us output 
+C is a procedural computer language that is used to build and maintain applications. 
 
-- when we run code, we compile it first and make the program 
-using "ruby." This goes into the file, imports anything that 
-needs to be imported, runs the algos, creates the output. 
-Compiles our source code (code we write) into machine code (code the computer understands).
+- We have souce code. Running it through a compiler converts it into machine code, instructions in binary that the computer understands 
+
+- Compiler goal is to run input code through algo to convert to binary so computer can give us output 
+
+- When we run code, we compile it first and make the program 
+using "ruby", for example. This goes into the file, imports anything that needs to be imported, runs the algos, creates the output. Compiles our source code (code we write) into machine code (code the computer understands).
     ruby nameFile.rb 
 
 - In C, a "long" is a very long number. Int is integer which 
-goes to like some billion. Long goes longer than int. 
+goes to like some billion. Long goes longer than int. Float = number with decimal. Int = integer. Char = single character. Str = strs. Reason to use char over str/ int over long is to save space. 
+
+- In C, we have to manually allocate space and free up space that we aren't using. 
 
 - Overflow: the point at which the integer or float that we're looking at has surpassed the number of bits we have (8, 16, 32 bits, etc) in storage. We try to add one, but because we're at capacity, we lose the data. 
-Y2K problem was because of integer overflow. Programmars stored only 2 digits for years (70s/ 80s/ 90s), not 3 digits,so the number 2000 broke systems. 
+- Y2K problem was because of integer overflow. Programmars stored only 2 digits for years (70s/ 80s/ 90s), not 3 digits,so the number 2000 broke systems. 
+
+- Floating point imprecision:
+We don't have enough bits to store all possible values, so computer stores as close as it can. 
+x: 1
+y: 10
+x / y = 0.100000001490116119384765625000000
 
 Pset1: Make pyramid thing with a nested for loop
+
+
 
 # Week 2: Arrays 
 
