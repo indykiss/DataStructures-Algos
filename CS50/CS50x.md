@@ -12,7 +12,7 @@ This doc is a file of notes from class. I started taking this in 2020: https://c
 
 But I didn't finish the course in time, and now the 2021 version has a few more psets & lectures/ slightly different content: https://cs50.harvard.edu/x/2021/ 
 
-In the interest of time (studying schedule), I'm running through the last ~3 lectures quickly and letting a few psets in C be uncompleted. I do not enjoy C. Python is great, I'd like to focus on the Python psets, refresh SQL, and quickly touch on web dev. 
+In the interest of time (studying schedule), I'm running through the new ~3 2021 lectures quickly and letting a few psets in C be uncompleted. I do not enjoy C. Python is great, I'd like to focus on the Python psets, refresh SQL, and quickly touch on web dev. 
 
 Each pset file in this folder is going to have overarching lessons listed at the top. Even if the pset itself isn't complete/ isn't passing all the tests, I'd like to make sure I'm understanding the overall points. 
 
@@ -322,6 +322,7 @@ Problems:
 
 
 # Week 8: Information. Review what was learned & go over final project tracks :)
+
 
 
 
