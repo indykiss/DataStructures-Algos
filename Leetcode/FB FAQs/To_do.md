@@ -4,7 +4,9 @@
 
 * Facebook Onsite 
 
-Lots to do! Strategy is TBD 
+December:
+X - Review interview cake topics + a handfull of algos 
+ - Harvard's CS50x 
 
 # ----------------------------------------------#
 
