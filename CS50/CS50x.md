@@ -221,7 +221,17 @@ A hash table is an example of a dictionary
 
 Using python > C
 
+Python is an interpreted language, which means we run another program (an interpreter) that reads our source code and runs it top to bottom. 
+
+What is difference between interpreted language, python, and compiled language, C?
+In a compiled languge, the machine directly translates the language. 
+In an interpreted language, there is a middle player called the interpretter that reads and executes the code. 
+
+Because of this, python is much slower than C. But it's easier to write in. Tradeoffs, depending on business needs. 
+
 Whitespaced, so no need for curly brackets or semi colons.
+
+Python has regex, C does not have. 
 
 Ex: 
 
@@ -269,13 +279,49 @@ We use hash table to implement dictionary.
 
 # Week 7: SQL 
 
+SQL = language that selects, sorts, inserts, updates, deletes info from relational databases 
+
+Ex:
+favorites.db:
+Title, Genres
+
+* SELECT title FROM favorites;
+
+* SELECT title, COUNT(title) AS n FROM favorites GROUP BY title ORDER BY n DESC LIMIT 10;
+
+* UPDATE favorites SET title = "The Office" WHERE title LIKE "%office"; 
+
+* DELETE FROM favorites WHERE title = "Friends";
+
+Other operations: 
+* WHERE, matching on some strict condition
+* LIKE, matching on substrings for text
+* LIMIT
+* GROUP BY
+* ORDER BY
+* JOIN, combining data from multiple tables
 
 
+It turns out that, when working with data, we only need four operations:
+- CREATE
+- READ
+- UPDATE
+- DELETE
+
+In SQL, the commands to perform each of these operations are:
+- INSERT
+- SELECT
+- UPDATE
+- DELETE
 
 
+Problems:
+- One problem with databases is race conditions, where the timing of two actions or events cause unexpected behavior. To solve this,we can use transactions, where a set of actions is guaranteed to happen together.
+
+- SQL injection attack, where an adversary can execute their own commands on our database. Dave typing "delete *" in Datapond as a title of a research packet.
 
 
+# Week 8: Information. Review what was learned & go over final project tracks :)
 
-# Week 8: Information 
 
 
