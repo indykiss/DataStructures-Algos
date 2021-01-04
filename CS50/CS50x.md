@@ -16,6 +16,10 @@ In the interest of time (studying schedule), I'm running through the new ~3 2021
 
 Each pset file in this folder is going to have overarching lessons listed at the top. Even if the pset itself isn't complete/ isn't passing all the tests, I'd like to make sure I'm understanding the overall points. 
 
+To dos:
+- Pset 7 skim, done before 
+- Pset 8 finance skim, done before
+
 # ----------------------------------------------------------#
 
 
