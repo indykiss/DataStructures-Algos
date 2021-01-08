@@ -2,14 +2,16 @@
 
 # ----------------------------------------------#
 
-* Facebook Onsite 
+* Facebook Onsite on April 1st 
+* Google phone screen in March, need to schedule 
 
-December:
-X - Review interview cake topics + a handfull of algos 
- - Harvard's CS50x 
 
 # ----------------------------------------------#
 
+
+# January To-dos:
+* Algoexperts / LC side by side
+* 1/2 of Pton DS&A course but skip through Java implementations, just do the psets/ notes in JS or Python 
 
 
 # December To-dos: 
