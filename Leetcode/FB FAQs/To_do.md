@@ -13,11 +13,9 @@
 * Algoexperts / LC side by side
 * 1/2 of Pton DS&A course but skip through Java implementations, just do the psets/ notes in JS or Python 
 
-
-# December To-dos: 
-* Interview Cake 
-* CS50 
-
+# December: What did I accomplish?
+## Interview Cake review 
+## CS50 quick run through
 
 # November: What did I accomplish?
 ## In ~3 weeks, 80 algos total. 

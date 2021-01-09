@@ -26,6 +26,26 @@ O(n) time
 */ 
 
 
+// practice getting back into swing
+function arrayOfProducts(array) {
+	let res = [];
+	
+  let preIprod = 1, 
+			postIprod = 1; 
+	
+	for(let i = 0; i < array.length; i++) {
+		res[i] = preIprod;
+		preIprod = preIprod * array[i];
+	}
+	
+	for(let j = array.length-1; j >= 0; j--) {
+		res[j] = res[j] * postIprod; 
+		postIprod = postIprod * array[j]
+	}
+	
+	return res;
+}
+
 
 // Bad. Got close, but too messy. 
 // looked at solution to get it. Got basics only
