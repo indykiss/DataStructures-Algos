@@ -95,3 +95,46 @@ var findDuplicates = function(nums) {
     }
     return duplicates;
 };
+
+
+
+// Different question. Find the 1st duplicate 
+
+// Easy way: O(n) time and O(n) space
+function firstDuplicateValue(array) {
+    const tracker = new Set();
+      
+      for(let num of array) {
+          if(tracker.has(num)) return num;
+              tracker.add(num);
+      }
+      
+      return -1;
+  }
+
+// Google way: O(n) time and O(1) space 
+/* Sort the array using two runners, 1 fast and 1 slow 
+
+Treat the array like it's a linkd list and we're trying to 
+find a cycle. 
+*/
+function firstDuplicateValue(nums) {
+
+    let slow = nums[0], 
+        fast = nums[nums[0]];
+    
+    while(slow != fast) {
+        slow = nums[slow];
+        fast = nums[nums[fast]];
+    }
+
+    slow = 0; 
+
+    while(slow != fast) {
+        slow = nums[slow];
+        fast = nums[fast];
+    }
+
+    return slow;
+
+}

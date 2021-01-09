@@ -31,7 +31,7 @@ function arrayOfProducts(array) {
 	let res = [];
 	
   let preIprod = 1, 
-			postIprod = 1; 
+		postIprod = 1; 
 	
 	for(let i = 0; i < array.length; i++) {
 		res[i] = preIprod;
