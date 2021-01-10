@@ -123,11 +123,13 @@ function firstDuplicateValue(nums) {
     let slow = nums[0], 
         fast = nums[nums[0]];
     
+    // find 1st intersection point 
     while(slow != fast) {
         slow = nums[slow];
         fast = nums[nums[fast]];
     }
 
+    // find the entrance point of the cycle 
     slow = 0; 
 
     while(slow != fast) {

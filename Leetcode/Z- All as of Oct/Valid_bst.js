@@ -11,6 +11,33 @@ Redone for bloomb
 
 */
 
+// algoexpert pract
+class BST {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
+  
+  function validateBst(tree, min = -Infinity, max = Infinity) {
+    // base case: we have a bst
+      if (tree == null) {
+          return true;
+      }
+      // we don't have a bst:
+      if(tree.value >= max) {
+          return false;
+      }
+      if(tree.value < min) {
+          return false;
+      }
+      // traverse tree until true or false
+      return validateBst(tree.left, min, tree.value) 
+          && validateBst(tree.right, tree.value, max);
+  }
+  
+
 // Oct practice bloomb
 var isValidBST = function(root, lower, upper) {
     
