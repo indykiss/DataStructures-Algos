@@ -152,29 +152,7 @@ Exs:
 - Find all missing numbers in an unsorted arr that has 1 to N nums
 
 
-# Knapsack using Dynammic Programming 
-Basically Greedy method of programming. 
-
-- Cashier is making change. Use smallest num of coins 
-- Fancy cake vault 
-
-
-# Topological Sort (Graph)
-Used to find a linear ordering of elements that have 
-dependencies on each other. For example, if event "B" is dependent on event "A" then "A" comes before "B" in
-topological ordering. 
-
-- Course Schedule: https://leetcode.com/problems/course-schedule/discuss/305685/java-script-dfs-100-detect-cycle-in-directed-graph 
-- Practice later maybe 
-
-
-
-# Miscellaneous things that I'm not great at and also probably aren't that important?
-# Should look at if it comes up this month (Nov)
-
-
-## Memoization
-
+# Miscellaneous things that I'm not great at, but need to look at more
 
 
 
