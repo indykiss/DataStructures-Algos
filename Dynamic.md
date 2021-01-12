@@ -17,7 +17,42 @@ Types of DP:
   We solve the problem "bottom-up" by solving all the related sub-problems first. This is done by filling up an n-dimensional table. Based on the results in the table, the solution to the orignal probelm is computed. 
 
 
-- Fibonacci
+*Fibonacci: Recurse* 
+function fibonacci(n) {
+    if(n == 0 || n == 1) {
+        return n;
+    }
+
+    return fibonacci(n-1) + fibonacci(n-2);
+}
+
+
+*Fibonacci: Memoize* 
+function fibonacci(n) {
+    let memo = []; 
+
+    // save time: if we did it before, return solution 
+    if(memo[n]) {
+        return memo[n];
+    }
+
+    // add the subproblem solution to cache 
+    memo[n] = fibonacci(n-1) + fibonacci(n-2);
+    return memo[n];
+} 
+
+
+*Fibonacci: Tabulation* 
+function fibonacci(n) {
+    let dp = [0,1]; 
+
+    // make a table of solutions based on the solutions
+    for(let i = 2; i < n; i++) {
+        dp[i] = dp[i-1] + dp[i-2];
+    }
+    return dp[n];
+}
+
 
 
 # Knapsack using Dynammic Programming 
