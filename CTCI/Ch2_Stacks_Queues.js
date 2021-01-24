@@ -124,6 +124,56 @@ Write a program to move the disks from the first tower to the last using stacks.
 
 
 
+class MyQueue {
+    constructor() {
+        this.inStack = [];
+        this.outStack = [];
+    }
+    
+    push(x) {
+        this.inStack.push(x);
+    }
+    
+    pop() {
+        while(this.inStack.length > 0) {
+            let ele = this.inStack.pop();
+            this.outStack.push(ele);
+        }
+        
+        let popped = this.outStack.pop();
+        
+        while(this.outStack.length > 0) {
+            let ele2 = this.outStack.pop();
+            this.inStack.push(ele2);
+        }
+        
+        return popped;
+    }
+    
+    peek() {
+        while(this.inStack.length > 0) {
+            let ele = this.inStack.pop();
+            this.outStack.push(ele);
+        }
+        
+        let temp = this.outStack.pop();        
+        this.outStack.push(temp);
+        
+        while(this.outStack.length > 0) {
+            let ele2 = this.outStack.pop();
+            this.inStack.push(ele2);
+        }
+        
+        return temp; 
+    }
+    
+    empty() {
+        return this.inStack.length === 0;
+    }
+    
+}
+
+
 
 // Q5: Implement a queue using two stacks 
 // Queue: First in, first out
