@@ -17,6 +17,44 @@ Output: 5->4->3->2->1->NULL
 */
 
 
+var reverseList = function(head) {
+    let stack = []; 
+    while(head !== null) {
+        stack.push(head); 
+        head = head.next;
+    }
+    
+    let newNode = new ListNode(-1); // need a new node 
+    head =  newNode; // reuse the head var to track where we are
+
+    while(stack.length !== 0) {
+        let curr = stack.pop();
+        
+        head.next = new ListNode(curr.val);
+        head = head.next; // keep loop going 
+    }
+    return newNode.next;
+}
+
+// O(n) time complexity. O(n) space as well - stack + linked list. 
+
+
+var reverseList = function(head) {
+    let curr = head,
+        prev = null, 
+        next = null; // curr = head.next;  
+    
+    while(curr !== null) {
+        
+        [curr.next, prev, curr] = [prev, curr, curr.next]      
+    }
+        
+    return prev;  
+} 
+// 
+
+
+
 // Warm up 
 // Iterative
 var reverseListIterative = function(head) {
