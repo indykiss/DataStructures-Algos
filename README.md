@@ -6,11 +6,12 @@ So I'm going to review concepts and think about how to solve problems.
 
 I'm using this repo to help keep track of the things I've learned and what I want to learn next. 
 
-It's a little unorganized at the moment, as I'm using a few resources vaguely structured by week, to learn core topics.
+## What am I studying now? 
+Highly recommended coding interview university: 
+https://github.com/jwasham/coding-interview-university
 
 
-
-## Resources I've covered:
+## Resources I've covered, in no particular order:
 - InterviewCake 
 - Leetcode
 - Hackerrank 
@@ -19,19 +20,15 @@ It's a little unorganized at the moment, as I'm using a few resources vaguely st
 - Cracking the Coding Interview (need to complete)
 - Company specific study sheets (parallels hackerrank/ leetcodes)
 - Udemy's The Coding Interview Bootcamp: Algos + Data structures by Stephen Grider
+- Harvard's online CS50x course 2020
 
 
 
 ### To- dos! 
-https://github.com/jwasham/coding-interview-university
-
 https://github.com/donnemartin/system-design-primer
 
 
 
 ### Lower priority to-dos! 
 https://github.com/lolapriego/coursework
-
-Harvard CS50: https://www.youtube.com/watch?v=y62zj9ozPOM&list=PLhQjrBD2T3828ZVcVzEIhsHVgjANGZveu 
-
 https://github.com/orrsella/soft-eng-interview-prep
