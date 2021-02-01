@@ -16,7 +16,7 @@
 
 ---------------------------------------------------------------------
 
-## The Daily Plan
+## The Plan
 
 - Practice & review: Start simple for quick confidence then build up
     - Strings 
@@ -42,9 +42,15 @@
         - Heapsort 
         - Fast review of bubble & insertion 
     - Recursion 
-    - Dynammic Programming  
+    - Dynamic Programming  
     - Bitwise operations 
     - Big O (review as I go along)
+
+
+Daily Plan for Feb:
+
+- Spend 1-2 focused hours a day studying the above topics roughly in order. Since it's focused, I can spend only 1-2 hrs. If I'm not focused, then I should up to 3 max. 
+    - Don't feel too out of sorts. Jan was v busy & Dec was productive. 
 
 ---------------------------------------------------------------------
 

@@ -1,6 +1,4 @@
 
-
-
 ## Dynammic programming 
 Algorithmn technique that solves an optimization problem by breaking it down into simpler subproblems. Then find the optimal way to solve the subproblems. If the solutions for the subproblems are optimal, then the solution for the overall problem is also optimal. 
 
