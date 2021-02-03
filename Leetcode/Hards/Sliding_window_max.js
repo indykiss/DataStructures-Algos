@@ -74,6 +74,4 @@ function maxSlidingWindow(nums, k) {
             res.push(nums[q[0]]);
         }
     }
-
-
 }
