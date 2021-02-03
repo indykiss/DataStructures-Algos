@@ -8,9 +8,40 @@ Output: [[1,6],[8,10],[15,18]]
 Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
 
 
-Sort! Takes O(n logn)
+Strategy 1:  O(n log n) bc sort
+- Sort by starting times
+- Iterate through intervals. If start time of 
+second meeting is less than end time of 1st meeting, 
+merge them by picking earliest start + latest end
+and replace with new overlapped dmeeting 
+- then go backwards once so we catch the new merged 
+
+
+Edge:
+- No overlaps 
 */
 
+// [[1,4],[4,5]]   =>  [[1,5]]
+
+
+var merge = function(intervals) {
+    intervals = intervals.sort((a,b) => a[0] - b[0]); 
+    
+    for(let i = 1; i < intervals.length; i++) {
+        let curr = intervals[i],
+            prev = intervals[i-1]; 
+        
+        if(curr[0] <= prev[1]) {
+            let x = Math.min(curr[0], prev[0]),
+                y = Math.max(curr[1], prev[1]); 
+        
+            intervals[i] = [x, y];  // add new merged interval
+            intervals.splice(i-1, 1); // delete prev now that we've merged
+            i--; // go back 1 so we can look at this new interval
+        }
+    }
+    return intervals;
+}
 
 
 // 20 mins. Forgot backtracking part AGAIN 
