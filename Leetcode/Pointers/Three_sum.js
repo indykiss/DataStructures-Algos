@@ -36,6 +36,85 @@ implementing helper and within the check for when pairSum == targetSum;
 
 */
 
+/*
+Goal: find ALL UNIQUE triplets within the arr of nums
+
+[-2, 2, 0, -1, 1, 0, 9]
+[[-2, 2, 0], [-1, 1, 0]]
+
+Target sum: 0 
+
+Strategy 2: O(n^3) time. O(n) space, worst case saving all nums in arr 
+- Nested 3 for loops to find triplets. Looks at EVERY possible 
+triplet pairing 
+
+Strategy 1: TBD
+- Seen hash table that tracks 1 num 
+- 2 pointers tracking 2 nums
+
+
+* Strategy 3: O(n log n) time at least. O(n) space * 
+- Var: triplets arr
+- Sort, asc order
+- Check the 1st 2 nums and the last num in the arr. 
+    - Create logics : O(n * log n) ???? 
+        - If sumOf3 < 0, increment 2nd pointer
+        - If sumOf3 > 0, decrement right most pointer
+        - If sumOf3 === 0, add to triplets arr 
+- Handle skipping the nums we've seen 
+
+Edge:
+- Zero triplets 
+- Arr has fewer than 3 nums 
+*/
+
+// [-2, 0, 2] => [[-2,0,2]]
+function threeSum(nums) {
+    if(nums.length < 3) return [];
+
+    let triplets = [];
+    
+    nums = nums.sort((a,b) => a-b);  
+    
+    for(let i = 0; i < nums.length - 2; i++) {
+        let curr = i, 
+            left = i + 1,
+            right = nums.length - 1; 
+        
+        if(nums[i] === nums[i-1] && i > 0) {
+            continue;
+        }
+        
+        while(left < right) {
+            let sumOf3 = nums[curr] + nums[left] + nums[right];
+            
+            // We've found a triplet
+            if(sumOf3 === 0) {
+                triplets.push([nums[curr], nums[left], nums[right]]);
+                left++; 
+                right--; 
+                
+                // [-1,-1,1,1,1,1,0,0] => only one [-1,1,0]
+                while(nums[left] === nums[left-1]) {
+                    left++;
+                }
+                while(nums[right] === nums[right+1]) {
+                    right--;
+                }
+            }
+            
+            else if(sumOf3 > 0) {
+                right--; 
+            }
+            else if(sumOf3 < 0) {
+                left++;
+            }   
+        }
+    }
+
+    return triplets;   
+} 
+
 
 
 // 35 mins. close but not quite. needed to look at solution. Nov 
