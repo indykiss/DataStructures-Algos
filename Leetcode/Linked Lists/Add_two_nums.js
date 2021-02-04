@@ -13,7 +13,63 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 Input: l1 = [2,4,3], l2 = [5,6,4]
 Output: [7,0,8]
 Explanation: 342 + 465 = 807.
+
+
+Strategy: O(max(n or m), n = l1 size, m = l2 size, time & space complexity. 
+- Vars: 2 pointers (aimed at each linked list), carry, head & curr for new linked list 
+- Iterate thru both pointers || carry is true (to handle cases of adding a 1 at the front of the whole new linked list)
+    - Val1/ val2 = pointer.val OR 0 if linked list is empty 
+    - Sum = val1 + val2. Check if carry, add 1 
+    - Change carry depending on sum >= 10
+    - Make sure sum is 1 digit, not >= 10 before adding it to LL 
+    - Make a new linked list with sum. 
+    - Increment our new linked list node (curr = curr.next)
+    - Increment point1 and point2 if they exist 
+- Return head.next (we started head as null so ignore that); 
+
+Edge cases/ considerations:
+- Possible to get 0 
+- Carry 
+- Empty linked lists 
+- Negative nums? 
 */
+
+
+var addTwoNumbers = function(l1, l2) {
+    let point1 = l1, 
+        point2 = l2, 
+        carry = false, 
+        head = new ListNode(null), 
+        curr = head;    
+    
+    while(point1 || point2 || carry) {
+        // Handle cases where 1 LL ends before prev
+        let val1 = point1 ? point1.val : 0; 
+        let val2 = point2 ? point2.val : 0;
+        let sum = val1 + val2;
+        
+        if(carry) {
+            sum += 1;
+        }
+            
+        if(sum >= 10) {
+            carry = true;
+        } else {
+            carry = false;
+        }
+        
+        sum = sum % 10; // get rid of leading 1s
+        
+        curr.next = new ListNode(sum);
+        curr = curr.next;
+                
+        if(point1) point1 = point1.next; 
+        if(point2) point2 = point2.next; 
+    }
+    return head.next;
+}
+
+
 
 
 var addTwoNumbers = function(l1, l2) {
