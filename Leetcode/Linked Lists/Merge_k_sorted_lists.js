@@ -4,6 +4,66 @@
 Merge k sorted linked lists and return it as one sorted list.
 Analyze and describe its complexity.
 
+
+/*
+Strategy: O(k * n) time where k is num of linked lists and 
+n is the total number of nodes in 2 lists, O(1) space, not saving extra space:
+
+- Use mergeTwoLists to merge 2 lists
+- Iterate through K lists, merging 2 at a time. 
+    - curr & prev
+    - lists[i] = new merged list 
+    - remove the prev (unshift)
+    - go back 1 in the k list so we merge our newly created 
+    list in the next round
+*/
+
+var mergeKLists = function(lists) {
+    if(lists.length === 0) return null;
+    
+    for(let i = 1; i < lists.length; i++) {
+        let curr = lists[i],
+            prev = lists[i-1]; 
+        
+        let newlyMergedList = mergeTwoLists(prev, curr); 
+        
+        lists[i] = newlyMergedList; 
+        lists.splice(i-1, 1); // remove prev bc its extra copy 
+        i--;
+    }
+    return lists[0];
+};
+
+var mergeTwoLists = function(l1, l2) {
+    let p1 = l1, 
+        p2 = l2,
+        l3 = new ListNode(null), 
+        curr = l3;
+    
+    while(p1 && p2) {
+        if(p1.val <= p2.val) {
+            curr.next = new ListNode(p1.val);
+            p1 = p1.next; 
+        } else {
+            curr.next = new ListNode(p2.val);
+            p2 = p2.next; 
+        }
+        curr = curr.next;
+    }
+    
+    // Catch the rest of the other linked list if 1 is shorter
+    curr.next = p1 || p2;
+    
+    return l3.next; 
+};
+
+
+
+
+
+
+
+/*
 Strategy:
 - Create a helper than manages the comparison of elements within 2 lists. 
   - Parameter is 2 lists. We make a temp node that creates the head 
