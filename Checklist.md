@@ -19,12 +19,16 @@
 ## The Plan
 
 - Practice & review: Start simple for quick confidence then build up
-    - Strings 
-    - Arrays
+- [X] have been reviewed leading up to Mon Feb 8. Need to briefly touch the below topics
+for that time frame. 
+Delete the [X]s on Monday. 
+
+    - Strings [X]
+    - Arrays [X]
     - Hash tables
     - Stacks 
     - Queues 
-    - Linked Lists
+    - Linked Lists [X]
     - Trees:
         - BST 
         - Heap / priority queue (type of tree)
