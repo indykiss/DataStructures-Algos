@@ -17,6 +17,30 @@ As we're just returning the largest sum, we don't need to track
 what the arr eles equal that largest sum
 */
 
+/*
+Stradegy: Greedy, O(n)time, O(1) space
+- maxSum, tempSum to hold 
+- Iterate
+    - Update vars within loop:
+    - maxSum = math.max(maxSum, tempSum)
+    - tempSum = Math.max(currNum, currNum + tempSum)
+*/
+
+var maxSubArray = function(nums) {
+    let tempSum = nums[0], 
+        maxSum = nums[0];
+    
+    for(let i = 0; i < nums.length - 1; i++) {
+        let curr = nums[i];
+        
+        tempSum = Math.max(curr, curr + tempSum);
+        maxSum = Math.max(tempSum, maxSum);
+    }
+    return maxSum;
+};
+
+
+
 
 var maxSubArray = function(nums) {
     let maxSum = nums[0],
