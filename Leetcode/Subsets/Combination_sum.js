@@ -46,8 +46,32 @@ Strategy: Recursive:
 
 */
 
-// Nov practice 30 mins 
 var combinationSum = function(candidates, target) {
+    let res = []; 
+    
+    recurseFinder(sum = 0, arr = [], idx = 0); 
+    
+    return res;
+    
+    function recurseFinder(sum, arr, idx) {
+        // base 
+        if(sum === target) res.push(arr); 
+        if(sum > target) return; 
+        
+        // recursive action, call every 
+        // possible subArr
+        for(let i = idx; i < candidates.length; i++) {
+            let updatedSum = sum + candidates[i]; 
+            let updatedArr = [...arr, candidates[i]]; 
+            
+            recurseFinder(updatedSum, updatedArr, i);
+        }
+    }
+} 
+
+
+// Nov practice 30 mins 
+var combinationSu = function(candidates, target) {
     let res = []; 
     
     recurse(sum = 0, arr = [], idx = 0); 
@@ -74,7 +98,7 @@ var combinationSum = function(candidates, target) {
 
 // Correct and intuitive. Do again. 20 mins, looked
 // at correct solution 
-var combinationSum = function(candidates, target) {
+var combinationSu = function(candidates, target) {
     let res = [];
     
     function helper(sum, arr, idx) {
@@ -101,7 +125,7 @@ var combinationSum = function(candidates, target) {
 
 
 // VERY wrong but I tried brute force. 30 mins. 
-var combinationSum = function(candidates, target) {
+var combinationSu = function(candidates, target) {
     
     let subsets = [[candidates[0]]],
         res = [];
