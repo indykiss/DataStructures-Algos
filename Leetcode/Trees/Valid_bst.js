@@ -3,6 +3,15 @@
 
 // Given a binary tree, check if it is a valid binary search tree (BST).
 
+var isValidBST = function(root, upper, lower) {
+    if(!root) return true; 
+    
+    if(root.val <= lower) return false;
+    if(root.val >= upper) return false; 
+    
+    return isValidBST(root.left, root.val, lower) &&
+        isValidBST(root.right, upper, root.val);
+} 
 
 // 8 mins, warm up. 1 off by 1 mistake 
 var isValidBST = function(root, upper, lower) {
