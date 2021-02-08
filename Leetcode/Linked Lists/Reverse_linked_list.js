@@ -14,7 +14,36 @@ Output: 5->4->3->2->1->NULL
 
 - Iterate with a prev & null 
 - Recurse
+
+
+Strategy: Time & space, O(n) n is total number of nodes in LL
+- Use a stack, iterate thru the linked list, add eles to 
+the stack as we go. 
+- After we iterate, the stack is in the reversed order that we're looking for.
+- Make a new linked list, take the popped ele in the stack, add it as a new node 
 */
+
+var reverseList = function(head) {
+    let stack = [],
+        reversedList = new ListNode(null);
+    
+    while(head !== null) {
+        stack.push(head); // curr or curr.val ? 
+        head = head.next; 
+    }
+    
+    head = reversedList;
+    
+    while(stack.length !== 0) {
+        let ele = stack.pop();
+        
+        head.next = new ListNode(ele.val);
+        head = head.next; 
+    }
+    return reversedList.next; // ?  
+} 
+
+
 
 
 var reverseList = function(head) {
