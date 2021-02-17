@@ -17,18 +17,16 @@
 ---------------------------------------------------------------------
 
 ## The Plan
-
 - Practice & review: Start simple for quick confidence then build up
-- [X] have been reviewed leading up to Mon Feb 8. Need to briefly touch the below topics
 for that time frame. 
-Delete the [X]s on Monday. 
+- Lots of easy leetcodes
 
-    - Strings [X]
-    - Arrays [X]
+    - Strings
+    - Arrays 
     - Hash tables
     - Stacks 
     - Queues 
-    - Linked Lists [X]
+    - Linked Lists 
     - Trees:
         - BST 
         - Heap / priority queue (type of tree)

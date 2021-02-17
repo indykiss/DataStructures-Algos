@@ -28,6 +28,27 @@ Edge case:
 */
 
 
+var mergeTwoLists = function (l1, l2) {
+    let pt1 = l1,
+      pt2 = l2,
+      l3 = new ListNode(null),
+      curr = l3;
+  
+    while (pt1 && pt2) {
+      if (pt1.val <= pt2.val) {
+        curr.next = new ListNode(pt1.val);
+        pt1 = pt1.next;
+      } else {
+        curr.next = new ListNode(pt2.val);
+        pt2 = pt2.next;
+      }
+      curr = curr.next;
+    }
+    // if LL are uneven length, add to rest
+    curr.next = pt1 || pt2;
+    return l3.next;
+  };
+
 
 // Recursive:
 // Time & space: O(m + n) 
