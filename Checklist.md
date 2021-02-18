@@ -19,7 +19,7 @@
 ## The Plan
 - Practice & review: Start simple for quick confidence then build up
 for that time frame. 
-- Lots of easy leetcodes
+- Lots of easy leetcodes 
 
     - Strings
     - Arrays 
@@ -52,17 +52,15 @@ for that time frame.
 Daily Plan for Feb:
 
 - Spend 1-2 focused hours a day studying the above topics roughly in order. Since it's focused, I can spend only 1-2 hrs. If I'm not focused, then I should up to 3 max. 
-    - Don't feel too out of sorts. Jan was v busy & Dec was productive. 
+- Don't feel too out of sorts. Jan was v busy & Dec was productive. 
 
 ---------------------------------------------------------------------
 
 
 ## How computers process a program && Big O:
-    - [ ] [How CPU executes a program (video)](https://www.youtube.com/watch?v=XM4lGflQFvA)
-    - [ ] [Harvard CS50 - Asymptotic Notation (video)](https://www.youtube.com/watch?v=iOq5kSKqeR4)
-    - [ ] [Big O Notations (general quick tutorial) (video)](https://www.youtube.com/watch?v=V6mKVRU1evU)
-    - [ ] [A Gentle Introduction to Algorithm Complexity Analysis](http://discrete.gr/complexity/)
-    - [ ] [Cheat sheet](http://bigocheatsheet.com/)
+    - [X] [How CPU executes a program (video)](https://www.youtube.com/watch?v=XM4lGflQFvA)
+    - [X] [Harvard CS50 - Asymptotic Notation (video)](https://www.youtube.com/watch?v=iOq5kSKqeR4)
+    - [X] [Cheat sheet](http://bigocheatsheet.com/)
 
 
 - ### Arrays
