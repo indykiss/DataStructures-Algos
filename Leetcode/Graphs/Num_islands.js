@@ -50,6 +50,41 @@ As we find ones, add to queue.
 Space: O(1) bc just tracking variables and an arr. 
 Time: O(n^2) because we're doing a nested loop
 */
+
+// Time: O(m * n), m = cols and n = rows. O(1) space
+var numIslands = function(grid) {
+    let numOfIslands = 0; 
+    
+    for(let row = 0; row <= grid.length - 1; row++) {
+        for(let col = 0; col <= grid[0].length - 1; col++) {
+            if(grid[row][col] === "1") {
+                bfs(row, col, grid); 
+                numOfIslands++; 
+            }
+        }
+    }
+    return numOfIslands; 
+};
+function bfs(row, col, grid) {
+    let queue = [];
+    queue.push([row, col]);
+    
+    while(queue.length) {
+        let [x, y] = queue.pop(); 
+        let dirs = [[0, 1], [0, -1], [-1,0], [1,0]];
+        grid[x][y] = "0" // we dont want to double count
+        
+        dirs.forEach(dir => {
+            let newX = dir[0] + x,
+                newY = dir[1] + y;
+            
+            if(newX >= 0 && newY >= 0 && newX < grid.length && newY <= grid[0].length && grid[newX][newY] === "1"){
+                queue.push([newX, newY]);
+            }  
+        })   
+    }
+}
+
 var numIslands = function(grid) {
     let countOfIslands = 0;
     
