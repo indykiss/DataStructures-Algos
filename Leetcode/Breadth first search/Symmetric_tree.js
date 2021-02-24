@@ -23,6 +23,21 @@ But the following [1,2,2,null,3,null,3] is not:
 Follow up: Solve it both recursively and iteratively.
 */
 
+// practice 
+var isSymmetric = function(root) {
+    
+    return mirrorCheck(root, root);
+    
+    function mirrorCheck(left, right) {
+        
+        if(!left && !right) return true;
+        if(!left || !right) return false; 
+
+        return mirrorCheck(right.left, left.right) && mirrorCheck(left.right, right.left) && (left.val === right.val);           
+    }
+};
+
+
 var isSymmetric = function(root) {
 
     return isMirror(root, root);
