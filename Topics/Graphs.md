@@ -109,3 +109,19 @@ This will help us decide which of the two to use.
 
 Are we looking for a solution that would needs a first in, first out (queue! therefore breadth) OR a last in, last out
 (stack! therefore depth). Are we visiting nodes in the order we see them (queue) or the last seen node first (stack)? 
+
+
+## Dijkstra Algorithm: Basics- need to run through 
+
+It is used to find the shortest path between a node/vertex 
+(source node) to any (or every) other nodes/vertices 
+(destination nodes) in a graph. A graph is basically an 
+interconnection of nodes connected by edges. 
+
+
+Solution for shortest path algorithm
+1. Convert problem to its graph equivalent.
+2. Assign cost to vertices.
+3. Calculate minimum cost for neighbors of selected source.
+4. Select next vertex with smallest cost from the unvisited list.
+5. Repeat step 4 for all the remaining unvisited nodes.

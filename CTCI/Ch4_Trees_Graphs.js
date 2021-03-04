@@ -102,8 +102,30 @@ var isBalanced = function(node) {
     }
 }
 
+
 // Runs in O(N) time and O(log N) space
 
+
+// Same Q: leetcode
+// O(n) time and O(h) space
+var isBalanced = function(root) {
+    let balanced = true;
+
+    function findHeight(root) {
+        if(!root) return 0; 
+        
+        let leftHeight = findHeight(root.left),
+            rightHeight = findHeight(root.right);
+    
+        let heightDiff = Math.abs(leftHeight - rightHeight); 
+
+        if(heightDiff > 1) balanced = false;
+        return Math.max(rightHeight, leftHeight) + 1;
+    }
+    
+    findHeight(root);
+    return balanced;
+};
 
 /* OK but inefficient:
 var balanced = function(root) {
