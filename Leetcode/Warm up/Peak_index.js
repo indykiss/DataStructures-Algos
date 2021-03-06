@@ -18,6 +18,20 @@ Highest peak definition is the highest number's ith that isn't
 the first or last number
 */
 
+// practice, march 
+var peakIndexInMountainArray = function(arr) {
+    for(let i = 1; i < arr.length; i++) {
+        let prev = arr[i-1], 
+            curr = arr[i], 
+            next = arr[i+1];
+        
+        if(curr > prev && curr > next) {
+            return i; 
+        }
+    }
+    return null; 
+}
+
 var peakIndexInMountainArray = function(arr) {
     let greatest = 0,
         peak = 0;
@@ -30,6 +44,7 @@ var peakIndexInMountainArray = function(arr) {
     }
     return peak;
 };
+
 
 
 /*
