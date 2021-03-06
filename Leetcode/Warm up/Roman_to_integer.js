@@ -59,3 +59,56 @@ var romanToInt = function(s) {
     }
     return sum;
 };
+
+
+// Opposite: Integer to Roman 
+
+/*
+Strategy:
+- Make a mapping that has our traditional rom: int match 
+and the edge cases
+- Iterate thru the map and check if our num is equal to 
+any of the keys. EX: If num === 100, just return C, done. Break
+- If the num is larger than the current rom num, let's 
+add the rom num to our res and decrement this amount from our num
+- Then keep going until we've processed all the nums in rom mapping 
+
+*/
+
+var mapping = {
+    'M': 1000,
+    'CM': 900,
+    'D': 500,
+    'CD': 400,
+    'C': 100,
+    'XC': 90,
+    'L': 50,
+    'XL': 40,
+    'X': 10,
+    'IX': 9,
+    'V': 5,
+    'IV': 4,
+    'I': 1   
+}
+
+var intToRoman = function(num) {
+    let res = ""; // return res in str 
+
+    for(let roman in mapping) {
+        if(num === 0) break;
+        if(num === mapping[roman]) {
+            res += roman; 
+            break; 
+        }
+        while(num >= mapping[roman]) {
+            res += roman; 
+            num -= mapping[roman];
+        }
+    }
+    return res;
+};
+
+
+
+
+
