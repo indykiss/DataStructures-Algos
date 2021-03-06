@@ -36,30 +36,51 @@ const exInput = [
   // loop thru final list of overlaps, find
   // non-overlaps
   
-  //this isn't working either
+  //Off by 1 or 2 erorr here but need to move on 
   function findAvails(input) {
-    let hours = Array(24).fill(0);
+    let hours = Array(24).fill(0),
+        res = []; 
   
-    for(let i = 0; i < input.length; i++) {
+    for (let i = 0; i < input.length; i++) {
       let sched = input[i];
-      for(let j = 0; j < input[i].length; j++) {
+      for (let j = 0; j < input[i].length; j++) {
         let meeting = input[i][j],
-            start = meeting[0],
-            end = meeting[1]; 
+          start = meeting[0],
+          end = meeting[1];
   
-        for(let k = start; k <= end; k++) {
-          if(hours[k] === 0) hours[k] = 1; 
+        for (let k = start; k <= end; k++) {
+          if (hours[k] === 0) hours[k] = 1;
         }
       }
     }
-    
-    let avails = []; 
   
-    for(let m = 0; m < hours.length; m++) {
-      if(hours[m] === 0) avails.push(m);
+    let avails = [],
+        ranges = [], 
+        tempRange = []; 
+    for (let m = 0; m < hours.length; m++) {
+      if (hours[m] === 0) avails.push(m);
     }
-    return avails;
+    
+    for(let m = 0; m < avails.length; m++) {
+      if(m === 0 || avails[m-1] + 1 === avails[m]) {
+        tempRange.push(avails[m]);
+      } else {
+        ranges.push(tempRange); 
+        tempRange = [];
+      }
+    }
+  
+    if(tempRange.length > 0) ranges.push(tempRange);
+  
+    for(let range of ranges) {
+      res.push([range[0] + 1, range[range.length - 1]]); 
+    }
+  
+    return res;
+  
   }
+  
+  console.log(findAvails(exInput))
   
   
   // // merge meetings simple 
