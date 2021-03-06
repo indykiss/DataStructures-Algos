@@ -23,6 +23,28 @@ Given a binary tree, return the level order traversal of its nodes' values.
 */
 
 
+// March, practice interview w/ Dom, got very stuck 
+function printTreeLevels(root) {
+    let queue = [{node: root, level: 1}], 
+        currLvl = 1; 
+    
+    while(queue.length > 0) {
+        let ele = queue.shift(); 
+
+        if(ele.level !== currLvl) {
+            console.log("---") // print new line 
+            currLvl = ele.level; // track what lvl we are on 
+        }
+        console.log(ele.node.value);
+        
+        // add left & right to the queue 
+        if(ele.node.left) queue.push({node: ele.node.left, level: currLvl + 1});
+        if(ele.node.right) queue.push({node: ele.node.right, level: currLvl + 1});
+    }
+}
+
+
+
 // Oct, try again. Grok. FB/ Bloomb
 var levelOrder = function(root) {
     if(!root) return [];
