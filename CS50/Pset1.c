@@ -58,8 +58,32 @@ int main(void)
 
 }
 
+/* Algoexpert: ways to make change using coin denominations. Adding here so all in 1 file
 
+Given an array of possible denominations and a target amount of money needed
+to make change for, how many ways can we make chng?
+*/
 
+function numberOfWaysToMakeChange(n, denoms) {
+  const waysToMakeChange = Array(n+1).fill(0);
+	waysToMakeChange[0] = 1;  // only 1 way to make change of $0
+	
+	for(let denom of denoms) {
+		// build up, based on prev 
+		// check for each denomination, how many ways 
+		// we can make chnge at every 0 - n point
+		for(let amount = 1; amount < n +1; amount++) {
+			// as we continue building, lets say oh hey
+			// is the $$$ we need less than the denomination?
+			if(denom <= amount) {
+				// if so, cool, lets update this arr
+				// by adding from prev
+				waysToMakeChange[amount] += waysToMakeChange[amount - denom];
+			}
+		}
+	}
+	return waysToMakeChange[n]
+}
 
 
 #include <stdio.h>
