@@ -8,6 +8,27 @@ You have a sorted aray and want to find a target number.
 */
 
 
+function binarySearch(arr, target) {
+
+	arr = arr.sort((a,b) => a-b); 
+
+	let start = 0, 
+		end = arr.length - 1; 
+
+	while(start <= end) {
+		let mid = Math.floor(start + (end-start) / 2); 
+		if(target === arr[mid]) {
+			return mid; 
+		}
+		if(target > arr[mid]) {
+			start = mid + 1; 
+		} else if(target < arr[mid]) {
+			end = mid -1; 
+		}
+	}
+	return -1; // dont have target in arr 
+}
+
 
 
 
@@ -46,7 +67,6 @@ function binarySearch(arr, target) {
 
 
 
-
 // O(log n) time and O(1) space
     // Searches are usually less than O(n)
     // since we're usually looking at less than the number of 
@@ -72,7 +92,6 @@ function binarySearchHelper(array, target, lowerBound, upperBound) {
 	}
 	return -1;
 }
-
 
 
 

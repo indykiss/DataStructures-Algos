@@ -25,6 +25,68 @@ dictionary than the prev[i] letter, then return false.
 - At the end if we never return false, return true
 */
 
+
+
+/*
+Strategy: O(n * m), n is num of words in arr and m is longest word in arr time
+O(k) where k is length of dictionary
+- Iterate thru arr
+  - ID word1 and word2 to compare 
+  - helper function that return T or F on if in alphabetical order 
+  - if false, return false, if true continue 
+- After loop, return true if never false 
+
+- Helper:
+  - Make dictionary become a hash dict where {letter: position}
+  - Iterate, while smallest word length 
+    - Look at ith letter for word1 and word2
+    - If hash[word1[i]] > hash[word2[i]], return false 
+    - if hash[word1[i]] === hash[word2[i]]] continue loop to look at next letter in word
+    - if hash[word1[i]] < hash[word2[i]] return true; 
+*/
+var isAlienSorted = function(input, dictionary) {
+    let hash = {}; 
+
+    for(let i = 0; i < dictionary.length; i++) {
+      let letter = dictionary[i];
+      hash[letter] = i; // assuming no dupe letters in dictionary
+    }
+
+    for(let i = 1; i < input.length; i++) {
+      let word1 = input[i-1],
+          word2 = input[i];
+
+      if(!comparer(word1, word2, hash)) return false; 
+    }
+    return true; 
+}
+
+function comparer(word1, word2, hash) {
+    let smallestWordLen = Math.min(word1.length, word2.length); 
+
+    for(let j = 0; j < smallestWordLen; j++) {
+      let pos1 = hash[word1[j]]; // tells us position of word1's letter at j 
+      let pos2 = hash[word2[j]]; // ditto for word2
+
+      if(pos1 > pos2) { // 1st word's letter comes later in the dictionary
+        return false; 
+      } if(pos1 < pos2) { // 1st word comes be4 2nd word
+        return true; 
+      } 
+    }
+
+  // if never return true or false, word1 == word2
+  if(word1 === word2) return true; 
+  // deal with unequal word lengths
+  if(word1.length > word2.length) return false;
+  if(word1.length < word2.length) return true;
+}
+
+
+
+
+
+
 // Not great :( 
 // Needed 5 hints, still didnt get all tests to pass but fine
 var isAlienSorted = function(words, order) {
