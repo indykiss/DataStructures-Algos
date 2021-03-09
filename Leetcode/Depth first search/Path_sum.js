@@ -24,6 +24,29 @@ Strategy:
 
 */
 
+/*
+DFS:
+- have a sum tracking the nodes' vals up in a search 
+- base case: if our sum === targetSum, and we're at 
+the end of a branch, return true 
+- recursive: return haspathsum(root.left, sum) || 
+haspathsum(root.right, sum)
+
+Edge:
+- Guaranteed that a branch will have target?
+- Multiple branches have target? Ok, just return true after 1st 
+*/
+
+// march practice 
+function hasPathSum(root, targetSum) {
+    if(!root) return false;
+    
+    if(!root.left && !root.right && root.val === targetSum) {
+        return true;
+    }
+    
+    return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
+}
 
 var hasPathSum = function(root, sum) {
     if(!root) return false;
