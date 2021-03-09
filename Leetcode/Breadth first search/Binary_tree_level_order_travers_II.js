@@ -24,6 +24,34 @@ return its bottom-up level order traversal as:
 
 */
 
+// practice bfs, march
+var levelOrder = function(root) {
+    if(!root) return [];
+
+    let queue = [],
+        res = []; 
+    
+    queue.push(root); 
+    
+    while(queue.length > 0) {
+        let lvl = [], 
+            len = queue.length; 
+        
+        for(let i = 0; i < len; i++) {
+            let curr = queue.shift();
+            
+            lvl.push(curr.val); 
+            
+            if(curr.left) queue.push(curr.left); 
+            if(curr.right) queue.push(curr.right); 
+        }
+        
+        res.push(lvl); 
+    }
+    return res;
+};
+
+
 // Oct, fb/ bloomb. Grokk/ LC
 var levelOrderBottom = function(root) {
     if(!root) return [];
