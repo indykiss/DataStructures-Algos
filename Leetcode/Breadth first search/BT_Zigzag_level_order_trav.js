@@ -33,6 +33,39 @@ queue.length, occupying the lvl
 
 */
 
+// practice, march, not great, needed like 4 hints 
+var zigzagLevelOrder = function(root) {
+    if(root === null) return [];
+   
+    let queue = [], 
+       zig = false,
+       res = []; 
+    
+    queue.push(root);
+    
+    while(queue.length > 0) {
+        let lvl = [],
+            len = queue.length; 
+        
+        // create the lvl, either zigging or zagging
+        for(let i = 0; i < len; i++) {
+            let currChild = queue.shift();
+            
+            if(zig === true) {
+                lvl.unshift(currChild.val);
+            } else {
+                lvl.push(currChild.val); 
+            }
+            
+            if(currChild.left) queue.push(currChild.left); 
+            if(currChild.right) queue.push(currChild.right); 
+        }
+        res.push(lvl);        
+        zig = !zig;
+    }
+    return res;
+};
+
 
 // Nov, practice. Not great, 30 mins. 
 var zigzagLevelOrder = function(root) {
