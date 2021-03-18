@@ -2,18 +2,21 @@
 
 # ----------------------------------------------#
 
-* Onsite on April 1st 
+* Onsite on ? June ? I paused process 
 
 + 2 technical phone screens Feb/March.ish
 
 # ----------------------------------------------#
 
 
+# March 
+
+- From Dec - March, +30 new algos, but that's ok. Dec-Feb was tough 
+
 
 # February To-dos:
-- The 'coding interview university' thing?
-- Leetcode? Algoexpert? IDK. Just make progress 
 - Work with Dom to work through practicing algos 
+- Couple interviews (5 with 1 company, 2 with another + 1 in March)
 
 
 # January:
