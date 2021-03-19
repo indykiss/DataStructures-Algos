@@ -43,6 +43,35 @@ return the set from the above two sets with higher profit
 
 */
 
+/*
+Knapsack practice 
+
+Given a list of items with values and weights, as well as 
+a max weight, find the maximum value you can generate from 
+items where the sum of the weights is less than the max.
+
+items = {(w:1, v:6), (w:2, v:10), (w:3, v:12)}
+maxWeight = 5
+knapsack(items, maxWeight) = 22
+*/
+
+
+function knapSack(items, maxWeight, currIdx = 0) {
+
+  // base case 
+  if(maxWeight <= 0) return 0; 
+
+  let profit = 0; 
+  if(items[currIdx] <= capacity) {
+    profit = items[currIdx] + knapSack(items, maxWeight - items[currIdx], currIdx + 1); 
+  }
+
+  let possibleProfit = knapSack(items, maxWeight, currIdx + 1); 
+
+  return Math.max(profit, possibleProfit); 
+}
+
+
 
 let solveKnapsack = function(profits, weights, capacity) {
     function knapsackRecursive(profits, weights, capacity, currentIndex) {
