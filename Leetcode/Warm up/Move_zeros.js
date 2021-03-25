@@ -12,6 +12,16 @@ Loop through the arr, if it's zero push it to end of arr. And remove 0 from plac
 Else, do nothing.
 */
 
+var moveZeroes = function(nums) {
+    for(let curr = 0, lastNonZero = 0; curr < nums.length; curr++) {
+        if(nums[curr] !== 0) {
+            [nums[curr], nums[lastNonZero]] = [nums[lastNonZero], nums[curr]];
+            lastNonZero++; 
+        }
+    }
+    return nums;
+}
+
 
 // Qs: negatives? 0s are guaranteed? nums are guaranteed? 
 // any decimals? in place or ok to create new arr? 
