@@ -27,6 +27,30 @@ Strat:
     
 */
 
+// march, 6 mins, practice 
+var isValid = function(s) {
+    let dict = {
+        "(" : ")", 
+        "{" : "}",
+        "[" : "]"
+    }
+    
+    let validity = true, 
+        openers = []; 
+    
+    for(let char of s) {
+        if(dict[char]) {
+            openers.push(char);
+        } else {
+            let match = openers.pop(); 
+            
+            if(dict[match] !== char) {
+                return false; 
+            }
+        }
+    }
+    return openers.length > 0 ? false : true;
+} 
 
 // 12 mins. Nov. Easy. 
 var isValid = function(s) {

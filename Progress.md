@@ -19,7 +19,7 @@ reschedule back to being sooner depending on onsite #1
 
 
 # March : Do 1 system per day at least 
-- Grokking object oriented design as quick pre-course for system design 
+- [X] Grokking object oriented design as quick pre-course for system design 
     - Library, parking lot, ATM, Amazon, Facebook 
 - Going through Grokking the system design interview 
     - Web crawler, Search, Newsfeed, Messenger, Youtube/ Netflix, Twitter
