@@ -1,5 +1,4 @@
 
-
 # ----------------------------------------------#
 
 # Upcoming: 
@@ -23,7 +22,7 @@ reschedule back to being sooner depending on onsite #1
     - Library, parking lot, ATM, Amazon, Facebook 
 - Going through Grokking the system design interview 
     - Web crawler, Search, Newsfeed, Messenger, Youtube/ Netflix, Twitter
-    - Done: TinyURL, Instagram 
+    - Done: TinyURL, Instagram, Basics 
 - Light leetcoding to stay sharp 
 
 

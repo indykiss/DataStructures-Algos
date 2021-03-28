@@ -45,6 +45,10 @@ probably more efficient solutions, but would like to try this way 1st.
 - The brute force approach is to test all possibilities, which is O(n^2) time. So the question is whether or not I can beat that time.
 - The answer will contain n^2 items, so I must at least spend that amount of time.
 
+IF I can't figure out an optimal solution within ~5 mins, need to just do
+the brute force solution. 
+
+We can optimize later. 
 
 ###### Optimizing solution:
 
