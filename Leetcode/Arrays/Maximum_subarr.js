@@ -26,6 +26,22 @@ Stradegy: Greedy, O(n)time, O(1) space
     - tempSum = Math.max(currNum, currNum + tempSum)
 */
 
+// practice: 
+var maxSubArray = function(nums) {
+    let maxSeen = nums[0], 
+        tempSum = nums[0];
+    
+    for(let idx = 1; idx < nums.length; idx++) {
+        tempSum += nums[idx];
+        
+        tempSum = Math.max(tempSum, nums[idx]);
+        maxSeen = Math.max(maxSeen, tempSum)
+    }
+    
+    return maxSeen;
+};
+
+
 var maxSubArray = function(nums) {
     let tempSum = nums[0], 
         maxSum = nums[0];
@@ -38,8 +54,6 @@ var maxSubArray = function(nums) {
     }
     return maxSum;
 };
-
-
 
 
 var maxSubArray = function(nums) {
