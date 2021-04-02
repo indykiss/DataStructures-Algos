@@ -39,6 +39,61 @@ the gap between the 5th and 6th stone is too large.
 */
 
 
+/*
+Given a list of stones' positions, 
+check if frog can cross the river by 
+landing on the last stone. 
+
+Frog starts on 1st stone. 
+If last frog's jump was k units, the next
+jump must be k-1, k or k+1 units. 
+
+Frog can only jump forward. 
+
+Strategy:
+By working backwards, we can eliminate most possibilities because of the given constraints. 
+There's one advantage in particular we have when working backwards: we know we must end on 1 hop.
+
+Starting at the end of the array, 
+calculate the distance (dst) between the 
+current element (i) and each of the previous 
+elements (j) in the array:
+
+If dst is greater than j+1, that means we won't be able to end on 1 hop, even if we subtract 1 from every hop from i down to 0. We can immediately abort this path.
+
+At next step, the last dst used becomes our k -- so we know that k-1 <= dst <= k+1 must hold true. 
+
+If dst > k+1, we can immediately abort this path since dst will only increase as j decreases. 
+
+If dst < k-1, we should skip this iteration because dst falls outside of our required range, but we still continue down this path since dst will increase as j decreases.
+*/
+
+
+var canCross = function(stones) {
+    
+    function recursive(i, k) {
+        let prev = stones[i]; 
+        
+        for(let j = i - 1; j >= 0; j--) {
+            let dist = prev - stones[j]; 
+            // too far, frog in water
+            if(dist > j + 1) return false;
+            // if k > 0
+            if(k > 0) {
+                if(dist > k + 1) return false; 
+                if(dist < k - 1) continue;
+            }
+            if(recursive(j, dist)) {
+                return true;
+            }
+        }
+        return true;
+    }
+    // start at the end of the stones 
+    return recursive(stones.length - 1, 0);
+};
+
+
 
 var canCross = function(stones) {
     
