@@ -1,18 +1,18 @@
 
 
 # April plan:
-- 1 week: Finish up system design:
-    - Watch youtubes of Instagram + top 5 system design 
-    - Sys design extra credit: Commenting, Typeahead suggestion, privacy settings, proximity server, top N songs
+- Watch youtubes of Instagram + top 5 system design 
+    - Sys design extra credit: Commenting, privacy settings, proximity server, top N songs
     - 2 practice interviews with system design 
-- 1-2 weeks: LEETCODES! Heavy 
-    - 2 practice interviews with coding 
-
+- Coding : HEAVY on the mediums, warm up with easies
+    - Review things I've done
+    - Implement trie
 
 # March : Do 1 system per day at least 
 - Going through Grokking the system design interview 
-    -  Youtube/ Netflix, Web crawler, Search, Twitter
-    - Done: Newsfeed, Messenger, TinyURL, Instagram, Basics 
+    - Typeahead, Web crawler, Search
+    - Done: Newsfeed, Messenger, TinyURL, Instagram, Basics, 
+    Youtube/ Netflix 
 - Light leetcoding to stay sharp 
 - Grokking object oriented design as quick pre-course for system design 
     - Library, parking lot, ATM, Amazon, Facebook 
