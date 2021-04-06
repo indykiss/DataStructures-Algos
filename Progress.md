@@ -10,9 +10,9 @@
 
 # March : Do 1 system per day at least 
 - Going through Grokking the system design interview 
-    - Typeahead, Web crawler, Search
-    - Done: Newsfeed, Messenger, TinyURL, Instagram, Basics, 
-    Youtube/ Netflix 
+    - Web crawler, Search
+    - Done: Typeahead, Newsfeed, Messenger, TinyURL, Instagram, Basics, 
+    Youtube/ Netflix, 
 - Light leetcoding to stay sharp 
 - Grokking object oriented design as quick pre-course for system design 
     - Library, parking lot, ATM, Amazon, Facebook 
