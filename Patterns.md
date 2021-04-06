@@ -17,6 +17,16 @@ Ways to identify when to use the Two Pointer method:
 - Triplets that sum to zero (medium) / Two sum
 - Merge 2 sorted arrs 
 
+function twoPointer(arr, goal) {s
+  let left = 0; 
+
+  for(let right = 0; right < arr.length; right++) {
+    if(arr[left] + arr[right] === goal) {
+      return [left, right];
+    }
+  }
+}
+
 
 ## Two pointers w/ differing paces
 A pointer algorithm that uses two pointers which move through the array (or sequence/linked list) at different speeds. This approach is quite useful when dealing with cyclic linked lists or arrays.
@@ -49,6 +59,22 @@ How do you identify when to use the Merge Intervals pattern?
 - Find number of meeting rooms needed.
 - Merge intervals. 
 
+function mergeIntervals(intervals) {
+    intervals = intervals.sort((a,b)=> a[0] - b[0]);
+
+    for(let idx = 1; idx < intervals.length; idx++) {
+        let prev = intervals[idx-1],
+            curr = intervals[idx];
+
+        // IDs overlapping appointments
+        if(curr[0] < prev[1]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
 
 # Tree: BFS (queue, levels)
 When we need to traverse a tree in a level by
@@ -59,6 +85,23 @@ level order, use breadth first search. We use a queue to keep  track of all the 
 of a binary tree
 - Return the avg of each level in a BT 
 
+BFS: Use a queue to hold things 
+var search = function(root) {
+    let queue = [];
+    visit(root);
+    root.visited = true; 
+    queue.enqueue(root); // Add root to end of the queue
+
+    while(!queue.isEmpty) {
+        let r = queue.dequeue();
+        root.forEach(let n in r.adjacent) {
+            visit(n);
+            n.visited = true;
+            queue.enqueue(n);
+        }
+    }
+}
+
 
 # Tree: DFS (stack, paths)
 We use recursion, OR A STACK using iterative, to track all the previous (parent) nodes while traversing. This makes our space always O(H) where H is the height of the tree.  
@@ -66,6 +109,19 @@ We use recursion, OR A STACK using iterative, to track all the previous (parent)
 - Binary Tree Path Sum 
 - Find the root-leaf path that equals given sequence, or 
 equals target sum 
+
+
+DFS: Use a recursive stack to hold things
+var search = function(root) {
+    if(root == null) return;
+    visit(root);
+    root.visited = true; 
+    root.forEach(n in root.next) {
+        if(n.visited == false) {
+           search(n)
+        }
+    }
+}
 
 
 ## Swapping things:
@@ -93,6 +149,47 @@ The window starts from one element and slides over 1 element and with it the end
 - Maximum sum subarray of size ‘K’ (easy)
 - Longest substring with ‘K’ distinct characters (medium)
 
+// Finding max length of subs : 1 template
+function slidingWindow(arr, target) {
+  let l = 0, 
+      r = 0, 
+      maxLen = 0,
+      tempSum = 0;
+  
+  for (let r = 0; r < arr.length; r++) {
+    tempSum += arr[r];
+   
+    while (tempSum > target) {
+      tempSum -= arr[l];
+      l++;
+    }
+    
+    if (tempSum === target) {
+      maxLen = Math.max(r - l + 1, maxLen); // maxLen = 1
+    }
+  }
+  return maxLen;
+} 
+
+// 2nd template: 
+function smallest_subarray_with_given_sum(s, arr) {
+    let windowSum = 0,
+      minLength = Infinity,
+      windowStart = 0;
+  
+    for (windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+      windowSum += arr[windowEnd]; // add the next element
+      while (windowSum >= s) {
+        minLength = Math.min(minLength, windowEnd - windowStart + 1);
+        windowSum -= arr[windowStart];
+        windowStart += 1;
+      }
+    }
+  
+    if (minLength === Infinity) return 0;
+    return minLength;
+}
+
 
 # Top 'K' Elements 
 Use when we're asked to find the top/ smallest/ largest/ frequent K elements. Frequently asked pattern. 
@@ -101,6 +198,22 @@ The best DS that keeps track of K elements is a heap. So the Grokking pattern us
 
 - Find K largest numbers in an arr. 
 - Find K closest points to origin
+
+Using a heap, top K: 
+const Heap = require('./collections/heap'); // import heap DS
+
+function kClosestHeap(points, k) {
+    let res = [];
+    
+    let minHeap = new Heap([], null, (a,b) => distCalc(a) - distCalc(b)); 
+    
+    for(let idx = 0; idx < k; idx++) {
+        let root = minHeap.pop();
+        
+        res.push(root);
+    }
+    return res; 
+}
 
 
 # K-way Merge 
@@ -121,7 +234,7 @@ When we need to deal with permutations or combinations of a set of elements.
 Grokking goes over a breadth first way to handle these Qs. 
 
 - Find all possible subsets in an arr of eles
-- Generate parenthese
+- Generate parantheses
 
 
 # Modified Binary Search 
@@ -130,6 +243,29 @@ through it.
 
 - Start, end, midpt (math.floor(start + (end-start)/2)
 - Update start/ end based on where target is 
+
+function binarySearch(array, target) {
+	return binarySearchHelper(array, target, 0, array.length - 1)
+}
+
+// [3,4,5,6,7,8] target: 7
+function binarySearchHelper(array, target, lowerBound, upperBound) {
+	while(lowerBound <= upperBound) {
+		const mid = Math.floor((lowerBound + upperBound) / 2)
+		const aprox = array[mid];
+		// low: 3, up: 8 
+		// aprox: 6
+		if(aprox === target) {
+			return mid;
+		} else if(target < aprox) {
+			upperBound = mid - 1;
+		} else {
+			lowerBound = mid + 1;
+		}
+	}
+	return -1;
+}
+
 
 
 ## Cyclic sort 
@@ -175,8 +311,7 @@ Out of place algos are safer, but if we need to save time/space and won't use th
 ## Reverse a linked list 
 When we need to reverse a linked list, particularly in place, or any variation of reversing a linked list. 
 
-- Literally ONLY need to learn like reverse a linked list. AND reverse linked list from 
-points A to B. 
+- Literally ONLY need to learn like reverse a linked list. AND reverse linked list from points A to B. 
 
 
 ## Counting 
