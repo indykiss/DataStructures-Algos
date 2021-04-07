@@ -1,3 +1,104 @@
+
+
+
+/*
+Design hash map
+
+Use a linked list (chaining) to avoid hash collisions
+
+Strategy: O(1) lookup BUT if hash collision, O(n) lookup 
+- Key/ value pairs
+- Hash collision : linked list 
+- get(key), add(key, val), delete(key)
+- Chaining: pros: simple to implement, good for unknown 
+# of keys. BUT bad bc O(n) time lookup now, uses extra
+space for the linked lists 
+
+- Open addressing: if a hashCode is being used, 
+go to the next empty slot. 
+Cons: harder to implement, limited by size of arr
+Pros: Faster, less space 
+
+*/
+
+class MyHashMap {
+    constructor() {
+        this.hashMap = []; // assume size 100
+    }
+    
+    hash(key) {
+        return key % 100;
+    }
+    
+    add(key, val) {
+        let idx = hash(key); 
+        
+        // if hash collision, make linked list 
+        if(this.hashMap[idx]) {
+            let temp = this.hashMap[key];
+            this.hashMap[key] = new LinkedList(); 
+            this.hashMap[key].next = temp; 
+            
+            this.hashMap[key].next.next = [key, val]; 
+        } else {
+            this.hashMap[idx] = [key, val];
+        }
+    }
+    // {} => {hashCode : [key, val] => [key, val] => ...} 
+    
+    get(key) {
+        let idx = hash(key);
+        
+        if(!this.hashMap[idx]) {
+            return -1; 
+        }
+
+        // If linked list, iterate thru 
+        if(this.hashMap[idx].next) { 
+            let i; 
+            
+            while(i !== null) {
+                if(this.hashMap[idx][0] === key) {
+                    return this.hashMap[idx][1];
+                }
+                i++; 
+            }
+        // If not linked list   
+        } else {
+            return this.hashMap[idx][1]; 
+        }
+    }
+    
+    remove(key) {
+        let idx = hash(key);
+        
+        if(!this.hashMap[idx]) {
+            return -1; 
+        } 
+        
+        // If linked list, iterate thru 
+        if(this.hashMap[idx].next) { 
+            let i; 
+            
+            while(i !== null) {
+                if(this.hashMap[idx][0] === key) {
+                    this.hashMap[idx][0] = "";
+                    this.hashMap[idx][1] = "";
+                }
+                i++; 
+            }
+        // If not linked list   
+        } else {
+            this.hashMap[idx] = []; 
+        }
+    }
+    
+}
+
+
+
+
+
 /*
 Design HashMap 
 Design a HashMap without using any built-in hash table libraries.

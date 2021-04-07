@@ -41,7 +41,7 @@
 - In ~3 weeks, 80 algos total. 
 - F technical call, passed! 
 - Bl onsite, failed :( Reapply in May 
-- See below methodology.
+- See below methodology for counting algos.
 
 
 # October: What did I accomplish?
@@ -56,7 +56,7 @@ Found 70 by guesstimating/ counting commits from mid-Oct to end of Oct. 1 commit
 # ----------------------------------------------#
 
 # Upcoming: 
-* Onsite #1 in April.ish? TBD
+* Onsite #1 in April
 * Onsite #2 pushed to June. But probably bad, might need to 
 reschedule back to being sooner depending on onsite #1 
 
@@ -64,16 +64,21 @@ reschedule back to being sooner depending on onsite #1
 
 
 // To be deleted : 
-Day of April onsite, if it goes well, email recruiter immediately. 
+If offer, email recruiter immediately. 
 Drafted bc I will be all over the place mentally: 
 "Hi! Sorry to be all over the place with scheduling. After our last 
 connect, a recruiter at X co/ a FAANG reached out to start the process. 
 Their timeline was really fast, so just had their onsite today. 
-I think it went well, but haven't heard back yet. I know timelines can be tricky. 
-I love your mission of "X" and loved chatting w/ your engineers; you're my 1st pick. 
+I think it went well, but haven't heard back yet. [Or just received
+offer from X]. I know timelines can be tricky. 
+I love your mission of "X" and loved chatting w/ your engineers. 
 Super sorry to ask- but would it be possible to move onsite scheduled
 in June to be sooner? Maybe next week or the week after if possible?
-If not possible, pls let me know the soonest we can schedule.
+Pls let me know the soonest we can schedule.
 Thanks for your time XO"
 
-If not, no worries, keep studying. 
+If not, no worries, keep studying for June.
+This is a moonshot. It's ok if I don't get it. 
+Higher level than where I am. New field that I've never touched. 
+Would be exciting! Would learn so much!
+But it's not the end of the world if not.  
