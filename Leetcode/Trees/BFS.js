@@ -25,13 +25,16 @@ class Node {
       return this;
     }
   
-    depthFirstSearch(array) {
+    breadthFirstSearch(array) {
         array.push(this.name);
           
         for(let i = 0; i < this.children.length; i++) {
             let child = this.children[i];
-          child.depthFirstSearch(array);
+          child.breadthFirstSearch(array);
         }
         return array;
     }
   }
+
+
+  

@@ -86,20 +86,25 @@ of a binary tree
 - Return the avg of each level in a BT 
 
 BFS: Use a queue to hold things 
-var search = function(root) {
-    let queue = [];
-    visit(root);
-    root.visited = true; 
-    queue.enqueue(root); // Add root to end of the queue
 
-    while(!queue.isEmpty) {
-        let r = queue.dequeue();
-        root.forEach(let n in r.adjacent) {
-            visit(n);
-            n.visited = true;
-            queue.enqueue(n);
+var bfs = function(root) {
+    let queue = [];
+    queue.push(root);
+    // things?
+
+    while(queue.length > 0) {
+        // maybe do something
+
+        for(let i = 0; i < queue.length; i++) {
+            let node = queue.shift();
+
+            // doing things? 
+
+            if(node.left) queue.push(node.left); 
+            if(node.right) queue.push(node.right);
         }
     }
+    return thing;
 }
 
 
