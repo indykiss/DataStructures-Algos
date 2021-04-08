@@ -3,6 +3,7 @@
 
 // Given a binary tree, check if it is a valid binary search tree (BST).
 
+// +1 April practice 
 var isValidBST = function(root, upper, lower) {
     if(!root) return true; 
     

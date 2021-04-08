@@ -15,8 +15,6 @@ trie.search("app");     // returns true
 
 
 Strategy:
-- YA IDK I JUST COPIED AN ANSWER. 
-- Really really need to do this again
 */
 
 
