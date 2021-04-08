@@ -37,6 +37,7 @@ Edge:
 - Multiple branches have target? Ok, just return true after 1st 
 */
 
+// april practice
 // march practice 
 function hasPathSum(root, targetSum) {
     if(!root) return false;

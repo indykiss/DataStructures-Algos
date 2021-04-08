@@ -117,15 +117,18 @@ equals target sum
 
 
 DFS: Use a recursive stack to hold things
-var search = function(root) {
+
+var dfs = function(root) {
+    // if we can't prove, default to opposite
     if(root == null) return;
-    visit(root);
-    root.visited = true; 
-    root.forEach(n in root.next) {
-        if(n.visited == false) {
-           search(n)
-        }
-    }
+
+    // prove either yes or no
+    if(root.val / root.left/  root.right) {
+        return false/ true;
+    } 
+    
+    return dfs(root.left, info?) || / && 
+        dfs(root.right, info?)
 }
 
 
