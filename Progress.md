@@ -8,7 +8,7 @@
     - Review things I've done
     - Implement trie
 
-# March : Do 1 system per day at least 
+# March : 
 - Going through Grokking the system design interview 
     - Web crawler, Search
     - Done: Typeahead, Newsfeed, Messenger, TinyURL, Instagram, Basics, 

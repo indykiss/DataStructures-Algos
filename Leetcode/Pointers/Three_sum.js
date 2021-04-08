@@ -68,6 +68,7 @@ Edge:
 - Arr has fewer than 3 nums 
 */
 
+// x2 in April:
 // [-2, 0, 2] => [[-2,0,2]]
 function threeSum(nums) {
     if(nums.length < 3) return [];
