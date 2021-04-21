@@ -211,3 +211,130 @@ var tictactoe = function(moves) {
     
 };
 
+
+
+
+Find my friends 
+
+1. Functional & nonfunctional requirements 
+
+2.  High level design 
+ - Components in system
+
+
+
+ 
+3. Estimations of the systems
+ - Traffic, storage [locations], bandwidth 
+
+4. APIs / datebase schemas 
+
+
+ 
+1. Functional & nonfunctional requirements  / goals 
+
+Functional reqs:
+- Have: user's location (latitude/ longitude) 
+- List of friends & their locations, who've turned on location finding 
+- Shows map of locations
+- Trail of where they've been last 10 mins (user & friends trails)
+
+Non-functional: 
+- Low latency, real time data 
+- Reliable / consistent 
+- Manageable 
+- Search heavy - read heavy / pushing people location is a write heavy. 1:1 read/ heavy ratio 
+- Running on user device => power & performance is very imp, 
+  - battery drain is important. mitigate (turning on GPS is draining)
+  - lower processing bc of mobile device
+  - offload to a local server? optimized so can run on device? 
+- Privacy implications => encryption, along the entire system path. User's friends have
+decryption keys 
+
+
+System extensions:
+- Directions, apple map directions system
+- Map modes
+
+
+2. High level design  
+Drawing mode
+
+
+
+
+
+
+
+const _ = require('lodash');
+
+/*
+Tic tac toe 
+
+2 players: X and O 
+
+3 x 3 grid  => matrix
+
+Alternative moves 
+- cols, rows, diagonals 
+
+What do we need? 
+
+- Build grid 
+  - Grid : [ [], [], [] ]
+- Each player builds move => [row, col] 
+  - Did player win? based on previous moves 
+  - Row, col, diagonal (2 diagonals)
+  - If player won => done. No second round
+- Tracks each player's previous moves 
+  - Track X or O based on winning 
+
+Status: - game in progress, player1 / player2 
+won, game is tied 
+*/
+
+
+class TicTacToe {
+
+  // grid of size 3 
+  constructor() {
+    this.grid = [[], [], []]; 
+    // alt: rows/ cols
+    this.size = 3; 
+    
+  }
+
+  move(player, row, col) {
+    let note; 
+    if(player === 1) {
+      note = "X" 
+    } else {
+      note = "O"
+    }
+    
+  
+    // [[X  ], 
+    //  [   ], 
+    //  [  O]]
+    
+    this.grid[row][col].push(note); 
+    
+    // determine current status
+    for(let row = 0; row < this.grid.length; row++) {
+      for(let col = 0; col < this.grid.length; col++) {
+        // count history/ check winners 
+        
+      }
+    }
+  
+      
+    // if game in progress
+      
+    // If game is tied, track that  
+  }
+  
+  
+  
+  
+
+}

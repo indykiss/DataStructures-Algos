@@ -22,19 +22,6 @@ Quicksort
 */
 
 
-
-
-
-
-
-
-
-
-
-
-// Attempt #4: Better! 
-
-
 // Quicksort
 var sortArray = function(nums) {
 
