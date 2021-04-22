@@ -12,6 +12,8 @@ If maps are equal, it's an anagram .
 Assumptions: All lower case
 */
 
+// Practiced in Apr 2021
+
 // Nov 10 mins warmup
 var isAnagram = function(s, t) {
     if(s.length !== t.length) return false;

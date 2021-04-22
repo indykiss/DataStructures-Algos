@@ -7,6 +7,8 @@ Your function should return true if any value appears at least twice in the arra
 and it should return false if every element is distinct.
 */
 
+// Practiced in Apr 2021 - both I and II 
+
 var containsDuplicate = function(nums) {
     let seen = new Set();
 
