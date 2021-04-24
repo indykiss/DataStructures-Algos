@@ -1,21 +1,55 @@
 
+# ----------------------------------------------#
+
+# Upcoming: 
+* Onsite pushed to June 
+
+# ----------------------------------------------#
+
+April 22 - whenev
+Do 5 of the below: Like 1-2 per day 
+- strings/arrays (Added this)
+- sliding window
+- multiple pointers
+- hashes/ maps
+- heaps / top k
+- binary search
+- prefix sums
+- stacks/queues
+- dfs
+- bfs (normal / level wise)
+- tree traversals (pre in post)
+- recursion
+- tries
+- topological sort 
+- dynamic programming (google, nefarious startups)
+
+
+# May plan: 
+- Coding : HEAVY on the mediums, warm up with easies
+- Watch youtubes of system design 
+    - Web crawler, Search, Commenting, privacy settings, proximity server, top N songs
+    - 2 practice interviews with system design 
+- Implement trie
+
 
 # April plan:
-- Watch youtubes of Instagram + top 5 system design 
-    - Sys design extra credit: Commenting, privacy settings, proximity server, top N songs
-    - 2 practice interviews with system design 
+- Onsite! Rejected, but that's ok, was a long shot
 - Coding : HEAVY on the mediums, warm up with easies
-    - Review things I've done
-    - Implement trie
+- System design 
+- Vacay/ recover from failure for 2 weeks 
+
 
 # March : 
 - Going through Grokking the system design interview 
     - Web crawler, Search
     - Done: Typeahead, Newsfeed, Messenger, TinyURL, Instagram, Basics, 
-    Youtube/ Netflix, 
+    Youtube/ Netflix
+- 2 system design interviews w/ interviewing.io
 - Light leetcoding to stay sharp 
 - Grokking object oriented design as quick pre-course for system design 
     - Library, parking lot, ATM, Amazon, Facebook 
+
 
 # February:
 - From Dec - March, only +30 new algos, but that's ok. Dec-Feb was tough 
@@ -51,34 +85,3 @@ In ~2 weeks, I did 70 algos total. Reviewed lots of Grokking problems: 30 refres
 ## Methodology for counting algos: 
 Found 70 by guesstimating/ counting commits from mid-Oct to end of Oct. 1 commit = 1 problem. Found 40 uniq by comparing this repo at end of Oct with mid-Oct. See search tracker spreadsheet to check out list of uniq algos (just copied and pasted all the .js files from directory). Did ~120 code commits in Oct, more heavy in 2nd half of Oct. 
 
-
-
-# ----------------------------------------------#
-
-# Upcoming: 
-* Onsite #1 in April
-* Onsite #2 pushed to June. But probably bad, might need to 
-reschedule back to being sooner depending on onsite #1 
-
-# ----------------------------------------------#
-
-
-// To be deleted : 
-If offer, email recruiter immediately. 
-Drafted bc I will be all over the place mentally: 
-"Hi! Sorry to be all over the place with scheduling. After our last 
-connect, a recruiter at X co/ a FAANG reached out to start the process. 
-Their timeline was really fast, so just had their onsite today. 
-I think it went well, but haven't heard back yet. [Or just received
-offer from X]. I know timelines can be tricky. 
-I love your mission of "X" and loved chatting w/ your engineers. 
-Super sorry to ask- but would it be possible to move onsite scheduled
-in June to be sooner? Maybe next week or the week after if possible?
-Pls let me know the soonest we can schedule.
-Thanks for your time XO"
-
-If not, no worries, keep studying for June.
-This is a moonshot. It's ok if I don't get it. 
-Higher level than where I am. New field that I've never touched. 
-Would be exciting! Would learn so much!
-But it's not the end of the world if not.  

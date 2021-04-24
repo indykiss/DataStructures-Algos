@@ -3,7 +3,6 @@
 /*
 Remove adjacent duplicate words in a string. 
 
-
 Input: "Where can I can I find find a cat"
 => 
 Output: "Where can I find a cat"
@@ -113,3 +112,39 @@ function removeDupes(str) {
   console.log(solution(test3)); */
 
 
+
+
+
+/*
+Leetcode easy: 
+
+Remove All Adjacent Duplicates In String
+
+Given a string S of lowercase letters, a duplicate removal consists of choosing two adjacent and equal letters, and removing them.
+
+We repeatedly make duplicate removals on S until we no longer can.
+
+Return the final string after all such duplicate removals have been made.  It is guaranteed the answer is unique.
+
+Input: "abbaca"
+Output: "ca"
+*/
+
+
+var removeDuplicates = function(S) {
+  let stack = [];
+      
+  for(let i = 0; i < S.length; i++) {
+      let ele = stack[stack.length - 1],
+          curr = S[i]; 
+      
+      if(ele !== curr) {
+          stack.push(curr);
+      } else {
+          stack.pop();
+      }
+  }
+  
+  return stack.join("");
+  
+};
