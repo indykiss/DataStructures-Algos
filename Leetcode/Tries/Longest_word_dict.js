@@ -1,9 +1,4 @@
 
-/**
- * @param {string[]} words
- * @return {string}
- */
-
 /*
 
 Brute force: 
