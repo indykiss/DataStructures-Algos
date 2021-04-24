@@ -8,6 +8,25 @@ from left to right are either all
 increasing or decreasing. 
 */
 
+// Apr 2021 practice
+var isMonotonic = function(A) {
+    let isIncreasing = true,
+        isDecreasing = true; 
+
+    for(let i = 0; i < A.length; i++) {
+        let next = A[i+1], 
+            curr = A[i];
+        
+        if(next > curr) {
+            isDecreasing = false;
+        } else if(next < curr) {
+            isIncreasing = false;
+        }
+    }
+    return isIncreasing || isDecreasing;
+};
+
+
 // O(n) time and O(1) space
 function isMonotonic(array) {
     let increasing = true;
@@ -24,3 +43,4 @@ function isMonotonic(array) {
       }
       return increasing || decreasing;
 }
+
