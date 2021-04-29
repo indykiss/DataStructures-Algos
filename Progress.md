@@ -8,7 +8,7 @@
 
 April 22 - whenev
 Do 5 of the below: Like 1-2 per day 
-- strings/arrays (Added this)
+- [X] strings/arrays (Added this)
 - sliding window
 - multiple pointers
 - hashes/ maps

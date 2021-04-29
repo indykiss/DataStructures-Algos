@@ -152,6 +152,8 @@ We have an array or a linked list that we need to find something within a specif
 
 The window starts from one element and slides over 1 element and with it the end of the window.
 
+Doesn't quite work if there's negative nums. 
+
 - Find the longest substr of repeating chars in a str. 
 - Fruits in a basket. We have 2 baskets and an arr of num. What's the most fruit we can have (longest subarr of 2 ints). 
 - Maximum sum subarray of size ‘K’ (easy)
