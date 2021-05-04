@@ -90,7 +90,7 @@ BFS: Use a queue to hold things
 var bfs = function(root) {
     let queue = [];
     queue.push(root);
-    // things?
+    // things to track to answer Q
 
     while(queue.length > 0) {
         // maybe do something
@@ -98,7 +98,7 @@ var bfs = function(root) {
         for(let i = 0; i < queue.length; i++) {
             let node = queue.shift();
 
-            // doing things? 
+            // maybe do something
 
             if(node.left) queue.push(node.left); 
             if(node.right) queue.push(node.right);
