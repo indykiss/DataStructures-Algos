@@ -76,7 +76,7 @@ function mergeIntervals(intervals) {
 
 
 
-# Tree: BFS (queue, levels)
+# Tree: BFS (queue, levels) -- Normal BFS and level wise 
 When we need to traverse a tree in a level by
 level order, use breadth first search. We use a queue to keep  track of all the nodes of a level before we move to the next level. Space always O(N) where n is the number of nodes. 
 
@@ -87,6 +87,7 @@ of a binary tree
 
 BFS: Use a queue to hold things 
 
+// Normal BFS: 
 var bfs = function(root) {
     let queue = [];
     queue.push(root);
@@ -94,18 +95,17 @@ var bfs = function(root) {
 
     while(queue.length > 0) {
         // maybe do something
+        let node = queue.shift();
+        // maybe do something
 
-        for(let i = 0; i < queue.length; i++) {
-            let node = queue.shift();
-
-            // maybe do something
-
-            if(node.left) queue.push(node.left); 
-            if(node.right) queue.push(node.right);
-        }
+        if(node.left) queue.push(node.left); 
+        if(node.right) queue.push(node.right);
     }
     return thing;
 }
+
+# BFS level wise 
+
 
 
 # Tree: DFS (stack, paths)
