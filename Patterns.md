@@ -105,7 +105,16 @@ var bfs = function(root) {
 }
 
 # BFS level wise 
+for level wise, you check the length of current queue and do a for loop for that many in the level.  just watch out not to check for the length of the queue again for each iteration of for loop, since the length could change with each node processed and more nodes pushed back into the queue.  does that make sense? (this is a common hiccup for level wise)
+instead of
 
+for(let i = 0; i < queue.length; i++) {
+
+int currentLevelLength = queue.length;
+for(let i = 0; i < currentLevelLength; i++) {
+something like that.
+
+???
 
 
 # Tree: DFS (stack, paths)
