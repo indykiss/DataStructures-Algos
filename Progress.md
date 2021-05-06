@@ -30,7 +30,8 @@ Do 5 of the below: Like 1-2 per day
 - Watch youtubes of system design 
     - Web crawler, Search, Commenting, privacy settings, proximity server, top N songs
     - 2 practice interviews with system design 
-- Implement trie
+- Implement trie : done! But practice 
+- new tech opp to explore in consulting 
 
 
 # April plan:
