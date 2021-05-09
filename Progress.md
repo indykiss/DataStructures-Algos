@@ -3,6 +3,7 @@
 
 # Upcoming: 
 * Onsite pushed to June 
+* Recruiter call in consulting
 
 # ----------------------------------------------#
 
@@ -31,7 +32,10 @@ Do 5 of the below: Like 1-2 per day
     - Web crawler, Search, Commenting, privacy settings, proximity server, top N songs
     - 2 practice interviews with system design 
 - Implement trie : done! But practice 
-- new tech opp to explore in consulting 
+- new tech opp to explore in consulting, completely new interview style
+- pause the June tech onsite?  :( 
+- have been doing fair amount of SWE job apps, research (youtubes), to 
+create pipeline for if fail FB. But maybe need to pivot entirely :(
 
 
 # April plan:
