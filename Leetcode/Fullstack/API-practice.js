@@ -1,4 +1,15 @@
-https://www.hackerrank.com/test/md1hiktjtk/questions/32gbiihfdea
+
+
+
+
+
+
+// ALL SUPER INCORRECT. JS PROMISES IS BEING WEIRD, I CAN'T FIGURE IT OUT
+// PLEASE LOOK AT PYTHON API-PRACTICE.PY FOR THIS CORRECT ANSWER
+
+
+
+//https://www.hackerrank.com/test/md1hiktjtk/questions/32gbiihfdea
 
 
 const request = require('request');
