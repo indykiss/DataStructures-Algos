@@ -34,6 +34,8 @@ Product sales per city
 
 Supposed to get total $$$ spent on product in each city 
 or something like that. But multiple tables/ joins needed
+
+Pause for a couple days, QA is first so study this first 
 */
 
 

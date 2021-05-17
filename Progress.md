@@ -3,7 +3,8 @@
 
 # Upcoming: 
 * Onsite pushed to June 
-* Recruiter call in consulting
+    * NEED TO PAUSE, I CANT DO THIS
+* Tech call w/ consulting mid-May
 
 # ----------------------------------------------#
 
