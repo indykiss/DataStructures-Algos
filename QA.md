@@ -1,7 +1,7 @@
 
 # Software Development Lifecycle 
 Goal: to make high quality software in the lowest
-amount of time & money. 
+amount of time & money that meets and exceeds customer expectations. 
 Ensures all stakeholders have a chance to
 give input in early stages. 
 Shortens development timelines by preventing
@@ -20,9 +20,9 @@ BUT SDLC gets incorporates into the agile dev methodology, using sprints to work
 In an ex of using a sprint to work through SDLC, the team will review backlog. ID a few strategic projects. Assign tasks. Focus on those tasks through the end of the sprint. Then next sprint. 
 
 
-Diff models include: Agile model, waterfall model,
-and spiral model. 
+Diff models include: waterfall model, agile model, rapid prototyping, incremental, and spiral model. 
 
+Stages:
 - Gather requirements 
 - Planning 
 - Software design
@@ -30,3 +30,6 @@ and spiral model.
 - Testing
 - Deployment 
 - Maintainence 
+
+
+Waterfall model: Oldest, most well known 
