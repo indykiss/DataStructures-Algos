@@ -2,8 +2,7 @@
 # ----------------------------------------------#
 
 # Upcoming: 
-* Onsite pushed to June 
-    * NEED TO PAUSE, I CANT DO THIS
+* Onsite pushed to late June
 * Tech call w/ consulting mid-May
 
 # ----------------------------------------------#
@@ -16,7 +15,6 @@ Do 5 of the below: Like 1-2 per day
 - hashes/ maps
 - heaps / top k
 - binary search
-- prefix sums
 - stacks/queues
 - dfs
 - bfs (normal / level wise)
@@ -24,20 +22,35 @@ Do 5 of the below: Like 1-2 per day
 - recursion
 - tries
 - topological sort 
+- prefix sums
 - dynamic programming (google, nefarious startups)
+
+FB onsite: 
+- Problem solving, coding, test verifications, communication
+
 
 
 # May plan: 
+What actually happened: 
+- McK 1st round HR, 2nd round Hackerrank
+- Studied SQL, QA, React, API queries
+- Studying for 3nd round pair programming
+    - Need to refresh my fullstack skills:
+        - query an API, backend, frontend general, SQL queries
+- QA 1st round- failed, but learned about QA so not total loss
+- PM next? Need to study this?
+
+Leetcodes practiced: 
+- Arr: productExceptSelf, moveZeroes, findLengthOfLCIS
+
+Goal: Go over 20 a week 
+
+Original plan: 
 - Coding : HEAVY on the mediums, warm up with easies
 - Watch youtubes of system design 
     - Web crawler, Search, Commenting, privacy settings, proximity server, top N songs
     - 2 practice interviews with system design 
 - Implement trie : done! But practice 
-- new tech opp to explore in consulting, completely new interview style
-    - HR screen passed. now studying for hackerrank
-    - Need to refresh my fullstack skills:
-        - query an API, backend, frontend general, SQL queries
-- pause the June tech onsite?  :( 
 - have been doing fair amount of SWE job apps, research (youtubes), to 
 create pipeline for if fail FB. But maybe need to pivot entirely :(
 
