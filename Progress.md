@@ -41,7 +41,7 @@ What actually happened:
 - PM next? Need to study this?
 
 Leetcodes practiced: 
-- Arr: productExceptSelf, moveZeroes, findLengthOfLCIS
+- Arr: productExceptSelf, moveZeroes, findLengthOfLCIS, pivotIndex, findKthPositive
 
 Goal: Go over 20 a week 
 
