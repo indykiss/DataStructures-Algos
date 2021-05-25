@@ -1,4 +1,8 @@
 
+
+# Rest API Basics:
+# Make HTTP request, convert to JSON string, parse it
+
 # https://www.hackerrank.com/test/md1hiktjtk/questions/32gbiihfdea
 
 
@@ -10,11 +14,13 @@ import requests
 def getTotalGoals(team, year): 
     totalGoals = 0 
     try:
+        # Step 1: Define our URL, requests.get(url) to get data
         url = ("https://jsonmock.hackerrank.com/api/football_matches?year={}&team1={}&page=1".format(year,team))
         requestData = requests.get(url).json(); 
         totalPages = requestData["total_pages"]
         matchesPerPage = requestData["per_page"]
         
+        # Step 2: Convert to JSON so we can do things 
         for i in range(1, totalPages+1):
             correctedURL = ("https://jsonmock.hackerrank.com/api/football_matches?year={}&team1={}&page={}".format(year,team,i))
             pageData = requests.get(correctedURL).json() 

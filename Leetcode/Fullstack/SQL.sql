@@ -24,6 +24,28 @@ SELECT id, name, price FROM table1
     (SELECT AVG(price) FROM table1)
 
 
+-- Select data from multiple tables:
+SELECT * FROM table1, table2, table3
+
+
+-- Ranking data in DESC or ASC order 
+RANK() OVER (ORDER BY table.column DESC)
+
+
+-- Select which products in a table match two specific col' vals
+SELECT product_id FROM products
+    WHERE low_fats = 'Y'
+    AND recyclable = 'Y'
+
+
+-- Count the uniq number of times something appears in the 
+-- table 
+SELECT date_id, make_name,
+    COUNT(DISTINCT lead_id) AS unique_leads,
+FROM DailySales 
+GROUP BY 1, 2 -- We're combining rows, so we need this 
+
+
 -- Join two tables on ID, filter out the aggregate score over 100 
 -- Return ID and name
 SELECT a.roll_number, a.name FROM student_information AS a
@@ -46,20 +68,6 @@ SELECT a.sku, a.product_name FROM product AS a
         FROM invoice_item AS b
         WHERE a.id = b.product_id
     );
-        
-    
--- Select data from multiple tables:
-SELECT * FROM table1, table2, table3
-
-
--- Ranking data in DESC or ASC order 
-RANK() OVER (ORDER BY table.column DESC)
-
-
--- Select which products in a table match two specific col' vals
-SELECT product_id FROM products
-    WHERE low_fats = 'Y'
-    AND recyclable = 'Y'
 
 
 -- To find length of a char column 
@@ -76,14 +84,6 @@ SELECT event_day AS day,
     SUM(out_time - in_time) AS total_time 
 FROM EMPLOYEES
 GROUP BY 1, 2 -- This part lets us combine rows that match ID
-
-
--- Count the uniq number of times something appears in the 
--- table 
-SELECT date_id, make_name,
-    COUNT(DISTINCT lead_id) AS unique_leads,
-FROM DailySales 
-GROUP BY 1, 2 -- We're combining rows, so we need this 
 
 
 -- Selecting the largest item
