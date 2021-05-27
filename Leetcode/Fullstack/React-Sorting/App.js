@@ -41,3 +41,34 @@ function App({articles}) {
 }
 
 export default App;
+
+
+<script src = "./script.js">  </script>
+<button onclick = "SelectItem()">
+
+In script:
+
+var app = new Function() {
+    this.ele = document.getElementById("tasks")
+    this.tasks = []; 
+
+    this.fetchAll = function() {
+        var data = ""; 
+        if(this.tasks.length > 0) {
+            for(let task of this.tasks) {
+                data += "<tr>"
+                data += task; 
+            }
+        }
+        return data; 
+    }
+
+    this.add = function() {
+        this.tasks.push(this.ele); 
+    }
+    this.edit ... 
+    this.delete ... 
+    this.count... 
+}
+
+app.fetchAll(); 
