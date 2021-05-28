@@ -30,14 +30,14 @@ What actually happened:
 - McK 1st round HR, 2nd round Hackerrank, 3rd round 
 - Studied SQL, QA, React, API queries
 - QA 1st round- failed, but learned about QA so not total loss
-- PM, TEI/ PEI next
+- PM studying (3 /7 hrs done), TEI/ PEI next
 
 
 Leetcodes practiced: 
 - Arr: productExceptSelf, moveZeroes, findLengthOfLCIS, pivotIndex, findKthPositive,
 ~10 SQLs
 
-Goal: Go over 20 a week 
+Goal: Go over 20 LC a week 
 
 Original plan: 
 - Coding : HEAVY on the mediums, warm up with easies
