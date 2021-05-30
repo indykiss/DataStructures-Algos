@@ -34,7 +34,7 @@ What actually happened:
 
 
 Leetcodes practiced: 
-- Arr: productExceptSelf, moveZeroes, findLengthOfLCIS, pivotIndex, findKthPositive,
+- Arr: productExceptSelf, moveZeroes, findLengthOfLCIS, pivotIndex, findKthPositive, mergeIntervals, trapping rain water, 
 ~10 SQLs
 
 Goal: Go over 20 LC a week 
@@ -46,7 +46,7 @@ Original plan:
     - 2 practice interviews with system design 
 - Implement trie : done! But practice 
 - have been doing fair amount of SWE job apps, research (youtubes), to 
-create pipeline for if fail FB. But maybe need to pivot entirely :(
+create pipeline
 
 
 # April plan:
