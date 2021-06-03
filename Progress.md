@@ -2,8 +2,11 @@
 
 # Upcoming: 
 * Onsite pushed to June 24th
-* PM June
+* PM Pt2 June
 * TEI/PEI June
+
+Goal: Go over 20 LC a week 
+
 # ----------------------------------------------#
 
 - [X] strings/arrays (Added this)
@@ -26,27 +29,24 @@ FB onsite:
 
 # June plan:
 - PM for 3 more hrs max, need to move on 
-- Story for TEI -- build/ research tech
-- Stories for PEI -- recycle 
+    - PM this weekend
+- Story for TEI -- built, now practicing
+- Stories for PEI -- practicing  
 - Leetcodes / system design
 
+LCs:
 
 # May plan: 
 What actually happened: 
 - MK 1st round HR, 2nd round Hackerrank, 3rd round 
 - Studied SQL, QA, React, API queries
 - QA 1st round- failed, but learned about QA so not total loss
-- PM studying (3 /7 hrs done), TEI/ PEI next
-    - PM, calling it done. 1 hr Monday for quick review 
-    - TEI focus next 
+- PM studying (3 /7 hrs done), TEI/ PEI prep
 - LC lightly
 
-
-Leetcodes practiced: 
+Leetcodes practiced last week: 
 - productExceptSelf, moveZeroes, findLengthOfLCIS, pivotIndex, findKthPositive, mergeIntervals, trapping rain water, 
 ~10 SQLs
-
-Goal: Go over 20 LC a week 
 
 Original plan: 
 - Coding : HEAVY on the mediums, warm up with easies
