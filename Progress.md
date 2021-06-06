@@ -1,9 +1,9 @@
 # ----------------------------------------------#
 
 # Upcoming: 
-* Onsite pushed to June 24th
+* Final round June
 * PM Pt2 June
-* TEI/PEI June
+* Onsite June 24th
 
 Goal: Go over 20 LC a week 
 
@@ -30,15 +30,16 @@ FB onsite:
 # June plan:
 - PM for 3 more hrs max, need to move on 
     - PM this weekend
-- Story for TEI -- built, now practicing
-- Stories for PEI -- practicing  
+- Stories for PEI impact, leadership
+- Lightning talk
+- Case study tech focus  
 - Leetcodes / system design
 
-LCs:
+LCs: numIslands, 
 
 # May plan: 
 What actually happened: 
-- MK 1st round HR, 2nd round Hackerrank, 3rd round 
+- MK 1st round HR, 2nd round Hackerrank, 3rd round pair
 - Studied SQL, QA, React, API queries
 - QA 1st round- failed, but learned about QA so not total loss
 - PM studying (3 /7 hrs done), TEI/ PEI prep
