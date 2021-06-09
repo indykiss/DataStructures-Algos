@@ -1,15 +1,15 @@
 # ----------------------------------------------#
 
 # Upcoming: 
-* Final round June
-* PM Pt2 June
-* Onsite June 24th
+* Final round June 11
+* Onsite June 24
 
 Goal: Go over 20 LC a week 
 
 # ----------------------------------------------#
 
-- [X] strings/arrays (Added this)
+Leetcodes
+- [X] strings/arrays
 - sliding window
 - multiple pointers
 - hashes/ maps
@@ -28,12 +28,11 @@ FB onsite:
 - Problem solving, coding, test verifications, communication
 
 # June plan:
-- PM for 3 more hrs max, need to move on 
-    - PM this weekend
 - Stories for PEI impact, leadership
 - Lightning talk
 - Case study tech focus  
 - Leetcodes / system design
+- PM 2 rnds, reject
 
 LCs: numIslands, 
 
