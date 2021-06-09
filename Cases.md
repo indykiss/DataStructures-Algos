@@ -12,6 +12,16 @@
 - IoT (Mainly the use of IoT in operations - Process steps completion, measuring temperature, maintenance measurements, other measurements, predicative algorithms, etc)
 
 
+# Process
+1. Define the problem. Listen and ask clarifying questions. Paraphrase to confirm. 
+2. Structure an approach. Build issue tree, be MECE. 
+Describe the overall approach before going into the details 
+3. Analyze data - math question. 
+Can break down problem, round if needed, scale is important not the exact nums. 
+4. Develop a conclusion. Synthesize implications. Relate them back to the 
+client problem. Answer the Q that was asked. 
+ 
+
 # Must-know math formulas
 Revenue = Volume x Price
 
