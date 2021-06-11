@@ -1,7 +1,6 @@
 # ----------------------------------------------#
 
 # Upcoming: 
-* Final round June 11
 * Onsite June 24
 
 Goal: Go over 20 LC a week 
@@ -28,11 +27,11 @@ FB onsite:
 - Problem solving, coding, test verifications, communication
 
 # June plan:
-- Stories for PEI impact, leadership
-- Lightning talk
-- Case study tech focus  
-- Leetcodes / system design
+- Leetcodes 
+- System design
+
 - PM 2 rnds, reject
+- M 2 rnds, final (3), XYZ
 
 LCs: numIslands, 
 
