@@ -13,14 +13,21 @@
 
 
 # Process
-1. Define the problem. Listen and ask clarifying questions. Paraphrase to confirm. 
+1. Define the problem. LISTEN and ask clarifying questions. Paraphrase to confirm. 
 2. Structure an approach. Build issue tree, be MECE. 
 Describe the overall approach before going into the details 
+First 2 minutes - ID the broadest 1st level key drivers.
+MUST summarize, THEN go into details for each bucket.  
+Prioritize drivers. Break each down into sub-problems. 
+
 3. Analyze data - math question. 
 Can break down problem, round if needed, scale is important not the exact nums. 
-4. Develop a conclusion. Synthesize implications. Relate them back to the 
-client problem. Answer the Q that was asked. 
- 
+4. Develop a conclusion. Synthesize implications - don't repeat myself. 
+Building on what we've learned so far. Relate them back to the client problem. 
+ANSWER the Q that was asked. Don't just summarize. 
+Remember to respond to probing questions. Not stress testing; try to answer as 
+best as I can. 
+
 
 # Must-know math formulas
 Revenue = Volume x Price
