@@ -33,7 +33,9 @@ FB onsite:
 - PM 2 rnds, reject
 - M 2 rnds, final (3), XYZ
 
-LCs: numIslands, 
+LCs: numIslands, isAnagram, valid parenthesis, minRemoveToMakeValid, twoSum, 
+frequencySort
+
 
 
 # May plan: 

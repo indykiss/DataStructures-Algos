@@ -23,3 +23,16 @@ I only studied react. I should've also studied basic JS frontend
 Sad face. 
 
 Maybe I can apply again next year
+
+
+# Pair programming
+
+Also passed. 
+
+# PEI / TEI 
+
+Also passed
+
+See google docs for personal notes on all of this 
+
+# Onsite
