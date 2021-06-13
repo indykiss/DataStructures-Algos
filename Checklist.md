@@ -3,7 +3,7 @@
 
 ## I sliced & diced this checklist to ID the sections I need to work on 
 
-
+  
 ## Quick Review videos
 - [ ] Series of 2-3 minutes short subject videos (23 videos)
     - [Videos](https://www.youtube.com/watch?v=r4r1DZcx1cM&list=PLmVb1OknmNJuC5POdcDv5oCS7_OUkDgpj&index=22)
@@ -48,11 +48,6 @@ for that time frame.
     - Bitwise operations 
     - Big O (review as I go along)
 
-
-Daily Plan for Feb:
-
-- Spend 1-2 focused hours a day studying the above topics roughly in order. Since it's focused, I can spend only 1-2 hrs. If I'm not focused, then I should up to 3 max. 
-- Don't feel too out of sorts. Jan was v busy & Dec was productive. 
 
 ---------------------------------------------------------------------
 
