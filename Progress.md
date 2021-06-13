@@ -30,13 +30,12 @@ FB onsite:
 - Leetcodes 
 - System design
 
+* LCs: numIslands, isAnagram, valid parenthesis, minRemoveToMakeValid, twoSum, 
+frequencySort, isPalindrome, merge intervals, valid BST, largest val in rows in BT,  
+
+
 - PM 2 rnds, reject
 - M 2 rnds, final (3), XYZ
-
-LCs: numIslands, isAnagram, valid parenthesis, minRemoveToMakeValid, twoSum, 
-frequencySort
-
-
 
 # May plan: 
 What actually happened: 
