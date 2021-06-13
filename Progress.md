@@ -8,20 +8,20 @@ Goal: Go over 20 LC a week
 # ----------------------------------------------#
 
 Leetcodes
-- [X] strings/arrays
-- sliding window
-- multiple pointers
-- hashes/ maps
-- heaps / top k
-- binary search
-- stacks/queues
-- dfs
-- bfs (normal / level wise)
-- tree traversals (pre in post)
-- recursion
-- tries
-- topological sort 
-- dynamic programming (google, nefarious startups)
+- Strings/arrays
+- Sliding window
+- Multiple pointers
+- Hashes/ maps
+- Heaps / top k
+- Binary search
+- Stacks/queues
+- Dfs
+- Bfs (normal / level wise)
+- Tree traversals (pre in post)
+- Recursion
+- Tries
+- Topological sort 
+- Dynamic programming (google, nefarious startups)
 
 FB onsite: 
 - Problem solving, coding, test verifications, communication
@@ -31,7 +31,7 @@ FB onsite:
 - System design
 
 * LCs: numIslands, isAnagram, valid parenthesis, minRemoveToMakeValid, twoSum, 
-frequencySort, isPalindrome, merge intervals, valid BST, largest val in rows in BT,  
+frequencySort, isPalindrome, merge intervals, valid BST, largest val in rows in BT,  numUniqueEmails
 
 
 - PM 2 rnds, reject
