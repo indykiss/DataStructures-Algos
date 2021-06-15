@@ -142,3 +142,21 @@ Requests from clients get forwarded to a server that can fulfill it before the r
 
 Benefits:
 - Increased security, increased scalability & flexibility since clients only see the reverse proxy's IP, SSL termination, compression, cachine, static content gets served directly 
+
+LB vs reverse proxy:
+- LB is good when there's multiple servers. LBs route traffic to a set of servers serving the same function.  
+- Reverse proxies are good for when there's just 1 web server/ application server
+
+Disadvantage: Increases complexity, a single reverse proxy is a single point of failure 
+
+
+# Application layer 
+Separating the web layer from the application layer lets us scale and configure both layers independently. Adding a new API results in needing more application servers without necessarily adding additional web servers. 
+
+Single responsibility principle advocates for small & autonomous services that work together. 
+
+Microservices is a type of architecture that's made up of small modules. Each running a unique process. 
+
+Disadvantages: Adding an application layer with loosely coupled services requires a different approach from an architecture standpoint vs a monolithic system. Adds complexity. 
+
+# Database
