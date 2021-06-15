@@ -3,7 +3,6 @@
 # Upcoming: 
 * Onsite June 24
 
-Goal: Go over 20 LC a week 
 
 # ----------------------------------------------#
 
@@ -35,7 +34,7 @@ frequencySort, isPalindrome, merge intervals, valid BST, largest val in rows in 
 
 
 - PM 2 rnds, reject
-- M 2 rnds, final (3), XYZ
+- M 2 rnds, final (3), reject
 
 # May plan: 
 What actually happened: 

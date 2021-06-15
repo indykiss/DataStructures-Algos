@@ -136,4 +136,9 @@ Can be a performance bottleneck. Introducing a LB increases complexity. A single
 
 
 # Reverse proxy (web server)
+A web server that centralizes internal services and provides unified interfaces to the public. 
 
+Requests from clients get forwarded to a server that can fulfill it before the reverse proxy returns the server's reponse to the client. 
+
+Benefits:
+- Increased security, increased scalability & flexibility since clients only see the reverse proxy's IP, SSL termination, compression, cachine, static content gets served directly 
