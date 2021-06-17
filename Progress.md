@@ -29,8 +29,10 @@ FB onsite:
 - Leetcodes 
 - System design
 
-* LCs - 23: numIslands, isAnagram, valid parenthesis, minRemoveToMakeValid,twoSum, frequencySort, isPalindrome, merge intervals, valid BST, largest val in rows in BT, numUniqueEmails, sortedSquares, 3sum, merge 2 sorted arrs, remove element, reverse str, palindrome linked list, sort colors, count number of nice subarrs, + 4 random ones I didnt get, set mismatch, word pattern, 
-
+* LCs - 27: numIslands, isAnagram, valid parenthesis, minRemoveToMakeValid,twoSum, frequencySort, isPalindrome, merge intervals, valid BST, largest val in rows in BT, numUniqueEmails, sortedSquares, 3sum, merge 2 sorted arrs, remove element, reverse str, palindrome linked list, sort colors, count number of nice subarrs, + 4 random ones I didnt get, set mismatch, word pattern, isomorphic str, twoSum III, idk some sentence one, 
+Tues: 11 LC
+Wed: 5 LC
+Thurs: 
 
 
 - PM 2 rnds, reject
