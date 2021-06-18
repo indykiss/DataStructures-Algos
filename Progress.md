@@ -37,12 +37,12 @@ Wed: set mismatch, word pattern, isomorphic str, twoSum II
 
 Thurs: idk some sentence one, dietPlanPerformance, numKLenSubstrNoRepeats
 
-Fri: Max Consecutive Ones III, maxTurbulenceSize, lengthOfLongestSubstringTwoDistinct
+Fri: Max Consecutive Ones III, maxTurbulenceSize, lengthOfLongestSubstringTwoDistinct, Longest Substring with At Most K Distinct Characters
 
 Tues: 11 LC
 Wed: 4 LC
 Thurs: 3 :(
-Fri: 3
+Fri: 4
 
 
 - PM 2 rnds, reject
