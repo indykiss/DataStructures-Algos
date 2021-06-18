@@ -16,7 +16,29 @@ Strategy:
 - Then we want to slice the array until k 
 */
 
+// HEAP always heap whenever top k 
+var Heap = require('./collections/heap')
 
+function kClosest(points, k) {
+    let res = [];
+    let minHeap = new Heap([], null, (a,b) => distCalc(b) - distCalc(a); 
+                           
+    for(let num of points) {
+        minHeap.push(num); 
+    }
+                                                      
+    while(minHeap.size > k) {
+        let ele = minHeap.pop(); 
+        res.push(ele);
+    }
+    return res;   
+}
+
+function distCalc(coord) {
+    let x = coord[0], 
+        y = coord[1];
+    return x*x + y*y;
+}
 
 
 // Nov: 18 mins to do this 2 ways. 

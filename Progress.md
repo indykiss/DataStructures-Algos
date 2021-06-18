@@ -39,12 +39,12 @@ Thurs: idk some sentence one, dietPlanPerformance, numKLenSubstrNoRepeats
 
 Fri: 
 Sliding window: Max Consecutive Ones III, maxTurbulenceSize, lengthOfLongestSubstringTwoDistinct, Longest Substring with At Most K Distinct Characters, fruit in baskets
-Heaps: Last stone weight, Kth Largest Element in a Stream
+Heaps: Last stone weight, Kth Largest Element in a Stream, k closest to origin
 
-Tues: 11 LC
+Tues: 11 LC. 4 were copies. 
 Wed: 4 LC
 Thurs: 3 :(
-Fri: 6 , 1 that I basically copied
+Fri: 8 . 1 was copy 
 
 
 - PM 2 rnds, reject
