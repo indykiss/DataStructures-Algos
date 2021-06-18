@@ -42,7 +42,7 @@ var lastStoneWeight = function(stones) {
         }
     }
     // return the winner if there is one
-    return maxHeap.size > 1 ? maxHeap.pop() : -1; 
+    return maxHeap.size === 1 ? maxHeap.pop() : 0; 
 };
 
 

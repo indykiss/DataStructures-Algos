@@ -39,7 +39,7 @@ Thurs: idk some sentence one, dietPlanPerformance, numKLenSubstrNoRepeats
 
 Fri: 
 Sliding window: Max Consecutive Ones III, maxTurbulenceSize, lengthOfLongestSubstringTwoDistinct, Longest Substring with At Most K Distinct Characters, fruit in baskets
-Heaps: Last stone weight 
+Heaps: Last stone weight, Kth Largest Element in a Stream
 
 Tues: 11 LC
 Wed: 4 LC

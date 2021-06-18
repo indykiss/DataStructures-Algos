@@ -56,7 +56,7 @@ const Heap = require("./collection/heap") // import heap
 
 var findKthLargestHeap = function(nums, k) {
     
-    let maxHeap = new Heap([], null, (a,b) => b-a); 
+    let maxHeap = new Heap([], null, (a,b) => a-b); 
         
     // add nums to maxheap
     for(let num of nums) {
