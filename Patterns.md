@@ -171,7 +171,6 @@ Doesn't quite work if there's negative nums.
 // Finding max length of subs : 1 template
 function slidingWindow(arr, target) {
   let l = 0, 
-      r = 0, 
       maxLen = 0,
       tempSum = 0;
   
