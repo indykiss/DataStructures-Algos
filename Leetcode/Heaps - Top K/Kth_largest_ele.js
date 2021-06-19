@@ -64,7 +64,7 @@ var findKthLargestHeap = function(nums, k) {
     }
     
     // ID the kth largest ele
-    for(let i = 0; i < k; i++) {
+    for(let i = 0; i <= k; i++) {
         let ele = maxHeap.pop(); // removes biggest num in heap, root 
         
         if(i === k) {

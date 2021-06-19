@@ -69,8 +69,28 @@ var connectSticks = function(sticks) {
 };
 
 
+var Heap = require('./collections/heap'); 
 
+var connectSticks = function(sticks) {
+    let minHeap = new Heap([], null, (a,b) => b-a), 
+        res = 0; 
 
+    for(let stick of sticks) {
+        minHeap.push(stick);
+    }
+
+    // cost of connecting all sticks 
+    while(minHeap.size > 1) {
+        let smallest  = minHeap.pop(), 
+            second = minHeap.pop();
+            
+        let newStick = smallest + second; 
+        res += newStick; 
+
+        minHeap.push(newStick);
+    }
+    return res; 
+} 
 
 
 // Grokking way to do this. Also called Connect Ropes. 

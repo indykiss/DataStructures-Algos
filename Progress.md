@@ -30,6 +30,7 @@ FB onsite:
 
 * LCs -  ~32: 
 IDK like Sun? Mon? : numIslands, isAnagram, valid parenthesis, minRemoveToMakeValid,twoSum, frequencySort, isPalindrome, merge intervals, valid BST, largest val in rows in BT, numUniqueEmails 
+Max subarr, Reverse Integer
 
 Tues: sortedSquares, 3sum, merge 2 sorted arrs, remove element, reverse str, palindrome linked list, sort colors, count number of nice subarrs, + 4 random ones I didnt get
 
@@ -39,12 +40,17 @@ Thurs: idk some sentence one, dietPlanPerformance, numKLenSubstrNoRepeats
 
 Fri: 
 Sliding window: Max Consecutive Ones III, maxTurbulenceSize, lengthOfLongestSubstringTwoDistinct, Longest Substring with At Most K Distinct Characters, fruit in baskets
-Heaps: Last stone weight, Kth Largest Element in a Stream, k closest to origin
+Heaps: Last stone weight, Kth Largest Element in a Stream, k closest to origin, Kth Largest Element in an Array, 
+
+Sat: Top K Frequent Elements, Kth Smallest Element in a Sorted Matrix,connect sticks, apples in basket, 
+
+
 
 Tues: 11 LC. 4 were copies. 
 Wed: 4 LC
 Thurs: 3 :(
-Fri: 8 . 1 was copy 
+Fri: 11 . 1 was copy 
+Sat: 4
 
 
 - PM 2 rnds, reject
