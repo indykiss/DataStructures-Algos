@@ -28,7 +28,7 @@ FB onsite:
 - Leetcodes 
 - System design
 
-* LCs -  ~32: 
+* LCs -  ~40, as of end Sat: 
 IDK like Sun? Mon? : numIslands, isAnagram, valid parenthesis, minRemoveToMakeValid,twoSum, frequencySort, isPalindrome, merge intervals, valid BST, largest val in rows in BT, numUniqueEmails 
 Max subarr, Reverse Integer
 
@@ -42,16 +42,20 @@ Fri:
 Sliding window: Max Consecutive Ones III, maxTurbulenceSize, lengthOfLongestSubstringTwoDistinct, Longest Substring with At Most K Distinct Characters, fruit in baskets
 Heaps: Last stone weight, Kth Largest Element in a Stream, k closest to origin, Kth Largest Element in an Array, 
 
-Sat: Heap: Top K Frequent Elements, Kth Smallest Element in a Sorted Matrix, connect sticks, apples in basket, top sort c&p 
-Linked Lists - Merge 2 LL, Merge K LL, reversed LL, remove LL nodes
+Sat: 
+Heap: Top K Frequent Elements, Kth Smallest Element in a Sorted Matrix, connect sticks, apples in basket
+Random- Implement Queue using Stacks, top sort c&p, find pivot idx
+Linked Lists - Merge 2 LL, Merge K LL, reversed LL, Remove Linked List Elements, copy list with random pointer
+
 To do:  Add numbers, add strs
 
 Tues: 11 LC. 4 were copies. 
 Wed: 4 LC
 Thurs: 3 :(
 Fri: 11 . 1 was copy 
-Sat: 9. 1 copy 
+Sat: 12. 2 copy 
 
+Remember, when you are mentally dead around the 4/5 hour mark, just do leetcode easies. Maybe read sys des. 
 
 - PM 2 rnds, reject
 - McK 2 rnds, final (3), try again in 3 months
