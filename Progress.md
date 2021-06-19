@@ -42,15 +42,15 @@ Fri:
 Sliding window: Max Consecutive Ones III, maxTurbulenceSize, lengthOfLongestSubstringTwoDistinct, Longest Substring with At Most K Distinct Characters, fruit in baskets
 Heaps: Last stone weight, Kth Largest Element in a Stream, k closest to origin, Kth Largest Element in an Array, 
 
-Sat: Top K Frequent Elements, Kth Smallest Element in a Sorted Matrix,connect sticks, apples in basket, 
-
-
+Sat: Heap: Top K Frequent Elements, Kth Smallest Element in a Sorted Matrix, connect sticks, apples in basket, top sort c&p 
+Linked Lists - Merge 2 LL, Merge K LL, reversed LL, remove LL nodes
+To do:  Add numbers, add strs
 
 Tues: 11 LC. 4 were copies. 
 Wed: 4 LC
 Thurs: 3 :(
 Fri: 11 . 1 was copy 
-Sat: 4
+Sat: 9. 1 copy 
 
 
 - PM 2 rnds, reject
