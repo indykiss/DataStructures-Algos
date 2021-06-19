@@ -51,6 +51,12 @@ queue.
     - If a child's in-degree becomes 0, add it as a source
     and thus add into the queue. 
 
+We use topological sorting when we want to sort thing based
+on dependencies across other items. 
+
+Ex: Alien dictionary without the letters. We need the other
+words to determine the alphabetical order. 
+
 */
 
 const Deque = require('./collections/deque'); // import deque
@@ -111,6 +117,63 @@ function topological_sort(vertices, edge) {
 
     return sortedOrder;
 }
+
+
+
+// copy and paste practice mental steps June 2021
+function top_sort(vertices, edges) {
+    
+    let sortedOrder = []; 
+    
+    // initialize graph
+    let inDegree = Array(vertices).fill(0); 
+    let graph = Array.fill(vertices).fill(0).map(( => [])); // empty arr in every node of graph 
+    
+    // build graph w/ edges
+    edges.forEach(edge => {
+        let parent = edge[0],
+            child = edge[1]; // off?
+        
+        graph[parent].push(child); // add child to parent 
+        inDegree[child]++; // add that a thing is now a parent to child
+    })
+    
+    // find all sources of indegrees
+    let sources = []; // queue. deque?
+    for(let i = 0; i < inDegree.length; i++) {
+        let ele = inDegree[i]; 
+        
+        if(ele === 0) {
+            sources.push(ele);
+        }
+    }
+    
+    
+    // add things to sortedOrder? 
+    while(sources.length > 0) {
+        let vertex = sources.shift(); // remove from front of que
+        sortedOrder.push(vertex);
+        // remove from child tracker 
+        graph[vertex].forEach((child) => {
+            inDegree[child]--; 
+            if(inDegree[child] === 0) {
+                sources.push(child);
+            }
+        })
+    }
+    
+    // what if we have a cycle in the graph? 
+    // no cycles allowed? 
+    
+    return sortedOrder; 
+}
+
+
+
+
+
+
+
 
 
 
