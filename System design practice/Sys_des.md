@@ -3,6 +3,14 @@
 ## Github primer notes ##
 https://github.com/donnemartin/system-design-primer#system-design-topics-start-here 
 
+# Benefits of distributed systems
+- More scalable (ability of system to grow & manage traffic/ increased data)
+- Reliable (performning without failing during a period of time)
+- Fault tolerant
+- Lower latency, increased performance
+- Cost effective 
+- More available (amount of time a system is operational). Hard to actually calc but this is the four ninths [1 hr/ year]/ 3 ninths [8 hrs] thing. Redundant servers is good because helps prevent downtime 
+
 
 # Scalability 
 - Vertical vs horizontal scaling 
@@ -67,6 +75,12 @@ Availability depends on whether or not the components are in sequence or in para
 - In parallel: Avail increases when 2 components aren't 100% available are in parallel. Covers for each other basically
 
 
+# Reliability vs availability 
+- A reliable system is always available (but not vice versa)
+- Availability can be maintained by redundancy 
+- Reliable software is more profitable bc proviging same service requires less backup
+
+
 # Domain name system 
 DNS translates a domain name like www.example.com to an IP address. 
 An IP address is a uniq address that IDs a device on the internet's location and makes the device accessible for communication.
@@ -118,9 +132,9 @@ Two modes: Active-passive or Active-active versions.
 
 Load balancers can route traffic based on a few metrics: random, least loaded, session/ cookies, round robin or weighted round robin, layer 4, layer 7
 
-Layer 4 load balancing: Looks at info at the transport layer to see how to distribute requests. 
+Layer 4 load balancing: Looks at info at the transport layer to see how to distribute requests. Simpler.
 
-Layer 7 load balancing: Looks at info at the application layer to see how to distribute requests. 
+Layer 7 load balancing: Looks at info at the application layer to see how to distribute requests. Good 4 authentication. 
 
 At the cost of flexibility, layer 4 LB requires less time and computing resources than layer 7. But the performance impact can be minimal on modern hardware. 
 
@@ -130,9 +144,10 @@ Load balancing can be helpful with horizontal scaling, improving performance and
 Disadvantages of horizontal scaling: Adds complexity, involves cloning servers. Servers should be stateless, they shouldn't have user-related data. 
 Sessions can be stored in a centralized data store, like a database or a persistent cache. Downstream servers like caches/ DBs need to handle more simultaneous connections as upstream servers scale out. 
 
-
 Disadvantages of load balancing: 
 Can be a performance bottleneck. Introducing a LB increases complexity. A single LB is a single point of failure, configuring multiple LBs further increases complexity. 
+
+Ex: Nginx (cloud), Citrix (hardware)
 
 
 # Reverse proxy (web server)
@@ -160,3 +175,48 @@ Microservices is a type of architecture that's made up of small modules. Each ru
 Disadvantages: Adding an application layer with loosely coupled services requires a different approach from an architecture standpoint vs a monolithic system. Adds complexity. 
 
 # Database
+
+
+
+Vertical scaling - make 1 server bigger. Easy, but single point of failure and can only make it so big. 
+
+Horizontal scaling - lots of smaller servers. More complex managability, but more efficient. Redundancy built in. Will also need load balancer. Cloud makes this easier. Kubernetes/ hadoop are exs of horiztontal scaling. App can be global bc cloud based data centers are all over. 
+
+
+# Data conversions
+8 bits -> 1 byte
+1k bytes -> KB
+1k KB -> MB
+1k MB -> GB 
+1k GB -> TB
+
+1 char -> 1 byte
+1 integer -> 4 bytes
+Timestamp -> 4 bytes
+
+# Time conversion 
+3K secs/ hour
+90K secs/ day
+2.5 mil secs/ month 
+
+# Math 
+Traffic =  Avg daily users * average reads/writes per user
+Memory = Read requests/ day * Average request size * 0.20
+    Cache the 20% most frequent stuff 
+Bandwidth = Requests per day * Request size 
+Storage = Writes per day * size of write * time to store data
+    Save stuff for like 5 years 
+
+
+# Notes - things that can go wrong 
+Communication: 
+- Client might not find server
+- Server crashes mid-request
+- Server response is lost
+- Client crashes
+
+- Network might not be reliable and/or secure
+- Bandwidth is not infinite 
+- High latency 
+
+- Need to synchronize clock to ensure everything is on same page
