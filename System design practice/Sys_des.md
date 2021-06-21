@@ -176,12 +176,124 @@ Disadvantages: Adding an application layer with loosely coupled services require
 
 # Database
 
+* Relational database management system (RDBMS) *
+Good for organizing data items into tables. Also good for ACID compliance. 
 
+A- Atomicity. Each transaction is all or nothing.
+C- Consistency. Any transaction will bring the DB from one valid state to another.
+I- Isolation. Executing transactions concurrently has the same results as if the transactions were executed serially. 
+D- Durability. Once a transaction has been committed, it will remain so. 
+
+Scaling a RDBMS can be done a few ways:
+- primary/secondary replication
+- primary/ primary replication
+- federation
+    - splits up databases by function. instead of a single monolithic DB, you can have multiple DBs (1 for users, 1 for products, etc)
+    - Good for scaling, but more complex. 
+        - Complex: not effective if schema needs huge tables
+        - Need to update application logic to know which tables to read/ write
+        - More hardware needed
+- sharding/ partitioning
+    - distributes data across dif. databases such that each only manage a subset of the data. Ex for users DB- as more users are added, more shards are added to the cluster.
+    - good for scaling but adds complexity
+        - update application logic to know which DB shards to work with 
+        - data distribution can be lopsided. more data in one shard than others. rebalancing adds complexity. using a consistent hashing method helps 
+        - adds hardware
+- denomalization
+    - Improve read performance at expensse of write performance 
+    - Duplicates data on massive tables to avoid expensive joins. Super fast to read. 
+    - A lot of NoSQL is based on just throwing everything into a single table. 
+    - But tables r duplicated 
+- SQL tuning 
+    - Tightening up the schema
+        - Make sure to use effective data types. Not saving too much extra. Ex using a long when can use int
+        - Avoid using large blobs if not needed
+    - Use good indices 
+        - Columns that you are querying (SELECT *) could be faster with indices
+        - Indices usually represented with self-balancing B-tree
+        - Placing an idx keeps data in memory, more space
+        - Writes might be slow bc index needs updating 
+    - Avoid expensive joins
+        - Denormalize if needed
+    - Partition tables
+    - Tune the query cache 
+
+* NoSQL * 
+Collections of data items represented in a key-value store, document store, wide column store, or a graph DB. 
+
+Data is denormalized and joins are done in the application code. 
+
+NoSQL is generally not ACID compliant and favors eventual consistency (two DBs aren't immediately consistent with each other, but will be eventually). 
+
+BASE is used to describe the properties of NoSQL. Chooses availability over consistent-- eventual consistent is not real time consistency. 
+
+BASE = basically available, soft state, eventual consistency. 
+
+When picking a NoSQL solution, need to pick what type:
+
+- Key-value store
+    - It's a hash table. O(1) reads and writes 
+    - High performance, good for simple data models and rapidly changing data (caches)
+    - Only limited set of operations
+- Document store
+    - Centered around documents (JSON, binary) where a doc stores all info for a given object
+    - Doc stores provide APIs or a query language to query based on the internal structure of the doc itself
+    - Ex: MongoDB  
+- Wide column store
+    - Data is stored in columns, that might be grouped in column tables/ super column families
+    - Used for very large data sets
+    - High availability and high scalability
+    - Ex: Cassandra, Bigtable
+- Graph database
+    - Each node is a record and there are connection between nodes that represents relationships.
+    - Good to represent complex relationships with many foreign keys or many-to-many relationships. 
+    - High performance for complex relationships like social networks. 
+    - New.ish, not wide spread. 
+
+SQL vs NoSQL
+- Choose SQL for:
+    - Structured data
+    - Strict schema
+    - Relational data
+    - Need for complex joins
+    - Clear patterns for scaling 
+    - Index lookups are fast
+NoSQL:
+    - Semi structured data
+    - Dynamic or flexible schema
+    - Non-relational data
+    - No complex joins
+    - TBs or PBs of data 
+    - Data intensive workload
+    - Exs of time to use NoSQL: clickstream, leaderboard or scoring data, temporary data like shopping cart, frequently accessed tables, metadata/ lookup tables
 
 Vertical scaling - make 1 server bigger. Easy, but single point of failure and can only make it so big. 
 
 Horizontal scaling - lots of smaller servers. More complex managability, but more efficient. Redundancy built in. Will also need load balancer. Cloud makes this easier. Kubernetes/ hadoop are exs of horiztontal scaling. App can be global bc cloud based data centers are all over. 
 
+
+# Cache
+Types of caches:
+- Client caching
+- CDN Caching
+- Web server caching
+    - ie Reverse proxies can do this
+- Database caching
+- Application caching 
+    - In memory caching like Redis are key-value stores.
+    As all caches, need data invalidation strategy, like LRU or LFU. 
+-  
+
+# Asynchronism
+
+# Communication
+- HTTP
+- Transmission control protocol (TCP)
+- User datagram protocol (UDP)
+- Remote procedure call (RPC)
+- Representational state transfer (REST)
+
+# Security
 
 # Data conversions
 8 bits -> 1 byte
