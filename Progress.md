@@ -26,11 +26,12 @@ FB onsite: Problem solving, coding, test verifications, communication
 # June plan:
 - Leetcodes, System design
 
-* Week pre FB - 45 LCs 
+* Week pre FB, M-Sun - 46 LCs 
 
 Facebook FAQs To-Do:  
 - Add numbers, add strs, look at list 
-- Briefly go over the FB system designs
+- Briefly go over the FB system designs all of them 
+- Look at my google sheet and the list
 
 Remember, when you are mentally dead around the 4/5 hour mark, just do leetcode easies. Maybe read sys des. 
 
