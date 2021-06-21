@@ -21,44 +21,28 @@ Leetcodes
 - Topological sort 
 - Dynamic programming (google, nefarious startups)
 
-FB onsite: 
-- Problem solving, coding, test verifications, communication
+FB onsite: Problem solving, coding, test verifications, communication
 
 # June plan:
-- Leetcodes 
-- System design
+- Leetcodes, System design
 
-* LCs -  ~40, as of end Sat: 
-IDK like Sun? Mon? : numIslands, isAnagram, valid parenthesis, minRemoveToMakeValid,twoSum, frequencySort, isPalindrome, merge intervals, valid BST, largest val in rows in BT, numUniqueEmails 
-Max subarr, Reverse Integer
+* Week pre FB - 45 LCs 
 
-Tues: sortedSquares, 3sum, merge 2 sorted arrs, remove element, reverse str, palindrome linked list, sort colors, count number of nice subarrs, + 4 random ones I didnt get
-
-Wed: set mismatch, word pattern, isomorphic str, twoSum II
-
-Thurs: idk some sentence one, dietPlanPerformance, numKLenSubstrNoRepeats
-
-Fri: 
-Sliding window: Max Consecutive Ones III, maxTurbulenceSize, lengthOfLongestSubstringTwoDistinct, Longest Substring with At Most K Distinct Characters, fruit in baskets
-Heaps: Last stone weight, Kth Largest Element in a Stream, k closest to origin, Kth Largest Element in an Array, 
-
-Sat: 
-Heap: Top K Frequent Elements, Kth Smallest Element in a Sorted Matrix, connect sticks, apples in basket
-Random- Implement Queue using Stacks, top sort c&p, find pivot idx
-Linked Lists - Merge 2 LL, Merge K LL, reversed LL, Remove Linked List Elements, copy list with random pointer
-
-To do:  Add numbers, add strs
-
-Tues: 11 LC. 4 were copies. 
-Wed: 4 LC
-Thurs: 3 :(
-Fri: 11 . 1 was copy 
-Sat: 12. 2 copy 
+Facebook FAQs To-Do:  
+- Add numbers, add strs, look at list 
+- Briefly go over the FB system designs
 
 Remember, when you are mentally dead around the 4/5 hour mark, just do leetcode easies. Maybe read sys des. 
 
+
+
+
+
+
 - PM 2 rnds, reject
 - McK 2 rnds, final (3), try again in 3 months
+
+
 
 
 # May plan: 
