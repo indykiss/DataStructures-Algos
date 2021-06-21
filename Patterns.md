@@ -86,6 +86,7 @@ of a binary tree
 - Return the avg of each level in a BT 
 
 BFS: Use a queue to hold things 
+Breathe the queue. Good for going wide. 
 
 // Normal BFS: 
 var bfs = function(root) {
@@ -126,6 +127,7 @@ equals target sum
 
 
 DFS: Use a recursive stack to hold things
+Duck the recursive stack. Good for going deep
 
 var dfs = function(root) {
     // if we can't prove, default to opposite
