@@ -19,6 +19,30 @@ Strat:
 */
 
 
+// DFS:
+var rightSideView = function(root) {
+    if(!root) return [];
+
+    let res = [];
+        
+    dfs(root, 0); 
+    
+    return res;
+    
+    function dfs(root, height) {
+        if(!root) return; 
+        
+        res[height] = root.val;
+        
+        dfs(root.left, height + 1); 
+        dfs(root.right, height + 1);
+    }
+    
+};
+
+
+
+// BFS:
 var rightSideView = function(root) {
     // Result array
     const res = [];
