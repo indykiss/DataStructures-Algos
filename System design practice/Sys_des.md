@@ -282,18 +282,79 @@ Types of caches:
 - Application caching 
     - In memory caching like Redis are key-value stores.
     As all caches, need data invalidation strategy, like LRU or LFU. 
--  
+- Caching at the database query level
+    - When query DB, hash the query as a key and store result as val
+    - But hard to delete cached results with complex queries
+    - If 1 piece of data changes, need to also update the cache.
+- Caching at the object levell
+    - See data as an object, like our application code. 
+    - Have application assemble dataset from the DB into a class instance or a data structure. 
+        - remove object from cache if underlying data has changed
+        - allows for async processing 
+
+Good to cache:
+    - User sessions
+    - Fully rendered web pages
+    - Activity streams
+    - User graph data 
+
+When to update the cache: 
+Honestly running out of time so running through this fast.
+- Cache-aside
+- Write-through
+- Write-behind
+- Refresh ahead 
+
 
 # Asynchronism
+Asychronous workflows help reduce request times for expensive operations that would be performed in-line. 
+Does time-consuming work in advance, like periodic data aggregation. 
+
+Message queues receive, hold and deliver messages. If operation is too slow to do inline, you can use a message queue. Redis is an ex. 
+
+Task queues - receives task & related data, runs them, delivers results. 
+
+If the task or message queues start to grow too much, the queue size can become larger than memory, resulting in cache misses, disk reads and slow performance. 
+Back pressure helps limit queue size, keeping a high throughoput rate and good response times. 
+
+Disadvantage of aynchronism:
+- Adding queues can add delays and complexity. Need to make sure the use case is right. Inexpensive workflows might be better for synchronous operations. 
+
 
 # Communication
 - HTTP
+    - Default. Request/ response. 
+    - Uses TCP/ UDP protocols.
 - Transmission control protocol (TCP)
+    - Handshake. Needs high reliable, but less time critical. 
+    - Use this over UDP when need all data to arrive intact. 
 - User datagram protocol (UDP)
-- Remote procedure call (RPC)
+    - Connectionless. 
+    - Less reliable but good for real time. Like video chat, streaming. 
+    - Use when need low latency. Late data is worse than data loss. 
+- Remote procedure call (RPC). Idk
 - Representational state transfer (REST)
+    - Client/ server modle where client acts on a set of resources provided by the server. 
+    - Server provides a representation of resouces/ actions that can either manipulate or get a new representation. 
+    - 4 qualities of a restful interface
+        - Identify resources
+        - CHange ith representations
+        - Self-descriptive error message
+        - Web service should be accessible in a browser
+    - Sample of rest calls:
+        - GET /resource/ID
+        - PUT /resource/ID{"data": "newUpdateData"}
+        - DELETE /resource/ID
+    - Bad bc sometimes not good bc complexity. REST relies on a few verbs, might not be the best fit for use case. Can be higher latency if data fields aren't updated in all the right places. 
 
 # Security
+VERY broad, lots going on. 
+
+- Just make sure that data is encrypted in transit AND at rest in the database. 
+- Sanitize user inputs. Prevent SQL injections. 
+- Use parameterized queries to prevent SQL injection.
+- Ensure user permissions match user needs. The principle of least privilege. 
+
 
 # Data conversions
 8 bits -> 1 byte
