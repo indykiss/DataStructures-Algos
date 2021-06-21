@@ -36,9 +36,9 @@ Facebook FAQs To-Do:
 Remember, when you are mentally dead around the 4/5 hour mark, just do leetcode easies. Maybe read sys des. 
 
 
-Mon-Wed: 6
-    - Search: 5 DFS, 
-    - Random: 1
+Mon-Wed: 9
+    - Search: 6 DFS, 
+    - Random: 3
 
 
 

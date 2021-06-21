@@ -2,7 +2,8 @@
 /*
 Symmetric Tree
 
-Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+Given a binary tree, check whether it is a mirror of 
+itself (ie, symmetric around its center).
 
 For example, this binary tree [1,2,2,3,4,4,3] is symmetric:
 
@@ -40,36 +41,18 @@ var isSymmetric = function(root) {
 // practice 
 var isSymmetric = function(root) {
     
-    return mirrorCheck(root, root);
+    return isMirror(root, root);
     
-    function mirrorCheck(left, right) {
+    function isMirror(root1, root2) {
+        if(!root1 && !root2) return true; 
+        if(!root1 || !root2) return false;
         
-        if(!left && !right) return true;
-        if(!left || !right) return false; 
-
-        return mirrorCheck(right.left, left.right) && mirrorCheck(left.right, right.left) && (left.val === right.val);           
+        if(root1.val !== root2.val) return false; 
+        
+        return isMirror(root1.left, root2.right) && 
+            isMirror(root1.right, root2.left);
     }
 };
-
-
-var isSymmetric = function(root) {
-
-    return isMirror(root, root);
-
-    function isMirror(left, right) {
-
-        if(!left && !right) return true;
-        if(!left || !right) return false; 
-
-        return(left.val == right.val) &&
-        isMirror(left.left, right.right) &&
-        isMirror(left.right, right.left);
-    }
-}
-
-
-
-
 
 
 
