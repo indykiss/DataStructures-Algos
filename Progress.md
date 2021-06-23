@@ -36,11 +36,11 @@ Facebook FAQs To-Do:
 Remember, when you are mentally dead around the 4/5 hour mark, just do leetcode easies. Maybe read sys des. 
 
 
-Mon-Wed: 26
+Mon-Wed: 26 + 6
     - Search: 8 DFS, 4 BFS
     - Random: 9
     - Add things: 5. Not great, but need to move on
-    - Wed: 
+    - Wed: 6
 
 
 - PM 2 rnds, reject
@@ -123,3 +123,12 @@ In ~2 weeks, I did 70 algos total. Reviewed lots of Grokking problems: 30 refres
 ## Methodology for counting algos: 
 Found 70 by guesstimating/ counting commits from mid-Oct to end of Oct. 1 commit = 1 problem. Found 40 uniq by comparing this repo at end of Oct with mid-Oct. See search tracker spreadsheet to check out list of uniq algos (just copied and pasted all the .js files from directory). Did ~120 code commits in Oct, more heavy in 2nd half of Oct. 
 
+
+
+# Rough Cheat Sheet
+hash[key] = val 
+maxHeap = new Heap([], null, (a,b) => a-b);
+minHeap = new Heap([], null, (a,b) => b-a)
+    - Time: Adding elements to heap is O(log k) times the num
+    of times we need to do it.. O(n log k)
+    - Space: O(k) IF max length of heap is k 
