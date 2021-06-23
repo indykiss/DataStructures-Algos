@@ -3,8 +3,8 @@
 
 - Functional/ Non-functional requirements
 - Capacity/ load estimation
-- Data models
 - Define APIs 
+- Data models (tables and fields)
 - Building block of distributed system
 - Deep dive into a couple components possibly
 
