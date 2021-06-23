@@ -36,12 +36,11 @@ Facebook FAQs To-Do:
 Remember, when you are mentally dead around the 4/5 hour mark, just do leetcode easies. Maybe read sys des. 
 
 
-Mon-Wed: 19
+Mon-Wed: 26
     - Search: 8 DFS, 4 BFS
-    - Random: 3
+    - Random: 9
     - Add things: 5. Not great, but need to move on
-    - 
-
+    - Wed: 
 
 
 - PM 2 rnds, reject

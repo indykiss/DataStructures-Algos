@@ -7,7 +7,6 @@ Traverse a BST using:
 - In order 
 - Preorder
 - Postorder
-
 */
 
 
