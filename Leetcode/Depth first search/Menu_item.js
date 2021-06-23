@@ -58,54 +58,58 @@ super_root = [12, 50]
 */
 
 
+// 5 mins after interview fixed it and is now working
+// dude wasnt super helpful
 function menuItems(arr) {
-  let tracker = {}, 
-    superRoot = [], 
-    res = []; 
-  
-  for(let item of arr) {
-    let id, parentId;
-    let chars = item.split(',');
-  
-    id = chars[0];
+    let tracker = {}, 
+      superRoot = [],
+      idName = {}, 
+      res = []; 
     
-    // [1, integers, 2]
-    if(chars.length === 3) {
-      parentId = chars[2];
-    } else {
-      superRoot.push(id);
-    }
-
-    if(tracker[parentId]) {
-      tracker[parentId].push(id);   
-    } else if(parentId) {
-      tracker[parentId] = [id]; 
-    }
-  } 
-  
-  while(superRoot.length > 0) {
-    let root = superRoot.pop(); 
+    for(let item of arr) {
+      let id, parentId;
+      let chars = item.split(',');
     
-    dfs(root);
-  }
+      id = chars[0];
+      idName[id] = chars[1];
+      
+      // [1, integers, 2]
+      if(chars.length === 3) {
+        parentId = chars[2];
+      } else {
+        superRoot.push(id);
+      }
   
-  return res; 
+      if(tracker[parentId]) {
+        tracker[parentId].push(id);   
+      } else if(parentId) {
+        tracker[parentId] = [id]; 
+      }
+    } 
   
-  function dfs(root) {
-    if(!root) return; 
-    let rootStr = "" + root + "";
-
-    let children = tracker[rootStr]; 
-
-    console.log(rootStr);
-          
-    for(let i = 0; i < children.length; i++) {
-      let child = children[0];
-      console.log(child);
-      dfs(child);
+    while(superRoot.length > 0) {
+      let root = superRoot.pop(); 
+      
+      console.log(root, idName[root]);
+      dfs(root);
+    }
+    
+    return res; 
+    
+    function dfs(root) {
+      if(!root) return; 
+  
+      let children = tracker[root]; 
+  
+      if(children) {
+        for(let i = 0; i < children.length; i++) {
+          let child = children[i];
+          console.log(child, idName[child]);
+          dfs(child);
+        }
+      }
     }
   }
-}
 
 
 console.log(menuItems([

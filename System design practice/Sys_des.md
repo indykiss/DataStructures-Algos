@@ -265,7 +265,7 @@ NoSQL:
     - No complex joins
     - TBs or PBs of data 
     - Data intensive workload
-    - Exs of time to use NoSQL: clickstream, leaderboard or scoring data, temporary data like shopping cart, frequently accessed tables, metadata/ lookup tables
+    - Exs of time to use NoSQL: clickstream, leaderboard or scoring data, temporary data like shopping cart, frequently accesssed tables, metadata/ lookup tables
 
 Vertical scaling - make 1 server bigger. Easy, but single point of failure and can only make it so big. 
 
