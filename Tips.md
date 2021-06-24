@@ -68,7 +68,6 @@ var dfs = function(root) {
     dfs(root.right)
 }
 
-
 # Bfs (normal / level wise) - Queue to track
 - Look all around 
 
@@ -130,6 +129,7 @@ function inOrderTraverse(tree, array) {
       return array; 
   }
 
+# Linked Lists
 
 # Recursion - think of it like DFS
 
