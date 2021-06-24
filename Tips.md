@@ -29,23 +29,24 @@ maxHeap = new Heap([], null, (a,b) => a-b);
 - Start, end, midpt (math.floor(start + (end-start)/2)
 - Update start/ end based on where target is 
 
-function binarySearch(array, target, lower, upper) {
-    let lower = 0, upper = arr.length -1;
 
-	while(lower <= upper) {
-		const mid = Math.floor((lower + upper) / 2)
-		const guess = array[mid];
+    function binarySearch(array, target, lower, upper) {
+        let lower = 0, upper = arr.length -1;
 
-		if(guess === target) {
-			return mid;
-		} else if(target < guess) {
-			upper = mid - 1;
-		} else {
-			lower = mid + 1;
-		}
-	}
-    return thing;
-}
+        while(lower <= upper) {
+            const mid = Math.floor((lower + upper) / 2)
+            const guess = array[mid];
+
+            if(guess === target) {
+                return mid;
+            } else if(target < guess) {
+                upper = mid - 1;
+            } else {
+                lower = mid + 1;
+            }
+        }
+        return thing;
+    }
 
 O(log n) time
 
@@ -58,102 +59,104 @@ O(log n) time
 # Dfs - Recursive 
 - Searching for ANYTHING. Searching through a hash, an arr, a matrix, or a tree
 - Going deep
-var dfs = function(root) {
-    / if we can't prove, default to opposite
-    if(root == null) return;
 
-    / prove either yes or no, or do thing:
-    if(root.val / root.left/  root.right) {
-        return false/ true;
-    } 
-    
-    return dfs(root.left, info?) || / && 
-        dfs(root.right, info?)
-    OR
-    dfs(root.left)
-    dfs(root.right)
-}
+    var dfs = function(root) {
+        / if we can't prove, default to opposite
+        if(root == null) return;
+
+        / prove either yes or no, or do thing:
+        if(root.val / root.left/  root.right) {
+            return false/ true;
+        } 
+        
+        return dfs(root.left, info?) || / && 
+            dfs(root.right, info?)
+        OR
+        dfs(root.left)
+        dfs(root.right)
+    }
 
 # Bfs (normal / level wise) - Queue to track
 - Look all around 
 
 Levels for trees: 
-var levelOrder = function(root) {
-    if(!root) return [];
-    let queue = [],
-        res = []; 
-    queue.push(root); 
-    
-    while(queue.length > 0) {
-        let lvl = [], 
-            len = queue.length; 
-            // SAVE PREVIOUS QUE LENGTH
+    var levelOrder = function(root) {
+        if(!root) return [];
+        let queue = [],
+            res = []; 
+        queue.push(root); 
         
-        // LOOK AT EACH LEVEL
-        for(let i = 0; i < len; i++) {
-            let curr = queue.shift();
-            lvl.push(curr.val); 
-            if(curr.left) queue.push(curr.left); 
-            if(curr.right) queue.push(curr.right); 
+        while(queue.length > 0) {
+            let lvl = [], 
+                len = queue.length; 
+                // SAVE PREVIOUS QUE LENGTH
+            
+            // LOOK AT EACH LEVEL
+            for(let i = 0; i < len; i++) {
+                let curr = queue.shift();
+                lvl.push(curr.val); 
+                if(curr.left) queue.push(curr.left); 
+                if(curr.right) queue.push(curr.right); 
+            }
+            res.push(lvl); 
         }
-        res.push(lvl); 
-    }
-    return res;
-};
+        return res;
+    };
 
 
 # Tree traversals (pre in post)
 - Just notes:
 
-// traverse(left), arr.push(curr.val), traverse(right)
-function inOrderTraverse(tree, array) {
-    if(tree !== null) {
-          inOrderTraverse(tree.left, array); 
-          array.push(tree.value);
-          inOrderTraverse(tree.right, array);
-      }
-      return array; 
-  }
-  
-  // arr.push(curr.val), traverse(left), traverse(right)
-  function preOrderTraverse(tree, array) {
-      if(tree !== null) {
-          array.push(tree.value);
-          preOrderTraverse(tree.left, array); 
-          preOrderTraverse(tree.right, array);
-      }
-      return array; 
-  }
-  
-  // traverse(left), traverse(right), arr.push(curr.val)
-  function postOrderTraverse(tree, array) {
-    if(tree !== null) {
-          postOrderTraverse(tree.left, array); 
-          postOrderTraverse(tree.right, array);
-          array.push(tree.value);
-      }
-      return array; 
-  }
+    // traverse(left), arr.push(curr.val), traverse(right)
+    function inOrderTraverse(tree, array) {
+        if(tree !== null) {
+            inOrderTraverse(tree.left, array); 
+            array.push(tree.value);
+            inOrderTraverse(tree.right, array);
+        }
+        return array; 
+    }
+    
+    // arr.push(curr.val), traverse(left), traverse(right)
+    function preOrderTraverse(tree, array) {
+        if(tree !== null) {
+            array.push(tree.value);
+            preOrderTraverse(tree.left, array); 
+            preOrderTraverse(tree.right, array);
+        }
+        return array; 
+    }
+    
+    // traverse(left), traverse(right), arr.push(curr.val)
+    function postOrderTraverse(tree, array) {
+        if(tree !== null) {
+            postOrderTraverse(tree.left, array); 
+            postOrderTraverse(tree.right, array);
+            array.push(tree.value);
+        }
+        return array; 
+    }
 
 # Linked Lists
 Singly/ doubly linked. 
 Reverse LL:
-var reverseList = function(head) {
-    let stack = [],
-        reversedList = new ListNode(null);
-    while(head !== null) {
-        stack.push(head); // curr or curr.val ? 
-        head = head.next; 
-    }
-    head = reversedList;
-    while(stack.length !== 0) {
-        let ele = stack.pop();
-        
-        head.next = new ListNode(ele.val);
-        head = head.next; 
-    }
-    return reversedList.next; // ?  
-} 
+
+    var reverseList = function(head) {
+        let stack = [],
+            reversedList = new ListNode(null);
+        while(head !== null) {
+            stack.push(head); // curr or curr.val ? 
+            head = head.next; 
+        }
+        head = reversedList;
+        while(stack.length !== 0) {
+            let ele = stack.pop();
+            
+            head.next = new ListNode(ele.val);
+            head = head.next; 
+        }
+        return reversedList.next; // ?  
+    } 
 
 # Recursion - think of it like DFS
 
