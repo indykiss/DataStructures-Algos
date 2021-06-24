@@ -23,29 +23,16 @@ Leetcodes
 
 FB onsite: Problem solving, coding, test verifications, communication
 
+
 # June plan:
-- Leetcodes, System design
+- Leetcodes
+- System design
 
 * Week pre FB, M-Sun - 46 LCs 
+* Mon-Wed pre FB - 36 LCs
 
-Facebook FAQs To-Do:  
-- Add numbers, add strs, look at list 
-- Briefly go over the FB system designs all of them 
-- Look at my google sheet and the list
-
-Remember, when you are mentally dead around the 4/5 hour mark, just do leetcode easies. Maybe read sys des. 
-
-
-Mon-Wed: 26 + 6
-    - Search: 8 DFS, 4 BFS
-    - Random: 9
-    - Add things: 5. Not great, but need to move on
-    - Wed: 6
-
-
-- PM 2 rnds, reject
 - McK 2 rnds, final (3), try again in 3 months
-
+- PM 2 rnds, reject
 
 
 
@@ -57,9 +44,7 @@ What actually happened:
 - PM studying (3 /7 hrs done), TEI/ PEI prep
 - LC lightly
 
-Leetcodes practiced last week: 
-- productExceptSelf, moveZeroes, findLengthOfLCIS, pivotIndex, findKthPositive, mergeIntervals, trapping rain water, 
-~10 SQLs
+Leetcodes practiced last week:  ~10 + ~10 SQLs
 
 Original plan: 
 - Coding : HEAVY on the mediums, warm up with easies
@@ -124,11 +109,3 @@ In ~2 weeks, I did 70 algos total. Reviewed lots of Grokking problems: 30 refres
 Found 70 by guesstimating/ counting commits from mid-Oct to end of Oct. 1 commit = 1 problem. Found 40 uniq by comparing this repo at end of Oct with mid-Oct. See search tracker spreadsheet to check out list of uniq algos (just copied and pasted all the .js files from directory). Did ~120 code commits in Oct, more heavy in 2nd half of Oct. 
 
 
-
-# Rough Cheat Sheet
-hash[key] = val 
-maxHeap = new Heap([], null, (a,b) => a-b);
-minHeap = new Heap([], null, (a,b) => b-a)
-    - Time: Adding elements to heap is O(log k) times the num
-    of times we need to do it.. O(n log k)
-    - Space: O(k) IF max length of heap is k 

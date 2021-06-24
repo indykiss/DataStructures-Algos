@@ -1,6 +1,4 @@
 
-
-
 # Design an API that does XYZ 
 # Ex: File download
 
@@ -16,7 +14,6 @@
 
 1. Clarify input and output. Ask lots of clarifying questions, figure out the problem's requirements. Any constraints? Ask Qs as we go.
 Problem tree structure the problem. 
-
     User inputs URL
     Output is a file downloaded
     How many users

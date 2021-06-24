@@ -109,13 +109,32 @@ var bfs = function(root) {
 for level wise, you check the length of current queue and do a for loop for that many in the level.  just watch out not to check for the length of the queue again for each iteration of for loop, since the length could change with each node processed and more nodes pushed back into the queue.  does that make sense? (this is a common hiccup for level wise)
 instead of
 
-for(let i = 0; i < queue.length; i++) {
+Normal BFS:
+Same as below, but just drop the inner for loop
 
-int currentLevelLength = queue.length;
-for(let i = 0; i < currentLevelLength; i++) {
-something like that.
-
-???
+Level wise traversal:
+var levelOrder = function(root) {
+    if(!root) return [];
+    let queue = [],
+        res = []; 
+    queue.push(root); 
+    
+    while(queue.length > 0) {
+        let lvl = [], 
+            len = queue.length; 
+            // SAVE PREVIOUS QUE LENGTH
+        
+        // LOOK AT EACH LEVEL
+        for(let i = 0; i < len; i++) {
+            let curr = queue.shift();
+            lvl.push(curr.val); 
+            if(curr.left) queue.push(curr.left); 
+            if(curr.right) queue.push(curr.right); 
+        }
+        res.push(lvl); 
+    }
+    return res;
+};
 
 
 # Tree: DFS (stack, paths)

@@ -25,7 +25,7 @@ https://github.com/jwasham/coding-interview-university
 
 
 ### To- dos! 
-https://github.com/donnemartin/system-design-primer
+1/2 done: https://github.com/donnemartin/system-design-primer
 
 
 
