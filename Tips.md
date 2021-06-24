@@ -1,11 +1,13 @@
 
 # Hashes/ maps/ sets
 hash[key] = val 
+
 maps: .has(key), .set(key, val), .get(key), .delete(key)
+
 sets: .add(num), .has(num), .delete(num), set.size()
 
-Str: 
 splice(start, deleteCount) changes an array by removing or replacing existing elements and/or adding new elements in place.
+
 slice(start, end) extracts a section of a string and returns it as a new string, without modifying the original string
 
 Access: O(1) time
