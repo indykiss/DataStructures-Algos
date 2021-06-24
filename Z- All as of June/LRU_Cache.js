@@ -1,0 +1,182 @@
+
+/*
+LRU Cache
+
+Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: get and put.
+
+get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.
+put(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
+
+The cache is initialized with a positive capacity.
+
+Follow up:
+Could you do both operations in O(1) time complexity?
+
+Example:
+
+LRUCache cache = new LRUCache( 2 // capacity  )
+
+cache.put(1, 1);
+cache.put(2, 2);
+cache.get(1);       // returns 1
+cache.put(3, 3);    // evicts key 2
+cache.get(2);       // returns -1 (not found)
+cache.put(4, 4);    // evicts key 1
+cache.get(1);       // returns -1 (not found)
+cache.get(3);       // returns 3
+cache.get(4);       // returns 4
+
+*/
+
+
+
+// Bloomb. Did this twice 
+class LRUCache {
+    
+    constructor(capacity) {
+        this.cache = new Map();
+        this.capacity = capacity;
+    }
+    
+    get(key) {
+        // If the cache has the key, we want to return the value
+        // And remove and readd to the top
+        if(this.cache.has(key)) {
+            let temp = this.cache.get(key);
+            this.cache.delete(key);
+            this.cache.set(key, temp);
+            return this.cache.get(key); 
+        } else {
+            return -1;
+        }
+    }
+    
+    // If cache has this key, change the value
+    // If we're at capacity, ID the least commonly used & delete it
+    put(key, value) {
+        if(this.cache.has(key)) {
+            this.cache.delete(key);
+        } 
+        
+        this.cache.set(key, value)
+        
+        if(this.cache.size > this.capacity) {
+            let least = this.cache.keys().next().value;
+            this.cache.delete(least);
+        }
+    }
+}
+
+
+// Bloomb. Do me again def. Sept 
+
+class LRUCache {
+    // First in, first out cache
+        // Ideal: get & put in constant time
+    constructor(capacity) {
+        this.cache = new Map();
+        this.capacity = capacity;
+    }
+    
+    /* Get item from cache
+        If it exists, delete and readd it in
+        to update the cache */
+    get(key) {
+       if(this.cache.has(key)) {
+           let tempVal = this.cache.get(key);
+           this.cache.delete(key);
+           this.cache.set(key, tempVal);
+           return this.cache.get(key);
+       } else {
+           return -1;
+       }
+    }
+    
+    /* Add an item into cache
+        If we've hit capacity, remove least used
+        If item exists, move it to the front by deleting it 
+        and adding it back in */
+    put(key, value) {
+        if(this.cache.has(key)) {
+            this.cache.delete(key)
+        }
+        this.cache.set(key, value);
+        
+        if(this.cache.size > this.capacity) {
+            let leastUsed = this.cache.keys().next().value;
+            this.cache.delete(leastUsed);
+        } 
+    }
+}   
+
+
+
+
+
+// Attempt #2, do me again 
+class LRUCache {
+    constructor(capacity) {
+        this.capacity = capacity;
+        this.cache = new Map();
+    }
+    // Pulls the value that correlates to the key
+        // If it exists, delete and re-add in order to move it into most recently used
+    get(key) {
+        if(this.cache.has(key)) {
+            let val = this.cache.get(key);
+            this.cache.delete(key);
+            this.cache.set(key, val);
+            return this.cache.get(key);
+        } else {
+            return -1;
+        }
+    }
+    // Set or inserts the value of the given key, IF it doesnt exist 
+    put(key, value) {
+        if(this.cache.has(key)) {
+            this.cache.delete(key);
+        }    
+        this.cache.set(key, value);
+        // Recognize that there is a capacity. We want to delete the least recently used item. 
+        if(this.cache.size > this.capacity) {
+            let least = this.cache.keys().next().value;
+            this.cache.delete(least);
+        }
+    }
+}
+
+
+
+
+class LRUCache {
+    constructor(capacity) {
+        this.cache = new Map();
+        this.capacity = capacity;
+    }
+    
+    get(key) {
+        // If the cache already has the key, we want to delete it and move it to being the most recently used key. Since we're looking at the order of key usage in cache
+        if(this.cache.has(key)) {
+            let val = this.cache.get(key);
+            this.cache.delete(key);
+            this.cache.set(key, val);
+            return this.cache.get(key);
+        } else {
+            return -1;
+        }
+    }
+    
+    put(key, value) {
+        if(this.cache.has(key)) {
+            this.cache.delete(key);
+        }
+        this.cache.set(key, value)
+        if(this.cache.size > this.capacity) {
+            // Delete the 1st value, ideally the least recently used item
+            this.cache.delete(this.cache.keys().next().value)
+        }
+    }
+       
+}
+
+
