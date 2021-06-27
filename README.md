@@ -1,5 +1,5 @@
 
-# Data structures and algos and big O, oh my! 
+# Data structures, algos and distributed system design
 As a bootcamp graduate with practical software engineering experience, I've realized that my knowledge of data structures and algorithms are a bit lacking, by not having a traditional computer science background.
 
 So I'm reviewing concepts and think about how to solve problems. 
@@ -10,6 +10,7 @@ I'm using this repo to help keep track of the things I've learned and what I wan
 Highly recommended coding interview university: 
 https://github.com/jwasham/coding-interview-university
 
+Working on a new project, TBD on scope
 
 ## Resources I've covered, in no particular order:
 - InterviewCake 
@@ -21,14 +22,10 @@ https://github.com/jwasham/coding-interview-university
 - Company specific study sheets (parallels hackerrank/ leetcodes)
 - Udemy's The Coding Interview Bootcamp: Algos + Data structures by Stephen Grider
 - Harvard's online CS50x course 2020
+- https://github.com/donnemartin/system-design-primer
 
 
-
-### To- dos! 
-1/2 done: https://github.com/donnemartin/system-design-primer
-
-
-
-### Lower priority to-dos! 
+### To-dos
+Learn Python
 https://github.com/lolapriego/coursework
 https://github.com/orrsella/soft-eng-interview-prep
