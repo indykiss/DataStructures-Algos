@@ -1,11 +1,24 @@
 # ----------------------------------------------#
 
 # Upcoming: 
-* Onsite June 24
+* PM maybe
+* Sept tech presentation
 
 # ----------------------------------------------#
 
-Leetcodes
+# July 
+- Coding interview course maybe 
+"Checklist.md"
+
+# June plan:
+- Leetcodes
+- System design
+- LCs: 82
+- McK 2 rnds, final (3), try again in 3 months
+- Appl PM 2 rnds, reject for 1 role - ongoing 
+- Total LC count is 340, FYI
+
+Key topics
 - Strings/arrays
 - Sliding window
 - Multiple pointers
@@ -20,19 +33,6 @@ Leetcodes
 - Tries
 - Topological sort 
 - Dynamic programming (google, nefarious startups)
-
-FB onsite: Problem solving, coding, test verifications, communication
-
-
-# June plan:
-- Leetcodes
-- System design
-
-* Week pre FB, M-Sun - 46 LCs 
-* Mon-Wed pre FB - 36 LCs
-
-- McK 2 rnds, final (3), try again in 3 months
-- PM 2 rnds, reject
 
 
 

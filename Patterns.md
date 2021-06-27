@@ -1,6 +1,7 @@
 
 
 # Patterns and techniques picked up from Grokking Patterns + InterviewCake and elsewhere. 
+# Should combine this with tips.md
 # Very important to recognize patterns 
 
 
