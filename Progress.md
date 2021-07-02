@@ -9,6 +9,19 @@
 # July 
 - Coding interview course maybe 
 "Checklist.md"
+- Plan new project
+    - Fullstack app definitely
+    - Hosted on Heroku for ease
+- Begin project
+- Build testing suite, baby CI/CD
+- Can use RoR if I want
+    - Or can do python w/ bootstrap?
+    
+Possible project options:
+    - Dev a sharepoint/ onedrive site
+    - Upgrade datapond by a lot
+
+
 
 # June plan:
 - Leetcodes
