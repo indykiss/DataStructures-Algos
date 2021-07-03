@@ -19,16 +19,26 @@
     
 Possible project options:
     - Dev a sharepoint/ onedrive site
+    - Dev a case capture form
+        - Admin portal w/ case builder email, 
+        template for email, client name, when to email
+        - Automatically send email to that email w/ template
+        on that date
+        - User gets link to the form to fill out
+        - With option to fill out form OR change end date
+        of project on their end 
+        - After form completed, gets sent to me & Laura
     - Upgrade datapond by a lot
 
 
 
-# June plan:
+# June:
 - Leetcodes
 - System design
 - LCs: 82
 - McK 2 rnds, final (3), try again in 3 months
-- Appl PM 2 rnds, reject for 1 role - ongoing 
+- Appl PM 2 rnds, reject for 1 role - ongoing?
+- FB onsite fail 
 - Total LC count is 340, FYI
 
 Key topics
@@ -49,7 +59,7 @@ Key topics
 
 
 
-# May plan: 
+# May: 
 What actually happened: 
 - MK 1st round HR, 2nd round Hackerrank, 3rd round pair
 - Studied SQL, QA, React, API queries
