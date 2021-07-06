@@ -7,7 +7,7 @@
 # ----------------------------------------------#
 
 # July 
-- Coding interview course maybe 
+- Coding interview course maybe ?
 "Checklist.md"
 - Plan new project
     - Fullstack app definitely
@@ -30,6 +30,8 @@ Possible project options:
         - After form completed, gets sent to me & Laura
     - Upgrade datapond by a lot
 
+- Maybe learn Python, do new project in Python 
+- Or use RoR w/ Python data viz
 
 
 # June:
