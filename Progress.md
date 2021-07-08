@@ -32,6 +32,7 @@ Possible project options:
 
 - Maybe learn Python, do new project in Python 
 - Or use RoR w/ Python data viz
+- Did a little game devs. Small but fun
 
 
 # June:
