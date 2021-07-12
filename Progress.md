@@ -34,6 +34,11 @@ Possible project options:
 - Or use RoR w/ Python data viz
 - Did a little game devs. Small but fun
 
+- Narrowing project plan down on paper
+
+- Continuing to learn about project management 
+
+
 
 # June:
 - Leetcodes
