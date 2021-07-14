@@ -35,9 +35,8 @@ Possible project options:
 - Did a little game devs. Small but fun
 
 - Narrowing project plan down on paper
-
 - Continuing to learn about project management 
-
+- Focusing on sharepoint work
 
 
 # June:
@@ -83,7 +82,7 @@ Original plan:
     - Web crawler, Search, Commenting, privacy settings, proximity server, top N songs
     - 2 practice interviews with system design 
 - Implement trie : done! But practice 
-- have been doing fair amount of SWE job apps, research (youtubes), to 
+- have been doing fair amount of SWE apps, research (youtubes), to 
 create pipeline
 
 
