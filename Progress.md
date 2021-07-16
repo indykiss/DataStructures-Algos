@@ -16,7 +16,9 @@
 - Build testing suite, baby CI/CD
 - Can use RoR if I want
     - Or can do python w/ bootstrap?
-    
+
+- SRE, FS studying 
+
 Possible project options:
     - Dev a sharepoint/ onedrive site
     - Dev a case capture form
