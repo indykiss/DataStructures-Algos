@@ -7,8 +7,8 @@
 # ----------------------------------------------#
 
 # July 
-- Coding interview course maybe ?
-"Checklist.md"
+- SRE, FS studying 
+
 - Plan new project
     - Fullstack app definitely
     - Hosted on Heroku for ease
@@ -16,8 +16,6 @@
 - Build testing suite, baby CI/CD
 - Can use RoR if I want
     - Or can do python w/ bootstrap?
-
-- SRE, FS studying 
 
 Possible project options:
     - Dev a sharepoint/ onedrive site
@@ -34,7 +32,6 @@ Possible project options:
 
 - Maybe learn Python, do new project in Python 
 - Or use RoR w/ Python data viz
-- Did a little game devs. Small but fun
 
 - Narrowing project plan down on paper
 - Continuing to learn about project management 
