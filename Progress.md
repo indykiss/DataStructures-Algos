@@ -37,6 +37,9 @@ Possible project options:
 - Continuing to learn about project management 
 - Focusing on sharepoint work
 
+- Created google doc on operating systems studying and 
+network technologies
+
 
 # June:
 - Leetcodes
