@@ -1,7 +1,4 @@
 
--- HckRnk certs Qs : good practice for pair programming thing
--- I'm googling a lot, not ideal, but learning bits and pieces 
-
 -- DB is a library of content. Tables are books. Indexes are the dewey 
 -- decimal system. 
 
