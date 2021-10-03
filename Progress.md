@@ -6,39 +6,50 @@
 
 # ----------------------------------------------#
 
+
+# October
+- Wrap up KPI builder 
+    - CI/CD, 3 more tests, prep for Qs
+    - Need to email recruiter
+- Leetcodes:
+    - 
+- Review CS foundation 
+
+
+# September 
+- KPI Builder 
+- Restart pipelines (2-3 cos)
+
+
+# August 
+- Generally took a little break
+- Morgan SRE
+- Start working lightly on KPI builder towards end of Aug
+
+
 # July 
-- SRE, FS studying 
+- Generally took a break
+- SRE, Finance studying 
+- Project management principles
 
 - Plan new project
-    - Fullstack app definitely
-    - Hosted on Heroku for ease
-- Begin project
-- Build testing suite, baby CI/CD
-- Can use RoR if I want
-    - Or can do python w/ bootstrap?
+    - Fullstack app definitely, hosted on Heroku for ease
+    - Begin project
+    - Build testing suite, baby CI/CD
 
-Possible project options:
+Notes: possible project options:
+    - KPI builder -- Winner!! 
     - Dev a sharepoint/ onedrive site
     - Dev a case capture form
-        - Admin portal w/ case builder email, 
-        template for email, client name, when to email
-        - Automatically send email to that email w/ template
-        on that date
+        - Admin portal w/ case builder email, template for email, client name, when to email
+        - Automatically send email to that email w/ template on date
         - User gets link to the form to fill out
-        - With option to fill out form OR change end date
-        of project on their end 
+        - With option to fill out form OR change end date of project on their end 
         - After form completed, gets sent to me & Laura
     - Upgrade datapond by a lot
 
-- Maybe learn Python, do new project in Python 
-- Or use RoR w/ Python data viz
+- Created google doc on operating systems studying and  network technologies
 
-- Narrowing project plan down on paper
-- Continuing to learn about project management 
-- Focusing on sharepoint work
-
-- Created google doc on operating systems studying and 
-network technologies
 
 
 # June:
