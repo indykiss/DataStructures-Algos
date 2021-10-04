@@ -45,9 +45,7 @@ Strat: O(n) time, O(n) space
 */
 
 var containsNearbyDuplicate = function(nums, k) {
-
     let seen = {};
-    
     for(let i = 0; i < nums.length; i++) {
         let curr = nums[i], 
             dupeIdx = seen[curr];
@@ -57,10 +55,23 @@ var containsNearbyDuplicate = function(nums, k) {
         } else {
             seen[curr] = i; 
         }
-        
     }
     return false; 
 };
+
+In Python:
+function dupeFinder(arr, k):
+	tracker = {} # num : idx
+ 
+	for i, val in enumerate(arr): 
+		if char in tracker:
+			j = tracker[char]
+			if i - j <= k: 
+				return True
+		tracker[char] = i
+	
+	return False
+
 
 
 

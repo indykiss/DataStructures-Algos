@@ -12,7 +12,9 @@
     - CI/CD, 3 more tests, prep for Qs
     - Need to email recruiter
 - Leetcodes:
-    - 
+    - Easies 6
+        - Valid anagram, Contains Dupe I & II & III, largest 3 nums in arr, intersection two arrays,
+    - Mediums 
 - Review CS foundation 
 
 
