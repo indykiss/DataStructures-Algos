@@ -12,8 +12,8 @@
     - CI/CD, 3 more tests, prep for Qs
     - Need to email recruiter
 - Leetcodes:
-    - Easies 6
-        - Valid anagram, Contains Dupe I & II & III, largest 3 nums in arr, intersection two arrays,
+    - Easies 12
+        - Valid anagram, Contains Dupe I & II & III, largest 3 nums in arr, intersection two arrays, palindrome number, minStack, valid parantheses (redo), reverse linked list (redo), first uniq char in a str, Longest Common Prefix (redo)
     - Mediums 
 - Review CS foundation 
 
@@ -86,7 +86,7 @@ What actually happened:
 - MK 1st round HR, 2nd round Hackerrank, 3rd round pair
 - Studied SQL, QA, React, API queries
 - QA 1st round- failed, but learned about QA so not total loss
-- PM studying (3 /7 hrs done), TEI/ PEI prep
+- PM studying, TEI/ PEI prep
 - LC lightly
 
 Leetcodes practiced last week:  ~10 + ~10 SQLs
