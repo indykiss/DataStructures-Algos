@@ -12,8 +12,8 @@
     - CI/CD, 3 more tests, prep for Qs
     - Need to email recruiter
 - Leetcodes:
-    - Easies 12
-        - Valid anagram, Contains Dupe I & II & III, largest 3 nums in arr, intersection two arrays, palindrome number, minStack, valid parantheses (redo), reverse linked list (redo), first uniq char in a str, Longest Common Prefix (redo)
+    - Easies 16
+        - Valid anagram, Contains Dupe I & II & III, largest 3 nums in arr, intersection two arrays, palindrome number, minStack, valid parantheses, reverse linked list, first uniq char in a str, Longest Common Prefix, move zeros, summary ranges, remove adjacent duplicates in a str, max nesting depth parantheses, 
     - Mediums 
 - Review CS foundation 
 
