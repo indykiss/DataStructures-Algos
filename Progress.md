@@ -12,9 +12,10 @@
     - CI/CD, 3 more tests, prep for Qs
     - Need to email recruiter
 - Leetcodes:
-    - Easies 16
-        - Valid anagram, Contains Dupe I & II & III, largest 3 nums in arr, intersection two arrays, palindrome number, minStack, valid parantheses, reverse linked list, first uniq char in a str, Longest Common Prefix, move zeros, summary ranges, remove adjacent duplicates in a str, max nesting depth parantheses, 
-    - Mediums 
+    - Easies: 18
+        - Valid anagram, Contains Dupe I & II & III, largest 3 nums in arr, intersection two arrays, palindrome number, minStack, valid parantheses, reverse linked list, first uniq char in a str, Longest Common Prefix, move zeros, summary ranges, remove adjacent duplicates in a str, max nesting depth parantheses, best time to buy and sell stock, maximum subarr
+    - Mediums: 2
+        - Merge intervals, accounts merge 
 - Review CS foundation 
 
 
