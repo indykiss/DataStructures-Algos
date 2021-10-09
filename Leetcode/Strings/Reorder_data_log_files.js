@@ -34,6 +34,21 @@ IDK. THIS ANSWER DOESNT EVEN PASS THE TESTS.
 But I've spent too much time on this already. 
 */
 
+/*
+LocaleCompare basics:
+
+letters.sort((a,b) => 
+    let strA = "cat"
+    let strB = "bat"
+
+    return strA.localeCompare(strB) will return 1 because it's true 
+    Returning 1 means sort will sort a before b 
+
+    Returning 0 (which would be strB.localeCompare(strA)) would mean
+    b is sorted before a
+)
+
+*/
 
 var reorderLogFiles = function(logs) {
     // Create separate arrs for letter and digit logs
