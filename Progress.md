@@ -12,10 +12,10 @@
     - CI/CD, 3 more tests, prep for Qs
     - Need to email recruiter
 - Leetcodes Oct Week 1:
-    - Easies: 21
-        - Valid anagram, Contains Dupe I & II & III, largest 3 nums in arr, intersection two arrays, palindrome number, minStack, valid parantheses, reverse linked list, first uniq char in a str, Longest Common Prefix, move zeros, summary ranges, remove adjacent duplicates in a str, max nesting depth parantheses, best time to buy and sell stock, maximum subarr, valid palindrome II, reorder data in log files, sign of the product of an array
-    - Mediums: 6
-        - Merge intervals, accounts merge, top K frequent words,  reverse words in a str, remove adjacent duplicates II, sort chars by frequency, 
+    - Easies: 22
+        - Fizz buzz, Valid anagram, Contains Dupe I & II & III, largest 3 nums in arr, intersection two arrays, palindrome number, minStack, valid parantheses, reverse linked list, first uniq char in a str, Longest Common Prefix, move zeros, summary ranges, remove adjacent duplicates in a str, max nesting depth parantheses, best time to buy and sell stock, maximum subarr, valid palindrome II, reorder data in log files, sign of the product of an array
+    - Mediums: 9
+        - Merge intervals, accounts merge, top K frequent words,  reverse words in a str, remove adjacent duplicates II, sort chars by frequency, longest substring Without Repeating Characters, find first and las position of element in sorted arr, find min in rotated sorted arr, 
 - Review CS foundation 
 
 RN: On leetcode, of the solved problems, I didn't do 17-20 of the 280+. Dave did those but I didn't. So I've basically done more LCs than Dave :(
