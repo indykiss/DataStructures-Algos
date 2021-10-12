@@ -12,9 +12,9 @@ This doc is a file of notes from class. I started taking this in 2020: https://c
 
 But I didn't finish the course in time, and now the 2021 version has a few more psets & lectures/ slightly different content: https://cs50.harvard.edu/x/2021/ 
 
-In the interest of time (studying schedule), I'm running through the new ~3 2021 lectures quickly and letting a few psets in C be uncompleted. I do not enjoy C. Python is great, I'd like to focus on the Python psets, refresh SQL, and quickly touch on web dev. 
+In the interest of time (studying schedule), I'm running through the new ~3 2021 lectures quickly and letting a few psets in C be uncompleted. I do not enjoy C. Python is great, I'd like to focus on the Python psets, refresh SQL and quickly touch on web dev. 
 
-Each pset file in this folder is going to have overarching lessons listed at the top. Even if the pset itself isn't complete/ isn't passing all the tests, I'd like to make sure I'm understanding the overall points. 
+Each pset file in this folder is going to have overarching lessons listed at the top. Even if the pset itself isn't complete/ isn't passing all the tests,I'd like to make sure I'm understanding the overall points. 
 
 # ----------------------------------------------------------#
 
@@ -41,12 +41,10 @@ C is a procedural computer language that is used to build and maintain applicati
 
 - Compiler goal is to run input code through algo to convert to binary so computer can give us output 
 
-- When we run code, we compile it first and make the program 
-using "ruby", for example. This goes into the file, imports anything that needs to be imported, runs the algos, creates the output. Compiles our source code (code we write) into machine code (code the computer understands).
+- When we run code, we compile it first and make the program using "ruby", for example. This goes into the file, imports anything that needs to be imported, runs the algos, creates the output. Compiles our source code (code we write) into machine code (code the computer understands).
     ruby nameFile.rb 
 
-- In C, a "long" is a very long number. Int is integer which 
-goes to like some billion. Long goes longer than int. Float = number with decimal. Int = integer. Char = single character. Str = strs. Reason to use char over str/ int over long is to save space. 
+- In C, a "long" is a very long number. Int is integer which goes to 2B and -2B, because it's 32 bit. Long goes longer than int, it has 64 bits of memory. Float = number with decimal. Int = integer. Char = single character. Str = strs. Reason to use char over str/ int over long is to save space. 
 
 - In C, we have to manually allocate space and free up space that we aren't using. 
 
@@ -58,6 +56,10 @@ We don't have enough bits to store all possible values, so computer stores as cl
 x: 1
 y: 10
 x / y = 0.100000001490116119384765625000000
+Computers aren't perfect. 
+
+- Y2K problem : Running out of space to store data 
+Another issue. If we have a 32 bit number and try to use a bigger number, we lose the carry. In 2038, we're going to see a similiar problem -- we're hitting like the 4 billionth second counted since like 1970. So hardware all over needs to be upgraded. 
 
 Pset1: Make pyramid thing with a nested for loop
 
