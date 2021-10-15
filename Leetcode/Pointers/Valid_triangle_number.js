@@ -33,6 +33,30 @@ Not great. Strategy:
         - return triplets 
 */
 
+// better:
+var triangleNumber = function(nums) {
+    let triplets = 0; 
+
+    nums.sort((a,b) => a-b); 
+    
+    for(let i = 0; i < nums.length; i++) {
+        let curr = nums[i], 
+            start = 0, 
+            end = i-1; 
+        
+        while(start < end) {
+            if(nums[start] + nums[end] > curr) {
+                triplets += (end-start); 
+                end--;
+            } else {
+                start++; 
+            }
+        }
+    }
+    return triplets;
+};
+
+
 
 var triangleNumber = function(nums) {
     let triplets = 0; 

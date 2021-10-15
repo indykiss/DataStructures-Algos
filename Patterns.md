@@ -191,7 +191,9 @@ var dfs = function(root) {
 }
 
 DFS practice, muscle memory:
-
+var dfs = function(root) {
+    
+}
 
 
 
