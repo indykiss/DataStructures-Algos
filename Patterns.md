@@ -10,6 +10,8 @@ When we have a sorted arr or linked list and we want to find a set of eles that 
 
 Two pointers iterate through the data together until a condition is met. 
 
+We can't use two pointers if the arr isn't sorted.
+
 Ways to identify when to use the Two Pointer method:
 -  It will feature problems where you deal with sorted arrays (or Linked Lists) and need to find a set of elements that fulfill certain constraints
 - The set of elements in the array is a pair, a triplet, or even a subarray
@@ -106,6 +108,8 @@ var bfs = function(root) {
     return thing;
 }
 
+
+
 # BFS level wise 
 for level wise, you check the length of current queue and do a for loop for that many in the level.  just watch out not to check for the length of the queue again for each iteration of for loop, since the length could change with each node processed and more nodes pushed back into the queue.  does that make sense? (this is a common hiccup for level wise)
 instead of
@@ -137,6 +141,30 @@ var levelOrder = function(root) {
     return res;
 };
 
+// practice typing for muscle memory
+var bfs = function(root) {
+    let queue = [],
+        res = [];
+
+    queue.push(root); 
+
+    while(queue.length > 0) {
+        let len = queue.length,
+            lvl = [], 
+
+        // do something 
+        for(let i = 0; i < queue.length; i++) {
+            let curr = queue.shift(); 
+            lvl.push(curr.val);
+            if(curr.left) queue.push(curr.left)
+            if(curr.right) queue.push(curr.right)
+        }
+        res.push(lvl)
+    }
+    return res
+}
+
+
 
 # Tree: DFS (stack, paths)
 We use recursion, OR A STACK using iterative, to track all the previous (parent) nodes while traversing. This makes our space always O(H) where H is the height of the tree.  
@@ -161,6 +189,10 @@ var dfs = function(root) {
     return dfs(root.left, info?) || / && 
         dfs(root.right, info?)
 }
+
+DFS practice, muscle memory:
+
+
 
 
 ## Swapping things:
