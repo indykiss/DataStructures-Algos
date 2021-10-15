@@ -12,10 +12,10 @@
     - CI/CD, 3 more tests, prep for Qs
     - Need to email recruiter
 - Leetcodes: All of Oct
-    - Easies: 26
-        - Fizz buzz, Valid anagram, Contains Dupe I & II & III, largest 3 nums in arr, intersection two arrays, palindrome number, minStack, valid parantheses, reverse linked list, first uniq char in a str, Longest Common Prefix, move zeros, summary ranges, remove adjacent duplicates in a str, max nesting depth parantheses, best time to buy and sell stock, maximum subarr, valid palindrome II, reorder data in log files, sign of the product of an array, design parking system, design ordered stream (trash), maximum units on a truck, pivot index
-    - Mediums: 15
-        - Merge intervals, accounts merge, top K frequent words,  reverse words in a str, remove adjacent duplicates II, sort chars by frequency, longest substring Without Repeating Characters, find first and las position of element in sorted arr, find min in rotated sorted arr, two city scheduler, merge sorted arr (3 pointers), design browser history, valid bst, design underground system, invalid transactions 
+    - Easies: 27
+        - Fizz buzz, Valid anagram, Contains Dupe I & II & III, largest 3 nums in arr, intersection two arrays, palindrome number, minStack, valid parantheses, reverse linked list, first uniq char in a str, Longest Common Prefix, move zeros, summary ranges, remove adjacent duplicates in a str, max nesting depth parantheses, best time to buy and sell stock, maximum subarr, valid palindrome II, reorder data in log files, sign of the product of an array, design parking system, design ordered stream (trash,maximum units on a truck, pivot index, consecutive characters
+    - Mediums: 16
+        - Merge intervals, accounts merge, top K frequent words,  reverse words in a str, remove adjacent duplicates II, sort chars by frequency, longest substring Without Repeating Characters, find first and las position of element in sorted arr, find min in rotated sorted arr, two city scheduler, merge sorted arr (3 pointers), design browser history, valid bst, design underground system, invalid transactions, implement magic dictionary 
 
 - Review CS foundation 
 
