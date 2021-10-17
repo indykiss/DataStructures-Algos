@@ -6,10 +6,8 @@ I'm using this repo to help keep track of the things I've learned and what I wan
 
 
 ## What am I studying now? 
-Highly recommended coding interview university: 
-https://github.com/jwasham/coding-interview-university
-
-Working on a new project, TBD on scope
+- Working on a new project, KPI Builder, and learning Python
+- Refreshing algorithmic thinking and data structures problem solving 
 
 
 ## Resources I've covered, in no particular order:
@@ -22,12 +20,16 @@ Working on a new project, TBD on scope
 - Udemy's The Coding Interview Bootcamp: Algos + Data structures by Stephen Grider
 - Harvard's online CS50x course 2020
 - https://github.com/donnemartin/system-design-primer
-- Technical case studies : Solving digital problem on
+- Technical case studies : Solving digital problems
 
 
 ### To-dos
 Cracking the Coding Interview (need to complete- have finished half)
 
+Highly recommended coding interview university: 
+https://github.com/jwasham/coding-interview-university
+
 Learn Python
 https://github.com/lolapriego/coursework
 https://github.com/orrsella/soft-eng-interview-prep
+Udemy Python Course
