@@ -14,11 +14,11 @@ I'm using this repo to help keep track of the things I've learned and what I wan
 - InterviewCake 
 - Leetcode
 - Hackerrank 
+- Harvard's online CS50x course 2020
 - Grokking the Coding Interview: Patterns for Coding Questions 
-- Interviewing.io for practicing talking about code 
+- Interviewing.io for practice talking about code 
 - Company specific study sheets (parallels hackerrank/ leetcodes)
 - Udemy's The Coding Interview Bootcamp: Algos + Data structures by Stephen Grider
-- Harvard's online CS50x course 2020
 - https://github.com/donnemartin/system-design-primer
 - Technical case studies : Solving digital problems
 
@@ -30,6 +30,6 @@ Highly recommended coding interview university:
 https://github.com/jwasham/coding-interview-university
 
 Learn Python
-https://github.com/lolapriego/coursework
-https://github.com/orrsella/soft-eng-interview-prep
-Udemy Python Course
+- https://github.com/lolapriego/coursework
+- https://github.com/orrsella/soft-eng-interview-prep
+- Udemy Python Course
