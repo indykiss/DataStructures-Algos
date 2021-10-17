@@ -117,7 +117,7 @@ instead of
 Normal BFS:
 Same as below, but just drop the inner for loop
 
-Level wise traversal:
+Level order traversal:
 var levelOrder = function(root) {
     if(!root) return [];
     let queue = [],
@@ -192,7 +192,7 @@ var dfs = function(root) {
 
 DFS practice, muscle memory:
 var dfs = function(root) {
-    
+
 }
 
 
