@@ -44,6 +44,21 @@ How do you identify when to use?
 - Palindrome Linked List (medium)
 - Cycle in a Circular Array (hard)
 
+Linked List Cycle, slow/ fast example
+var hasCycle = function(head) {
+    let slow = head,
+        fast = head;
+    
+    while(fast !== null && fast.next !== null) {
+        fast = fast.next.next;
+        slow = slow.next;
+        
+        if(slow === fast) {
+            return true;
+        }
+    }
+    return false;
+};
 
 ## Merge Intervals 
 We're looking to find overlapping intervals or merge intervals if they do overlap. Intervals being an arr of arrs with starting point and end point. 
@@ -117,7 +132,7 @@ instead of
 Normal BFS:
 Same as below, but just drop the inner for loop
 
-Level order traversal:
+Level order BFS:
 var levelOrder = function(root) {
     if(!root) return [];
     let queue = [],
