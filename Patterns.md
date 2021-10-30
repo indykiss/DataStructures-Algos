@@ -356,6 +356,25 @@ function binarySearchHelper(array, target, lowerBound, upperBound) {
 }
 
 
+var binarySearch = function(arr, target) {
+    let floor = 0, 
+        ceiling = arr.length-1; 
+    
+    while(floor <= ceiling) {
+        let mid = Math.floor(floor+ceiling/2);
+
+        if(arr[mid] == target) {
+            return mid; 
+        } else if(target < arr[mid]) {
+            ceiling = mid-1;
+        } else {
+            floor = mid+1;
+        }
+    }
+    return -1; 
+
+}
+
 
 ## Cyclic sort 
 Describes an approach to deal with problems involving arrays containing numbers in a given range.

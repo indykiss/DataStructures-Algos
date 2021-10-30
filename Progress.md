@@ -18,7 +18,7 @@
         - Merge intervals, accounts merge, top K frequent words,  reverse words in a str, remove adjacent duplicates II, sort chars by frequency, longest substring Without Repeating Characters, find first and las position of element in sorted arr, find min in rotated sorted arr, two city scheduler, merge sorted arr (3 pointers), design browser history, valid bst, design underground system, invalid transactions, implement magic dictionary, valid triangle, smallest string starting from leaf, maximum width of binary tree, binary tree level order traversal, binary tree level order zig zag traversal, find bottom left tree value, number of islands, add numbers I && II, Basic Calculator II, subsets, insert delete getrandom O(1), minimum remove to make valid parenthesis,pow(x,n), LRU cache, coin change, decode string, flatten multilevel doubly linked list, 
     - Hards: 2
         - Buy and sell stocks III (medium really), vertical order traversal of binary tree
-
+- Took 1 week off of leetcodes because BUSY with work and planning Galapagos vacation and looking at apartments for moving. Very bad timing for vacation. 
 - Review CS foundation 
 
 RN: On leetcode, of the solved problems, I didn't do 17-20 of the 280+. Dave did those but I didn't. So I've basically done more LCs than Dave :(
