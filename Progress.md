@@ -23,6 +23,7 @@
 
 RN: On leetcode, of the solved problems, I didn't do 17-20 of the 280+. Dave did those but I didn't. So I've basically done more LCs than Dave :(
 
++ Hacker rank practice on front end/ to do apps/ reviewing React
 
 # September 
 - KPI Builder 
