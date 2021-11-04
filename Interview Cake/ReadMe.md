@@ -30,7 +30,7 @@ At the end of strings, under the hood, there is a special character that says "y
 
 # Arrays 
 
-Looking up the contents of a given array index is O(1)O(1) time. This fast lookup capability is the most important property of arrays.
+Looking up the contents of a given array index is O(1) time. This fast lookup capability is the most important property of arrays.
 
 But the formula we used to get the address of the nnth item in our array only works if:
 

@@ -6,24 +6,27 @@
 
 # ----------------------------------------------#
 
-
-# October
-- Wrap up KPI builder 
+# November
+- Vacation for 2 weeks + Thanksgiving
+- NEED TO WRAP UP KPI BUILDER
     - CI/CD, 3 more tests, prep for Qs
     - Need to email recruiter
-- Leetcodes: All of Oct
+- Front end test, skilled test
+
+
+# October
+- 2 weeks of studying really: 1 week planning vacay/ busy at work, 1 week looking at apts
+- 75 leetcode practices. Easies: 44, mediums: 36, hards: 2 in Oct. 
     - Easies: 44
         - Fizz buzz, Valid anagram, Contains Dupe I & II & III, largest 3 nums in arr, intersection two arrays, palindrome number, minStack, valid parantheses, reverse linked list, first uniq char in a str, Longest Common Prefix, move zeros, summary ranges, remove adjacent duplicates in a str, max nesting depth parantheses, best time to buy and sell stock, maximum subarr, valid palindrome II, reorder data in log files, sign of the product of an array, design parking system, design ordered stream (trash), maximum units on a truck, pivot index, consecutive characters, same tree, binary tree paths, diameter of binary tree, symmetric tree, minimum depth of BT,invert binary tree, sum of left leaves, island perimeter, minimum difference between BST nodes, merge two binary trees, average of levels in binary tree, relative ranks, verifying an alien dictionary, shortest distance to a character, reverse words in a string, 1D candy crush, power of 2 
     - Mediums: 36
         - Merge intervals, accounts merge, top K frequent words,  reverse words in a str, remove adjacent duplicates II, sort chars by frequency, longest substring Without Repeating Characters, find first and las position of element in sorted arr, find min in rotated sorted arr, two city scheduler, merge sorted arr (3 pointers), design browser history, valid bst, design underground system, invalid transactions, implement magic dictionary, valid triangle, smallest string starting from leaf, maximum width of binary tree, binary tree level order traversal, binary tree level order zig zag traversal, find bottom left tree value, number of islands, add numbers I && II, Basic Calculator II, subsets, insert delete getrandom O(1), minimum remove to make valid parenthesis,pow(x,n), LRU cache, coin change, decode string, flatten multilevel doubly linked list, design leaderboard, sort integers by the power value
-    - Hards: 2
-        - Buy and sell stocks III (medium really), vertical order traversal of binary tree
-- Took 1 week off of leetcodes because BUSY with work and planning Galapagos vacation and looking at apartments for moving. Very bad timing for vacation. 
 - Review CS foundation 
+- Bl 1st round
+- Hacker rank practice on front end/ to do apps/ reviewing React
 
 RN: On leetcode, of the solved problems, I didn't do 17-20 of the 280+. Dave did those but I didn't. So I've basically done more LCs than Dave :(
 
-+ Hacker rank practice on front end/ to do apps/ reviewing React
 
 # September 
 - KPI Builder 
@@ -58,7 +61,6 @@ Notes: possible project options:
     - Upgrade datapond by a lot
 
 - Created google doc on operating systems studying and  network technologies
-
 
 
 # June:

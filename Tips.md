@@ -30,7 +30,7 @@ maxHeap = new Heap([], null, (a,b) => a-b);
 - Update start/ end based on where target is 
 
 
-    function binarySearch(array, target, lower, upper) {
+    function binarySearch(array, target) {
         let lower = 0, upper = arr.length -1;
 
         while(lower <= upper) {
@@ -52,7 +52,7 @@ O(log n) time
 
 
 # Stacks / Queues
-- shift() removes the first element from an arr and returns that removed element
+- shift() removes the first element from an arr and returns that removed element [pop the shift]
 - unshift() adds to the beg of arr and returns the new length of the arr
 - pop() removes at end. push() adds to end
 
@@ -79,7 +79,24 @@ O(log n) time
 # Bfs (normal / level wise) - Queue to track
 - Look all around 
 
-Levels for trees: 
+Normal:
+var bfs = function(root) {
+    let queue = [];
+    queue.push(root);
+    // things to track to answer Q
+
+    while(queue.length > 0) {
+        // maybe do something
+        let node = queue.shift();
+        // maybe do something
+
+        if(node.left) queue.push(node.left); 
+        if(node.right) queue.push(node.right);
+    }
+    return thing;
+}
+
+Level order, for trees: 
     var levelOrder = function(root) {
         if(!root) return [];
         let queue = [],
@@ -102,6 +119,8 @@ Levels for trees:
         }
         return res;
     };
+
+
 
 
 # Tree traversals (pre in post)
@@ -159,6 +178,7 @@ Reverse LL:
     } 
 
 # Recursion - think of it like DFS
+Need a base case, recursive action, + doing things
 
 # Tries
 Node that has storage obj, isWord, built like tree
