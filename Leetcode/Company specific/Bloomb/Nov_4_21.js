@@ -30,6 +30,9 @@ class counter {
                }
            }
         }
+
+        // not 100% sure this would work, but adding
+        // essentially, work backwards to get each step added in 
         let temp2 = 1, 
             tempSteps = steps; 
         // add to memo
