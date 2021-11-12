@@ -11,7 +11,8 @@
 - NEED TO WRAP UP KPI BUILDER
     - CI/CD, 3 more tests, prep for Qs
     - Need to email recruiter
-- Front end test, skilled test
+- Goog email recruiter
+- Front end test, front end pair programming, skilled test
 
 
 # October
