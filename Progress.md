@@ -6,6 +6,12 @@
 
 # ----------------------------------------------#
 
+# December 
+- KPI Builder
+- Python
+- Leetcodes
+
+
 # November
 - Vacation for 2 weeks + Thanksgiving
 - NEED TO WRAP UP KPI BUILDER
