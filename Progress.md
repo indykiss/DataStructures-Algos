@@ -8,16 +8,17 @@
 
 # December 
 - KPI Builder
+    - CI/CD, 3 more tests, prep for Qs
+    - Need to email recruiter
 - Python
 - Leetcodes
 
 
 # November
-- Vacation for 2 weeks + Thanksgiving
-- NEED TO WRAP UP KPI BUILDER
-    - CI/CD, 3 more tests, prep for Qs
-    - Need to email recruiter
-- Goog email recruiter
+- Not a super productive studying month 
+- Vacation for 2 weeks, Galapagos, + Thanksgiving
+- 1 week to apartment hunt (50+ emails, 12+ apt tours, 2 final contenders, 1 lease signed!)
+- Goog recr
 - Front end test, front end pair programming, skilled test
 
 
@@ -34,6 +35,7 @@
 
 RN: On leetcode, of the solved problems, I didn't do ~20 of the 280+
 Total via counting .js is 350.
+
 
 # September 
 - KPI Builder 
