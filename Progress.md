@@ -1,17 +1,15 @@
 # ----------------------------------------------#
 
 # Upcoming: 
-* PM maybe
-* Sept tech presentation
+- Jan tech call G
 
 # ----------------------------------------------#
 
 # December 
-- KPI Builder
-    - CI/CD, 3 more tests, prep for Qs
-    - Need to email recruiter
 - Python
 - Leetcodes
+- KPI Builder: Done enough. Deployed, tested. 
+    - Prep for Qs and add a cache to speed up search
 
 
 # November
