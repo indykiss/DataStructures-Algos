@@ -178,3 +178,4 @@ isinstance(tom, Person) => true. Tom is obj, person class
 isinstance("cat", str) => true
 ```
 
+
