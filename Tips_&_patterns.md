@@ -178,4 +178,9 @@ isinstance(tom, Person) => true. Tom is obj, person class
 isinstance("cat", str) => true
 ```
 
+Other topics to cover:
+https://www.valentinog.com/blog/python-for-js/ 
+
+Raising exceptions, sychronous, commenting, etc
+
 
