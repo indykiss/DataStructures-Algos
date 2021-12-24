@@ -9,10 +9,9 @@
 - Python
 - Leetcodes 
     - 5 easies to practice python
-    
 - KPI Builder: Done enough. Deployed, tested. 
     - Prep for Qs and add a cache to speed up search
-
+- Moving + christmas + holidays. oof
 
 # November
 - Not a super productive studying month 
