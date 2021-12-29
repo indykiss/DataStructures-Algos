@@ -11,8 +11,7 @@
     - 6 easies to practice python
 - KPI Builder: Done enough. Deployed, tested. 
     - Prep for Qs and add a cache to speed up search
-- Moving 
-- Christmas + holidays. oof
+- Moving. Christmas + holidays. Oof
 
 # November
 - Not a super productive studying month 

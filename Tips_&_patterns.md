@@ -68,6 +68,17 @@ Python data types: float, int, string, boolean, none
     No BigInt, no undefined. 
     Null (JS) is None (Python)
 
+# Math in Python  - remember PEMDAS
+print(10 - 2)
+print(10 + 2)
+print(10 / 3) => 3.33
+    One / gives us division float
+print(10 // 3) => 3
+    Double // rounds division to int 
+print(10 % 3) => 1
+print(10 ** 3) => 1000 
+    10 to the power of 3 
+
 # Regex in Python
 ```
 import re
@@ -184,3 +195,27 @@ https://www.valentinog.com/blog/python-for-js/
 Raising exceptions, sychronous, commenting, etc
 
 
+# Converting data types 
+We can convert str -> int, int -> str, etc, by using these:
+    int()
+    float()
+    str()
+    bool()
+
+Ex:
+    i1 = input("First: ") takes a num
+    i2 = input("Second: ") takes a num
+    sum = float(i1) + float(i2)
+    print("Sum = " + str(sum))
+
+# Handy Built In Methods
+.find()
+    s1 = "hello"
+    print(s1.find("Y")) => -1, there is no Y 
+
+.replace()
+    s2 = "hi there"
+    print(s2.replace("there", "bye")) => "hi bye"
+
+.range()
+numbers = range(5, 10) is list of numbers 5 -> 9
