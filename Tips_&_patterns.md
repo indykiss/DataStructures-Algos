@@ -106,6 +106,9 @@ my_list.append("woo")
  # print(my_list) = ["yo", "i", "potat", "woo"]
 my_list.remove("yo")
  # print(my_list) = ["i", "potat", "woo"]
+my_list.pop(1) 
+ # Removes index 1 element
+
  ```
 Concatenate lists! 
 ```
@@ -114,8 +117,27 @@ list2 = ["potato"]
 print(list1+list2) = ["I", "is", "potato"]
 ```
 
+Nested lists behave the same as JS:
+    l1 = [[0,"abc"], [2], 3, 4]
+    l1[0][1] = "abc"
+
+Nested dictionaries/ arrs:
+    d1 = {"a": [1,2,3], "b": 4}
+    d1['a'][1] ==> 2
+
 # Tuples 
+Immutable.
+Only 2 methods: .count() for counting number of times
+something is in the tuple and .index() to search the tuple
+for that value and returns its position. 
+
+Why use a tuple? When passing around objects that need to 
+not be changed. Keep data integrity, use tuples.
+
 my_tuple = ("i", 9, "am", 10, "potato")
+
+
+
 
 # Dictionaries
 Similar to Javascript's object key/value pair 
@@ -145,6 +167,11 @@ a = {"indy": 10}
 b = {"status": "single"}
 c = a | b  # {"indy": 10, "status": "single"}
 ```
+
+dict.keys() returns all the keys 
+dict.values() returns all the values 
+dict.items() returns all the key/ value pairs in TUPLES form
+
 
 # Sets
 Holds unique values. Extra mathenatical set operations over JS 
@@ -219,3 +246,30 @@ Ex:
 
 .range()
 numbers = range(5, 10) is list of numbers 5 -> 9
+
+.sort()
+l1 = [1,2,3,5,4]
+l1.sort() 
+    [1,2,3,4,5]
+
+
+# Formatting strings 
+How to add variables into strings:
+
+Strings:
+    name = "Indy"
+    print(f"Hello, {name}") 
+    "Hello, Indy"
+
+
+
+# Random
+Returns all the text in the file
+    file1 = a text file 
+    file1.read() returns all the text in the file
+
+Opening a file from a different location.
+Use pwd to find the path
+    open_file = open("/Users/UserName/Folder/file1.txt)
+Remember, need to .close() a file after opening it if we're trying 
+to delete it
