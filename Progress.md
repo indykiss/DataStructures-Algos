@@ -1,7 +1,6 @@
 # ----------------------------------------------#
 
 # Upcoming: 
-- Jan tech call G
 
 # ----------------------------------------------#
 
@@ -9,6 +8,7 @@
 - Python
 - Leetcodes 
     - 10 easies to practice python
+    - Translating JS to Python, youtube, blogs, etc
 - KPI Builder: Done enough. Deployed, tested. 
     - Prep for Qs and add a cache to speed up search
 - Moving. Christmas + holidays. Oof
