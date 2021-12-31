@@ -8,7 +8,7 @@
 # December 
 - Python
 - Leetcodes 
-    - 6 easies to practice python
+    - 10 easies to practice python
 - KPI Builder: Done enough. Deployed, tested. 
     - Prep for Qs and add a cache to speed up search
 - Moving. Christmas + holidays. Oof
