@@ -4,6 +4,10 @@
 
 # ----------------------------------------------#
 
+# January 
+- Python practice
+- LCs easies
+
 # December 
 - Python
 - Leetcodes 
