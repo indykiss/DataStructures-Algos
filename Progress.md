@@ -5,8 +5,10 @@
 # ----------------------------------------------#
 
 # January 
-- Python practice
+- Python practice and studying 
 - LCs easies
+    - 1 LC medium 
+
 
 # December 
 - Python
