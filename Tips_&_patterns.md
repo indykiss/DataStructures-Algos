@@ -143,6 +143,13 @@ my_tuple = ("i", 9, "am", 10, "potato")
 Similar to Javascript's object key/value pair 
 In JS, everything is an object (array, str, set, etc). In Python, a dictionary is just a dict, not a building block for all. 
 
+To add to a dict:
+    dict[num] = val
+To check if a key is in a dictionary:
+    dict.get(num)
+To update val in dict:
+    dict[num] = dict.get(num) + 1
+
 ```
 my_dict = {"indy": 10, "dave": 6.5}
 my_dict.get("indy") # 10 
@@ -176,6 +183,13 @@ dict.items() returns all the key/ value pairs in TUPLES form
 # Sets
 Holds unique values. Extra mathenatical set operations over JS 
 
+To quickly add eles in an arr to a set:
+    newSet = set(arr)
+To add 1 ele to a set:
+    newSet.add(ele)
+To check if something is in a set:
+    if stone in stoneSet: 
+
 ```
 my_set = set()
 my_set.add("Bojangles")
@@ -185,7 +199,7 @@ second_set = set()
 second_set.add("Katmai")
 
 Just like JS, has:
-.has, .forEach, .size
+.forEach, .size
 
 BUT also has:
 difference, intersecttion, issubset, issuperset, union, etc
@@ -252,6 +266,20 @@ l1 = [1,2,3,5,4]
 l1.sort() 
     [1,2,3,4,5]
 
+"".join(arr)
+    Converts an arr to a string
+    Same .join in JS, so use .join option
+
+.sum(arr)
+    Adds all the nums in a particular arr 
+    Faster than doing:
+        sum = 0
+        for num in nums:
+            sum = sum + num
+
+.max(arr) OR .max(num1, num2)
+    Finds the maximum in an arr
+    Finds the maximum in a couple of values
 
 # Formatting strings 
 How to add variables into strings:
@@ -273,3 +301,7 @@ Use pwd to find the path
     open_file = open("/Users/UserName/Folder/file1.txt)
 Remember, need to .close() a file after opening it if we're trying 
 to delete it
+
+
+# Loops 
+
