@@ -305,3 +305,17 @@ to delete it
 
 # Loops 
 
+Basic for loop with index:
+    for(let i = 0; i < nums.length; i++)
+    ==
+    for i in range(len(nums))
+If we want to change our for loop's increment:
+    for(let i = 0; i < nums.length; i+=2)
+    == 
+    for i in range(0, len(nums), 2)
+
+Basic for/ in, no index:
+    for char in/of arr:
+    ==
+    for char in arr:
+
