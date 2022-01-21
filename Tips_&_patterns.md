@@ -125,6 +125,14 @@ Nested dictionaries/ arrs:
     d1 = {"a": [1,2,3], "b": 4}
     d1['a'][1] ==> 2
 
+IF we need to use the index in an arr to assign. For ex:
+    "rearrange1 sentence3 this2" => "rearrange this sentence"
+    We need to:
+        arr = [0] * len(sentence)
+            build arr that is length of sentence 
+        for word in arr:
+            arr[idx] = word[0:-1]
+
 # Tuples 
 Immutable.
 Only 2 methods: .count() for counting number of times
