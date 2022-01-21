@@ -269,9 +269,16 @@ Ex:
 .range()
 numbers = range(5, 10) is list of numbers 5 -> 9
 
-.sort()
+.sorted(arr)
+Actually sorts as expected! JS .sort() behavior
+Need to use .sorted(arr) to sort an arr in asc order
+
+To sort in descending order:
+.sorted(arr, reverse=True)
+
+.sort() returns none, just sorts in place
 l1 = [1,2,3,5,4]
-l1.sort() 
+l1.sort() RETURNS NONE
     [1,2,3,4,5]
 
 "".join(arr)
