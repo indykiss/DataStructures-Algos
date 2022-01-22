@@ -294,12 +294,23 @@ list(str)
     Converts an arr to a string
     Same .join in JS, so use .join option
 
+"THING".join(arr): Joins with separator:
+    arr = [hi,there]
+    "-".join(arr)
+    "hi-there"
+
 .sum(arr)
     Adds all the nums in a particular arr 
     Faster than doing:
         sum = 0
         for num in nums:
             sum = sum + num
+
+str[::-1]
+NO .reverse in python, instead word[::-1]
+    s = "hi"
+    return s[::-1] =>
+    "ih"
 
 .max(arr) OR .max(num1, num2)
     Finds the maximum in an arr
@@ -313,6 +324,7 @@ ord(char)
         "a1c" => "abc"
         We will use ord(char) + num to find the 'b'
         Then use char() to make the unicode num into a char 
+
 
 # Converting data types
 chr(integer)
