@@ -270,16 +270,25 @@ Ex:
 numbers = range(5, 10) is list of numbers 5 -> 9
 
 .sorted(arr)
-Actually sorts as expected! JS .sort() behavior
-Need to use .sorted(arr) to sort an arr in asc order
+    Actually sorts as expected! JS .sort() behavior
+    Need to use .sorted(arr) to sort an arr in asc order
 
 To sort in descending order:
 .sorted(arr, reverse=True)
 
 .sort() returns none, just sorts in place
-l1 = [1,2,3,5,4]
-l1.sort() RETURNS NONE
-    [1,2,3,4,5]
+    l1 = [1,2,3,5,4]
+    l1.sort() RETURNS NONE
+        [1,2,3,4,5]
+
+str.split()
+   Splits a string into an array using WHITESPACE
+    OR to split on a comma or different ele:
+        str.split("#")
+
+list(str)
+    Split a str into n arr on every CHARACTER
+
 
 "".join(arr)
     Converts an arr to a string
@@ -334,3 +343,9 @@ Basic for/ in, no index:
     ==
     for char in arr:
 
+Key, val through a dictionary:
+    dic = {'1':"hi", '2':"bye"}
+    
+    for key, val in dic.items():
+        print(key) # 1
+        print(val) # hi
