@@ -305,6 +305,24 @@ list(str)
     Finds the maximum in an arr
     Finds the maximum in a couple of values
 
+ord(char)
+    Finds the unicode of a character
+    Unicode is an interger representation of chars and 
+    punctuation 
+    Helps us do things like shift chars in the alphabet:
+        "a1c" => "abc"
+        We will use ord(char) + num to find the 'b'
+        Then use char() to make the unicode num into a char 
+
+# Converting data types
+chr(integer)
+    Returns a character from an integer
+
+int(str)
+    Returns an integer from a string
+
+
+
 # Formatting strings 
 How to add variables into strings:
 
