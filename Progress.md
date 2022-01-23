@@ -6,8 +6,9 @@
 
 # January 
 - Python practice and studying 
-- LCs easies
-    - 1 LC medium 
+- LCs easies ~40 
+    - Focusing on basic code blocks in Python
+    - Sticking with high acceptance, google tagged Qs for now
 
 
 # December 

@@ -79,6 +79,12 @@ print(10 % 3) => 1
 print(10 ** 3) => 1000 
     10 to the power of 3 
 
+# Checking even and odd in python 
+Even:
+    if num % 2 == 0
+Odd:
+    if num % 2 == 1
+
 # Regex in Python
 ```
 import re
@@ -333,7 +339,9 @@ chr(integer)
 int(str)
     Returns an integer from a string
 
-
+format(num, 'b').zfill(32)
+    Number to binary AND adds all 32 zeros so we can 
+    count for big numbers too 
 
 # Formatting strings 
 How to add variables into strings:
@@ -379,3 +387,9 @@ Key, val through a dictionary:
     for key, val in dic.items():
         print(key) # 1
         print(val) # hi
+
+Reverse loop, from end of arr to front of arr 
+    arr = ["c", "b", "a"]
+    for i in reversed(arr): 
+        print arr[i]
+            # a b c 
