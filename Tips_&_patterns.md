@@ -333,6 +333,10 @@ ord(char)
 
 
 # Converting data types
+str(integer)
+    Returns a STRING from an integer
+    Much better than chr()
+
 chr(integer)
     Returns a character from an integer
 
@@ -364,6 +368,17 @@ Use pwd to find the path
 Remember, need to .close() a file after opening it if we're trying 
 to delete it
 
+# Bitwise 
+
+
+IF we have to do some crazy "find the only non-dupe in set"
+    XOR -> inequality detector 
+        arr = [2,1,2,1,3]
+        a = 0
+        for i in arr:
+            a ^= i
+        return a 
+    XNOR -> equality detector
 
 # Loops 
 

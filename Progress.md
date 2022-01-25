@@ -8,7 +8,7 @@
 - Python practice and studying 
 - LCs easies ~40 
     - Focusing on basic code blocks in Python
-    - Sticking with high acceptance, google tagged Qs for now
+    - Sticking with easy high acceptance, google tagged Qs for now
 
 
 # December 
