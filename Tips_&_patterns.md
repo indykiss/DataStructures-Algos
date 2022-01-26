@@ -107,13 +107,16 @@ Similar to JS arrays, also mutable. Main differences:
 
 Different terms for push/ pop
 ```
-my_list = ["yo", "i", "potat"]
-my_list.append("woo") 
+l = ["yo", "i", "potat"]
+l.append("woo") 
  # print(my_list) = ["yo", "i", "potat", "woo"]
-my_list.remove("yo")
+l.remove("yo")
  # print(my_list) = ["i", "potat", "woo"]
-my_list.pop(1) 
+l.pop(1) 
  # Removes index 1 element
+
+.extend([1, 2, 3])
+    Adds multiple things to the end of a list
 
  ```
 Concatenate lists! 
@@ -295,7 +298,6 @@ str.split()
 list(str)
     Split a str into n arr on every CHARACTER
 
-
 "".join(arr)
     Converts an arr to a string
     Same .join in JS, so use .join option
@@ -336,6 +338,7 @@ ord(char)
         .gcd(8, 24) -> 8
         .gcd() 
 
+    
 
 # Converting data types
 str(integer)
@@ -351,6 +354,7 @@ int(str)
 format(num, 'b').zfill(32)
     Number to binary AND adds all 32 zeros so we can 
     count for big numbers too 
+
 
 # Formatting strings 
 How to add variables into strings:
@@ -375,7 +379,6 @@ to delete it
 
 # Bitwise 
 
-
 IF we have to do some crazy "find the only non-dupe in set"
     XOR -> inequality detector 
         arr = [2,1,2,1,3]
@@ -384,6 +387,9 @@ IF we have to do some crazy "find the only non-dupe in set"
             a ^= i
         return a 
     XNOR -> equality detector
+
+# Lamdas
+
 
 # Loops 
 
