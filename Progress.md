@@ -6,7 +6,7 @@
 
 # January 
 - Python practice and studying 
-- LCs easies ~40 
+- LCs easies ~50 
     - Focusing on basic code blocks in Python
     - Sticking with easy high acceptance, google tagged Qs for now
 

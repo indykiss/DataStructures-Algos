@@ -331,6 +331,11 @@ ord(char)
         We will use ord(char) + num to find the 'b'
         Then use char() to make the unicode num into a char 
 
+.gcd(n1, n2)
+    Finds the greatest common factor between two nums
+        .gcd(8, 24) -> 8
+        .gcd() 
+
 
 # Converting data types
 str(integer)
