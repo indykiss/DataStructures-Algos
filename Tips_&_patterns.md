@@ -338,7 +338,10 @@ ord(char)
         .gcd(8, 24) -> 8
         .gcd() 
 
-    
+To pop the ele in the front of a list: (JS's shift)
+    ele = arr[0]
+    del arr[0]    
+
 
 # Converting data types
 str(integer)
