@@ -14,6 +14,29 @@ Looking for where there's commonalities within both arrs. No dupes
 */
 
 
+In python, the G way: 
+class Solution:
+    def intersection(self, n1: List[int], n2: List[int]) -> List[int]:
+        ans = []
+        i = 0
+        j = 0
+        n1.sort()
+        n2.sort()
+        
+        while i < len(n1) and j < len(n2):
+            if n1[i] > n2[j]:
+                j += 1
+            elif n1[i] < n2[j]:
+                i += 1
+            else:
+                if n1[i] not in ans:
+                    ans.append(n1[i])
+                i += 1
+                j += 1
+        
+        return ans
+
+
 
 // Attempt #4: I think the important thing here to remember is 
 // that we need to ID the use of making sets.  
