@@ -400,6 +400,7 @@ Basic for loop with index:
     for(let i = 0; i < nums.length; i++)
     ==
     for i in range(len(nums))
+
 If we want to change our for loop's increment:
     for(let i = 0; i < nums.length; i+=2)
     == 
@@ -419,6 +420,6 @@ Key, val through a dictionary:
 
 Reverse loop, from end of arr to front of arr 
     arr = ["c", "b", "a"]
-    for i in reversed(arr): 
+    for i in range(len(digits)-1, -1, -1):
         print arr[i]
             # a b c 

@@ -1,15 +1,20 @@
 # ----------------------------------------------#
-
 # Upcoming: 
-
 # ----------------------------------------------#
+
+# February 
+- HR on Feb 5 
+- C1 tagged LCs: 35 total 
+    - 
+- Start on LC mediums
+- 20-30 hrs/ week is goal 
 
 # January 
 - Python practice and studying 
-- LCs easies ~50 + 8
+- LCs easies ~60 
     - Focusing on basic code blocks in Python
-    - Sticking with easy high acceptance, google tagged Qs for now
-- 1 Hackerrank
+    - Stuck with easy high acceptance, G tagged Qs for now
+- 2 Hackerranks
 
 # December 
 - Python
@@ -24,7 +29,6 @@
 - Not a super productive studying month 
 - Vacation for 2 weeks, Galapagos, + Thanksgiving
 - 1 week to apartment hunt (50+ emails, 12+ apt tours, 2 final contenders, 1 lease signed!)
-- Goog recr
 - Front end test, front end pair programming, skilled test
 
 
