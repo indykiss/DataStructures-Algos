@@ -344,7 +344,7 @@ To pop the ele in the front of a list: (JS's shift)
 
 Add an ele to the front of a list (JS unshift):
     arr = ["i"]
-    arr.insert(idx, num)
+    # arr.insert(idx, num)
     arr.insert(0, "h")
     arr = ["h", "i"]
 
