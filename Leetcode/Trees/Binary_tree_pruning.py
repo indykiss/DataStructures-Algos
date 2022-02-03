@@ -15,9 +15,6 @@
 #         self.left = left
 #         self.right = right
 
-# subtree must have 1 or be deleted 
-# recurse, check if there is a 1 as we traverse a path
-
 
 class Solution:
     def pruneTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
