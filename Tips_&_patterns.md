@@ -348,6 +348,10 @@ Add an ele to the front of a list (JS unshift):
     arr.insert(0, "h")
     arr = ["h", "i"]
 
+.next(itr(dict))
+    Returns the 1st key in the dictionary or list 
+
+
 # Converting data types
 str(integer)
     Returns a STRING from an integer
@@ -399,6 +403,10 @@ IF we have to do some crazy "find the only non-dupe in set"
 # Lamdas
 
 
+# Two possible values for a variable
+    val1 = l1.val if l1 else 0
+        Like JS's: let val1 = l1.val ? l1 : 0
+
 # Loops 
 
 Basic for loop with index:
@@ -428,3 +436,4 @@ Reverse loop, from end of arr to front of arr
     for i in range(len(digits)-1, -1, -1):
         print arr[i]
             # a b c 
+

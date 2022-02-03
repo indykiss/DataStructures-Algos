@@ -15,6 +15,25 @@ Strategy:
 
 */
 
+
+# Python: 
+class Solution:
+    def countPrimes(self, n: int) -> int:
+        if n <= 2: return 0 
+        counts = [True] * n
+        counts[0] = False
+        counts[1] = False
+        
+        i = 2
+        while i*i < n:
+            if counts[i]:
+                for j in range(i*i, n, i):
+                    counts[j] = False
+            i += 1
+        
+        return sum(counts)
+
+
 // Correct : O(n * sqrt(n))
 var countPrimes = function(n) {
     let count = 1; 

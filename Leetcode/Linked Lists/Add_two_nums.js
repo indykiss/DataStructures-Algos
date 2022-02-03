@@ -34,6 +34,31 @@ Edge cases/ considerations:
 - Negative nums? 
 */
 
+Python: 
+class Solution:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        l3 = ListNode(-1)
+        curr = l3
+        carry = False 
+        
+        while l1 or l2 or carry:
+            val1 = l1.val if l1 else 0 
+            val2 = l2.val if l2 else 0
+            val_sum = val1 + val2
+            if carry: 
+                val_sum += 1
+                carry = False
+            if val_sum >= 10:
+                carry = True 
+                val_sum = val_sum - 10 
+            curr.next = ListNode(val_sum)
+            curr = curr.next 
+            
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
+
+        return l3.next 
+
 
 var addTwoNumbers = function(l1, l2) {
     let point1 = l1, 

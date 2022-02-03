@@ -15,7 +15,25 @@ Output: 3
 Explanation: 11 = 5 + 5 + 1
 */
 
+Python DP:
+O(m * n) time, amount and num of coins
+O(n) space because dp arr
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:        
+        dp = [float('inf')] * (amount+1)  
+        dp[0] = 0
+        
+        for coin in coins:
+            for i in range(coin, amount+1):
+                dp[i] = min(dp[i], dp[i-coin]+1)
+                    
+        if dp[amount] < amount + 1:
+            return dp[amount]
+        else:
+            return - 1
 
+
+            
 var coinChange = function(coins, amount) {
     let dp = Array(amount+1).fill(Infinity);
     

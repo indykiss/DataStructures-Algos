@@ -13,6 +13,33 @@ Strat:
 */
 
 
+Python solution: 
+
+class Solution:
+    def letterCombinations(self, digits: str) -> List[str]:
+        letters = {"2": "abc", "3": "def", "4": "ghi", "5": "jkl", 
+                   "6": "mno", "7": "pqrs", "8": "tuv", "9": "wxyz"}
+        
+        if len(digits) == 0: return []
+        
+        def backtrack(idx, path):
+            if len(path) == len(digits):
+                combos.append("".join(path))
+                return # backtrack 
+            
+            # get the letters that map to each num 
+            # iterate through them
+            potential_letters = letters[digits[idx]]
+            for letter in potential_letters:
+                path.append(letter)
+                backtrack(idx+1, path) # recurse 
+                path.pop() # backtrack by removing the letter before moving to the next
+        
+        combos = []
+        backtrack(0, [])
+        return combos
+
+
 
 // Never would've gotten this
 
