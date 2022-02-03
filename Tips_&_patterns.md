@@ -351,6 +351,36 @@ Add an ele to the front of a list (JS unshift):
 .next(itr(dict))
     Returns the 1st key in the dictionary or list 
 
+.ceil(float)
+    rounds a number up
+
+.round(float)
+    rounds a number down
+
+# Handy extended tricks 
+
+Sorting a dictionary based on its values:
+Return k most freq eles in arr
+    freq = {8: 1, 9: 3, 7: 4}
+    res = []
+    sortedFreq = sorted(freq.items(), key=lambda x: x[1], reverse=True)
+    for key, val in sortedFreq:
+        if i <= k:
+            res.append(key)
+            i += 1  
+    return res
+BUT REALLY USING A HEAP IS THE RIGHT ANSWER FOR K FREQUENT Qs
+
+Build a frequency dictionary quickly:
+    freq = {}
+    for num in nums:
+        freq[num] = 1 + freq.get(num, 0)
+    # freq: {9: 5, 8: 2}
+
+
+# Heaps 
+
+
 
 # Converting data types
 str(integer)
