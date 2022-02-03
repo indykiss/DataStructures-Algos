@@ -29,6 +29,29 @@ the copy
 based on the original 
 */
 
+# Python
+class Solution:
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        if head is None: return None
+        n = head
+        mapping = {}
+        
+        while n:
+            mapping[n] = Node(n.val, None, None) # val, random 
+            n = n.next 
+        
+        # Make the random connections 
+        n = head
+        while n:
+            # Create connections 
+            if n.next:
+                mapping[n].next = mapping[n.next]
+            if n.random:
+                mapping[n].random = mapping[n.random]
+            n = n.next 
+            
+        return mapping[head]
+
 
 // Had to copy this. 30 mins. no idea how to start
 // Do again
