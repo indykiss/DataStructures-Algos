@@ -46,6 +46,60 @@ in either horiz & vertical
 */
 
 
+# Python : 
+
+class Solution:
+    def candyCrush(self, board: List[List[int]]) -> List[List[int]]:
+        r, c = len(board), len(board[0])
+        stable = False
+
+        while True:
+            stable = True 
+            crushing = set()
+            
+            # check for horizontal crushes 
+            for x in range(r):
+                for y in range(c-2):
+                    if board[x][y] == board[x][y+1] == board[x][y+2] != 0:
+                        stable = False
+                        crushing.update([(x,y), (x,y+1), (x, y+2)])
+            
+            # check for vertical crushes 
+            for x in range(r-2):
+                for y in range(c):
+                    if board[x][y] == board[x+1][y] == board[x+2][y] != 0:
+                        stable = False
+                        crushing.update([(x,y), (x+1,y), (x+2, y)])
+                        
+            # if no candies were crushed, done
+            if stable:
+                return board
+            
+            # crush the candies
+            for x,y in crushing:
+                board[x][y] = 0
+                
+            # drop the candies down 
+            for y in range(c):
+                new_pos = 0
+                for x in range(r-1, -1, -1):
+                    k = x + new_pos
+                    if (x,y) in crushing:
+                        new_pos += 1
+                    else: 
+                        board[k][y] = board[x][y]
+                # add zeros at the top of the board
+                for x in range(new_pos):
+                    board[x][y] = 0
+                        
+                        
+                        
+                        
+
+
+
+
+
 
 // Just copied. Fuck thhiiss. So tired. Didnt pass time 
 // Do again :( 
