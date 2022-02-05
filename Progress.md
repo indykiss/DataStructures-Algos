@@ -3,11 +3,10 @@
 # ----------------------------------------------#
 
 # February 
-- HR on Feb 5 
-- C1 tagged LCs: 35 total 
-    - 18 easies, 7 mediums 
-    - 5 other misc
-- Start on LC mediums
+- HR on Feb 6 
+- C1 tagged LCs: 35 total (2 hards, rest easy/med)
+- LC mediums:
+    - 5 mediums
 - 20-30 hrs/ week is goal 
 
 # January 

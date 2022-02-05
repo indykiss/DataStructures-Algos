@@ -357,6 +357,7 @@ Add an ele to the front of a list (JS unshift):
 .round(float)
     rounds a number down
 
+
 # Handy extended tricks 
 
 Sorting a dictionary based on its values:
@@ -377,6 +378,10 @@ Build a frequency dictionary quickly:
         freq[num] = 1 + freq.get(num, 0)
     # freq: {9: 5, 8: 2}
 
+Adding a char or a space x number of times:
+    s = ""
+    s += "hi" * 3
+    s = "hihihi"
 
 # Heaps 
 
@@ -467,3 +472,8 @@ Reverse loop, from end of arr to front of arr
         print arr[i]
             # a b c 
 
+
+# Dynammic programming 
+1. Always has a lookup table
+    - memoization for ex
+2. Use past values to get current solution
