@@ -477,3 +477,20 @@ Reverse loop, from end of arr to front of arr
 1. Always has a lookup table
     - memoization for ex
 2. Use past values to get current solution
+
+Steps:
+1. Recursion
+2. Memoization to store previous vals
+3. Bottom up
+    - Alternative to recursion! 
+    - Better because it's much faster (no recursion)
+    Basically:
+        def fib_bottom_up(n):
+            if n == 1 or n == 2:
+                return 1 
+            dp = [] * n+1
+            dp[1] = 1
+            dp[2] = 1
+            for i in range(3, n):
+                dp[i] = dp[i-1] + dp[i-2]
+            return dp[n]
