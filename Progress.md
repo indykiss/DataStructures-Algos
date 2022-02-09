@@ -5,9 +5,8 @@
 # February 
 - HR on Feb 6 
 - C1 tagged LCs: 35 total (2 hards, rest easy/med)
-- LC mediums:
-    - 5 mediums
-- 20-30 hrs/ week is goal 
+- LC easies: 10
+- LC mediums: 8 
 
 # January 
 - Python practice and studying 

@@ -357,6 +357,14 @@ Add an ele to the front of a list (JS unshift):
 .round(float)
     rounds a number down
 
+Sorting nested lists:
+    intervals = [["k", 1], ["a", 5]]
+    intervals.sort(key=lambda x: x[0]) # sort by 1st ele 
+    intervals = [["a", 5], ["k", 1]]
+
+str.count(" ")
+Counts the number of spaces in the str
+
 
 # Handy extended tricks 
 
@@ -383,9 +391,26 @@ Adding a char or a space x number of times:
     s += "hi" * 3
     s = "hihihi"
 
+Check is a char is a number:
+isnumeric
+
+Check is a char is A-Z:
+isalpha
+
+
 # Heaps 
+import heapq
 
+nums = []
 
+heapq.heappush(val) ==> Pushes ele into heap 
+heapq.heappop() ==> Pops min or max ele from heap
+heapq.heapreplace(a, x) ==> Returns the smallest val in heap THEN pushes x
+heapq.heappushpop(a,x) ==> Pushes x into a and then returns smallest val  
+
+Remember, broadly for heaps: based on a tree and the root is either 
+the largest or the smallest number. We bubble up, bubble down, elements,
+swapping as needed. 
 
 # Converting data types
 str(integer)
