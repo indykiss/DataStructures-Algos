@@ -398,10 +398,11 @@ Check is a char is A-Z:
 isalpha
 
 
-# Heaps 
+# Min heap 
 import heapq
 
 nums = []
+heapq.heapify(nums)
 
 heapq.heappush(val) ==> Pushes ele into heap 
 heapq.heappop() ==> Pops min or max ele from heap
@@ -411,6 +412,31 @@ heapq.heappushpop(a,x) ==> Pushes x into a and then returns smallest val
 Remember, broadly for heaps: based on a tree and the root is either 
 the largest or the smallest number. We bubble up, bubble down, elements,
 swapping as needed. 
+
+# Max heap (make nums negative and use min heap)
+Python does not have built in support for max heap :((((
+
+Python, only has Min-Heap. Just as the name suggests, this is a Heap that instead of always returning the maximum item, it returns the minimum. Solution:
+    - Multiply all numbers going into the heap by -1, and then multiply them by -1 to restore them when they come out.
+
+    Make the numbers in the heap negative and un-negative when pull out minheap. 
+
+    # Make all the nums negative. We want to do this *in place*, to keep the
+    # space complexity of this algorithm at O(1).
+    for i in range(len(nums)):
+        num[i] *= -1
+    
+    # Heapify all the nums.
+    heapq.heapify(nums)
+
+    # Do things to our min heap (treating it like a max heap)
+    s1 = heapq.heappop(nums)
+    s2 = heapq.heappop(nums)
+    heapq.heappush(nums, s2 - s1)
+
+    # Convert the goal num back into positive 
+    return -heapq.heappop(nums) if nums else 0
+
 
 # Converting data types
 str(integer)
