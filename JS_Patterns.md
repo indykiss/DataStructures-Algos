@@ -205,11 +205,6 @@ var dfs = function(root) {
         dfs(root.right, info?)
 }
 
-DFS practice, muscle memory:
-var dfs = function(root) {
-
-}
-
 
 
 ## Swapping things:

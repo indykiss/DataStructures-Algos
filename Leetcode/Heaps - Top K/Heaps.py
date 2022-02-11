@@ -31,20 +31,3 @@ class Solution:
         return heap[0]
 
 
-# Making a max heap: 
-import heapq
-class Solution:
-    def lastStoneWeight(self, stones: List[int]) -> int:
-        
-        # make a heap with stones 
-        heap = stones 
-        heapq.heapify(heap)
-        
-        while len(heap) != 1:
-            largest = heapq.heappop(heap)
-            second = heapq.heappop(heap)
-            remain = abs(largest - second)
-            heapq.heappush(heap, remain)
-            print(heap)
-            
-        return heap[0]
