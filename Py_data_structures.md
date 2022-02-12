@@ -14,7 +14,6 @@
 
 # Misc tips & tricks / Minor patterns:
 - Maths*
-- Swapping things
 - Subsets [BFS]
 - Cyclic sort
 - Doing things in place 

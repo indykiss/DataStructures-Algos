@@ -39,14 +39,12 @@ Odd:
     if num % 2 == 1
 
 # Regex in Python
-```
 import re
 regex = re.compile(r"\d\d\d\d")
 text = "Your id is 4933"
 match = regex.search(text)
 start, end = match.start(), match.end()
 found = text[start:end] # 4933
-``` 
 
 # Instance operators 
 Actually kinda important, but I'm mentally done
@@ -57,11 +55,10 @@ Python instanceof
 
 # Built in functions
 Checking type:
-```
+
 isinstance(9, int) => true 
 isinstance(tom, Person) => true. Tom is obj, person class
 isinstance("cat", str) => true
-```
 
 Other topics to cover:
 https://www.valentinog.com/blog/python-for-js/ 
@@ -85,16 +82,13 @@ Ex:
 # Handy Built In Methods
 
 # Str built in methods
-.find()
+str.find(char)
     s1 = "hello"
     print(s1.find("Y")) => -1, there is no Y 
 
-.replace()
+str.replace(this, withThat)
     s2 = "hi there"
     print(s2.replace("there", "bye")) => "hi bye"
-
-.range()
-numbers = range(5, 10) is list of numbers 5 -> 9
 
 str.split()
    Splits a string into an array using WHITESPACE
@@ -186,6 +180,9 @@ ord(char)
 
 .round(float)
     rounds a number down
+
+range(start, end)
+numbers = range(5, 10) is list of numbers 5 -> 9
 
 
 # Sorting a dictionary based on its values:
