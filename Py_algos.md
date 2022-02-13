@@ -11,12 +11,12 @@
     - Level wise
 - Binary search
 - Dynammic programming*
-    - Overlapping subproblems / Memoization
-    - MISC
-    - THERE'S LOTS I DONT KNOW HERE 
-- Greedy 
+    - Bottom up tabulation
+    - Top down memoization
+    - THERE'S LOTS I DONT KNOW HERE     
+- Greedy (similiar to DP)
 
-# Patterns, Python
+# Algorithmic patterns, Python
 - Two pointers
     - Two pointers with differing paces
 - Sliding window
@@ -134,6 +134,7 @@ class Solution:
                 right -= 1
         return left 
 
+
 # Quick sort that passes tests on LC:
 class Solution:
     def sortArray(self, arr: List[int]) -> List[int]:
@@ -160,3 +161,94 @@ class Solution:
         
         quicksort(arr, 0, len(arr) - 1)
         return arr
+
+
+# Depth first search (recursive)
+# Use stack OR recursion 
+DFS goes deep into one branch of a tree. 
+Exs: path sum, depth of tree, etc 
+
+    def bfs(root):
+        if not root: return 
+        if not root.left and not root.right: 
+            potentially return something gets us closer to our ans
+
+        # prove true or false or add something to our parameter
+        # as we iterate through our tree 
+
+        if root.left: dfs(root.left)
+        if root.right: dfs(root.right)
+
+
+# Breadth first search (queue)
+# Normal and level-wise 
+Goes wide vs deep. We use a queue to track all the nodes as we traverse a tree or a matrix. 
+Exs: avg of each level, 
+
+Normal: 
+    def bfs(root):
+        queue = []
+        queue.append(root)
+        # track something to answer question
+
+        while queue:
+            ele = queue.pop(0)
+            # potentially do something to get answer
+            if ele.left: queue.append(ele.left)
+            if ele.right: queue.append(ele.right)
+
+        return answer
+
+Level-wise:
+    def bfs(root):
+        queue = []
+        res = []
+        # track something to answer question
+        queue.append(root)
+
+        while queue: 
+            lvl = []
+            q_len = len(queue)
+            # something to track MAYBE
+
+            # Here we remove from Q
+            for i in range(0, q_len):
+                ele = queue.pop(0)
+                lvl.append(ele.val)
+                # maybe do something
+                if ele.left: q.append(ele.left)
+                if ele.right: q.append(ele.right)
+
+            res.append(lvl)
+
+        return answer
+
+
+# Binary search 
+When we have a sorted array or BST or sorted matrix, we can do a binary search.
+
+Basic:
+    def binarySearch(sorted_arr): 
+        floor = 0 
+        ceil = len(sorted_arr)-1 
+
+        while floor <= ceil:
+            mid = left + (ceil-floor) // 2
+            if nums[mid] == target:
+                return mid
+            elif target < nums[mid]:
+                ceil = mid - 1
+            else: 
+                floor = mid + 1
+
+        # we couldn't find target so:
+        return -1 
+
+
+
+# Sliding window 
+
+
+
+# Greedy
+

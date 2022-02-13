@@ -95,8 +95,7 @@ function mergeIntervals(intervals) {
 
 
 # Tree: BFS (queue, levels) -- Normal BFS and level wise 
-When we need to traverse a tree in a level by
-level order, use breadth first search. We use a queue to keep  track of all the nodes of a level before we move to the next level. Space always O(N) where n is the number of nodes. 
+When we need to traverse a tree in a level by level order, use breadth first search. We use a queue to keep  track of all the nodes of a level before we move to the next level. Space always O(N) where n is the number of nodes. 
 
 - Binary tree level-order traversal 
 - Return an arr of arrs with all the values on each level
@@ -185,8 +184,7 @@ var bfs = function(root) {
 We use recursion, OR A STACK using iterative, to track all the previous (parent) nodes while traversing. This makes our space always O(H) where H is the height of the tree.  
 
 - Binary Tree Path Sum 
-- Find the root-leaf path that equals given sequence, or 
-equals target sum 
+- Find the root-leaf path that equals given sequence, or equals target sum 
 
 
 DFS: Use a recursive stack to hold things
