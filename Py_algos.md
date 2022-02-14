@@ -24,6 +24,52 @@
 - Top K / Merge K 
 
 
+# Quick select: 
+# Remember, 2-3 algos/ DS can be mixed into 1 question
+If input array/matrix is sorted or BST given then
+    - Binary search
+    - Two pointers
+
+If asked for all permutations/subsets then
+    - Backtracking
+
+If given a tree then
+    - DFS
+    - BFS
+
+If given a graph or matrix then
+    - DFS
+    - BFS
+
+If asked for longest/ max consecutive subarr/substr that fits XYZ:
+    - Sliding window
+
+If given a linked list then
+    - Two pointers 
+
+If recursion is banned then
+    - Stack 
+
+If must solve in-place then
+    - Swap corresponding values
+    - Store one or more different values in the same pointer
+
+If asked for maximum/minumum subarray/subset/options then
+    - Dynamic programming
+        - Either top down memoization or bottom up tabulation
+
+If asked for top/least K items then
+    - Heap (min or max)
+
+If asked for common strings then
+    - Map
+    - Trie
+
+Else
+    - Map/Set for O(1) time & O(n) space
+    - Sort input for O(nlogn) time and O(1) space
+
+
 # DP
 Subproblems are overlapping, so some of the identical steps are needed to solve one sub-problem. 
 

@@ -116,8 +116,6 @@ What actually happened:
 - PM studying, TEI/ PEI prep
 - LC lightly
 
-Leetcodes practiced last week:  ~10 + ~10 SQLs
-
 Original plan: 
 - Coding : HEAVY on the mediums, warm up with easies
 - Watch youtubes of system design 
