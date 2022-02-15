@@ -53,7 +53,6 @@ class Solution:
         
         
         
-        
 
 # Course Schedule II 
 
@@ -75,7 +74,6 @@ class Solution:
 # you should have finished both courses 1 and 2. Both courses 1 and 2 
 # should be taken after you finished course 0.
 # So one correct course order is [0,1,2,3]. Another correct ordering is [0,2,1,3].
-
 
 
 
