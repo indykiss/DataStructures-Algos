@@ -5,8 +5,9 @@
 # February 
 - HR on Feb 6 
 - C1 tagged LCs: 35 total (2 hards, rest easy/med)
-- LC easies: 20+
-- LC mediums: 10+
+- Additional LC easies: 30+
+- Additional LC mediums: 15+
+
 
 # January 
 - Python practice and studying 
