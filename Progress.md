@@ -5,7 +5,7 @@
 # February 
 - HR on Feb 6 
 - C1 tagged LCs: 35 total (2 hards, rest easy/med)
-- Additional LC easies: 30+
+- Additional LC easies: 35+
 - Additional LC mediums: 15+
 
 
