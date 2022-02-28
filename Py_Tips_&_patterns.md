@@ -2,82 +2,6 @@
 ## ----- Build my toolkit ----- ##
 ## --- Handy "how to" tricks -- ##
 
-# Data types and logic
-JS => Python logic
-    || => or
-    && => and
-    !  => not 
-    in => in 
-        We can do ```"a" in [a,b,c]``` returns true
-        Works in strings, tuples, lists, dictionaries
-        Technically JS has "in" but it sucks, only works w/ objs. 
-        Python's "in" is v good, works for a lot
-
-Comparison operators are the same. Just python doesn't have ===
-Bc python doesn't force coercion ("a" + 9 = "a9" in JS)
-== > < <= >= != all the same
-
-Python data types: float, int, string, boolean, none
-    No BigInt, no undefined. 
-    Null (JS) is None (Python)
-
-# Math in Python  - remember PEMDAS
-print(10 - 2)
-print(10 + 2)
-print(10 / 3) => 3.33
-    One / gives us division float
-print(10 // 3) => 3
-    Double // rounds division to int 
-print(10 % 3) => 1
-print(10 ** 3) => 1000 
-    10 to the power of 3 
-
-# Checking even and odd in python 
-Even:
-    if num % 2 == 0
-Odd:
-    if num % 2 == 1
-
-# Regex in Python
-import re
-regex = re.compile(r"\d\d\d\d")
-text = "Your id is 4933"
-match = regex.search(text)
-start, end = match.start(), match.end()
-found = text[start:end] # 4933
-
-# Instance operators 
-Actually kinda important, but I'm mentally done
-Come back to this :(
-
-Python instanceof
-
-
-# Built in functions
-Checking type:
-
-isinstance(9, int) => true 
-isinstance(tom, Person) => true. Tom is obj, person class
-isinstance("cat", str) => true
-
-Other topics to cover:
-https://www.valentinog.com/blog/python-for-js/ 
-
-Raising exceptions, sychronous, commenting, etc
-
-
-# Converting data types 
-We can convert str -> int, int -> str, etc, by using these:
-    int()
-    float()
-    str()
-    bool()
-
-Ex:
-    i1 = input("First: ") takes a num
-    i2 = input("Second: ") takes a num
-    sum = float(i1) + float(i2)
-    print("Sum = " + str(sum))
 
 # Handy Built In Methods
 
@@ -92,8 +16,11 @@ str.replace(this, withThat)
 
 str.split()
    Splits a string into an array using WHITESPACE
-    OR to split on a comma or different ele:
+   OR to split on a comma or different ele:
         str.split("#")
+
+list(str)
+    Split a str into n arr on every CHARACTER
 
 str[::-1]
 NO .reverse in python, instead word[::-1]
@@ -143,7 +70,8 @@ max(arr) - max(num1, num2) - min(arr)
 
 To pop the ele in the front of a list: (JS's shift)
     ele = arr[0]
-    del arr[0]    
+    del arr[0]
+    arr.pop(0)    
 
 Add an ele to the front of a list (JS unshift):
     arr = ["i"]
@@ -185,12 +113,12 @@ range(start, end)
 numbers = range(5, 10) is list of numbers 5 -> 9
 
 
-# Sorting a dictionary based on its values:
+# Sorting a dictionary based on its values: sorted(dict.items()) as iterate
 Return k most freq eles in arr
     freq = {8: 1, 9: 3, 7: 4}
     res = []
-    sortedFreq = sorted(freq.items(), key=lambda x: x[1], reverse=True)
-    for key, val in sortedFreq:
+
+    for key, val in sorted(freq.items()):
         if i <= k:
             res.append(key)
             i += 1  
@@ -321,4 +249,80 @@ Steps:
                 dp[i] = dp[i-1] + dp[i-2]
             return dp[n]
 
+# Data types and logic
+JS => Python logic
+    || => or
+    && => and
+    !  => not 
+    in => in 
+        We can do ```"a" in [a,b,c]``` returns true
+        Works in strings, tuples, lists, dictionaries
+        Technically JS has "in" but it sucks, only works w/ objs. 
+        Python's "in" is v good, works for a lot
+
+Comparison operators are the same. Just python doesn't have ===
+Bc python doesn't force coercion ("a" + 9 = "a9" in JS)
+== > < <= >= != all the same
+
+Python data types: float, int, string, boolean, none
+    No BigInt, no undefined. 
+    Null (JS) is None (Python)
+
+# Math in Python  - remember PEMDAS
+print(10 - 2)
+print(10 + 2)
+print(10 / 3) => 3.33
+    One / gives us division float
+print(10 // 3) => 3
+    Double // rounds division to int 
+print(10 % 3) => 1
+print(10 ** 3) => 1000 
+    10 to the power of 3 
+
+# Checking even and odd in python 
+Even:
+    if num % 2 == 0
+Odd:
+    if num % 2 == 1
+
+# Regex in Python
+import re
+regex = re.compile(r"\d\d\d\d")
+text = "Your id is 4933"
+match = regex.search(text)
+start, end = match.start(), match.end()
+found = text[start:end] # 4933
+
+# Instance operators 
+Actually kinda important, but I'm mentally done
+Come back to this :(
+
+Python instanceof
+
+
+# Built in functions
+Checking type:
+
+isinstance(9, int) => true 
+isinstance(tom, Person) => true. Tom is obj, person class
+isinstance("cat", str) => true
+
+Other topics to cover:
+https://www.valentinog.com/blog/python-for-js/ 
+
+Raising exceptions, sychronous, commenting, etc
+
+
+# Converting data types 
+We can convert str -> int, int -> str, etc, by using these:
+    int()
+    float()
+    str()
+    bool()
+
+Ex:
+    i1 = input("First: ") takes a num
+    i2 = input("Second: ") takes a num
+    sum = float(i1) + float(i2)
+    print("Sum = " + str(sum))
 

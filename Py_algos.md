@@ -279,7 +279,7 @@ Basic:
         ceil = len(sorted_arr)-1 
 
         while floor <= ceil:
-            mid = left + (ceil-floor) // 2
+            mid = floor + (ceil-floor) // 2
             if nums[mid] == target:
                 return mid
             elif target < nums[mid]:
@@ -294,6 +294,19 @@ Basic:
 
 # Sliding window 
 
+Very roughly
+def slidingWindow(arr: List[int], target: int):
+    start = 0
+    goal = 0 
+    tmp = 0
+
+    for end in range(len(arr)): 
+        goal += arr[end]
+        while tmp > 0: 
+            tmp -= 1
+            start += 1
+
+    return goal 
 
 
 # Greedy
