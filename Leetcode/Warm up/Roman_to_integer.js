@@ -28,6 +28,37 @@ Edge: Special roman chars like IV b/c IVX = 14.
 Lesson: Look for patterns and rules in the input to inform the code. 
 */
 
+
+Python solution: 
+exch = {
+    'I': 1, 
+    'V': 5, 
+    'X': 10, 
+    'L': 50, 
+    'C': 100, 
+    'D': 500,
+    'M': 1000
+}
+
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        # read left to right for roman ints
+        total = 0 
+        total += exch[s[0]]
+        
+        for i in range(1, len(s)): 
+            curr = s[i]
+            prev = s[i-1]
+            if (prev == "I" and curr == "V") or (prev == "I" and curr == "X"): 
+                total -= 2
+            if (prev == "X" and curr == "L") or (prev == "X" and curr == "C"): 
+                total -= 20 
+            if (prev == "C" and curr == "D") or (prev == "C" and curr == "M"): 
+                total -= 200 
+            total += exch[curr] 
+            
+        return total
+
 // Define roman-> integer relationship 
 const romanInt = {
     I: 1, 

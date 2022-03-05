@@ -24,3 +24,15 @@ class Solution:
             dp[i] = dp[i-1] + dp[i-2]
         
         return dp[n]
+
+
+
+ dictionary = {}
+
+ for num in nums: 
+    dictionary[num] = 1 + dictionary.get(num, 0)
+
+[[1,2,3], [4,5,6]]
+
+for arr in nums: 
+    
