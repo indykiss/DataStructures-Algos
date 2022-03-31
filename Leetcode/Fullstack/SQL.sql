@@ -42,6 +42,8 @@ SELECT date_id, make_name,
 FROM DailySales 
 GROUP BY 1, 2 -- We're combining rows, so we need this 
 
+SELECT DISTINCT col1_col2 
+FROM table_name
 
 -- Join two tables on ID, filter out the aggregate score over 100 
 -- Return ID and name

@@ -2,12 +2,20 @@
 # Upcoming: 
 # ----------------------------------------------#
 
+# March 2022
+- Final round with C1. Offer from C1
+- Resigned from Lippincott (first 2 weeks wrapping up)
+- Final round with GS. Offer from GS
+- 1st week post-Lipp, vacation/ doing things for home
+- 2nd week post-Lipp, deciding between GS and C1 (connected w/ GS about numbers). Took too long, but was very difficult decision. Lots of research, talking to people, pro/con lists
+- Last week of March need to focus on G now that I've made decision
+
 # February 
 - HR on Feb 6 
 - C1 tagged LCs: 35 total (2 hards, rest easy/med)
 - Additional LC easies: 35+
 - Additional LC mediums: 15+
-
+- Offer from LF
 
 # January 
 - Python practice and studying 
@@ -16,7 +24,10 @@
     - Stuck with easy high acceptance, G tagged Qs for now
 - 2 Hackerranks
 
-# December 
+
+## 2021:
+
+# December 2021
 - Python
 - Leetcodes 
     - 10 easies to practice python
@@ -30,7 +41,6 @@
 - Vacation for 2 weeks, Galapagos, + Thanksgiving
 - 1 week to apartment hunt (50+ emails, 12+ apt tours, 2 final contenders, 1 lease signed!)
 - Front end test, front end pair programming, skilled test
-
 
 # October
 - 2 weeks of studying really: 1 week planning vacay/ busy at work, 1 week looking at apts
@@ -46,17 +56,14 @@
 RN: On leetcode, of the solved problems, I didn't do ~20 of the 280+
 Total via counting .js is 350.
 
-
 # September 
 - KPI Builder 
 - Restart pipelines (2-3 cos)
-
 
 # August 
 - Generally took a little break
 - Morgan SRE
 - Start working lightly on KPI builder towards end of Aug
-
 
 # July 
 - Generally took a break
@@ -80,7 +87,6 @@ Notes: possible project options:
     - Upgrade datapond by a lot
 
 - Created google doc on operating systems studying and  network technologies
-
 
 # June:
 - Leetcodes
@@ -108,7 +114,6 @@ Key topics
 - Dynamic programming (google, nefarious startups)
 
 
-
 # May: 
 What actually happened: 
 - MK 1st round HR, 2nd round Hackerrank, 3rd round pair
@@ -126,15 +131,13 @@ Original plan:
 - have been doing fair amount of SWE apps, research (youtubes), to 
 create pipeline
 
-
-# April plan:
+# April:
 - Onsite! Rejected, but that's ok, was a long shot
 - Coding : HEAVY on the mediums, warm up with easies
 - System design 
 - Vacay/ recover from failure for 2 weeks 
 
-
-# March : 
+# March: 
 - Going through Grokking the system design interview 
     - Web crawler, Search
     - Done: Typeahead, Newsfeed, Messenger, TinyURL, Instagram, Basics, 
@@ -143,7 +146,6 @@ create pipeline
 - Light leetcoding to stay sharp 
 - Grokking object oriented design as quick pre-course for system design 
     - Library, parking lot, ATM, Amazon, Facebook 
-
 
 # February:
 - From Dec - March, only +30 new algos, but that's ok. Dec-Feb was tough 
