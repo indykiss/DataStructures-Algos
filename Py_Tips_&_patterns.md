@@ -125,6 +125,18 @@ Return k most freq eles in arr
     return res
 BUT REALLY USING A HEAP IS THE RIGHT ANSWER FOR K FREQUENT Qs
 
+# Sorting an array by increasing frequency 
+# Use a frequency dictionary, then custom sort (line 136)
+def frequencySort(self, nums: List[int]) -> List[int]:     
+    c = {}
+    for num in nums:
+        c[num] = c.get(num, 0) + 1
+        
+    nums.sort(reverse=True)  # edge case for decreasing order
+    nums.sort(key=lambda x: c[x])
+    return nums
+
+
 # Build a frequency dictionary quickly:
     freq = {}
     for num in nums:
