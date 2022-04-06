@@ -101,13 +101,56 @@ def build_nary_tree_str(str):
     curr_val = int(node[curr_lvl:])
     while i >= 0: 
       maybe_lvl = nodes[i].count('-')
-	maybe_parent = int(node[maybe_lvl:])
+	  maybe_parent = int(node[maybe_lvl:])
       if maybe_lvl == curr_lvl-1:
 	  # need to check on building vs appending a .children()
         if maybe_parent in tree: 
-    tree[maybe_parent].append(curr_val)
-  else: 
-    tree[maybe_parent] = []
+      tree[maybe_parent].append(curr_val)
+      else: 
+        tree[maybe_parent] = []
+      i -= 1
+
   return tree
+
+
+
+# Course Schedule II
+# There are a total of numCourses courses you have to take, labeled from 0 to 
+# numCourses - 1. You are given an array prerequisites where 
+# prerequisites[i] = [ai, bi] indicates that you must take course bi 
+# first if you want to take course ai.
+
+# For example, the pair [0, 1], indicates that to take course 0 you have to 
+# first take course 1.
+# Return the ordering of courses you should take to finish all courses. If 
+# there are many valid answers, return any of them. If it is impossible to 
+# finish all courses, return an empty array.
+
+def find_course_order(prereqs: List[int])
+  adj = defaultdict(list)
+
+  for crs, pre in prereqs: 
+    adj[crs].append(pre)
+
+  ordered_courses = []
+  visited = {}
+  
+  def dfs(adj, crs): 
+    nonlocal visited 
+    visted[crs] = True 
+    for pre in adj[crs]:
+        if pre not in visited:
+ 	  dfs(adj, pre)
+	 else: 
+	  if pre in visited and visited[pre]: return 
+    ordered_courses.append(crs)
+    visited[crs] = False 
+ 
+  for i in range(numCourses):
+	if i not in visited:
+	   dfs(adj, i)
+
+  return ordered_courses
+
     
      
