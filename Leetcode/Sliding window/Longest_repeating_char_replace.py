@@ -1,7 +1,4 @@
 
-
-
-/*
 Longest Repeating Character Replacement
 
 Given a string with lowercase letters only, if you are 
@@ -17,13 +14,40 @@ String="abbcb", k=1
 Output: 4
 Replace the 'c' with 'b' to have a longest repeating substring "bbbb".
 
+# Strategy
+# Sliding window, left and right 
+# Build a dictionary of the chars:freq in our window 
+# If our window_size - most_freq_val_in_dict <= k, update the longest  maybe 
+# If not, we need to update the start of our window. Remove/ decrement from dictionary 
+# Return longest
 
-Strat: Sliding window
-- Vars: start, for w/ end, hash:{char: freq}, trackMaximumRepeatingLetterCounter
-If we ID a window that has letters that 
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+        freq = {}
+        left = 0
+        longest = 0 
+        
+        for right in range(len(s)): 
+            freq[s[right]] = freq.get(s[right], 0) + 1
+            most_freq_val = max(freq.values())
+            window_size = right-left+1
+            
+            # looking for if our current window minus our most freq value in dictionary is <= k. If so, update longest
+            if window_size - most_freq_val <= k: 
+                longest = max(longest, window_size)
+                
+            # move left of window up & remove from dic
+            else: 
+                freq[s[left]] -= 1
+                if freq[s[left]] == 0:
+                    del freq[s[left]]
+                left += 1
+                
+        return longest
 
-*/
 
+
+# JS: 
 var characterReplacement = function(str, k) {
     let start = 0,
         charFreqHash = {},
