@@ -1,3 +1,4 @@
+
 Counting Words With a Given Prefix
 
 You are given an array of strings words and a string pref.
@@ -153,4 +154,41 @@ def find_course_order(prereqs: List[int])
   return ordered_courses
 
     
-     
+
+# Given an index and an input string find the char at the
+# given index of the string. 
+# If the index exceeds the len of the str, then you transform 
+# the string by removing the string's last char and appending 
+# it to the front and appending this transformed string to the original 
+# string until you have a string length that exceeds the desired index.
+
+# For example,if we have a string "abcd" and want to find the char at index 3
+# it would obviously be 'd'. However, if we want to find the char at index 7 
+# of "abcd" we would transform "abcd" to "abcddabc" and the char would be 'c'. 
+# If we want to find the char at index 12 of "abcd" we would transform "abcd" to 
+# "abcddabc" and then again transform to "abcddabccabcddab" and the char would be 'd.
+
+Strategy 
+- Brute:  
+  - Build the transformed string, 1 transformation at a time until we have a str len 
+  greater than desired idx 
+
+def getChar(string, idx): 
+  # calculate # of transformations needed
+  transforms = 0 
+  temp_len = len(string)
+
+  while temp_len <= idx:
+    transforms += 1 
+    temp_len // 2
+    
+  # make a new string with our transformations
+  new_str = string 
+  for j in range(transforms): 
+    new_str = new_str + new_str[-1] + new_str[0:-1] # our string is the prev 
+    # str + the last char in front of slice of str from 0 to end-1
+  return new_str[idx] # return char at idx in our new string
+
+- O(log n) time 
+- Strategy: 
+- Math. Calculate the number of transformations
