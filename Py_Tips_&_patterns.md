@@ -31,6 +31,9 @@ NO .reverse in python, instead word[::-1]
 str.count(" ")
 Counts the number of spaces in the str
 
+Sort a string:
+    sortedList = sorted(str)
+    return "".join(sortedList)
 
 
 # List built in methods 
