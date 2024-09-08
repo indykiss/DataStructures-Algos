@@ -27,6 +27,7 @@ NO .reverse in python, instead word[::-1]
     s = "hi"
     return s[::-1] =>
     "ih"
+    This works because of how slicing works in Python, Start at beg, End at end, because both are ommitted, and move with -1 steps.
 
 str.count(" ")
 Counts the number of spaces in the str
