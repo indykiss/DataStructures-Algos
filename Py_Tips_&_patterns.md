@@ -107,16 +107,43 @@ ord(char)
     Finds the greatest common factor between two nums
         .gcd(8, 24) -> 8
         .gcd() 
-
-.ceil(float)
+import math
+math.ceil(float)
     rounds a number up
-
-.round(float)
+math.floor(float) OR math.round(float)
     rounds a number down
+math.sqrt(9) = 3 
+math.pow(2,3) = 8
 
 range(start, end)
 numbers = range(5, 10) is list of numbers 5 -> 9
 
+# Simple math 
+    5/2 = 2.5
+    5//2 = 2 (rounds down, integer)
+    -3//2 = -2 
+    int(-3/2) = -1 
+
+# Modulo = getting remainder 
+        10 % 3 = 1 is remainder
+    weird negative:
+        -10 % 3 = 2 is remainder for some garbage reason 
+    fix weird negative:
+        import math 
+        math.fmod(-10 % 3) = -1
+
+# Iterate through array, forward and back
+    for i in range(5):
+        print(i) # 0,1,2,3,4
+    for i in range(1,6):
+        print(i) # 0,1,2,3,4
+    for i in range(5,1,-1):
+        print(i) # 5,4,3,2
+    for i in range(10,2,-2):
+        print(i) # 10,8,6,4
+    arr = [10,8,4,2]
+    for i, item in enumerate(arr):
+        print(i, item) // 0 10, 1 8, 2 4, 3 4
 
 # Sorting a dictionary based on its values: sorted(dict.items()) as iterate
 Return k most freq eles in arr
@@ -129,6 +156,7 @@ Return k most freq eles in arr
             i += 1  
     return res
 BUT REALLY USING A HEAP IS THE RIGHT ANSWER FOR K FREQUENT Qs
+
 
 # Sorting an array by increasing frequency 
 # Use a frequency dictionary, then custom sort (line 136)
