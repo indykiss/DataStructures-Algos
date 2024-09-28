@@ -204,6 +204,12 @@ format(num, 'b').zfill(32)
     count for big numbers too 
 
 
+# Queue / Deque
+Deque = double ended queue
+append / appendleft
+pop / popleft 
+[0] first / [-1] last ele
+
 # Formatting strings 
 How to add variables into strings:
 
