@@ -15,6 +15,16 @@
 
 class Solution:
     def anagramMappings(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        mapping = []
+        for i, num in enumerate(nums1):
+            j = nums2.index(num) 
+            mapping.insert(i, j) 
+
+        return mapping       
+
+
+class Solution2:
+    def anagramMappings(self, nums1: List[int], nums2: List[int]) -> List[int]:
         arr = []
         dict2 = {}
 
