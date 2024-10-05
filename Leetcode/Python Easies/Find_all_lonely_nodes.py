@@ -19,7 +19,25 @@
 #     to the lonely arr 
 #     - Return arr 
 
+
 class Solution:
+    def getLonelyNodes(self, root: Optional[TreeNode]) -> List[int]:
+        lonely = []
+        que = []
+        que.append(root)
+        while len(que) > 0: 
+            node = que[0]
+            del que[0]
+            if node.left: que.append(node.left)
+            if node.right: que.append(node.right)
+            if node.left and not node.right:
+                lonely.append(node.left.val)
+            if node.right and not node.left:
+                lonely.append(node.right.val)
+        return lonely
+                
+
+class Solution2:
     def getLonelyNodes(self, root: Optional[TreeNode]) -> List[int]:
         ls = []
         que = []
@@ -34,4 +52,6 @@ class Solution:
             if ele.right: que.append(ele.right)
         
         return ls 
-                
+
+
+
