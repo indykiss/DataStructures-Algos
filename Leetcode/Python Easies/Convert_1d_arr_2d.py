@@ -22,16 +22,41 @@ class Solution:
     def construct2DArray(self, original: List[int], m: int, n: int) -> List[List[int]]:
         if len(original) != m * n:
             return []
-        
         res = []
         idx = 0
-        
         for i in range(m): 
             row = []
             for j in range(n):
                 row.append(original[idx])
                 idx += 1
             res.append(row)
-    
         return res
-            
+
+
+# [3,4,5,6,7,8]  3 rows, 2 cols
+# [ [3,4], [5,6], [7,8] ]
+# edge: if not enough eles in og arr, return []
+class Solution2:
+    def construct2DArray(self, original: List[int], m: int, n: int) -> List[List[int]]:
+        if( m * n != len(original)):
+            return []
+        two_d_arr = []
+        for i in range(0, len(original), n): 
+            two_d_arr.append(original[i:i+n])
+        return two_d_arr
+
+class Solution3:
+    def construct2DArray(self, original: List[int], m: int, n: int) -> List[List[int]]:
+        if( m * n != len(original)):
+            return []
+        two_d_arr = []
+        temp = []
+        for i in range(len(original)):
+            temp.append(original[i])
+            j = i+1
+            if(i+1) % n == 0:
+                j += 1
+                two_d_arr.append(temp)
+                temp = []
+        
+        return two_d_arr
