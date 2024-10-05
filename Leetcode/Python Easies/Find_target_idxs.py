@@ -18,6 +18,16 @@
 # Explanation: After sorting, nums is [1,2,2,3,5].
 # The indices where nums[i] == 2 are 1 and 2.
 
+class Solution:
+    def targetIndices(self, nums: List[int], target: int) -> List[int]:
+        nums.sort()
+        idxs = []
+        for i, num in enumerate(nums):
+            if num == target:
+                idxs.append(i)
+            elif num > target:
+                break
+        return idxs
 
 # O(n log n) time
 class Solution:
