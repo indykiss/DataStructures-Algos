@@ -3,7 +3,6 @@
 # Given a fixed-length integer array arr, 
 # duplicate each occurrence of zero, shifting the remaining 
 # elements to the right.
-
 # Strategy: 
 # If we have a zero, insert a zero at i+1 and pop to remove the num at end 
     # while loop so we can skip 2 when we have a zero to not dupe a zero twice
@@ -22,3 +21,4 @@ class Solution:
                 i += 2
             else: 
                 i += 1
+            
