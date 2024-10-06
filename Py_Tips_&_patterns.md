@@ -1,8 +1,4 @@
-
-## ----- Build my toolkit ----- ##
-## --- Handy "how to" tricks -- ##
-
-
+## --- How To ... in Python -- ##
 # Handy Built In Methods
 
 # Str built in methods
