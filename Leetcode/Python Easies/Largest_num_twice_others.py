@@ -9,6 +9,18 @@
 
 class Solution:
     def dominantIndex(self, nums: List[int]) -> int:
+        # find the max num and its index
+        max_num = max(nums)
+        idx = nums.index(max_num)
+        # confirm its at least larger than twice as large as rest
+        for n in nums:
+            if max_num < n * 2 and not max_num == n:
+                return -1
+
+        return idx
+        
+class Solution:
+    def dominantIndex(self, nums: List[int]) -> int:
         max_num = nums[0]
         idx = 0 
         
