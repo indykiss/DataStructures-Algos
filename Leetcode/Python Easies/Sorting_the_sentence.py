@@ -11,6 +11,23 @@
 # For example, the sentence "This is a sentence" can be shuffled as 
 # "sentence4 a3 is2 This1" or "is2 sentence4 This1 a3".
 
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        arr = s.split()
+        res = [""] * len(arr)
+        for word in arr:
+            chars = []
+            pos = int()
+            for ch in word :
+                if not ch.isdigit():
+                    chars.append(ch)
+                else:
+                    pos = int(ch)-1
+            ans = ''.join(chars)
+            res[pos] = ans
+
+        return " ".join(res)
+
 
 class Solution:
     def sortSentence(self, s: str) -> str:
