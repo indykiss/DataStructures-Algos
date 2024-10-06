@@ -11,6 +11,44 @@
 
 # Input: s = "abcd", t = "abcde"
 # Output: "e"
+# O(n)
+# XOR practice / exclusive or 
+# Good for: Finding unique elements, Bit manipulation
+# Matches apples to apples, and oranges to oranges
+# Returns 0 when there are matches. left are the differences 
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        result_of_xor = 0
+        for ele in s:
+            result_of_xor ^= ord(ele)
+        for ele in t:
+            result_of_xor ^= ord(ele)
+        return chr(result_of_xor)
+
+# O(n)
+class SolutionHash:
+    def findTheDifference(self, s: str, t: str) -> str:
+        s_hash = {}
+        for ele in s:
+            s_hash[ele] = 1 + s_hash.get(ele, 0)
+        for t_ele in t:
+            if t_ele not in s_hash.keys() or s_hash[t_ele] == 0: 
+                return t_ele
+            s_hash[t_ele] = s_hash[t_ele] - 1
+
+
+# O(nlogn)
+class SolutionSlow:
+    def findTheDifference(self, s: str, t: str) -> str:
+        s_arr = sorted(s)
+        t_arr = sorted(t)
+        i = 0
+        while i < len(s):
+            if s_arr[i] != t_arr[i]:
+                return t_arr[i]
+            i += 1
+        
+        return t_arr[i]
 
 
 class Solution:
