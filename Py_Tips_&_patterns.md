@@ -1,5 +1,4 @@
-## --- How To ... in Python -- ##
-# Handy Built In Methods
+## -- How To ... in Python -- ##
 
 # Str built in methods
 str.find(char)
