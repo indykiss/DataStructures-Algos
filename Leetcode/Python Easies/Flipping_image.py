@@ -21,7 +21,19 @@
 #     - Flip: Two pointers, one at beg and one at end, swap until they meet
 #     - Invert: If 1, make it a 0, if 0, make it 1 
 # - Append new pixel to res 
-    
+
+class Solution:
+    def flipAndInvertImage(self, image: List[List[int]]) -> List[List[int]]:
+        res = []
+        for row in image:
+            rev = row[::-]
+            tmp = [0] * len(rev) 
+            for i, num in enumerate(rev):
+                tmp[i] = 0 if num else 1
+            res.append(tmp)
+        return res
+
+
 class Solution:
     def flipAndInvertImage(self, image: List[List[int]]) -> List[List[int]]:
         res = []
