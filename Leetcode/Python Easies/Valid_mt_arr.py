@@ -11,6 +11,24 @@
 # Iterate and count peaks/ valleys
 # Only one peak in the array of nums and 1 valley
 
+# ehh, barely get this one
+class Solution:
+    def validMountainArray(self, arr: List[int]) -> bool:
+        peaks = 0 
+        valleys = 0 
+
+        for i in range(1, len(arr)-1):
+            left = arr[i-1]
+            mid = arr[i]
+            right = arr[i+1]
+
+            if left < mid and mid > right: 
+                peaks += 1 
+            if left >= mid and mid <= right:
+                valleys += 1
+        
+        return peaks == 1 and valleys == 0
+        
 class Solution:
     def validMountainArray(self, arr: List[int]) -> bool:
         peaks = 0 
