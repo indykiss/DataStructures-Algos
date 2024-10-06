@@ -37,6 +37,13 @@ Sort a string:
     sortedList = sorted(str)
     return "".join(sortedList)
 
+# Convert num -> char and char -> num
+ord(character) = character's unicode str
+    ord(a) = 97 
+    ord(a) + 1 = 98 
+chr(number) = string's unicode str
+    chr(97) = "a"
+    chr(98) = "b"
 
 # List built in methods 
 sorted(arr)
