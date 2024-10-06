@@ -12,6 +12,20 @@
 # Input nums = [2,2,1,1,1,2,2]
 # Output: 2
 
+# o(n) time/ space
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        h = {}
+        max_occ = int()
+        max_num = int()
+        for n in nums:
+            h[n] = 1 + h.get(n, 0)
+        
+        for num, occ in h.items():
+            if occ > max_occ:
+                max_occ = occ
+                max_num = num
+        return max_num
 
 
 # Boyer-Moore algorithm, O(n) time and O(1) space 
