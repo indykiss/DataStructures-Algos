@@ -2,6 +2,9 @@
 
 Cheatsheet
 
+smallestWord = min(words, key=len) # find shortest word in an arr of words
+
+
 Two pointers: one input, opposite ends
 
 def fn(arr):
