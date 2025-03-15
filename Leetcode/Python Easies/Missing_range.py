@@ -39,8 +39,45 @@ class Solution:
             prev = curr
             
         return res
-    
-    
+
+
+# slight change
+Missing Ranges
+You are given an inclusive range [lower, upper] and a sorted unique integer array nums, where all elements are within the inclusive range.
+A number x is considered missing if x is in the range [lower, upper] and x is not in nums.
+Return the shortest sorted list of ranges that exactly covers all the missing numbers. That is, no element of nums is included in any of the ranges, and each missing number is covered by one of the ranges.
+
+Input: nums = [0,1,3,50,75], lower = 0, upper = 99
+Output: [[2,2],[4,49],[51,74],[76,99]]
+Explanation: The ranges are:
+[2,2]
+[4,49]
+[51,74]
+[76,99]
+
+class Solution:
+    def findMissingRanges(self, nums: List[int], lower: int, upper: int) -> List[List[int]]:
+        missing = []
+
+        if len(nums) == 0:
+            missing.append([lower, upper])
+            return missing
+
+        # before 1st ele, check if we're missing anything
+        if lower < nums[0]:
+            missing.append([lower, nums[0]-1])
+
+        #between els in arr, find missing nums 
+        for i in range(1, len(nums)):
+            num1, num2 = nums[i-1], nums[i]
+            if num2 - 1 != num1: 
+                missing.append([num1 + 1, num2 - 1])
+
+        # after last num, check if missing any 
+        if upper > nums[-1]:
+            missing.append([nums[-1] + 1, upper])
+
+        return missing
     
     
     
