@@ -453,3 +453,44 @@ Ex:
     sum = float(i1) + float(i2)
     print("Sum = " + str(sum))
 
+Compound Assignment Operators
+Operator
+Description
+Syntax
+Results
+x=7 and y=4
+
++=
+Add and assign: Add the right-side operand with the left-side operand, and assign the result to the left operand (x = x + y)
+x += y    
+x = 11
+
+-=
+Subtract and assign: Subtract the right-side operand from the left-side operand and assign the result to the left operand (x = x - y)
+x -= y  
+x = 3
+
+*=
+Multiply and assign: Multiply the right-side operand with the left side operand and assign the result to the left operand (x = x * y)
+x *= y    
+x = 28
+
+/=
+Divide and assign: Divide the left operand with the right operand, and then assign it to the left operand (x = x / y)
+x /= y    
+x = 1.75
+
+//=
+Integer divide and assign: Divide the left operand and the right operand, and assign the integer value (floor of the result) to the left operand (x = x // y)
+x //= y    
+x = 1
+
+%=
+Modulo and assign: Take modulo after dividing the left operand with the right operand, and assign the result to the left operand (x = x % y)
+x %= y    
+x = 3
+
+**=
+Exponent and assign: Calculate the exponent (raised power) value using operands and assign the value to the left operand (x = x ** y)
+x **= y    
+x = 2401
