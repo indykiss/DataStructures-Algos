@@ -1,5 +1,5 @@
 
-# ITERATE THROUGH ARRAYS
+# Loops for arrs
 For ele in [a,b,c]:
 
 For idx in range(1, 101):
@@ -13,19 +13,22 @@ i = 0
 while i < len(whatever):
   i+= 1
 
+Loops backwards
+For i in str[::-1]:
+OR reversed(text):
 
-# ITERATE THROUGH DICTIONARIES
+# Loops for dicts
 dict = {"k":"v", "o": "r"}
 For key, val in dict.items(): 
 For key in dict.keys():
 For val in dict.values():
 
 
-# STRINGS
+# Strs
 str = "hello"
-str[0] = h  # str[-1] = o
+str[0] = h  # str[-1] = oN
 
-# STR SLICE - ALSO ARR SLICE
+# Str slice / arr slice
 str[startIdx:endIdxNONInclusive]
 str[i:] from i to end of str
 str[:i] from beg of str to i NON INCLUSIVE, so i-1
