@@ -13,6 +13,35 @@ No using BigInteger lib or converting number to integer directly
 */
 
 
+class Solution:
+    def addStrings(self, num1: str, num2: str) -> str:
+        res = []
+        i, j  = len(num1)-1, len(num2)-1 
+        carry = False
+
+        while i >=0 or j >=0:
+            d1 = int(num1[i]) if i >= 0 else 0
+            d2 = int(num2[j]) if j >= 0 else 0
+            miniSum = d1 + d2
+            miniSum = miniSum + 1 if carry else miniSum
+            if miniSum > 9:
+                carry = True
+                miniSum -= 10
+            else:
+                carry = False
+            res.append(str(miniSum))
+            i -= 1
+            j -= 1
+
+        if carry:
+            res.append("1")
+
+        return ''.join(res[::-1])
+
+        
+            
+                
+
 // Do me again. Oct, FB: 
 var addStrings = function(num1, num2) {
     let sum = 0,
