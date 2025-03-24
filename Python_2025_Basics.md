@@ -14,6 +14,7 @@ while i < len(whatever):
   i+= 1
 
 Loops backwards
+
 For i in str[::-1]:
 OR reversed(text):
 
