@@ -123,3 +123,33 @@ function smallest_subarray_with_given_sum(s, arr) {
 
 
 
+# use a dictionary to save the running list of sums that we've seen
+# since we can have negative nums, possible we'll see like -2, 2 
+
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        subArrs = 0
+        currSum = 0
+        #currSumCount = defaultdict(int) #lets us skip the if key doesnt exist, add to dictionary thing
+        currSumCount = {}
+
+        # we can that zero is a cumulative sum we've already seen
+        # with the count 0 
+        currSumCount[0] = 1
+
+        for num in nums:
+            currSum += num
+
+            targetPrefixToExclude = currSum - k
+            if targetPrefixToExclude in currSumCount:
+                subArrs += currSumCount[targetPrefixToExclude]
+            
+            if currSum in currSumCount:
+                currSumCount[currSum] += 1
+            else:
+                currSumCount[currSum] = 1
+
+        return subArrs
+
+
+
