@@ -1,4 +1,3 @@
-
 # Loops for arrs
 For ele in [a,b,c]:
 
@@ -24,7 +23,6 @@ For key, val in dict.items():
 For key in dict.keys():
 For val in dict.values():
 
-
 # Strs
 str = "hello"
 str[0] = h  # str[-1] = oN
@@ -33,3 +31,10 @@ str[0] = h  # str[-1] = oN
 str[startIdx:endIdxNONInclusive]
 str[i:] from i to end of str
 str[:i] from beg of str to i NON INCLUSIVE, so i-1
+
+# Dictionaries
+
+Declare dict example with default value of 0 / empty arr/ empty str
+my_dict = defaultdict(int)
+my_dict = defaultdict(list)
+my_dict = defaultdict(str)
