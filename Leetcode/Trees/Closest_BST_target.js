@@ -22,6 +22,32 @@ Input: root = [4,2,5,1,3], target = 3.714286
 Output: 4
 */
 
+#depth first search
+class Solution:
+    def closestValue(self, root: Optional[TreeNode], target: float) -> int:
+        if not root:
+            return None
+        self.closest = root.val
+
+        def dfs(node):
+            if not node:
+                return 0            
+            curr = abs(target-node.val)
+            bestDiff = abs(target-self.closest)
+            # chose the smaller option, if we have multiple options
+            if curr == bestDiff:
+                self.closest = min(node.val, self.closest)
+            # update our best if we've found best    
+            if curr < bestDiff:
+                self.closest = node.val
+            if node.left:
+                dfs(node.left)
+            if node.right:
+                dfs(node.right)
+
+        dfs(root)
+        return self.closest
+
 
 var closestValue = function(root, target, min = null) {
     
