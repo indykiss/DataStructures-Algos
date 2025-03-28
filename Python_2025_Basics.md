@@ -26,6 +26,7 @@ For val in dict.values():
 # Strs
 str = "hello"
 str[0] = h  # str[-1] = oN
+str.replace("a", "") # lose all a in str
 
 # Str slice / arr slice
 str[startIdx:endIdxNONInclusive]
