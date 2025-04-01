@@ -35,9 +35,11 @@ Random ones:
     s = "world"
     return "hello ".format(s)  # Insert var into str
 ```
-
-smallestWord = min(words, key=len) # find shortest word in an arr of words
-
+### Arrs
+```
+Random tricks:
+    smallestWord = min(words, key=len) # find shortest word in an arr of words
+```
 ## Two Pointers <a name="pointers"></a>
 ```
 Two pointers: one input, opposite ends
@@ -102,7 +104,7 @@ chr(number) = string's unicode str
     chr(97) = "a"
     chr(98) = "b"
 
-# List built in methods 
+# Arr built in methods 
 sorted(arr)
     Actually sorts as expected! JS .sort() behavior
     Need to use .sorted(arr) to sort an arr in asc order
