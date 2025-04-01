@@ -1,8 +1,8 @@
 # Table of contents
-1. Strs & Arrs (#strs&arrs)
-2. Pointers (#pointers)
+1. [Strs & Arrs] (#strs&arrs)
+2. [Pointers] (#pointers)
 
-# Strs & Arrs <a name="strs&arrs"></a>
+## Strs & Arrs <a name="strs&arrs"></a>
 ```
 Arr => Str
     return "".join(["a","b"])  # "ab"
