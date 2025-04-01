@@ -1,17 +1,40 @@
 # Table of contents
 1. [Strs & Arrs](#strs&arrs)
-2. [Pointers](#pointers)
+2. [Doubles](#doubles)
+3. [Pointers](#pointers)
 
-## Strs & Arrs <a name="strs&arrs"></a>
+## Strs <=> Arrs <a name="strs&arrs"></a>
 ```
 Arr => Str
     return "".join(["a","b"])  # "ab"
 Str => Arr
-    return list("str")  # [s,t,r]
+    return list("str")         # [s,t,r]
 Sentence => Arr
-    return "str st".split()  # [str, st]
+    return "str st".split()    # [str, st]
+    return "s,t".split(,)      # [s, t]
 ```
-
+## Strs 
+```
+Find / Replace
+    return "hell".find(e)  # idx of 1. if no e, -1
+    return str.replace(this, withThat)
+        s2 = "hi there"
+        print(s2.replace("there", "bye")) => "hi bye"
+Slice
+    return str[start:stop_noninclusive:step] 
+Reverse
+    return str[::-1]     
+    This works because of how slicing works in Python, Start at beg, End at end, because both are ommitted, and move with -1 steps.
+Sort, by using arr sort:
+    sortedList = sorted(str)
+    return "".join(sortedList)
+Random ones:
+    return len(str)
+    return str.count(" ")  # Counts the number of spaces in the str
+    return str.upper() / str.lower()
+    s = "world"
+    return "hello ".format(s)  # Insert var into str
+```
 
 smallestWord = min(words, key=len) # find shortest word in an arr of words
 
@@ -67,49 +90,9 @@ def fn(arr):
         prefix.append(prefix[-1] + arr[i])
     return prefix
 ```
-Efficient string building
-# arr is a list of characters
-def fn(arr):
-    ans = []
-    for c in arr:
-        ans.append(c)
-    return "".join(ans)
 
+#HELLO FUTURE INDY I AM HERE
 
-
-
-
-# Str built in methods
-str.find(char)
-    s1 = "hello"
-    print(s1.find("Y")) => -1, there is no Y 
-
-str.replace(this, withThat)
-    s2 = "hi there"
-    print(s2.replace("there", "bye")) => "hi bye"
-
-str.split()
-   Splits a string into an array using WHITESPACE
-   OR to split on a comma or different ele:
-        str.split("#")
-
-list(str)
-    Split a str into n arr on every CHARACTER
-
-str[::-1]
-NO .reverse in python, instead word[::-1]
-    s = "hi"
-    return s[::-1] =>
-    "ih"
-    This works because of how slicing works in Python, Start at beg, End at end, because both are ommitted, and move with -1 steps.
-    str[start:stop:step] slicing in python
-
-str.count(" ")
-Counts the number of spaces in the str
-
-Sort a string:
-    sortedList = sorted(str)
-    return "".join(sortedList)
 
 # Convert num -> char and char -> num
 ord(character) = character's unicode str
