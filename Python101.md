@@ -1,5 +1,8 @@
+# Table of contents
+1. Strs & Arrs (#strs&arrs)
+2. Pointers (#pointers)
 
-# Strs & Arrs
+# Strs & Arrs <a name="strs&arrs"></a>
 ```
 Arr => Str
     return "".join(["a","b"])  # "ab"
@@ -12,7 +15,7 @@ Sentence => Arr
 
 smallestWord = min(words, key=len) # find shortest word in an arr of words
 
-## Two Pointers
+## Two Pointers <a name="pointers"></a>
 ```
 Two pointers: one input, opposite ends
 def fn(arr):
