@@ -4,7 +4,7 @@ Cheatsheet
 
 smallestWord = min(words, key=len) # find shortest word in an arr of words
 
-'''
+```
 Two pointers: one input, opposite ends
 def fn(arr):
     left = ans = 0
@@ -16,7 +16,7 @@ def fn(arr):
         else:
             right -= 1    
     return ans
-'''
+```
 
 Two pointers: two inputs, exhaust both
 def fn(arr1, arr2):
