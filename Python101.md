@@ -45,7 +45,33 @@ Random ones:
 ```
 ### Arrs
 ```
-Random tricks:
+k = sorted(arr)               # ascending order
+m = sorted(arr, reverse=True) # descending order
+arr.sort() returns none, just sorts in place
+
+list(str)                  # Split a str into n arr on every CHARACTER
+"".join(arr)               # Arr -> str
+"THING".join(arr): Joins with separator:
+    arr = [hi,there]
+    "-".join(arr)          # "hi-there"
+
+sum(arr)                   # O(n), Adds all nums in arr 
+max(arr) - max(num1, num2) - min(arr) 
+    Finds the maximum/ minimum in an arr or between 2 vals
+
+arr.pop(0) / del arr[0]   # To pop the ele in the front of a list
+arr.insert(idx, num)      # Add ele to arr at specific idx
+
+# Random tricks:
+
+Sorting nested lists:
+    next(itr(dict))
+        Returns the 1st key in the dictionary or list 
+
+    intervals = [["k", 1], ["a", 5]]
+    intervals.sort(key=lambda x: x[0]) # sort by 1st ele 
+    intervals = [["a", 5], ["k", 1]]
+
     smallestWord = min(words, key=len) # find shortest word in an arr of words
 ```
 ## Two Pointers <a name="pointers"></a>
@@ -100,41 +126,6 @@ def fn(arr):
         prefix.append(prefix[-1] + arr[i])
     return prefix
 ```
-
-# Arr built in methods 
-```
-k = sorted(arr)               # ascending order
-m = sorted(arr, reverse=True) # descending order
-arr.sort() returns none, just sorts in place
-
-list(str)                  # Split a str into n arr on every CHARACTER
-"".join(arr)               # Arr -> str
-"THING".join(arr): Joins with separator:
-    arr = [hi,there]
-    "-".join(arr)          # "hi-there"
-
-sum(arr)                   # O(n), Adds all nums in arr 
-max(arr) - max(num1, num2) - min(arr) 
-    Finds the maximum in an arr or 2 vals
-
-To pop the ele in the front of a list: (JS's shift)
-    ele = arr[0]
-    del arr[0]
-    arr.pop(0)    
-
-Add an ele to the front of a list (JS unshift):
-    arr = ["i"]
-    # arr.insert(idx, num)
-    arr.insert(0, "h")
-    arr = ["h", "i"]
-
-next(itr(dict))
-    Returns the 1st key in the dictionary or list 
-
-Sorting nested lists:
-    intervals = [["k", 1], ["a", 5]]
-    intervals.sort(key=lambda x: x[0]) # sort by 1st ele 
-    intervals = [["a", 5], ["k", 1]]
 
 #HELLO FUTURE INDY I AM HERE
 
