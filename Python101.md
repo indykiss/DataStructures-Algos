@@ -12,6 +12,14 @@ Str => Arr
 Sentence => Arr
     return "str st".split()    # [str, st]
     return "s,t".split(,)      # [s, t]
+
+# Convert num -<=> char
+ord(character) = character's unicode str
+    ord(a) = 97 
+    ord(a) + 1 = 98 
+chr(number) = string's unicode str
+    chr(97) = "a"
+    chr(98) = "b"
 ```
 ## Strs 
 ```
@@ -93,49 +101,19 @@ def fn(arr):
     return prefix
 ```
 
-#HELLO FUTURE INDY I AM HERE
-
-
-# Convert num -> char and char -> num
-ord(character) = character's unicode str
-    ord(a) = 97 
-    ord(a) + 1 = 98 
-chr(number) = string's unicode str
-    chr(97) = "a"
-    chr(98) = "b"
-
 # Arr built in methods 
-sorted(arr)
-    Actually sorts as expected! JS .sort() behavior
-    Need to use .sorted(arr) to sort an arr in asc order
-
-Sort in descending order:
-sorted(arr, reverse=True)
-
+```
+k = sorted(arr)               # ascending order
+m = sorted(arr, reverse=True) # descending order
 arr.sort() returns none, just sorts in place
-    l1 = [1,2,3,5,4]
-    l1.sort() RETURNS NONE
-        [1,2,3,4,5]
 
-list(str)
-    Split a str into n arr on every CHARACTER
-
-"".join(arr)
-    Converts an arr to a string
-    Same .join in JS, so use .join option
-
+list(str)                  # Split a str into n arr on every CHARACTER
+"".join(arr)               # Arr -> str
 "THING".join(arr): Joins with separator:
     arr = [hi,there]
-    "-".join(arr)
-    "hi-there"
+    "-".join(arr)          # "hi-there"
 
-sum(arr)
-    Adds all the nums in a particular arr 
-    Faster than doing:
-        sum = 0
-        for num in nums:
-            sum = sum + num
-
+sum(arr)                   # O(n), Adds all nums in arr 
 max(arr) - max(num1, num2) - min(arr) 
     Finds the maximum in an arr or 2 vals
 
@@ -157,6 +135,8 @@ Sorting nested lists:
     intervals = [["k", 1], ["a", 5]]
     intervals.sort(key=lambda x: x[0]) # sort by 1st ele 
     intervals = [["a", 5], ["k", 1]]
+
+#HELLO FUTURE INDY I AM HERE
 
 
 # Num / char handy built in 
