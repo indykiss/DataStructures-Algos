@@ -74,6 +74,45 @@ Sorting nested lists:
 
     smallestWord = min(words, key=len) # find shortest word in an arr of words
 ```
+## Loop through Arrs 
+```
+    arr = [cat, dog, fish]
+
+Access every ele in arr
+    for ele in arr:
+        print ele      # cat, dog, fish
+Need idx, ex: accessing 2 arrs in parallel or modifying arr in-place
+    for i in range(len(arr)):
+        print(i)       
+Need index, go backwards
+    for i in range(len(arr),2,-2):
+        print(i)       #
+Need both ele + idx 
+    for i, item in enumerate(arr):
+        print(i, item) # 0 10, 1 8, 2 4, 3 4
+Want more control over loop flow
+    i = 0
+    while i < len(arr):
+        #do stuff
+        i += 1
+Create new list by transforming elements
+    upper_animals = [ele.upper() for ele in arr]
+Map: Apply a fn to each ele
+    def shout(word):
+        return word.upper()
+    shouted = list(map(shout, arr))
+Select some stuff in arr
+    long_words = list(filter(lamda f: len(f) > 5, arr))
+Manual control over iteration
+    stuff_iter = iter(arr)
+    print(next(stuff_iter)) # just get the 1st ele
+    # do a bunch of stuff
+    print(next(stuff_iter)  # now next ele in arr
+ 
+```
+## Loop through dictionaries 
+```
+```
 ## Two Pointers <a name="pointers"></a>
 ```
 Two pointers: one input, opposite ends
@@ -95,7 +134,7 @@ def fn(arr1, arr2):
     while i < len(arr1) and j < len(arr2):
         # do some logic here
         if CONDITION:
-            i += 1
+            i += 10
         else:
             j += 1
     while i < len(arr1):
