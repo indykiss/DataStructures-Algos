@@ -1,48 +1,11 @@
 # Table of contents
-1. [Strs & Arrs](#strs&arrs)
-2. [Doubles](#doubles)
-3. [Pointers](#pointers)
+1. [Arrs & Strs](#strs&arrs)
+2. [Dictionaries](#dicts)
+3. [Loops](#Loops)
+4. [Doubles](#doubles)
+5. [Pointers](#pointers)
 
-## Strs <=> Arrs <a name="strs&arrs"></a>
-```
-Arr => Str
-    return "".join(["a","b"])  # "ab"
-Str => Arr
-    return list("str")         # [s,t,r]
-Sentence => Arr
-    return "str st".split()    # [str, st]
-    return "s,t".split(,)      # [s, t]
-
-# Convert num -<=> char
-ord(character) = character's unicode str
-    ord(a) = 97 
-    ord(a) + 1 = 98 
-chr(number) = string's unicode str
-    chr(97) = "a"
-    chr(98) = "b"
-```
-## Strs 
-```
-Find / Replace
-    return "hell".find(e)  # idx of 1. if no e, -1
-    return str.replace(this, withThat)
-        s2 = "hi there"
-        print(s2.replace("there", "bye")) => "hi bye"
-Slice
-    return str[start:stop_noninclusive:step] 
-Reverse
-    return str[::-1]     
-    This works because of how slicing works in Python, Start at beg, End at end, because both are ommitted, and move with -1 steps.
-Sort, by using arr sort:
-    sortedList = sorted(str)
-    return "".join(sortedList)
-Random ones:
-    return len(str)
-    return str.count(" ")  # Counts the number of spaces in the str
-    return str.upper() / str.lower()
-    s = "world"
-    return "hello ".format(s)  # Insert var into str
-```
+## Arrs & Strs <a name="strs&arrs"></a>
 ### Arrs
 ```
 k = sorted(arr)               # ascending order
@@ -74,9 +37,55 @@ Sorting nested lists:
 
     smallestWord = min(words, key=len) # find shortest word in an arr of words
 ```
-## Loop through Arrs 
+### Strs 
 ```
-    arr = [cat, dog, fish]
+Find / Replace
+    return "hell".find(e)  # idx of 1. if no e, -1
+    return str.replace(this, withThat)
+        s2 = "hi there"
+        print(s2.replace("there", "bye")) => "hi bye"
+Slice
+    return str[start:stop_noninclusive:step] 
+Reverse
+    return str[::-1]     
+    This works because of how slicing works in Python, Start at beg, End at end, because both are ommitted, and move with -1 steps.
+Sort, by using arr sort:
+    sortedList = sorted(str)
+    return "".join(sortedList)
+Random ones:
+    return len(str)
+    return str.count(" ")        # Counts the number of spaces in the str
+    return str.upper() / str.lower()
+    s = "world"
+    return "hello ".format(s)    # Insert var into str
+    or     print(f"Hello, {name}") 
+```
+### Strs <=> Arrs, Nums <=> Char
+```
+Arr => Str
+    return "".join(["a","b"])  # "ab"
+Str => Arr
+    return list("str")         # [s,t,r]
+Sentence => Arr
+    return "str st".split()    # [str, st]
+    return "s,t".split(,)      # [s, t]
+
+# Convert num <=> char
+ord(character) = character's unicode str
+    ord(a) = 97 
+    ord(a) + 1 = 98 
+chr(number) = string's unicode str
+    chr(97) = "a"
+    chr(98) = "b"
+```
+## Dictionaries <a name="dicts"></a>
+```
+
+```
+## Loops <a name="Loops"></a>
+### Loop through Arrs 
+```
+arr = [cat, dog, fish]
 
 Access every ele in arr
     for ele in arr:
@@ -113,7 +122,8 @@ Manual control over iteration
 ## Loop through dictionaries 
 ```
 ```
-## Two Pointers <a name="pointers"></a>
+## Pointers <a name="pointers"></a>
+## Two Pointers
 ```
 Two pointers: one input, opposite ends
 def fn(arr):
@@ -208,19 +218,6 @@ numbers = range(5, 10) is list of numbers 5 -> 9
         import math 
         math.fmod(-10 % 3) = -1
 
-# Iterate through array, forward and back
-    for i in range(5):
-        print(i) # 0,1,2,3,4
-    for i in range(1,6):
-        print(i) # 0,1,2,3,4
-    for i in range(5,1,-1):
-        print(i) # 5,4,3,2
-    for i in range(10,2,-2):
-        print(i) # 10,8,6,4
-    arr = [10,8,4,2]
-    for i, item in enumerate(arr):
-        print(i, item) // 0 10, 1 8, 2 4, 3 4
-
 # Sorting a dictionary based on its values: sorted(dict.items()) as iterate
 Return k most freq eles in arr
     freq = {8: 1, 9: 3, 7: 4}
@@ -234,8 +231,7 @@ Return k most freq eles in arr
 BUT REALLY USING A HEAP IS THE RIGHT ANSWER FOR K FREQUENT Qs
 
 
-# Sorting an array by increasing frequency 
-# Use a frequency dictionary, then custom sort (line 136)
+## Use a frequency dictionary, then custom sort
 def frequencySort(self, nums: List[int]) -> List[int]:     
     c = {}
     for num in nums:
@@ -285,16 +281,6 @@ Deque = double ended queue
 append / appendleft
 pop / popleft 
 [0] first / [-1] last ele
-
-# Formatting strings 
-How to add variables into strings:
-
-Strings:
-    name = "Indy"
-    print(f"Hello, {name}") 
-    "Hello, Indy"
-
-
 
 # Random
 Returns all the text in the file
@@ -453,44 +439,12 @@ Ex:
     sum = float(i1) + float(i2)
     print("Sum = " + str(sum))
 
-Compound Assignment Operators
-Operator
-Description
-Syntax
-Results
-x=7 and y=4
 
-+=
-Add and assign: Add the right-side operand with the left-side operand, and assign the result to the left operand (x = x + y)
-x += y    
-x = 11
-
--=
-Subtract and assign: Subtract the right-side operand from the left-side operand and assign the result to the left operand (x = x - y)
-x -= y  
-x = 3
-
-*=
-Multiply and assign: Multiply the right-side operand with the left side operand and assign the result to the left operand (x = x * y)
-x *= y    
-x = 28
-
-/=
-Divide and assign: Divide the left operand with the right operand, and then assign it to the left operand (x = x / y)
-x /= y    
-x = 1.75
-
-//=
-Integer divide and assign: Divide the left operand and the right operand, and assign the integer value (floor of the result) to the left operand (x = x // y)
-x //= y    
-x = 1
-
-%=
-Modulo and assign: Take modulo after dividing the left operand with the right operand, and assign the result to the left operand (x = x % y)
-x %= y    
-x = 3
-
-**=
-Exponent and assign: Calculate the exponent (raised power) value using operands and assign the value to the left operand (x = x ** y)
-x **= y    
-x = 2401
+Logic
+    x += 1
+    x -= 1
+    x *= 1
+    x /= 1
+    x //= 1     # Integer floor of result 
+    x %= y      # Remainder, ex 10 % 4 = 2
+    x **= y     # Exponent, ie raised power
