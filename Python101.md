@@ -80,6 +80,14 @@ chr(number) = string's unicode str
 ```
 ## Dictionaries <a name="dicts"></a>
 ```
+dict = {'b': 2, 'a': 1, 'c': 3}
+dict.items()       # Returns tuple of key + val of dict, ideal in loops
+
+# Random tricks
+Sort dict based on vals, ascending 
+    sorted(dict.items())                # {'a': 1, 'b': 2, 'c': 3}
+Sort dict based on vals, descending
+    sorted(dict.items(), reverse=True)  # {'c': 3, 'b': 2, 'a': 1}
 
 ```
 ## Loops <a name="Loops"></a>
@@ -121,6 +129,9 @@ Manual control over iteration
 ```
 ## Loop through dictionaries 
 ```
+dic = {'1':"hi", '2':"bye"}    
+for key, val in dic.items():
+    print(key, val) 
 ```
 ## Pointers <a name="pointers"></a>
 ## Two Pointers
@@ -218,15 +229,13 @@ numbers = range(5, 10) is list of numbers 5 -> 9
         import math 
         math.fmod(-10 % 3) = -1
 
-# Sorting a dictionary based on its values: sorted(dict.items()) as iterate
-Return k most freq eles in arr
-    freq = {8: 1, 9: 3, 7: 4}
-    res = []
-
-    for key, val in sorted(freq.items()):
-        if i <= k:
-            res.append(key)
-            i += 1  
+# Most freq K in arr
+freq = {8: 1, 9: 3, 7: 4}
+res = []
+for key, val in sorted(freq.items()):
+    if i <= k:
+        res.append(key)
+        i += 1  
     return res
 BUT REALLY USING A HEAP IS THE RIGHT ANSWER FOR K FREQUENT Qs
 
@@ -320,11 +329,6 @@ If we want to change our for loop's increment:
     for(let i = 0; i < nums.length; i+=2)
     == 
     for i in range(0, len(nums), 2)
-
-Basic for/ in, no index:
-    for char in/of arr:
-    ==
-    for char in arr:
 
 Key, val through a dictionary:
     dic = {'1':"hi", '2':"bye"}
