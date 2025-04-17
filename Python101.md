@@ -4,6 +4,7 @@
 3. [Loops](#Loops)
 4. [Doubles](#doubles)
 5. [Pointers](#pointers)
+6. [Ques, heaps, bitwise, regex] (#Ques/heaps/bitwise/regex)
 
 ## Arrs & Strs <a name="strs&arrs"></a>
 ### Arrs
@@ -83,11 +84,14 @@ chr(number) = string's unicode str
 str(integer) # Returns a STRING from an integer
 chr(integer) # Returns a character from an integer
 int(str)     # Returns an integer from a string
+float()
+bool()
 
-format(num, 'b').zfill(32)
-    Number to binary AND adds all 32 zeros so we can 
-    count for big numbers too 
-
+# Random stuff
+Checking type:
+    isinstance(9, int) => true 
+    isinstance(tom, Person) => true. # Tom is obj, person class
+    isinstance("cat", str) => true
 ```
 ## Dictionaries <a name="dicts"></a>
 ```
@@ -107,7 +111,6 @@ Build a frequency dictionary:
     //Bonus, custom sort nums by frequency based on our dict
     nums.sort(key=lambda x: freq[x])
     return nums
-
 ```
 ## Loops <a name="Loops"></a>
 ### Loop through Arrs 
@@ -151,6 +154,14 @@ Build a prefix sum, ie calcs sum of subarrs in an arr of nums
         for i in range(1, len(arr)):
             prefix.append(prefix[-1] + arr[i])
         return prefix
+Most freq K in arr = heap or 
+    freq = {8: 1, 9: 3, 7: 4}
+    res = []
+    for key, val in sorted(freq.items()):
+        if i <= k:
+            res.append(key)
+            i += 1  
+    return res
 ```
 ### Loop through dictionaries 
 ```
@@ -203,11 +214,17 @@ def fn(arr):
         # update ans
     return ans
 ```
-
 # Doubles <a name="doubles"></a>
 ```
-isnumeric            # Check is a char is a number
 Simple math
+    isnumeric   # Check is a char is a number
+    x += 1
+    x -= 1
+    x *= 1
+    x /= 1
+    x //= 1     # Integer floor of result 
+    x %= y      # Remainder, ex 10 % 4 = 2
+    x **= y     # Exponent, ie raised power
     math.sqrt(9) = 3 
     math.pow(2,3) = 8
         OR print(10 ** 3) => 1000 #10 to the power of 3 
@@ -238,30 +255,21 @@ Round
     import math
     math.ceil(float)
     math.floor(float) OR math.round(float)
+Number to binary AND adds all 32 zeros so we can count for big numbers too 
+    format(num, 'b').zfill(32)
 ```
-HELLO FUTURE INDY I AM HERE
-
-
-# Most freq K in arr
-freq = {8: 1, 9: 3, 7: 4}
-res = []
-for key, val in sorted(freq.items()):
-    if i <= k:
-        res.append(key)
-        i += 1  
-    return res
-BUT REALLY USING A HEAP IS THE RIGHT ANSWER FOR K FREQUENT Qs
-
-
-# Queue / Deque
+# Ques, heaps, bitwise, regex <a name="Ques/heaps/bitwise/regex"></a>
+## Queue / Deque
 ```
 Deque = double ended queue
 append / appendleft
 pop / popleft 
 [0] first / [-1] last ele
 ```
-
-# Bitwise 
+## Heaps
+```
+```
+## Bitwise 
 IF we have to do some crazy "find the only non-dupe in set"
     XOR -> inequality detector 
         arr = [2,1,2,1,3]
@@ -270,77 +278,17 @@ IF we have to do some crazy "find the only non-dupe in set"
             a ^= i
         return a 
     XNOR -> equality detector
-
-# Control logic
+## Regex in Python
 ```
-    val1 = l1.val if l1 else 0
-```
-# Data types and logic
-JS => Python logic
-    || => or
-    && => and
-    !  => not 
-    in => in 
-        We can do ```"a" in [a,b,c]``` returns true
-        Works in strings, tuples, lists, dictionaries
-        Technically JS has "in" but it sucks, only works w/ objs. 
-        Python's "in" is v good, works for a lot
-
-Comparison operators are the same. Just python doesn't have ===
-Bc python doesn't force coercion ("a" + 9 = "a9" in JS)
-== > < <= >= != all the same
-
-Python data types: float, int, string, boolean, none
-    No BigInt, no undefined. 
-    Null (JS) is None (Python)
-
-# Regex in Python
 import re
 regex = re.compile(r"\d\d\d\d")
 text = "Your id is 4933"
 match = regex.search(text)
 start, end = match.start(), match.end()
 found = text[start:end] # 4933
-
-# Instance operators 
-Actually kinda important, but I'm mentally done
-Come back to this :(
-
-Python instanceof
-
-
-# Built in functions
-Checking type:
-
-isinstance(9, int) => true 
-isinstance(tom, Person) => true. Tom is obj, person class
-isinstance("cat", str) => true
-
-Other topics to cover:
-https://www.valentinog.com/blog/python-for-js/ 
-
-Raising exceptions, sychronous, commenting, etc
-
-
-# Converting data types 
-We can convert str -> int, int -> str, etc, by using these:
-    int()
-    float()
-    str()
-    bool()
-
-Ex:
-    i1 = input("First: ") takes a num
-    i2 = input("Second: ") takes a num
-    sum = float(i1) + float(i2)
-    print("Sum = " + str(sum))
-
-
-Logic
-    x += 1
-    x -= 1
-    x *= 1
-    x /= 1
-    x //= 1     # Integer floor of result 
-    x %= y      # Remainder, ex 10 % 4 = 2
-    x **= y     # Exponent, ie raised power
+```
+## Control logic
+```
+    val1 = l1.val if l1 else 0
+    Python data types: float, int, string, boolean, none
+```
