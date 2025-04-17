@@ -26,7 +26,6 @@ arr.pop(0) / del arr[0]   # To pop the ele in the front of a list
 arr.insert(idx, num)      # Add ele to arr at specific idx
 
 # Random tricks:
-
 Sorting nested lists:
     next(itr(dict))
         Returns the 1st key in the dictionary or list 
@@ -35,7 +34,8 @@ Sorting nested lists:
     intervals.sort(key=lambda x: x[0]) # sort by 1st ele 
     intervals = [["a", 5], ["k", 1]]
 
-    smallestWord = min(words, key=len) # find shortest word in an arr of words
+Find shortest word in an arr of words
+    smallestWord = min(words, key=len) 
 ```
 ### Strs 
 ```
@@ -59,6 +59,7 @@ Random ones:
     s = "world"
     return "hello ".format(s)    # Insert var into str
     or     print(f"Hello, {name}") 
+    s += "hi" * 3                # s = "hihihi"
 ```
 ### Strs <=> Arrs, Nums <=> Char
 ```
@@ -88,12 +89,21 @@ Sort dict based on vals, ascending
     sorted(dict.items())                # {'a': 1, 'b': 2, 'c': 3}
 Sort dict based on vals, descending
     sorted(dict.items(), reverse=True)  # {'c': 3, 'b': 2, 'a': 1}
+Build a frequency dictionary:
+    freq = {}
+    for num in nums:
+        freq[num] = 1 + freq.get(num, 0)
+
+    //Bonus, custom sort nums by frequency based on our dict
+    nums.sort(key=lambda x: freq[x])
+    return nums
 
 ```
 ## Loops <a name="Loops"></a>
 ### Loop through Arrs 
 ```
 arr = [cat, dog, fish]
+// for i in range(start, end_noninclusive, step)
 
 Access every ele in arr
     for ele in arr:
@@ -187,47 +197,38 @@ def fn(arr):
     return prefix
 ```
 
-#HELLO FUTURE INDY I AM HERE
-
-
-# Num / char handy built in 
-ord(char)
-    Finds the unicode of a character
-    Unicode is an interger representation of chars and 
-    punctuation 
-    Helps us do things like shift chars in the alphabet:
-        "a1c" => "abc"
-        We will use ord(char) + num to find the 'b'
-        Then use char() to make the unicode num into a char 
-
-.gcd(n1, n2)
-    Finds the greatest common factor between two nums
-        .gcd(8, 24) -> 8
-        .gcd() 
-import math
-math.ceil(float)
-    rounds a number up
-math.floor(float) OR math.round(float)
-    rounds a number down
-math.sqrt(9) = 3 
-math.pow(2,3) = 8
-
-range(start, end)
-numbers = range(5, 10) is list of numbers 5 -> 9
-
-# Simple math 
+# Doubles <a name="doubles"></a>
+Simple math
+    math.sqrt(9) = 3 
+    math.pow(2,3) = 8
+    range(start, end)
+        numbers = range(5, 10) is list of numbers 5 -> 9
     5/2 = 2.5
     5//2 = 2 (rounds down, integer)
     -3//2 = -2 
     int(-3/2) = -1 
-
-# Modulo = getting remainder 
+Modulo = getting remainder 
         10 % 3 = 1 is remainder
     weird negative:
         -10 % 3 = 2 is remainder for some garbage reason 
     fix weird negative:
         import math 
-        math.fmod(-10 % 3) = -1
+        math.fmod(-10 % 3) = -1    
+Finds unicode of a char (int rep of chars & punctuation)
+    ord(char)
+    Helps us do things like shift chars in the alphabet:
+        "a1c" => "abc"
+        We will use ord(char) + num to find the 'b'
+        Then use char() to make the unicode num into a char 
+Finds the greatest common factor between two nums
+    .gcd(8, 24) -> 8
+Round
+    import math
+    math.ceil(float)
+    math.floor(float) OR math.round(float)
+
+#HELLO FUTURE INDY I AM HERE
+
 
 # Most freq K in arr
 freq = {8: 1, 9: 3, 7: 4}
@@ -238,29 +239,6 @@ for key, val in sorted(freq.items()):
         i += 1  
     return res
 BUT REALLY USING A HEAP IS THE RIGHT ANSWER FOR K FREQUENT Qs
-
-
-## Use a frequency dictionary, then custom sort
-def frequencySort(self, nums: List[int]) -> List[int]:     
-    c = {}
-    for num in nums:
-        c[num] = c.get(num, 0) + 1
-        
-    nums.sort(reverse=True)  # edge case for decreasing order
-    nums.sort(key=lambda x: c[x])
-    return nums
-
-
-# Build a frequency dictionary quickly:
-    freq = {}
-    for num in nums:
-        freq[num] = 1 + freq.get(num, 0)
-    # freq: {9: 5, 8: 2}
-
-# Adding a char or a space x number of times:
-    s = ""
-    s += "hi" * 3
-    s = "hihihi"
 
 # Check is a char is a number:
 isnumeric
@@ -318,30 +296,6 @@ IF we have to do some crazy "find the only non-dupe in set"
 # Two possible values for a variable
     val1 = l1.val if l1 else 0
         Like JS's: let val1 = l1.val ? l1 : 0
-
-# Loops 
-Basic for loop with index:
-    for(let i = 0; i < nums.length; i++)
-    ==
-    for i in range(len(nums))
-
-If we want to change our for loop's increment:
-    for(let i = 0; i < nums.length; i+=2)
-    == 
-    for i in range(0, len(nums), 2)
-
-Key, val through a dictionary:
-    dic = {'1':"hi", '2':"bye"}
-    
-    for key, val in dic.items():
-        print(key) # 1
-        print(val) # hi
-
-Reverse loop, from end of arr to front of arr 
-    arr = ["c", "b", "a"]
-    for i in range(len(digits)-1, -1, -1):
-        print arr[i]
-            # a b c 
 
 
 # Dynammic programming 
