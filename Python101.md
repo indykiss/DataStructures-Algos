@@ -60,6 +60,7 @@ Random ones:
     return "hello ".format(s)    # Insert var into str
     or     print(f"Hello, {name}") 
     s += "hi" * 3                # s = "hihihi"
+    isalpha                      # Check is a char is A-Z
 ```
 ### Strs <=> Arrs, Nums <=> Char
 ```
@@ -192,15 +193,10 @@ def fn(arr):
             left += 1
         # update ans
     return ans
-Build a prefix sum, ie calcs sum of subarrs in an arr of nums
-    def fn(arr):
-        prefix = [arr[0]]
-        for i in range(1, len(arr)):
-            prefix.append(prefix[-1] + arr[i])
-        return prefix
 ```
 
 # Doubles <a name="doubles"></a>
+isnumeric            # Check is a char is a number
 Simple math
     math.sqrt(9) = 3 
     math.pow(2,3) = 8
