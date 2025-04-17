@@ -196,16 +196,20 @@ def fn(arr):
 ```
 
 # Doubles <a name="doubles"></a>
+```
 isnumeric            # Check is a char is a number
 Simple math
     math.sqrt(9) = 3 
     math.pow(2,3) = 8
+        OR print(10 ** 3) => 1000 #10 to the power of 3 
     range(start, end)
         numbers = range(5, 10) is list of numbers 5 -> 9
     5/2 = 2.5
     5//2 = 2 (rounds down, integer)
     -3//2 = -2 
     int(-3/2) = -1 
+    if num % 2 == 0      # Even
+    if num % 2 == 1      # Odd
 Modulo = getting remainder 
         10 % 3 = 1 is remainder
     weird negative:
@@ -225,7 +229,7 @@ Round
     import math
     math.ceil(float)
     math.floor(float) OR math.round(float)
-
+```
 HELLO FUTURE INDY I AM HERE
 
 
@@ -238,13 +242,6 @@ for key, val in sorted(freq.items()):
         i += 1  
     return res
 BUT REALLY USING A HEAP IS THE RIGHT ANSWER FOR K FREQUENT Qs
-
-# Check is a char is a number:
-isnumeric
-
-Check is a char is A-Z:
-isalpha
-
 
 # Converting data types
 str(integer)
@@ -296,29 +293,6 @@ IF we have to do some crazy "find the only non-dupe in set"
     val1 = l1.val if l1 else 0
         Like JS's: let val1 = l1.val ? l1 : 0
 
-
-# Dynammic programming 
-1. Always has a lookup table
-    - memoization for ex
-2. Use past values to get current solution
-
-Steps:
-1. Recursion
-2. Memoization to store previous vals
-3. Bottom up
-    - Alternative to recursion! 
-    - Better because it's much faster (no recursion)
-    Basically:
-        def fib_bottom_up(n):
-            if n == 1 or n == 2:
-                return 1 
-            dp = [] * n+1
-            dp[1] = 1
-            dp[2] = 1
-            for i in range(3, n):
-                dp[i] = dp[i-1] + dp[i-2]
-            return dp[n]
-
 # Data types and logic
 JS => Python logic
     || => or
@@ -337,23 +311,6 @@ Bc python doesn't force coercion ("a" + 9 = "a9" in JS)
 Python data types: float, int, string, boolean, none
     No BigInt, no undefined. 
     Null (JS) is None (Python)
-
-# Math in Python  - remember PEMDAS
-print(10 - 2)
-print(10 + 2)
-print(10 / 3) => 3.33
-    One / gives us division float
-print(10 // 3) => 3
-    Double // rounds division to int 
-print(10 % 3) => 1
-print(10 ** 3) => 1000 
-    10 to the power of 3 
-
-# Checking even and odd in python 
-Even:
-    if num % 2 == 0
-Odd:
-    if num % 2 == 1
 
 # Regex in Python
 import re
