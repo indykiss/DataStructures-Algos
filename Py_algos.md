@@ -79,6 +79,27 @@ Memoization is a type of DP.
 
 DP problem might need top down or bottom up solution. 
 
+# Dynammic programming 
+1. Always has a lookup table
+    - memoization for ex
+2. Use past values to get current solution
+
+Steps:
+1. Recursion
+2. Memoization to store previous vals
+3. Bottom up
+    - Alternative to recursion! 
+    - Better because it's much faster (no recursion)
+    Basically:
+        def fib_bottom_up(n):
+            if n == 1 or n == 2:
+                return 1 
+            dp = [] * n+1
+            dp[1] = 1
+            dp[2] = 1
+            for i in range(3, n):
+                dp[i] = dp[i-1] + dp[i-2]
+            return dp[n]
 
 # Bottom up dynammic programming 
 Tabulation is when we make that nice DP list and add some easy answers to it, then we go from the next step up to n, calculating every step and return that last dp[n] basically. We can use dp[i-1]/d[[i-2]] etc OR other fun loops/ whatever to build what dp[i] is. 
@@ -311,3 +332,12 @@ def slidingWindow(arr: List[int], target: int):
 
 # Greedy
 
+# Returns all the text in the file
+    file1 = a text file 
+    file1.read() returns all the text in the file
+
+Opening a file from a different location.
+Use pwd to find the path
+    open_file = open("/Users/UserName/Folder/file1.txt)
+Remember, need to .close() a file after opening it if we're trying 
+to delete it
