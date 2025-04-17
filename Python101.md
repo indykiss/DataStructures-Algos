@@ -4,7 +4,8 @@
 3. [Loops](#Loops)
 4. [Doubles](#doubles)
 5. [Pointers](#pointers)
-6. [Ques, heaps, bitwise, regex](#ques)
+6. [Sets](#sets)
+7. [Ques, heaps, bitwise, regex](#ques)
 
 ## Arrs & Strs <a name="strs&arrs"></a>
 ### Arrs
@@ -23,20 +24,20 @@ sum(arr)                   # O(n), Adds all nums in arr
 max(arr) - max(num1, num2) - min(arr) 
     Finds the maximum/ minimum in an arr or between 2 vals
 
-arr.pop(0) / del arr[0]   # To pop the ele in the front of a list
+arr.pop() / del arr[0]   # To pop the ele in the front of a list, o(1)
+arr.pop(i)                # o(n) bc need to shift eles
 arr.insert(idx, num)      # Add ele to arr at specific idx
+arr.remove("ele")  #o(n)
 
 # Random tricks:
 Sorting nested lists:
     next(itr(dict))
         Returns the 1st key in the dictionary or list 
-
     intervals = [["k", 1], ["a", 5]]
     intervals.sort(key=lambda x: x[0]) # sort by 1st ele 
     intervals = [["a", 5], ["k", 1]]
-
 Find shortest word in an arr of words
-    smallestWord = min(words, key=len) 
+    smallestWord = min(words, key=len)
 ```
 ### Strs 
 ```
@@ -51,7 +52,7 @@ Slice
     str[:i]  # From beg of str to i, noninclusive
 Reverse - O(n)
     str[::-1]     
-    This works because of how slicing works in Python, Start at beg, End at end, because both are ommitted, and move with -1 steps.
+    This works bc of how slicing works in Python, Start at beg, End at end, because both are ommitted, and move with -1 steps.
     reversed(text)
 Sort, by using arr sort:
     sortedList = sorted(str)
@@ -61,11 +62,11 @@ Random ones:
     str.count(" ")        # Counts the number of spaces in the str
     str.upper() / str.lower()
     str[-1]
-    s = "world"
-    return "hello ".format(s)    # Insert var into str
-    or     print(f"Hello, {name}") 
+    "hello ".format(s)    # Insert var into str
+    or  print(f"Hello, {name}") 
     s += "hi" * 3                # s = "hihihi"
     isalpha                      # Check is a char is A-Z
+    
 ```
 ### Strs <=> Arrs, Nums <=> Char
 ```
