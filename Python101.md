@@ -41,22 +41,26 @@ Find shortest word in an arr of words
 ### Strs 
 ```
 Find / Replace
-    return "hell".find(e)  # idx of 1. if no e, -1
-    return str.replace(this, withThat)
+    "hell".find(e)  # idx of 1. if no e, -1
+    str.replace(this, withThat)
         s2 = "hi there"
-        print(s2.replace("there", "bye")) => "hi bye"
+        s2.replace("there", "bye") => "hi bye"
 Slice
-    return str[start:stop_noninclusive:step] 
-Reverse
-    return str[::-1]     
+    str[start:stop_noninclusive:step]
+    str[i:]  # From i to end of str
+    str[:i]  # From beg of str to i, noninclusive
+Reverse - O(n)
+    str[::-1]     
     This works because of how slicing works in Python, Start at beg, End at end, because both are ommitted, and move with -1 steps.
+    reversed(text)
 Sort, by using arr sort:
     sortedList = sorted(str)
     return "".join(sortedList)
 Random ones:
-    return len(str)
-    return str.count(" ")        # Counts the number of spaces in the str
-    return str.upper() / str.lower()
+    len(str)
+    str.count(" ")        # Counts the number of spaces in the str
+    str.upper() / str.lower()
+    str[-1]
     s = "world"
     return "hello ".format(s)    # Insert var into str
     or     print(f"Hello, {name}") 
@@ -66,12 +70,12 @@ Random ones:
 ### Strs <=> Arrs, Nums <=> Char
 ```
 Arr => Str
-    return "".join(["a","b"])  # "ab"
+    "".join(["a","b"])  # "ab"
 Str => Arr
-    return list("str")         # [s,t,r]
+    list("str")         # [s,t,r]
 Sentence => Arr
-    return "str st".split()    # [str, st]
-    return "s,t".split(,)      # [s, t]
+    "str st".split()    # [str, st]
+    "s,t".split(,)      # [s, t]
 
 # Convert num <=> char
 ord(character) = character's unicode str
@@ -97,7 +101,10 @@ Checking type:
 ```
 dict = {'b': 2, 'a': 1, 'c': 3}
 dict.items()       # Returns tuple of key + val of dict, ideal in loops
-
+Declare dict example with default value of 0 / empty arr/ empty str
+    my_dict = defaultdict(int)
+    my_dict = defaultdict(list)
+    my_dict = defaultdict(str)
 # Random tricks
 Sort dict based on vals, ascending 
     sorted(dict.items())                # {'a': 1, 'b': 2, 'c': 3}
@@ -107,7 +114,6 @@ Build a frequency dictionary:
     freq = {}
     for num in nums:
         freq[num] = 1 + freq.get(num, 0)
-
     //Bonus, custom sort nums by frequency based on our dict
     nums.sort(key=lambda x: freq[x])
     return nums
@@ -167,7 +173,13 @@ Most freq K in arr = heap or
 ```
 dic = {'1':"hi", '2':"bye"}    
 for key, val in dic.items():
-    print(key, val) 
+    print(key, val)
+
+for key in dict.keys():
+    print(key)
+  
+for val in dict.values():
+    print(val)
 ```
 ## Pointers <a name="pointers"></a>
 ### Two Pointers
