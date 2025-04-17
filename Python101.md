@@ -137,14 +137,14 @@ Manual control over iteration
     print(next(stuff_iter)  # now next ele in arr
  
 ```
-## Loop through dictionaries 
+### Loop through dictionaries 
 ```
 dic = {'1':"hi", '2':"bye"}    
 for key, val in dic.items():
     print(key, val) 
 ```
 ## Pointers <a name="pointers"></a>
-## Two Pointers
+### Two Pointers
 ```
 Two pointers: one input, opposite ends
 def fn(arr):
@@ -176,7 +176,7 @@ def fn(arr1, arr2):
         j += 1
     return ans
 ```
-## Sliding window
+### Sliding window
 ```
 def fn(arr):
     left = ans = curr = 0
@@ -188,13 +188,12 @@ def fn(arr):
         # update ans
     return ans
 ```
-## Build a prefix sum
-```
-def fn(arr):
-    prefix = [arr[0]]
-    for i in range(1, len(arr)):
-        prefix.append(prefix[-1] + arr[i])
-    return prefix
+Build a prefix sum, ie calcs sum of subarrs in an arr of nums
+    def fn(arr):
+        prefix = [arr[0]]
+        for i in range(1, len(arr)):
+            prefix.append(prefix[-1] + arr[i])
+        return prefix
 ```
 
 # Doubles <a name="doubles"></a>
