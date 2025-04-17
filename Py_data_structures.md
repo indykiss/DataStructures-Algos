@@ -1,11 +1,3 @@
-
-## Javascript -> Python translation notes ##
-
-# Data Structures, Python
-- Lists* [=Arrays]
-- Strings* [Immutable]
-- Dictionaries
-- Sets
 - Trees*
 - Graphs*
 - Tries
@@ -24,24 +16,6 @@
 - Closures [I should know this]
 - Regex
 
-
-# Lists/ Arrays 
-Similar to JS arrays, also mutable. Main differences:
-
-Different terms for push/ pop
-```
-l = ["yo", "i", "potat"]
-l.append("woo") 
- # print(my_list) = ["yo", "i", "potat", "woo"]
-l.remove("yo")
- # print(my_list) = ["i", "potat", "woo"]
-l.pop(1) 
- # Removes index 1 element
-
-.extend([1, 2, 3])
-    Adds multiple things to the end of a list
-
- ```
 Concatenate lists! 
 ```
 list1 = ["I", "is"]
