@@ -24,8 +24,8 @@ sum(arr)                   # O(n), Adds all nums in arr
 max(arr) - max(num1, num2) - min(arr) 
     Finds the maximum/ minimum in an arr or between 2 vals
 
-arr.pop() / del arr[0]   # To pop the ele in the front of a list, o(1)
-arr.pop(i)                # o(n) bc need to shift eles
+arr.pop() / .pop(-1)      # To pop the ele in the end of a list, o(1)
+arr.pop(i)                # To pop anywhere, o(n) bc need to shift eles
 arr.insert(idx, num)      # Add ele to arr at specific idx
 arr.remove("ele")  #o(n)
 
