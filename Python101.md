@@ -79,6 +79,15 @@ ord(character) = character's unicode str
 chr(number) = string's unicode str
     chr(97) = "a"
     chr(98) = "b"
+
+str(integer) # Returns a STRING from an integer
+chr(integer) # Returns a character from an integer
+int(str)     # Returns an integer from a string
+
+format(num, 'b').zfill(32)
+    Number to binary AND adds all 32 zeros so we can 
+    count for big numbers too 
+
 ```
 ## Dictionaries <a name="dicts"></a>
 ```
@@ -243,38 +252,14 @@ for key, val in sorted(freq.items()):
     return res
 BUT REALLY USING A HEAP IS THE RIGHT ANSWER FOR K FREQUENT Qs
 
-# Converting data types
-str(integer)
-    Returns a STRING from an integer
-    Much better than chr()
-
-chr(integer)
-    Returns a character from an integer
-
-int(str)
-    Returns an integer from a string
-
-format(num, 'b').zfill(32)
-    Number to binary AND adds all 32 zeros so we can 
-    count for big numbers too 
-
 
 # Queue / Deque
+```
 Deque = double ended queue
 append / appendleft
 pop / popleft 
 [0] first / [-1] last ele
-
-# Random
-Returns all the text in the file
-    file1 = a text file 
-    file1.read() returns all the text in the file
-
-Opening a file from a different location.
-Use pwd to find the path
-    open_file = open("/Users/UserName/Folder/file1.txt)
-Remember, need to .close() a file after opening it if we're trying 
-to delete it
+```
 
 # Bitwise 
 IF we have to do some crazy "find the only non-dupe in set"
@@ -286,13 +271,10 @@ IF we have to do some crazy "find the only non-dupe in set"
         return a 
     XNOR -> equality detector
 
-# Lamdas
-
-
-# Two possible values for a variable
+# Control logic
+```
     val1 = l1.val if l1 else 0
-        Like JS's: let val1 = l1.val ? l1 : 0
-
+```
 # Data types and logic
 JS => Python logic
     || => or
