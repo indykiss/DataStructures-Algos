@@ -4,7 +4,7 @@
 3. [Loops](#Loops)
 4. [Doubles](#doubles)
 5. [Pointers](#pointers)
-6. [Ques, heaps, bitwise, regex] (#Ques/heaps/bitwise/regex)
+6. [Ques, heaps, bitwise, regex](#Ques)
 
 ## Arrs & Strs <a name="strs&arrs"></a>
 ### Arrs
@@ -258,7 +258,7 @@ Round
 Number to binary AND adds all 32 zeros so we can count for big numbers too 
     format(num, 'b').zfill(32)
 ```
-# Ques, heaps, bitwise, regex <a name="Ques/heaps/bitwise/regex"></a>
+# Ques, heaps, bitwise, regex <a name="Ques"></a>
 ## Queue / Deque
 ```
 Deque = double ended queue
