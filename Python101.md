@@ -135,7 +135,12 @@ Manual control over iteration
     print(next(stuff_iter)) # just get the 1st ele
     # do a bunch of stuff
     print(next(stuff_iter)  # now next ele in arr
- 
+Build a prefix sum, ie calcs sum of subarrs in an arr of nums
+    def fn(arr):
+        prefix = [arr[0]]
+        for i in range(1, len(arr)):
+            prefix.append(prefix[-1] + arr[i])
+        return prefix
 ```
 ### Loop through dictionaries 
 ```
@@ -187,7 +192,6 @@ def fn(arr):
             left += 1
         # update ans
     return ans
-```
 Build a prefix sum, ie calcs sum of subarrs in an arr of nums
     def fn(arr):
         prefix = [arr[0]]
@@ -226,7 +230,7 @@ Round
     math.ceil(float)
     math.floor(float) OR math.round(float)
 
-#HELLO FUTURE INDY I AM HERE
+HELLO FUTURE INDY I AM HERE
 
 
 # Most freq K in arr
