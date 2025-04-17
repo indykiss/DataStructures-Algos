@@ -28,6 +28,8 @@ arr.pop() / .pop(-1)      # To pop the ele in the end of a list, o(1)
 arr.pop(i)                # To pop anywhere, o(n) bc need to shift eles
 arr.insert(idx, num)      # Add ele to arr at specific idx
 arr.remove("ele")  #o(n)
+arr.extend([1, 2, 3])     # Adds multiple things to the end of a list
+
 
 # Random tricks:
 Sorting nested lists:
@@ -40,6 +42,7 @@ Find shortest word in an arr of words
     smallestWord = min(words, key=len)
 ```
 ### Strs 
+Immutable, so any changes creates a copy
 ```
 Find / Replace
     "hell".find(e)  # idx of 1. if no e, -1
