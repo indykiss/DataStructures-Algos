@@ -16,20 +16,6 @@
 - Closures [I should know this]
 - Regex
 
-Concatenate lists! 
-```
-list1 = ["I", "is"]
-list2 = ["potato"]
-print(list1+list2) = ["I", "is", "potato"]
-```
-
-Nested lists behave the same as JS:
-    l1 = [[0,"abc"], [2], 3, 4]
-    l1[0][1] = "abc"
-
-Nested dictionaries/ arrs:
-    d1 = {"a": [1,2,3], "b": 4}
-    d1['a'][1] ==> 2
 
 IF we need to use the index in an arr to assign. For ex:
     "rearrange1 sentence3 this2" => "rearrange this sentence"
