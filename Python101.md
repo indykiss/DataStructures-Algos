@@ -29,7 +29,8 @@ arr.pop(i)                # To pop anywhere, o(n) bc need to shift eles
 arr.insert(idx, num)      # Add ele to arr at specific idx
 arr.remove("ele")  #o(n)
 arr.extend([1, 2, 3])     # Adds multiple things to the end of a list
-
+arr1 + arr2 = arr3        # Arr concat
+arr = [[0,"abc"], [2]]    # Arr[0][1] = "abc"
 
 # Random tricks:
 Sorting nested lists:
@@ -109,6 +110,8 @@ Declare dict example with default value of 0 / empty arr/ empty str
     my_dict = defaultdict(int)
     my_dict = defaultdict(list)
     my_dict = defaultdict(str)
+d1 = {"a": [1,2,3], "b": 4}             # d1['a'][1] ==> 2
+
 # Random tricks
 Sort dict based on vals, ascending 
     sorted(dict.items())                # {'a': 1, 'b': 2, 'c': 3}
