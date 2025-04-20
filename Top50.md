@@ -1,4 +1,4 @@
-# Find Peak Element
+### Find Peak Element
 ```
 A peak element is an element that is strictly greater than its neighbors.
 An peak, only in O(log n) time.
