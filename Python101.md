@@ -68,9 +68,9 @@ Random ones:
     str[-1]
     "hello ".format(s)    # Insert var into str
     or  print(f"Hello, {name}") 
-    s += "hi" * 3                # s = "hihihi"
-    isalpha                      # Check is a char is A-Z
-    
+    s += "hi" * 3         # s = "hihihi"
+    isalpha               # Check is a char is A-Z
+    isalnum               # Check if alphanumeric   
 ```
 ### Strs <=> Arrs, Nums <=> Char
 ```
