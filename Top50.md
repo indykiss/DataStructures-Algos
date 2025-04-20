@@ -1,4 +1,39 @@
+# Find Peak Element
+```
+A peak element is an element that is strictly greater than its neighbors.
+An peak, only in O(log n) time.
+    def findPeakElement(self, nums: List[int]) -> int:
+            floor = 0
+            ceil = len(nums)-1
+            while floor < ceil:
+                mid = (floor+ceil) // 2
+                if nums[mid] < nums[mid+1]: 
+                    floor = mid + 1
+                else: 
+                    ceil = mid 
+            return floor
+```
 
+### Valid palindrome 
+```
+# strategy - o(n)
+# 2 pointers - left & right 
+# only look at alnum vals, check if left == right 
+    def isPalindrome(self, s: str) -> bool:     
+        left = 0
+        right = len(s)-1
+        s = s.lower()
+        while left < right: 
+            while left < right and not s[left].isalnum():
+                left += 1
+            while left < right and not s[right].isalnum():
+                right -= 1 
+            if s[left] != s[right]:
+                return False
+            left += 1 
+            right -= 1       
+        return True
+```
 ### Simplify Path
 ```
 # You are given an absolute path for a Unix-style file system, which always begins with a slash '/'. Your task is to transform this absolute path into its simplified canonical path.
@@ -7,12 +42,9 @@
 # stack to trace  
 # either add or remove from stack, based on rules
 # join at end with / to return str 
-
-class Solution:
     def simplifyPath(self, path: str) -> str:
         arr = path.split("/")
         stack = []
-
         for ele in arr: 
             if ele == "" or ele == ".":
                 continue 
@@ -21,7 +53,6 @@ class Solution:
                     stack.pop()
             else: 
                 stack.append(ele)
-        
         return "/" + "/".join(stack)
 ```
 ### Merge intervals
@@ -31,11 +62,9 @@ class Solution:
 #- Iterate, check if start of i+1 is before the end time of i, 
 #merge
 #- Go backwards 1 to consider new interval 
-class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         sortedIntervals = sorted(intervals, key=lambda x: x[0])
         merge = [sortedIntervals[0]]
-        
         for curr in sortedIntervals:
             last = merge[-1]
             new = last
