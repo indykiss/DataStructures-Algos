@@ -1,5 +1,5 @@
 
-### # Simplify Path
+### Simplify Path
 ```
 # You are given an absolute path for a Unix-style file system, which always begins with a slash '/'. Your task is to transform this absolute path into its simplified canonical path.
 # strategy - O(n)
