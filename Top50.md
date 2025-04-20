@@ -1,6 +1,30 @@
 
+### Merge intervals
+```
+#O(log n * n)
+#- Sort by start time 
+#- Iterate, check if start of i+1 is before the end time of i, 
+#merge
+#- Go backwards 1 to consider new interval 
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        sortedIntervals = sorted(intervals, key=lambda x: x[0])
+        merge = [sortedIntervals[0]]
+        
+        for curr in sortedIntervals:
+            last = merge[-1]
+            new = last
+            if curr[0] <= last[1]:
+                start = last[0]
+                end = max(last[1], curr[1])
+                del merge[-1]
+                merge.append([start, end])
+            else:
+                merge.append(curr) 
+        return merge
+```
 
-# Implement pow(x, n), which calculates x raised to the power n (i.e., xn).
+### Implement pow(x, n), which calculates x raised to the power n (i.e., xn).
 ```
 Extremely slow, only passes basic cases - O(n)
     def myPow(self, x: float, n: int) -> float:
