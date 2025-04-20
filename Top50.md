@@ -1,3 +1,28 @@
+### Copy List with Random Pointer
+```
+A linked list of length n is given such that each node contains an additional random pointer, which could point to any node in the list.
+Construct a deep copy of the list. The deep copy should consist of exactly n brand new nod
+# o(n) strategy
+# make a dictionary to initialize with new nodes 
+# add the connections from newNode-> other newNode from old linked list 
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        if head is None: return None
+        # intialize dictionary 
+        h = head 
+        mapping = {} # oldNode : newNode 
+        while h:
+            mapping[h] = Node(h.val, None, None) 
+            h = h.next
+        # create the connections 
+        h = head 
+        while h: 
+            if h.next: 
+                mapping[h].next = mapping[h.next]
+            if h.random: 
+                mapping[h].random = mapping[h.random]
+            h = h.next 
+        return mapping[head] # return the newHead basically, with full linked list behind it 
+```
 
 ### Find Peak Element
 ```
