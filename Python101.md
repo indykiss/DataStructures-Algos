@@ -236,7 +236,8 @@ def fn(arr):
 # Doubles <a name="doubles"></a>
 ```
 Simple math
-    isnumeric   # Check is a char is a number
+    isnumeric   # Check is a char is a number, but includes fractions, roman numerals, power of
+    isdigit     # Checks if 0-9
     x += 1
     x -= 1
     x *= 1
