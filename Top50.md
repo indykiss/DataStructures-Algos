@@ -1,3 +1,4 @@
+
 ### Find Peak Element
 ```
 A peak element is an element that is strictly greater than its neighbors.
@@ -12,6 +13,29 @@ An peak, only in O(log n) time.
                 else: 
                     ceil = mid 
             return floor
+```
+### Find Peak Element II 
+```
+Find peak in a matrix, basically. Must be O(m log n)
+Use binary search on columns, picking the middle column each time. In that column, find the row with the max value — if it’s a peak compared to its left and right neighbors, return it; otherwise, move the search to the side with the larger neighbor.
+    def findPeakGrid(self, mat: List[List[int]]) -> List[int]:
+        m, n = len(mat), len(mat[0])
+        low, high = 0, n - 1
+
+        while low <= high:
+            mid = (low + high) // 2
+            row = max(range(m), key=lambda i: mat[i][mid])
+            left = mat[row][mid-1] if mid > 0 else -1
+            right = mat[row][mid+1] if mid < n-1 else -1
+            if left < mat[row][mid] > right:
+                return [row, mid]
+            elif mat[row][mid] < left:
+                high = mid - 1
+            else:
+                low = mid + 1
+
+        return [-1, -1]
+
 ```
 
 ### Valid palindrome 
