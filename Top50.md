@@ -1,3 +1,34 @@
+### Continuous Subarray Sum 
+```
+Given an integer array nums and an integer k, return true if nums has a good subarray or false otherwise.
+A good subarray is a subarray where: its length is at least two, and the sum of the elements of the subarray is a multiple of k.
+
+# strategy - O()
+# trick: if we add up nums and take the remainder when dividing by k, 
+# then we see this remainder again, then we know we can divide the subarr sum 
+# by k without any leftover num
+# 1. dictionary to track remainders
+# 2. if we see same remainder twice, done
+class Solution:
+    def checkSubarraySum(self, nums: List[int], k: int) -> bool:
+        remainder_map = {0: -1} # idx : sumOfAllBefore 
+        # intialize so our i - (-1) gives us i + 1, so can 
+        # count 1st ele in subarr
+        total = 0 
+
+        for i, num in enumerate(nums):
+            total += num 
+            rem = total % k
+            if rem in remainder_map: 
+                # confirm len is at least 2
+                if i - remainder_map[rem] > 1: 
+                    return True
+            else:
+                remainder_map[rem] = i
+        return False
+```
+
+
 ### Valid Number 
 ```
 Given a string s, return whether s is a valid number.
