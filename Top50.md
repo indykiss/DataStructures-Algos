@@ -1,4 +1,29 @@
 
+### # Simplify Path
+```
+# You are given an absolute path for a Unix-style file system, which always begins with a slash '/'. Your task is to transform this absolute path into its simplified canonical path.
+# strategy - O(n)
+# split with / to find the stuff between
+# stack to trace  
+# either add or remove from stack, based on rules
+# join at end with / to return str 
+
+class Solution:
+    def simplifyPath(self, path: str) -> str:
+        arr = path.split("/")
+        stack = []
+
+        for ele in arr: 
+            if ele == "" or ele == ".":
+                continue 
+            elif ele == "..":
+                if len(stack):
+                    stack.pop()
+            else: 
+                stack.append(ele)
+        
+        return "/" + "/".join(stack)
+```
 ### Merge intervals
 ```
 #O(log n * n)
