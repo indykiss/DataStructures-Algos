@@ -1,3 +1,27 @@
+### Binary Tree Vertical Order Traversal
+```
+Given the root of a binary tree, return the vertical order traversal of its nodes' values. (i.e., from top to bottom, column by column).
+    def verticalOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if root is None: return []
+        column_map = defaultdict(list) 
+        min_col, max_col = 0, 0 
+        def dfs(node, row, col):
+            nonlocal min_col, max_col 
+            if not node:
+                return 
+            column_map[col].append((row, node.val))
+            min_col = min(col, min_col)
+            max_col = max(col, max_col)
+            dfs(node.left, row+1, col-1)
+            dfs(node.right, row+1, col+1)
+        dfs(root, 0, 0)
+        res = [] 
+        for col in range(min_col, max_col+1):
+            column_map[col].sort(key=lambda x: x[0])
+            vals = [val for row, val in column_map[col]]
+            res.append(vals)
+        return res
+```
 
 ### Binary Search Tree Iterator 
 ```
@@ -9,30 +33,20 @@ Implement the BSTIterator class that represents an iterator over the in-order tr
 #         self.left = left
 #         self.right = right
 class BSTIterator:
-
     def __init__(self, root: Optional[TreeNode]):
         self.sorted_nodes = []
         self.pointer = -1
         self.flatten_inorder(root)
-
     def flatten_inorder(self, root: TreeNode) -> None:
         if not root: return 
         self.flatten_inorder(root.left)
         self.sorted_nodes.append(root.val)
         self.flatten_inorder(root.right)
-
     def next(self) -> int:
         self.pointer += 1
         return self.sorted_nodes[self.pointer]
-
     def hasNext(self) -> bool:
         return len(self.sorted_nodes) > self.pointer + 1
-
-
-# Your BSTIterator object will be instantiated and called as such:
-# obj = BSTIterator(root)
-# param_1 = obj.next()
-# param_2 = obj.hasNext()
 ```
 
 ### Continuous Subarray Sum 
