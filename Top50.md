@@ -1,3 +1,40 @@
+
+### Binary Search Tree Iterator 
+```
+Implement the BSTIterator class that represents an iterator over the in-order traversal of a binary search tree (BST):
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class BSTIterator:
+
+    def __init__(self, root: Optional[TreeNode]):
+        self.sorted_nodes = []
+        self.pointer = -1
+        self.flatten_inorder(root)
+
+    def flatten_inorder(self, root: TreeNode) -> None:
+        if not root: return 
+        self.flatten_inorder(root.left)
+        self.sorted_nodes.append(root.val)
+        self.flatten_inorder(root.right)
+
+    def next(self) -> int:
+        self.pointer += 1
+        return self.sorted_nodes[self.pointer]
+
+    def hasNext(self) -> bool:
+        return len(self.sorted_nodes) > self.pointer + 1
+
+
+# Your BSTIterator object will be instantiated and called as such:
+# obj = BSTIterator(root)
+# param_1 = obj.next()
+# param_2 = obj.hasNext()
+```
+
 ### Continuous Subarray Sum 
 ```
 Given an integer array nums and an integer k, return true if nums has a good subarray or false otherwise.
