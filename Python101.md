@@ -137,6 +137,9 @@ Access every ele in arr
 Need idx, ex: accessing 2 arrs in parallel or modifying arr in-place
     for i in range(len(arr)):
         print(i)       
+Go backwards
+    for ele in reversed(arr)
+        do thing 
 Need index, go backwards
     for i in range(len(arr),2,-2):
         print(i)       #
