@@ -1,3 +1,26 @@
+
+
+### Kth Largest Element in an Array 
+```
+Given an integer array nums and an integer k, return the kth largest element in the array.
+Note that it is the kth largest element in the sorted order, not the kth distinct element.
+
+import heapq 
+
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        hea = []
+
+        for num in nums: 
+            if len(hea) < k:
+                heapq.heappush(hea, num)
+            else:
+                if hea[0] < num:
+                    heapq.heappop(hea)
+                    heapq.heappush(hea, num)
+                   
+        return hea[0]
+```
 ### Minimum Remove to Make Valid Parentheses
 ```
 Given a string s of '(' , ')' and lowercase English characters.
