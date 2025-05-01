@@ -1,3 +1,36 @@
+### Minimum Remove to Make Valid Parentheses
+```
+Given a string s of '(' , ')' and lowercase English characters.
+Your task is to remove the minimum number of parentheses ( '(' or ')', in any positions ) so that the resulting parentheses string is valid and return any valid string.
+    def minRemoveToMakeValid(self, s: str) -> str:
+        first = []
+        balance = 0
+        open_so_far = 0
+
+        # remove all invalid closer
+        for c in s:
+            if c == "(":
+                open_so_far += 1
+                balance += 1
+            if c == ")":
+                if balance == 0:
+                    continue 
+                balance -= 1
+            first.append(c)
+        
+        # remove as many left most bad openers 
+        res = []
+        open_to_keep = open_so_far - balance 
+        for ch in first:
+            if ch == "(": 
+                open_to_keep -= 1
+                if open_to_keep < 0: 
+                    continue
+            res.append(ch)
+        
+        return "".join(res)
+```
+
 ### Binary Tree Vertical Order Traversal
 ```
 Given the root of a binary tree, return the vertical order traversal of its nodes' values. (i.e., from top to bottom, column by column).
