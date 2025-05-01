@@ -1,7 +1,8 @@
 ### Minimum Remove to Make Valid Parentheses
 ```
 Given a string s of '(' , ')' and lowercase English characters.
-Your task is to remove the minimum number of parentheses ( '(' or ')', in any positions ) so that the resulting parentheses string is valid and return any valid string.
+Your task is to remove the minimum number of parentheses ( '(' or ')', in any positions ) so
+that the resulting parentheses string is valid and return any valid string.
 
     def minRemoveToMakeValid(self, s: str) -> str:
         first = []
@@ -34,7 +35,8 @@ Your task is to remove the minimum number of parentheses ( '(' or ')', in any po
 
 ### Binary Tree Vertical Order Traversal
 ```
-Given the root of a binary tree, return the vertical order traversal of its nodes' values. (i.e., from top to bottom, column by column).
+Given the root of a binary tree, return the vertical order traversal of its nodes' values.
+(i.e., from top to bottom, column by column).
     def verticalOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if root is None: return []
         column_map = defaultdict(list) 
@@ -86,7 +88,8 @@ class BSTIterator:
 ### Continuous Subarray Sum 
 ```
 Given an integer array nums and an integer k, return true if nums has a good subarray or false otherwise.
-A good subarray is a subarray where: its length is at least two, and the sum of the elements of the subarray is a multiple of k.
+A good subarray is a subarray where: its length is at least two, and the sum of
+the elements of the subarray is a multiple of k.
 
 # strategy - O()
 # trick: if we add up nums and take the remainder when dividing by k, 
@@ -117,7 +120,10 @@ class Solution:
 ### Valid Number 
 ```
 Given a string s, return whether s is a valid number.
-For example, all the following are valid numbers: "2", "0089", "-0.1", "+3.14", "4.", "-.9", "2e10", "-90E3", "3e+7", "+6e-1", "53.5e93", "-123.456e789", while the following are not valid numbers: "abc", "1a", "1e", "e3", "99e2.5", "--6", "-+3", "95a54e53".
+For example, all the following are valid numbers:
+"2", "0089", "-0.1", "+3.14", "4.", "-.9", "2e10", "-90E3",
+"3e+7", "+6e-1", "53.5e93", "-123.456e789",
+while the following are not valid numbers: "abc", "1a", "1e", "e3", "99e2.5", "--6", "-+3", "95a54e53".
 
 # o(n)
 # ok so we have rules. no strategy, just iterate and check if our rules have been breached 
@@ -150,7 +156,8 @@ For example, all the following are valid numbers: "2", "0089", "-0.1", "+3.14", 
 
 ### Copy List with Random Pointer
 ```
-A linked list of length n is given such that each node contains an additional random pointer, which could point to any node in the list.
+A linked list of length n is given such that each node contains an
+additional random pointer, which could point to any node in the list.
 Construct a deep copy of the list. The deep copy should consist of exactly n brand new nod
 # o(n) strategy
 # make a dictionary to initialize with new nodes 
@@ -192,7 +199,10 @@ An peak, only in O(log n) time.
 ### Find Peak Element II 
 ```
 Find peak in a matrix, basically. Must be O(m log n)
-Use binary search on columns, picking the middle column each time. In that column, find the row with the max value — if it’s a peak compared to its left and right neighbors, return it; otherwise, move the search to the side with the larger neighbor.
+Use binary search on columns, picking the middle column each time.
+In that column, find the row with the max value — if it’s a peak
+compared to its left and right neighbors, return it; otherwise,
+move the search to the side with the larger neighbor.
     def findPeakGrid(self, mat: List[List[int]]) -> List[int]:
         m, n = len(mat), len(mat[0])
         low, high = 0, n - 1
@@ -235,7 +245,9 @@ Use binary search on columns, picking the middle column each time. In that colum
 ```
 ### Simplify Path
 ```
-# You are given an absolute path for a Unix-style file system, which always begins with a slash '/'. Your task is to transform this absolute path into its simplified canonical path.
+# You are given an absolute path for a Unix-style file system,
+which always begins with a slash '/'. Your task is to transform this
+absolute path into its simplified canonical path.
 # strategy - O(n)
 # split with / to find the stuff between
 # stack to trace  
