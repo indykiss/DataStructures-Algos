@@ -1,4 +1,21 @@
+### Merge Strings Alternately
+```
+def mergeAlternately(self, word1: str, word2: str) -> str:
+        res = []
+        i, j = 0, 0 
+        q1, q2 = list(word1), list(word2)
 
+        while i < len(q1) and j < len(q2): 
+            res.append(q1.pop(0))
+            res.append(q2.pop(0))
+        
+        if len(q1):
+            res.extend(q1)
+        if len(q2):
+            res.extend(q2)
+        
+        return "".join(res)
+```
 
 ### Moving Average from Data Stream
 ```
