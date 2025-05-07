@@ -1,5 +1,28 @@
 
 
+### Moving Average from Data Stream
+```
+Given a stream of integers and a window size, calculate the moving average of all integers in the sliding window.
+Implement the MovingAverage class:
+    MovingAverage(int size) Initializes the object with the size of the window size.
+    double next(int val) Returns the moving average of the last size values of the stream.
+
+# time: O(n * m), size of moving window * n is size of window 
+# space: O(m), size of storage
+class MovingAverage:
+    def __init__(self, size: int):
+        self.q = []
+        self.window_size = size 
+
+    def next(self, val: int) -> float:
+        q = self.q
+        window_size = self.window_size
+        q.append(val)
+
+        window_sum = sum(q[-window_size:]) # get sum bc avg = sum / count, at window 
+        return window_sum / min(len(q), window_size) 
+```
+
 ### Kth Largest Element in an Array 
 ```
 Given an integer array nums and an integer k, return the kth largest element in the array.
