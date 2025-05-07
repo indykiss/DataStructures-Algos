@@ -106,7 +106,6 @@ from collections import deque
 def fn(root):
     queue = deque([root])
     ans = 0
-
     while queue:
         current_length = len(queue)
         # do logic for current level
@@ -118,7 +117,6 @@ def fn(root):
                 queue.append(node.left)
             if node.right:
                 queue.append(node.right)
-
     return ans
 ```
 ### DFS, recursive, graph
@@ -134,7 +132,6 @@ def fn(graph):
             if neighbor not in seen:
                 seen.add(neighbor)
                 ans += dfs(neighbor)
-        
         return ans
 
     seen = {START_NODE}
@@ -146,7 +143,6 @@ def fn(graph):
     stack = [START_NODE]
     seen = {START_NODE}
     ans = 0
-
     while stack:
         node = stack.pop()
         # do some logic
@@ -154,7 +150,6 @@ def fn(graph):
             if neighbor not in seen:
                 seen.add(neighbor)
                 stack.append(neighbor)
-    
     return ans
 ```
 ### BFS, graph 
@@ -165,7 +160,6 @@ def fn(graph):
     queue = deque([START_NODE])
     seen = {START_NODE}
     ans = 0
-
     while queue:
         node = queue.popleft()
         # do some logic
@@ -173,7 +167,6 @@ def fn(graph):
             if neighbor not in seen:
                 seen.add(neighbor)
                 queue.append(neighbor)
-    
     return ans
 ```
 
@@ -188,7 +181,6 @@ def fn(arr, k):
         heapq.heappush(heap, (CRITERIA, num))
         if len(heap) > k:
             heapq.heappop(heap)
-    
     return [num for num in heap]
 ```
 ### Binary search
@@ -205,7 +197,6 @@ def fn(arr, target):
             right = mid - 1
         else:
             left = mid + 1
-    
     # left is the insertion point
     return left
 ```
@@ -238,13 +229,13 @@ def fn(arr, k):
     counts = defaultdict(int)
     counts[0] = 1
     ans = curr = 0
-
     for num in arr:
         # do logic to change curr
         ans += counts[curr - k]
         counts[curr] += 1
-    
     return ans
 ```
-### 
+
+
+
 
