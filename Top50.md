@@ -1,3 +1,27 @@
+### Top K 
+```
+import heapq
+from collections import defaultdict
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        counter = defaultdict(int) # num: freq
+        for num in nums: 
+            counter[num] += 1
+
+        max_heap = []
+        for num, freq in counter.items():
+            node = (freq * -1, num) # sort by freq
+            heapq.heappush(max_heap, node)
+        
+        ans = []
+        i = 0
+        while i < k:
+            freq, num = heapq.heappop(max_heap)            
+            ans.append(num)
+            i += 1
+
+        return ans 
+```
 ### Merge Strings Alternately
 ```
 def mergeAlternately(self, word1: str, word2: str) -> str:
