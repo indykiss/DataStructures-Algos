@@ -1,3 +1,24 @@
+### Sum Root to Leaf Numbers
+```
+    def sumNumbers(self, root: Optional[TreeNode]) -> int:
+        total = []
+        ans = 0
+        def dfs(node, curr_path):
+            nonlocal total
+            if not node: return ""
+            curr_path += str(node.val)
+            if not node.left and not node.right:
+                total.append(curr_path)
+            dfs(node.left, curr_path)
+            dfs(node.right, curr_path)
+        dfs(root, "")
+        # total: ["12", "13"]
+        for num in total: 
+            ans += int(num)
+        return ans
+```
+
+
 ### Top K Frequent Elements
 ```
 import heapq
