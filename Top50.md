@@ -1,3 +1,31 @@
+### Binary Tree Right Side View
+```
+class Solution:
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        if not root: return []
+        res = [] #idx is lvl, [eles at lvl]
+        
+        def dfs(node, lvl): 
+            if not node: return 
+
+            if lvl >= len(res):
+                res.append([node.val])  # create a new level
+            else:
+                res[lvl].append(node.val)
+
+            dfs(node.left, lvl+1)
+            dfs(node.right, lvl+1)
+
+        dfs(root,0)
+
+        view = []
+        for lvl in res: 
+            view.append(lvl.pop())
+
+        return view
+
+```
+
 ### Sum Root to Leaf Numbers
 ```
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
