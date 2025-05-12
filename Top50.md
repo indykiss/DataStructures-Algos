@@ -1,3 +1,45 @@
+### Course Schedule
+```
+
+# adjaceny list to find a cycle, if cycle then no
+# bc cant have psych 101 -> chem 101 -> math 101 -> psych 101 : bad school
+
+class Solution:
+    def canFinish(self, numCourses: int, prereqs: List[List[int]]) -> bool:
+# make an adjacency graph
+        graph = defaultdict(list)
+            
+        for course, prereq in prereqs:
+            graph[course].append(prereq)
+        
+        # DFS through adjacency graph to find cycle 
+        # need to check if we can eliminate the prereqs in our dictionary
+        visited = set()
+        def dfs(crs):
+            nonlocal graph
+            # if we are finding a cycle
+            if crs in visited: 
+                return False 
+            # no prereqs left
+            if not graph[crs]:
+                return True
+            
+            visited.add(crs)
+            for prereq in graph[crs]:
+                if not dfs(prereq): return False 
+            
+            visited.remove(crs) # not looking at anymore
+            graph[crs] = [] # returns true bc we looked at this already
+            return True 
+            
+        # call dfs for all the courses if graph isnt connected
+        for crs in range(numCourses): 
+            if not dfs(crs): 
+                return False
+
+        return True
+```
+
 ### Binary Tree Right Side View
 ```
 class Solution:
