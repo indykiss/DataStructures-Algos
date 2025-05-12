@@ -39,6 +39,24 @@ class Solution:
 
         return True
 ```
+### Minimum Add to Make Parentheses Valid
+```
+class Solution:
+    def minAddToMakeValid(self, s: str) -> int:
+        openers = 0 
+        min_add = 0 
+
+        for ch in s: 
+            if ch == "(":
+                openers += 1
+            else: 
+                if openers > 0: 
+                    openers -= 1 
+                else:  
+                    min_add += 1
+        
+        return openers + min_add
+```
 
 ### Binary Tree Right Side View
 ```
